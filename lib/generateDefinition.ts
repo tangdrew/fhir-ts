@@ -47,64 +47,85 @@ export const generateDefinitions = (
   return files;
 };
 
-export const generateDefinition = structureDefinition => {
-  const project = new Project();
-  project.addExistingSourceFiles("generated/entities/*.ts");
-  const patientFile = project.createSourceFile(
-    "generated/entities/patient.ts",
-    {
-      enums: createEnumDeclarationsFromStructureDefinition(structureDefinition),
-      interfaces: createEnumDeclarationsFromStructureDefinition(
-        structureDefinition
-      )
-    },
-    { overwrite: true }
-  );
-
-  project.save();
-};
-
 const createInterfaceDeclarationsFromStructureDefinition = (
   structureDefinition
 ): InterfaceDeclarationStructure[] => {
   const { differential, snapshot } = structureDefinition;
-  const [baseElement, ...childrenElements] = snapshot.element;
-  const interfaces = childrenElements.reduce((prev, curr) => {
-    const { path, type } = curr;
-    const pathArray = path.split(".");
-    const isChoiceType = path.substr(-3) === "[x]";
-    const parentName = convertToPascalCase(pathArray.slice(0, -1).join("."));
-    const propertyName = convertToCamelCase(
-      isChoiceType
-        ? pathArray
-            .slice(-1)
-            .join("")
-            .substring(0, pathArray.slice(-1).join("").length - 3)
-        : pathArray.slice(-1).join("")
-    );
-    const propertyDefinition = isChoiceType
-      ? type.reduce((accumPropDef, currType) => {
-          return {
-            ...accumPropDef,
-            [`${propertyName}${convertToPascalCase(currType.code)}`]: {
-              ...curr,
-              type: [{ code: currType.code }] // Set choice type to only the current type
-            }
-          };
-        }, {})
-      : { [propertyName]: curr };
-    return {
-      ...prev,
-      [parentName]: { ...prev[parentName], ...propertyDefinition }
-    };
-  }, {});
+  const interfaces = snapshot.element.reduce(
+    (interfaceDefinitions, curr, index) => {
+      const { definition, path, type } = curr;
+      // The first element in the snapshot array is the base element definition
+      const isBaseElement = index === 0;
+      if (isBaseElement) {
+        return {
+          [path]: {
+            docs: [definition]
+          }
+        };
+      }
+      const pathArray = path.split(".");
+      const isBackboneElement =
+        !isBaseElement && type.some(t => t.code === "BackboneElement");
+      const isChoiceType = path.substr(-3) === "[x]";
+      const parentName = convertToPascalCase(pathArray.slice(0, -1).join("."));
+      const propertyName = convertToCamelCase(
+        isChoiceType
+          ? pathArray
+              .slice(-1)
+              .join("")
+              .substring(0, pathArray.slice(-1).join("").length - 3)
+          : pathArray.slice(-1).join("")
+      );
+      const propertyDefinition = isChoiceType
+        ? type.reduce((accumPropDef, currType) => {
+            return {
+              ...accumPropDef,
+              [`${propertyName}${convertToPascalCase(currType.code)}`]: {
+                ...curr,
+                type: [{ code: currType.code }] // Set choice type to only the current type
+              }
+            };
+          }, {})
+        : { [propertyName]: curr };
+      const elementName = convertToPascalCase(path);
+      let updatedInterfaceDefinitions = {
+        ...interfaceDefinitions,
+        [parentName]: {
+          ...interfaceDefinitions[parentName],
+          properties: {
+            ...(interfaceDefinitions[parentName] || {}).properties,
+            ...propertyDefinition
+          }
+        }
+      };
+      if (isBackboneElement) {
+        updatedInterfaceDefinitions = {
+          ...updatedInterfaceDefinitions,
+          [elementName]: {
+            ...updatedInterfaceDefinitions[elementName],
+            docs: [definition]
+          }
+        };
+      }
+      return updatedInterfaceDefinitions;
+    },
+    {}
+  );
 
   return Object.keys(interfaces).map(interfaceName => {
-    const properties = interfaces[interfaceName];
+    const { docs, properties } = interfaces[interfaceName];
     return {
+      docs,
       name: interfaceName,
       properties: Object.keys(properties).map(propertyName => {
-        const { type, contentReference, min, max } = properties[propertyName];
+        const {
+          contentReference,
+          definition,
+          max,
+          min,
+          path,
+          type
+        } = properties[propertyName];
         const isRequired = min > 0;
         const isArray =
           max === "*" || (!isNaN(parseInt(max, 10)) && parseInt(max, 10) > 1);
@@ -115,8 +136,18 @@ const createInterfaceDeclarationsFromStructureDefinition = (
                 .split(".")
                 .join("")
             )}${isArray ? "[]" : ""}`
-          : type.map(t => `${t.code}${isArray ? "[]" : ""}`).join(" | ");
+          : type
+              .map(
+                t =>
+                  `${
+                    t.code === "BackboneElement"
+                      ? convertToPascalCase(path)
+                      : t.code
+                  }${isArray ? "[]" : ""}`
+              )
+              .join(" | ");
         return {
+          docs: [definition],
           hasQuestionToken: !isRequired,
           name: propertyName,
           type: typeName
