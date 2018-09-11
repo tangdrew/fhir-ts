@@ -13,10 +13,12 @@ FHIR Typescript definitions generator.
     - [ ] Interface declaration from differential
     - [ ] Property enum types
     - [ ] Reference types
+    - [ ] Default values
+    - [ ] Content reference
  - Enums
     - [ ] Enum declarations from binding valuesets
-    - [x] JSDoc comments
-    - [x] Member names
-    - [x] Member values
+    - [ ] JSDoc comments
+    - [ ] Member names
+    - [ ] Member values
  - Primitive types
  - CLI options
