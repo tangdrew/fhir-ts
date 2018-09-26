@@ -7,13 +7,14 @@ import {
 import Project from "ts-simple-ast";
 import {
   elementName,
+  formatComment,
   isBackboneElement,
   isRequired,
   loadFromFile,
   parentName,
   pathToPascalCase,
   propertyTypeName,
-  stringsToCamelCase
+  stringsToPascalCase
 } from "./helpers";
 
 /**
@@ -27,17 +28,16 @@ export const generateDefinitions = (
 ) => {
   const files = glob.sync(pattern);
   const structureDefinitions = files.map(fileName => loadFromFile(fileName));
-  const enumDeclarations = structureDefinitions.reduce((prev, curr) => {
-    const newEnumDeclarations = createEnumDeclarationsFromStructureDefinition(
-      curr
-    );
-    return [...prev, ...newEnumDeclarations];
-  }, []);
 
-  // Only define declarations for resource and complex-type structure definitions
+  // Only define declarations for base resource and complex-type structure definitions
   const interfaceDeclarations = structureDefinitions
-    .filter(structureDefinition =>
-      ["resource", "complex-type"].includes(structureDefinition.kind)
+    .filter(
+      ({ baseDefinition, kind, id, type }) =>
+        kind === "complex-type" ||
+        (kind === "resource" &&
+          baseDefinition ===
+            "http://hl7.org/fhir/StructureDefinition/DomainResource") ||
+        type === "Resource"
     )
     .reduce((prev, curr) => {
       const newInterfaceDeclarations = createInterfaceDeclarationsFromStructureDefinition(
@@ -46,17 +46,34 @@ export const generateDefinitions = (
       return [...prev, ...newInterfaceDeclarations];
     }, []);
 
-  const project = new Project();
-  project.addExistingSourceFiles(`${outputPath}/*.ts`);
+  const project = new Project({
+    compilerOptions: { declaration: true, outDir: outputPath }
+  });
   project.createSourceFile(
-    `${outputPath}/declarations.ts`,
+    `${outputPath}/fhir.ts`,
     {
-      enums: enumDeclarations,
-      interfaces: interfaceDeclarations
+      interfaces: interfaceDeclarations,
+      typeAliases: [
+        { name: "integer", type: "number", isExported: true },
+        { name: "decimal", type: "number", isExported: true },
+        { name: "uri", type: "string", isExported: true },
+        { name: "base64Binary", type: "string", isExported: true },
+        { name: "instant", type: "string", isExported: true },
+        { name: "date", type: "string", isExported: true },
+        { name: "dateTime", type: "string", isExported: true },
+        { name: "time", type: "string", isExported: true },
+        { name: "code", type: "string", isExported: true },
+        { name: "oid", type: "string", isExported: true },
+        { name: "id", type: "string", isExported: true },
+        { name: "markdown", type: "string", isExported: true },
+        { name: "unsignedInt", type: "number", isExported: true },
+        { name: "positiveInt", type: "number", isExported: true },
+        { name: "xhtml", type: "string", isExported: true } // For Narrative.div
+      ]
     },
     { overwrite: true }
   );
-  project.save();
+  project.emit({ emitOnlyDtsFiles: true });
   return files;
 };
 
@@ -69,13 +86,14 @@ const createInterfaceDeclarationsFromStructureDefinition = (
   return Object.keys(interfaces).map(interfaceName => {
     const { docs, elementDefinitions } = interfaces[interfaceName];
     return {
-      docs,
+      docs: (docs || []).map(doc => formatComment(doc)),
+      isExported: true,
       name: interfaceName,
       properties: Object.keys(elementDefinitions).map(elementKey => {
         const elementDefinition = elementDefinitions[elementKey];
         const { definition } = elementDefinition;
         return {
-          docs: [definition],
+          docs: [formatComment(definition)],
           hasQuestionToken: !isRequired(elementDefinition),
           name: elementKey,
           type: propertyTypeName(elementDefinition)
@@ -85,43 +103,24 @@ const createInterfaceDeclarationsFromStructureDefinition = (
   });
 };
 
-const createEnumDeclarationsFromStructureDefinition = (
-  structureDefinition
-): EnumDeclarationStructure[] => {
-  // const { differential } = structureDefinition;
-
-  // // Get element definitions that contain a value set binding
-  // // TODO: only get elements whose value set is defined in the short for now
-  // const codedElements = differential.element.filter(
-  //   el => el.binding && el.short && el.short.split("|").length > 1
-  // );
-
-  // return codedElements.map(elementDefinition => {
-  //   const { definition, path, short } = elementDefinition;
-  //   return {
-  //     docs: [definition],
-  //     members: short.split("|").map(code => ({
-  //       name: stringsToCamelCase(code.trim().split("-")),
-  //       value: code.trim()
-  //     })),
-  //     name: `${pathToPascalCase(path)}Types`
-  //   };
-  // });
-  return [];
-};
-
 const interfacesFromSnapshot = snapshot =>
   snapshot.element.reduce((interfaceDefinitions, curr, index) => {
-    const { definition, path, type } = curr;
+    const { contentReference, definition, path, type } = curr;
     const isBaseElement = index === 0; // The first element in the snapshot array is the base element definition
     if (isBaseElement) {
       return {
         [path]: {
-          docs: [definition]
+          docs: [formatComment(definition)]
         }
       };
     }
-    const normalizedElementDefinitions = type.reduce(
+
+    // If contentReference inherit type from referenced
+    const types = !contentReference
+      ? type
+      : [stringsToPascalCase(contentReference.slice(1).split("."))];
+
+    const normalizedElementDefinitions = types.reduce(
       (accumPropDef, currType) => {
         return {
           ...accumPropDef,
@@ -130,6 +129,7 @@ const interfacesFromSnapshot = snapshot =>
       },
       {}
     );
+
     let updatedInterfaceDefinitions = {
       ...interfaceDefinitions,
       [parentName(curr)]: {
@@ -140,13 +140,14 @@ const interfacesFromSnapshot = snapshot =>
         }
       }
     };
+
     if (isBackboneElement(curr)) {
       const backboneElementName = pathToPascalCase(path);
       updatedInterfaceDefinitions = {
         ...updatedInterfaceDefinitions,
         [backboneElementName]: {
           ...updatedInterfaceDefinitions[backboneElementName],
-          docs: [definition]
+          docs: [formatComment(definition)]
         }
       };
     }

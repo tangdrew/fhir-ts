@@ -12,13 +12,8 @@ FHIR Typescript definitions generator.
     - [x] Backbone Element properties
     - [ ] Interface declaration from differential
     - [ ] Property enum types
-    - [ ] Reference types
     - [ ] Default values
-    - [ ] Content reference
- - Enums
-    - [ ] Enum declarations from binding valuesets
-    - [ ] JSDoc comments
-    - [ ] Member names
-    - [ ] Member values
+    - [x] Content reference
  - Primitive types
+    - [x] Type aliases
  - CLI options
