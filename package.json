@@ -1,8 +1,11 @@
 {
   "name": "fhir-ts",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "FHIR Typescript definitions generator",
   "main": "dist/index.js",
+  "bin": {
+    "fhir-ts": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "tslint -c tslint.json 'lib/**/*.ts'",
