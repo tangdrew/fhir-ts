@@ -1,6 +1,21 @@
 # fhir-ts
 FHIR Typescript definitions generator.
 
+## Installation
+```sh
+npm install fhir-ts -g
+```
+
+## Usage
+```sh
+fhir-ts <pattern> <output-directory>
+```
+
+Example:
+```sh
+fhir-ts "structure-defintions/**.profile.json" "types"
+```
+
 ## Roadmap
  - Resource Definitions
     - [x] Interface declaration from snapshot
