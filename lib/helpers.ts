@@ -113,12 +113,18 @@ const isArray = ({ max }) =>
  */
 export const propertyTypeName = elementDefinition => {
   const { contentReference, path, type } = elementDefinition;
-  return (!!contentReference
-    ? [stringsToCamelCase(contentReference.slice(1).split("."))]
-    : type.map(
+  return (!contentReference
+    ? type.map(
         t => `${t.code === "BackboneElement" ? pathToPascalCase(path) : t.code}`
       )
+    : [stringsToPascalCase(contentReference.slice(1).split("."))]
   )
     .map(name => `${name}${isArray(elementDefinition) ? "[]" : ""}`)
     .join(" | ");
 };
+
+/**
+ * Removes all line breaks from string
+ */
+export const formatComment = (comment: string) =>
+  comment.replace(/\r?\n|\r/g, "");

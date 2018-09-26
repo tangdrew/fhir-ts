@@ -18,7 +18,6 @@ export default class extends Command {
     })
     outputPath: string
   ) {
-    const files = generateDefinitions(inputPath, outputPath);
-    return files.join(",");
+    generateDefinitions(inputPath, outputPath);
   }
 }
