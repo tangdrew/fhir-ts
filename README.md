@@ -1,5 +1,5 @@
 # fhir-ts
-FHIR Typescript definitions generator.
+FHIR TypeScript definitions generator.
 
 ## Installation
 ```sh
@@ -26,9 +26,9 @@ fhir-ts "structure-defintions/**.profile.json" "types"
     - [x] JSDoc comments
     - [x] Backbone Element properties
     - [ ] Interface declaration from differential
-    - [ ] Property enum types
     - [ ] Default values
     - [x] Content reference
  - Primitive types
     - [x] Type aliases
+    - [x] Extensions
  - CLI options

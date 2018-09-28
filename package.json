@@ -1,7 +1,7 @@
 {
   "name": "fhir-ts",
-  "version": "0.0.1",
-  "description": "FHIR Typescript definitions generator",
+  "version": "0.0.2",
+  "description": "FHIR TypeScript definitions generator",
   "main": "dist/index.js",
   "bin": {
     "fhir-ts": "./dist/index.js"
