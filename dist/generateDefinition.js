@@ -7,6 +7,27 @@ const helpers_1 = require("./helpers");
 /**
  * Module for generating Typescript type declarations from a FHIR structure definition
  */
+var FHIRPrimitiveTypes;
+(function (FHIRPrimitiveTypes) {
+    FHIRPrimitiveTypes["boolean"] = "boolean";
+    FHIRPrimitiveTypes["integer"] = "integer";
+    FHIRPrimitiveTypes["string"] = "string";
+    FHIRPrimitiveTypes["decimal"] = "decimal";
+    FHIRPrimitiveTypes["uri"] = "uri";
+    FHIRPrimitiveTypes["base64Binary"] = "base64Binary";
+    FHIRPrimitiveTypes["instant"] = "instant";
+    FHIRPrimitiveTypes["date"] = "date";
+    FHIRPrimitiveTypes["dateTime"] = "dateTime";
+    FHIRPrimitiveTypes["time"] = "time";
+    FHIRPrimitiveTypes["code"] = "code";
+    FHIRPrimitiveTypes["oid"] = "oid";
+    FHIRPrimitiveTypes["id"] = "id";
+    FHIRPrimitiveTypes["markdown"] = "markdown";
+    FHIRPrimitiveTypes["unsignedInt"] = "unsignedInt";
+    FHIRPrimitiveTypes["positiveInt"] = "positiveInt";
+    FHIRPrimitiveTypes["xhtml"] = "xhtml";
+})(FHIRPrimitiveTypes || (FHIRPrimitiveTypes = {}));
+const PRIMITIVE_TYPES_SET = new Set(Object.keys(FHIRPrimitiveTypes));
 exports.generateDefinitions = (pattern, outputPath, version = "3.0.1") => {
     const files = glob.sync(pattern);
     const structureDefinitions = files.map(fileName => helpers_1.loadFromFile(fileName));
@@ -84,7 +105,12 @@ const interfacesFromSnapshot = snapshot => snapshot.element.reduce((interfaceDef
         ? type
         : [helpers_1.stringsToPascalCase(contentReference.slice(1).split("."))];
     const normalizedElementDefinitions = types.reduce((accumPropDef, currType) => {
-        return Object.assign({}, accumPropDef, { [helpers_1.elementName(curr, currType)]: Object.assign({}, curr, { type: [currType] }) });
+        const elName = helpers_1.elementName(curr, currType);
+        return Object.assign({}, accumPropDef, { [elName]: Object.assign({}, curr, { type: [currType] }) }, (PRIMITIVE_TYPES_SET.has(currType.code)
+            ? {
+                [`_${elName}`]: Object.assign({}, curr, { definition: `Contains extension information for property '${elName}'`, min: 0, type: [{ code: "Element" }] })
+            }
+            : {}));
     }, {});
     let updatedInterfaceDefinitions = Object.assign({}, interfaceDefinitions, { [helpers_1.parentName(curr)]: Object.assign({}, interfaceDefinitions[helpers_1.parentName(curr)], { elementDefinitions: Object.assign({}, (interfaceDefinitions[helpers_1.parentName(curr)] || {}).elementDefinitions, normalizedElementDefinitions) }) });
     if (helpers_1.isBackboneElement(curr)) {

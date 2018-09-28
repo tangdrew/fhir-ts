@@ -1,8 +1,5 @@
 import * as glob from "glob";
-import {
-  EnumDeclarationStructure,
-  InterfaceDeclarationStructure
-} from "ts-simple-ast";
+import { InterfaceDeclarationStructure } from "ts-simple-ast";
 // tslint:disable-next-line:no-duplicate-imports
 import Project from "ts-simple-ast";
 import {
@@ -20,6 +17,28 @@ import {
 /**
  * Module for generating Typescript type declarations from a FHIR structure definition
  */
+
+enum FHIRPrimitiveTypes {
+  boolean = "boolean",
+  integer = "integer",
+  string = "string",
+  decimal = "decimal",
+  uri = "uri",
+  base64Binary = "base64Binary",
+  instant = "instant",
+  date = "date",
+  dateTime = "dateTime",
+  time = "time",
+  code = "code",
+  oid = "oid",
+  id = "id",
+  markdown = "markdown",
+  unsignedInt = "unsignedInt",
+  positiveInt = "positiveInt",
+  xhtml = "xhtml"
+}
+
+const PRIMITIVE_TYPES_SET = new Set(Object.keys(FHIRPrimitiveTypes));
 
 export const generateDefinitions = (
   pattern: string,
@@ -122,9 +141,21 @@ const interfacesFromSnapshot = snapshot =>
 
     const normalizedElementDefinitions = types.reduce(
       (accumPropDef, currType) => {
+        const elName = elementName(curr, currType);
         return {
           ...accumPropDef,
-          [elementName(curr, currType)]: { ...curr, type: [currType] }
+          [elName]: { ...curr, type: [currType] },
+          // If primitive type, add optional '_<name>' extension element
+          ...(PRIMITIVE_TYPES_SET.has(currType.code)
+            ? {
+                [`_${elName}`]: {
+                  ...curr,
+                  definition: `Contains extension information for property '${elName}'.`,
+                  min: 0,
+                  type: [{ code: "Element" }]
+                }
+              }
+            : {})
         };
       },
       {}
