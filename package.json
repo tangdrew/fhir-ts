@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "FHIR TypeScript definitions generator",
   "main": "dist/index.js",
+  "types": "types/fhir.d.ts",
   "bin": {
     "fhir-ts": "./dist/index.js"
   },
