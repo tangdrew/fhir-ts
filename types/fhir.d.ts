@@ -18,11 +18,15 @@ export declare type xhtml = string;
  */
 export interface Account {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Account";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34,7 +38,7 @@ export interface Account {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -42,7 +46,7 @@ export interface Account {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -70,7 +74,7 @@ export interface Account {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -82,7 +86,7 @@ export interface Account {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -114,7 +118,7 @@ export interface Account {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -131,7 +135,7 @@ export interface AccountCoverage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -151,7 +155,7 @@ export interface AccountCoverage {
      */
     priority?: positiveInt;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
 }
@@ -164,7 +168,7 @@ export interface AccountGuarantor {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -184,7 +188,7 @@ export interface AccountGuarantor {
      */
     onHold?: boolean;
     /**
-     * Contains extension information for property 'onHold'
+     * Contains extension information for property 'onHold'.
      */
     _onHold?: Element;
     /**
@@ -197,11 +201,15 @@ export interface AccountGuarantor {
  */
 export interface ActivityDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ActivityDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -213,7 +221,7 @@ export interface ActivityDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -221,7 +229,7 @@ export interface ActivityDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -245,7 +253,7 @@ export interface ActivityDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -257,7 +265,7 @@ export interface ActivityDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -265,7 +273,7 @@ export interface ActivityDefinition {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -273,7 +281,7 @@ export interface ActivityDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -281,7 +289,7 @@ export interface ActivityDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -289,7 +297,7 @@ export interface ActivityDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -297,7 +305,7 @@ export interface ActivityDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -305,7 +313,7 @@ export interface ActivityDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -313,7 +321,7 @@ export interface ActivityDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -321,7 +329,7 @@ export interface ActivityDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -329,7 +337,7 @@ export interface ActivityDefinition {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -337,7 +345,7 @@ export interface ActivityDefinition {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -345,7 +353,7 @@ export interface ActivityDefinition {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -377,7 +385,7 @@ export interface ActivityDefinition {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -393,7 +401,7 @@ export interface ActivityDefinition {
      */
     kind?: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -409,7 +417,7 @@ export interface ActivityDefinition {
      */
     timingDateTime?: dateTime;
     /**
-     * Contains extension information for property 'timingDateTime'
+     * Contains extension information for property 'timingDateTime'.
      */
     _timingDateTime?: Element;
     /**
@@ -466,7 +474,7 @@ export interface ActivityDefinitionParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -482,7 +490,7 @@ export interface ActivityDefinitionParticipant {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -499,7 +507,7 @@ export interface ActivityDefinitionDynamicValue {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -515,7 +523,7 @@ export interface ActivityDefinitionDynamicValue {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -523,7 +531,7 @@ export interface ActivityDefinitionDynamicValue {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -531,7 +539,7 @@ export interface ActivityDefinitionDynamicValue {
      */
     language?: string;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -539,7 +547,7 @@ export interface ActivityDefinitionDynamicValue {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
 }
@@ -552,7 +560,7 @@ export interface Address {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -564,7 +572,7 @@ export interface Address {
      */
     use?: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -572,7 +580,7 @@ export interface Address {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -580,7 +588,7 @@ export interface Address {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -588,7 +596,7 @@ export interface Address {
      */
     line?: string[];
     /**
-     * Contains extension information for property 'line'
+     * Contains extension information for property 'line'.
      */
     _line?: Element[];
     /**
@@ -596,7 +604,7 @@ export interface Address {
      */
     city?: string;
     /**
-     * Contains extension information for property 'city'
+     * Contains extension information for property 'city'.
      */
     _city?: Element;
     /**
@@ -604,7 +612,7 @@ export interface Address {
      */
     district?: string;
     /**
-     * Contains extension information for property 'district'
+     * Contains extension information for property 'district'.
      */
     _district?: Element;
     /**
@@ -612,7 +620,7 @@ export interface Address {
      */
     state?: string;
     /**
-     * Contains extension information for property 'state'
+     * Contains extension information for property 'state'.
      */
     _state?: Element;
     /**
@@ -620,7 +628,7 @@ export interface Address {
      */
     postalCode?: string;
     /**
-     * Contains extension information for property 'postalCode'
+     * Contains extension information for property 'postalCode'.
      */
     _postalCode?: Element;
     /**
@@ -628,7 +636,7 @@ export interface Address {
      */
     country?: string;
     /**
-     * Contains extension information for property 'country'
+     * Contains extension information for property 'country'.
      */
     _country?: Element;
     /**
@@ -641,11 +649,15 @@ export interface Address {
  */
 export interface AdverseEvent {
     /**
+     * The type of the resource.
+     */
+    resourceType: "AdverseEvent";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -657,7 +669,7 @@ export interface AdverseEvent {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -665,7 +677,7 @@ export interface AdverseEvent {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -693,7 +705,7 @@ export interface AdverseEvent {
      */
     category?: code;
     /**
-     * Contains extension information for property 'category'
+     * Contains extension information for property 'category'.
      */
     _category?: Element;
     /**
@@ -709,7 +721,7 @@ export interface AdverseEvent {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -741,7 +753,7 @@ export interface AdverseEvent {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -770,7 +782,7 @@ export interface AdverseEventSuspectEntity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -790,7 +802,7 @@ export interface AdverseEventSuspectEntity {
      */
     causality?: code;
     /**
-     * Contains extension information for property 'causality'
+     * Contains extension information for property 'causality'.
      */
     _causality?: Element;
     /**
@@ -802,7 +814,7 @@ export interface AdverseEventSuspectEntity {
      */
     causalityProductRelatedness?: string;
     /**
-     * Contains extension information for property 'causalityProductRelatedness'
+     * Contains extension information for property 'causalityProductRelatedness'.
      */
     _causalityProductRelatedness?: Element;
     /**
@@ -827,7 +839,7 @@ export interface Age {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -839,7 +851,7 @@ export interface Age {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -847,7 +859,7 @@ export interface Age {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -855,7 +867,7 @@ export interface Age {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -863,7 +875,7 @@ export interface Age {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -871,7 +883,7 @@ export interface Age {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -880,11 +892,15 @@ export interface Age {
  */
 export interface AllergyIntolerance {
     /**
+     * The type of the resource.
+     */
+    resourceType: "AllergyIntolerance";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -896,7 +912,7 @@ export interface AllergyIntolerance {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -904,7 +920,7 @@ export interface AllergyIntolerance {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -932,7 +948,7 @@ export interface AllergyIntolerance {
      */
     clinicalStatus?: code;
     /**
-     * Contains extension information for property 'clinicalStatus'
+     * Contains extension information for property 'clinicalStatus'.
      */
     _clinicalStatus?: Element;
     /**
@@ -940,7 +956,7 @@ export interface AllergyIntolerance {
      */
     verificationStatus: code;
     /**
-     * Contains extension information for property 'verificationStatus'
+     * Contains extension information for property 'verificationStatus'.
      */
     _verificationStatus?: Element;
     /**
@@ -948,7 +964,7 @@ export interface AllergyIntolerance {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -956,7 +972,7 @@ export interface AllergyIntolerance {
      */
     category?: code[];
     /**
-     * Contains extension information for property 'category'
+     * Contains extension information for property 'category'.
      */
     _category?: Element[];
     /**
@@ -964,7 +980,7 @@ export interface AllergyIntolerance {
      */
     criticality?: code;
     /**
-     * Contains extension information for property 'criticality'
+     * Contains extension information for property 'criticality'.
      */
     _criticality?: Element;
     /**
@@ -980,7 +996,7 @@ export interface AllergyIntolerance {
      */
     onsetDateTime?: dateTime;
     /**
-     * Contains extension information for property 'onsetDateTime'
+     * Contains extension information for property 'onsetDateTime'.
      */
     _onsetDateTime?: Element;
     /**
@@ -1000,7 +1016,7 @@ export interface AllergyIntolerance {
      */
     onsetString?: string;
     /**
-     * Contains extension information for property 'onsetString'
+     * Contains extension information for property 'onsetString'.
      */
     _onsetString?: Element;
     /**
@@ -1008,7 +1024,7 @@ export interface AllergyIntolerance {
      */
     assertedDate?: dateTime;
     /**
-     * Contains extension information for property 'assertedDate'
+     * Contains extension information for property 'assertedDate'.
      */
     _assertedDate?: Element;
     /**
@@ -1024,7 +1040,7 @@ export interface AllergyIntolerance {
      */
     lastOccurrence?: dateTime;
     /**
-     * Contains extension information for property 'lastOccurrence'
+     * Contains extension information for property 'lastOccurrence'.
      */
     _lastOccurrence?: Element;
     /**
@@ -1045,7 +1061,7 @@ export interface AllergyIntoleranceReaction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1069,7 +1085,7 @@ export interface AllergyIntoleranceReaction {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -1077,7 +1093,7 @@ export interface AllergyIntoleranceReaction {
      */
     onset?: dateTime;
     /**
-     * Contains extension information for property 'onset'
+     * Contains extension information for property 'onset'.
      */
     _onset?: Element;
     /**
@@ -1085,7 +1101,7 @@ export interface AllergyIntoleranceReaction {
      */
     severity?: code;
     /**
-     * Contains extension information for property 'severity'
+     * Contains extension information for property 'severity'.
      */
     _severity?: Element;
     /**
@@ -1106,7 +1122,7 @@ export interface Annotation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1122,7 +1138,7 @@ export interface Annotation {
      */
     authorString?: string;
     /**
-     * Contains extension information for property 'authorString'
+     * Contains extension information for property 'authorString'.
      */
     _authorString?: Element;
     /**
@@ -1130,7 +1146,7 @@ export interface Annotation {
      */
     time?: dateTime;
     /**
-     * Contains extension information for property 'time'
+     * Contains extension information for property 'time'.
      */
     _time?: Element;
     /**
@@ -1138,7 +1154,7 @@ export interface Annotation {
      */
     text: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
 }
@@ -1147,11 +1163,15 @@ export interface Annotation {
  */
 export interface Appointment {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Appointment";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1163,7 +1183,7 @@ export interface Appointment {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -1171,7 +1191,7 @@ export interface Appointment {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -1199,7 +1219,7 @@ export interface Appointment {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -1231,7 +1251,7 @@ export interface Appointment {
      */
     priority?: unsignedInt;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -1239,7 +1259,7 @@ export interface Appointment {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -1251,7 +1271,7 @@ export interface Appointment {
      */
     start?: instant;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -1259,7 +1279,7 @@ export interface Appointment {
      */
     end?: instant;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -1267,7 +1287,7 @@ export interface Appointment {
      */
     minutesDuration?: positiveInt;
     /**
-     * Contains extension information for property 'minutesDuration'
+     * Contains extension information for property 'minutesDuration'.
      */
     _minutesDuration?: Element;
     /**
@@ -1279,7 +1299,7 @@ export interface Appointment {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -1287,7 +1307,7 @@ export interface Appointment {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -1312,7 +1332,7 @@ export interface AppointmentParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1336,7 +1356,7 @@ export interface AppointmentParticipant {
      */
     required?: code;
     /**
-     * Contains extension information for property 'required'
+     * Contains extension information for property 'required'.
      */
     _required?: Element;
     /**
@@ -1344,7 +1364,7 @@ export interface AppointmentParticipant {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
 }
@@ -1353,11 +1373,15 @@ export interface AppointmentParticipant {
  */
 export interface AppointmentResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "AppointmentResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1369,7 +1393,7 @@ export interface AppointmentResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -1377,7 +1401,7 @@ export interface AppointmentResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -1409,7 +1433,7 @@ export interface AppointmentResponse {
      */
     start?: instant;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -1417,7 +1441,7 @@ export interface AppointmentResponse {
      */
     end?: instant;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -1433,7 +1457,7 @@ export interface AppointmentResponse {
      */
     participantStatus: code;
     /**
-     * Contains extension information for property 'participantStatus'
+     * Contains extension information for property 'participantStatus'.
      */
     _participantStatus?: Element;
     /**
@@ -1441,7 +1465,7 @@ export interface AppointmentResponse {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -1454,7 +1478,7 @@ export interface Attachment {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1466,7 +1490,7 @@ export interface Attachment {
      */
     contentType?: code;
     /**
-     * Contains extension information for property 'contentType'
+     * Contains extension information for property 'contentType'.
      */
     _contentType?: Element;
     /**
@@ -1474,7 +1498,7 @@ export interface Attachment {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -1482,7 +1506,7 @@ export interface Attachment {
      */
     data?: base64Binary;
     /**
-     * Contains extension information for property 'data'
+     * Contains extension information for property 'data'.
      */
     _data?: Element;
     /**
@@ -1490,7 +1514,7 @@ export interface Attachment {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -1498,7 +1522,7 @@ export interface Attachment {
      */
     size?: unsignedInt;
     /**
-     * Contains extension information for property 'size'
+     * Contains extension information for property 'size'.
      */
     _size?: Element;
     /**
@@ -1506,7 +1530,7 @@ export interface Attachment {
      */
     hash?: base64Binary;
     /**
-     * Contains extension information for property 'hash'
+     * Contains extension information for property 'hash'.
      */
     _hash?: Element;
     /**
@@ -1514,7 +1538,7 @@ export interface Attachment {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -1522,7 +1546,7 @@ export interface Attachment {
      */
     creation?: dateTime;
     /**
-     * Contains extension information for property 'creation'
+     * Contains extension information for property 'creation'.
      */
     _creation?: Element;
 }
@@ -1531,11 +1555,15 @@ export interface Attachment {
  */
 export interface AuditEvent {
     /**
+     * The type of the resource.
+     */
+    resourceType: "AuditEvent";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1547,7 +1575,7 @@ export interface AuditEvent {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -1555,7 +1583,7 @@ export interface AuditEvent {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -1587,7 +1615,7 @@ export interface AuditEvent {
      */
     action?: code;
     /**
-     * Contains extension information for property 'action'
+     * Contains extension information for property 'action'.
      */
     _action?: Element;
     /**
@@ -1595,7 +1623,7 @@ export interface AuditEvent {
      */
     recorded: instant;
     /**
-     * Contains extension information for property 'recorded'
+     * Contains extension information for property 'recorded'.
      */
     _recorded?: Element;
     /**
@@ -1603,7 +1631,7 @@ export interface AuditEvent {
      */
     outcome?: code;
     /**
-     * Contains extension information for property 'outcome'
+     * Contains extension information for property 'outcome'.
      */
     _outcome?: Element;
     /**
@@ -1611,7 +1639,7 @@ export interface AuditEvent {
      */
     outcomeDesc?: string;
     /**
-     * Contains extension information for property 'outcomeDesc'
+     * Contains extension information for property 'outcomeDesc'.
      */
     _outcomeDesc?: Element;
     /**
@@ -1640,7 +1668,7 @@ export interface AuditEventAgent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1668,7 +1696,7 @@ export interface AuditEventAgent {
      */
     altId?: string;
     /**
-     * Contains extension information for property 'altId'
+     * Contains extension information for property 'altId'.
      */
     _altId?: Element;
     /**
@@ -1676,7 +1704,7 @@ export interface AuditEventAgent {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -1684,7 +1712,7 @@ export interface AuditEventAgent {
      */
     requestor: boolean;
     /**
-     * Contains extension information for property 'requestor'
+     * Contains extension information for property 'requestor'.
      */
     _requestor?: Element;
     /**
@@ -1696,7 +1724,7 @@ export interface AuditEventAgent {
      */
     policy?: uri[];
     /**
-     * Contains extension information for property 'policy'
+     * Contains extension information for property 'policy'.
      */
     _policy?: Element[];
     /**
@@ -1721,7 +1749,7 @@ export interface AuditEventAgentNetwork {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1737,7 +1765,7 @@ export interface AuditEventAgentNetwork {
      */
     address?: string;
     /**
-     * Contains extension information for property 'address'
+     * Contains extension information for property 'address'.
      */
     _address?: Element;
     /**
@@ -1745,7 +1773,7 @@ export interface AuditEventAgentNetwork {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
 }
@@ -1758,7 +1786,7 @@ export interface AuditEventSource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1774,7 +1802,7 @@ export interface AuditEventSource {
      */
     site?: string;
     /**
-     * Contains extension information for property 'site'
+     * Contains extension information for property 'site'.
      */
     _site?: Element;
     /**
@@ -1795,7 +1823,7 @@ export interface AuditEventEntity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1835,7 +1863,7 @@ export interface AuditEventEntity {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -1843,7 +1871,7 @@ export interface AuditEventEntity {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -1851,7 +1879,7 @@ export interface AuditEventEntity {
      */
     query?: base64Binary;
     /**
-     * Contains extension information for property 'query'
+     * Contains extension information for property 'query'.
      */
     _query?: Element;
     /**
@@ -1868,7 +1896,7 @@ export interface AuditEventEntityDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1884,7 +1912,7 @@ export interface AuditEventEntityDetail {
      */
     type: string;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -1892,7 +1920,7 @@ export interface AuditEventEntityDetail {
      */
     value: base64Binary;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -1905,7 +1933,7 @@ export interface BackboneElement {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1922,11 +1950,15 @@ export interface BackboneElement {
  */
 export interface Basic {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Basic";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -1938,7 +1970,7 @@ export interface Basic {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -1946,7 +1978,7 @@ export interface Basic {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -1982,7 +2014,7 @@ export interface Basic {
      */
     created?: date;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -1995,11 +2027,15 @@ export interface Basic {
  */
 export interface BodySite {
     /**
+     * The type of the resource.
+     */
+    resourceType: "BodySite";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2011,7 +2047,7 @@ export interface BodySite {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -2019,7 +2055,7 @@ export interface BodySite {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -2047,7 +2083,7 @@ export interface BodySite {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -2063,7 +2099,7 @@ export interface BodySite {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -2080,11 +2116,15 @@ export interface BodySite {
  */
 export interface CapabilityStatement {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CapabilityStatement";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2096,7 +2136,7 @@ export interface CapabilityStatement {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -2104,7 +2144,7 @@ export interface CapabilityStatement {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -2128,7 +2168,7 @@ export interface CapabilityStatement {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -2136,7 +2176,7 @@ export interface CapabilityStatement {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -2144,7 +2184,7 @@ export interface CapabilityStatement {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -2152,7 +2192,7 @@ export interface CapabilityStatement {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -2160,7 +2200,7 @@ export interface CapabilityStatement {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -2168,7 +2208,7 @@ export interface CapabilityStatement {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -2176,7 +2216,7 @@ export interface CapabilityStatement {
      */
     date: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -2184,7 +2224,7 @@ export interface CapabilityStatement {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -2196,7 +2236,7 @@ export interface CapabilityStatement {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -2212,7 +2252,7 @@ export interface CapabilityStatement {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -2220,7 +2260,7 @@ export interface CapabilityStatement {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -2228,7 +2268,7 @@ export interface CapabilityStatement {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -2236,7 +2276,7 @@ export interface CapabilityStatement {
      */
     instantiates?: uri[];
     /**
-     * Contains extension information for property 'instantiates'
+     * Contains extension information for property 'instantiates'.
      */
     _instantiates?: Element[];
     /**
@@ -2252,7 +2292,7 @@ export interface CapabilityStatement {
      */
     fhirVersion: id;
     /**
-     * Contains extension information for property 'fhirVersion'
+     * Contains extension information for property 'fhirVersion'.
      */
     _fhirVersion?: Element;
     /**
@@ -2260,7 +2300,7 @@ export interface CapabilityStatement {
      */
     acceptUnknown: code;
     /**
-     * Contains extension information for property 'acceptUnknown'
+     * Contains extension information for property 'acceptUnknown'.
      */
     _acceptUnknown?: Element;
     /**
@@ -2268,7 +2308,7 @@ export interface CapabilityStatement {
      */
     format: code[];
     /**
-     * Contains extension information for property 'format'
+     * Contains extension information for property 'format'.
      */
     _format?: Element[];
     /**
@@ -2276,7 +2316,7 @@ export interface CapabilityStatement {
      */
     patchFormat?: code[];
     /**
-     * Contains extension information for property 'patchFormat'
+     * Contains extension information for property 'patchFormat'.
      */
     _patchFormat?: Element[];
     /**
@@ -2284,7 +2324,7 @@ export interface CapabilityStatement {
      */
     implementationGuide?: uri[];
     /**
-     * Contains extension information for property 'implementationGuide'
+     * Contains extension information for property 'implementationGuide'.
      */
     _implementationGuide?: Element[];
     /**
@@ -2313,7 +2353,7 @@ export interface CapabilityStatementSoftware {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2329,7 +2369,7 @@ export interface CapabilityStatementSoftware {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -2337,7 +2377,7 @@ export interface CapabilityStatementSoftware {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -2345,7 +2385,7 @@ export interface CapabilityStatementSoftware {
      */
     releaseDate?: dateTime;
     /**
-     * Contains extension information for property 'releaseDate'
+     * Contains extension information for property 'releaseDate'.
      */
     _releaseDate?: Element;
 }
@@ -2358,7 +2398,7 @@ export interface CapabilityStatementImplementation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2374,7 +2414,7 @@ export interface CapabilityStatementImplementation {
      */
     description: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -2382,7 +2422,7 @@ export interface CapabilityStatementImplementation {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
 }
@@ -2395,7 +2435,7 @@ export interface CapabilityStatementRest {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2411,7 +2451,7 @@ export interface CapabilityStatementRest {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -2419,7 +2459,7 @@ export interface CapabilityStatementRest {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -2447,7 +2487,7 @@ export interface CapabilityStatementRest {
      */
     compartment?: uri[];
     /**
-     * Contains extension information for property 'compartment'
+     * Contains extension information for property 'compartment'.
      */
     _compartment?: Element[];
 }
@@ -2460,7 +2500,7 @@ export interface CapabilityStatementRestSecurity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2476,7 +2516,7 @@ export interface CapabilityStatementRestSecurity {
      */
     cors?: boolean;
     /**
-     * Contains extension information for property 'cors'
+     * Contains extension information for property 'cors'.
      */
     _cors?: Element;
     /**
@@ -2488,7 +2528,7 @@ export interface CapabilityStatementRestSecurity {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -2505,7 +2545,7 @@ export interface CapabilityStatementRestSecurityCertificate {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2521,7 +2561,7 @@ export interface CapabilityStatementRestSecurityCertificate {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -2529,7 +2569,7 @@ export interface CapabilityStatementRestSecurityCertificate {
      */
     blob?: base64Binary;
     /**
-     * Contains extension information for property 'blob'
+     * Contains extension information for property 'blob'.
      */
     _blob?: Element;
 }
@@ -2542,7 +2582,7 @@ export interface CapabilityStatementRestResource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2558,7 +2598,7 @@ export interface CapabilityStatementRestResource {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -2570,7 +2610,7 @@ export interface CapabilityStatementRestResource {
      */
     documentation?: markdown;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -2582,7 +2622,7 @@ export interface CapabilityStatementRestResource {
      */
     versioning?: code;
     /**
-     * Contains extension information for property 'versioning'
+     * Contains extension information for property 'versioning'.
      */
     _versioning?: Element;
     /**
@@ -2590,7 +2630,7 @@ export interface CapabilityStatementRestResource {
      */
     readHistory?: boolean;
     /**
-     * Contains extension information for property 'readHistory'
+     * Contains extension information for property 'readHistory'.
      */
     _readHistory?: Element;
     /**
@@ -2598,7 +2638,7 @@ export interface CapabilityStatementRestResource {
      */
     updateCreate?: boolean;
     /**
-     * Contains extension information for property 'updateCreate'
+     * Contains extension information for property 'updateCreate'.
      */
     _updateCreate?: Element;
     /**
@@ -2606,7 +2646,7 @@ export interface CapabilityStatementRestResource {
      */
     conditionalCreate?: boolean;
     /**
-     * Contains extension information for property 'conditionalCreate'
+     * Contains extension information for property 'conditionalCreate'.
      */
     _conditionalCreate?: Element;
     /**
@@ -2614,7 +2654,7 @@ export interface CapabilityStatementRestResource {
      */
     conditionalRead?: code;
     /**
-     * Contains extension information for property 'conditionalRead'
+     * Contains extension information for property 'conditionalRead'.
      */
     _conditionalRead?: Element;
     /**
@@ -2622,7 +2662,7 @@ export interface CapabilityStatementRestResource {
      */
     conditionalUpdate?: boolean;
     /**
-     * Contains extension information for property 'conditionalUpdate'
+     * Contains extension information for property 'conditionalUpdate'.
      */
     _conditionalUpdate?: Element;
     /**
@@ -2630,7 +2670,7 @@ export interface CapabilityStatementRestResource {
      */
     conditionalDelete?: code;
     /**
-     * Contains extension information for property 'conditionalDelete'
+     * Contains extension information for property 'conditionalDelete'.
      */
     _conditionalDelete?: Element;
     /**
@@ -2638,7 +2678,7 @@ export interface CapabilityStatementRestResource {
      */
     referencePolicy?: code[];
     /**
-     * Contains extension information for property 'referencePolicy'
+     * Contains extension information for property 'referencePolicy'.
      */
     _referencePolicy?: Element[];
     /**
@@ -2646,7 +2686,7 @@ export interface CapabilityStatementRestResource {
      */
     searchInclude?: string[];
     /**
-     * Contains extension information for property 'searchInclude'
+     * Contains extension information for property 'searchInclude'.
      */
     _searchInclude?: Element[];
     /**
@@ -2654,7 +2694,7 @@ export interface CapabilityStatementRestResource {
      */
     searchRevInclude?: string[];
     /**
-     * Contains extension information for property 'searchRevInclude'
+     * Contains extension information for property 'searchRevInclude'.
      */
     _searchRevInclude?: Element[];
     /**
@@ -2671,7 +2711,7 @@ export interface CapabilityStatementRestResourceInteraction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2687,7 +2727,7 @@ export interface CapabilityStatementRestResourceInteraction {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -2695,7 +2735,7 @@ export interface CapabilityStatementRestResourceInteraction {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -2708,7 +2748,7 @@ export interface CapabilityStatementRestResourceSearchParam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2724,7 +2764,7 @@ export interface CapabilityStatementRestResourceSearchParam {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -2732,7 +2772,7 @@ export interface CapabilityStatementRestResourceSearchParam {
      */
     definition?: uri;
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element;
     /**
@@ -2740,7 +2780,7 @@ export interface CapabilityStatementRestResourceSearchParam {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -2748,7 +2788,7 @@ export interface CapabilityStatementRestResourceSearchParam {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -2761,7 +2801,7 @@ export interface CapabilityStatementRestInteraction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2777,7 +2817,7 @@ export interface CapabilityStatementRestInteraction {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -2785,7 +2825,7 @@ export interface CapabilityStatementRestInteraction {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -2798,7 +2838,7 @@ export interface CapabilityStatementRestOperation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2814,7 +2854,7 @@ export interface CapabilityStatementRestOperation {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -2831,7 +2871,7 @@ export interface CapabilityStatementMessaging {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2851,7 +2891,7 @@ export interface CapabilityStatementMessaging {
      */
     reliableCache?: unsignedInt;
     /**
-     * Contains extension information for property 'reliableCache'
+     * Contains extension information for property 'reliableCache'.
      */
     _reliableCache?: Element;
     /**
@@ -2859,7 +2899,7 @@ export interface CapabilityStatementMessaging {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -2880,7 +2920,7 @@ export interface CapabilityStatementMessagingEndpoint {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2900,7 +2940,7 @@ export interface CapabilityStatementMessagingEndpoint {
      */
     address: uri;
     /**
-     * Contains extension information for property 'address'
+     * Contains extension information for property 'address'.
      */
     _address?: Element;
 }
@@ -2913,7 +2953,7 @@ export interface CapabilityStatementMessagingSupportedMessage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2929,7 +2969,7 @@ export interface CapabilityStatementMessagingSupportedMessage {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -2946,7 +2986,7 @@ export interface CapabilityStatementMessagingEvent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -2966,7 +3006,7 @@ export interface CapabilityStatementMessagingEvent {
      */
     category?: code;
     /**
-     * Contains extension information for property 'category'
+     * Contains extension information for property 'category'.
      */
     _category?: Element;
     /**
@@ -2974,7 +3014,7 @@ export interface CapabilityStatementMessagingEvent {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -2982,7 +3022,7 @@ export interface CapabilityStatementMessagingEvent {
      */
     focus: code;
     /**
-     * Contains extension information for property 'focus'
+     * Contains extension information for property 'focus'.
      */
     _focus?: Element;
     /**
@@ -2998,7 +3038,7 @@ export interface CapabilityStatementMessagingEvent {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -3011,7 +3051,7 @@ export interface CapabilityStatementDocument {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3027,7 +3067,7 @@ export interface CapabilityStatementDocument {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -3035,7 +3075,7 @@ export interface CapabilityStatementDocument {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -3048,11 +3088,15 @@ export interface CapabilityStatementDocument {
  */
 export interface CarePlan {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CarePlan";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3064,7 +3108,7 @@ export interface CarePlan {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -3072,7 +3116,7 @@ export interface CarePlan {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -3116,7 +3160,7 @@ export interface CarePlan {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -3124,7 +3168,7 @@ export interface CarePlan {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -3136,7 +3180,7 @@ export interface CarePlan {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -3144,7 +3188,7 @@ export interface CarePlan {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -3197,7 +3241,7 @@ export interface CarePlanActivity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3238,7 +3282,7 @@ export interface CarePlanActivityDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3278,7 +3322,7 @@ export interface CarePlanActivityDetail {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -3286,7 +3330,7 @@ export interface CarePlanActivityDetail {
      */
     statusReason?: string;
     /**
-     * Contains extension information for property 'statusReason'
+     * Contains extension information for property 'statusReason'.
      */
     _statusReason?: Element;
     /**
@@ -3294,7 +3338,7 @@ export interface CarePlanActivityDetail {
      */
     prohibited?: boolean;
     /**
-     * Contains extension information for property 'prohibited'
+     * Contains extension information for property 'prohibited'.
      */
     _prohibited?: Element;
     /**
@@ -3310,7 +3354,7 @@ export interface CarePlanActivityDetail {
      */
     scheduledString?: string;
     /**
-     * Contains extension information for property 'scheduledString'
+     * Contains extension information for property 'scheduledString'.
      */
     _scheduledString?: Element;
     /**
@@ -3342,7 +3386,7 @@ export interface CarePlanActivityDetail {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
 }
@@ -3351,11 +3395,15 @@ export interface CarePlanActivityDetail {
  */
 export interface CareTeam {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CareTeam";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3367,7 +3415,7 @@ export interface CareTeam {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -3375,7 +3423,7 @@ export interface CareTeam {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -3403,7 +3451,7 @@ export interface CareTeam {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -3415,7 +3463,7 @@ export interface CareTeam {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -3460,7 +3508,7 @@ export interface CareTeamParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3493,11 +3541,15 @@ export interface CareTeamParticipant {
  */
 export interface ChargeItem {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ChargeItem";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3509,7 +3561,7 @@ export interface ChargeItem {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -3517,7 +3569,7 @@ export interface ChargeItem {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -3545,7 +3597,7 @@ export interface ChargeItem {
      */
     definition?: uri[];
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element[];
     /**
@@ -3553,7 +3605,7 @@ export interface ChargeItem {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -3577,7 +3629,7 @@ export interface ChargeItem {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -3613,7 +3665,7 @@ export interface ChargeItem {
      */
     factorOverride?: decimal;
     /**
-     * Contains extension information for property 'factorOverride'
+     * Contains extension information for property 'factorOverride'.
      */
     _factorOverride?: Element;
     /**
@@ -3625,7 +3677,7 @@ export interface ChargeItem {
      */
     overrideReason?: string;
     /**
-     * Contains extension information for property 'overrideReason'
+     * Contains extension information for property 'overrideReason'.
      */
     _overrideReason?: Element;
     /**
@@ -3637,7 +3689,7 @@ export interface ChargeItem {
      */
     enteredDate?: dateTime;
     /**
-     * Contains extension information for property 'enteredDate'
+     * Contains extension information for property 'enteredDate'.
      */
     _enteredDate?: Element;
     /**
@@ -3670,7 +3722,7 @@ export interface ChargeItemParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3695,11 +3747,15 @@ export interface ChargeItemParticipant {
  */
 export interface Claim {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Claim";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3711,7 +3767,7 @@ export interface Claim {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -3719,7 +3775,7 @@ export interface Claim {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -3747,7 +3803,7 @@ export interface Claim {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -3763,7 +3819,7 @@ export interface Claim {
      */
     use?: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -3779,7 +3835,7 @@ export interface Claim {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -3880,7 +3936,7 @@ export interface ClaimRelated {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3913,7 +3969,7 @@ export interface ClaimPayee {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3946,7 +4002,7 @@ export interface ClaimCareTeam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -3962,7 +4018,7 @@ export interface ClaimCareTeam {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -3974,7 +4030,7 @@ export interface ClaimCareTeam {
      */
     responsible?: boolean;
     /**
-     * Contains extension information for property 'responsible'
+     * Contains extension information for property 'responsible'.
      */
     _responsible?: Element;
     /**
@@ -3995,7 +4051,7 @@ export interface ClaimInformation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4011,7 +4067,7 @@ export interface ClaimInformation {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4027,7 +4083,7 @@ export interface ClaimInformation {
      */
     timingDate?: date;
     /**
-     * Contains extension information for property 'timingDate'
+     * Contains extension information for property 'timingDate'.
      */
     _timingDate?: Element;
     /**
@@ -4039,7 +4095,7 @@ export interface ClaimInformation {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -4068,7 +4124,7 @@ export interface ClaimDiagnosis {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4084,7 +4140,7 @@ export interface ClaimDiagnosis {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4113,7 +4169,7 @@ export interface ClaimProcedure {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4129,7 +4185,7 @@ export interface ClaimProcedure {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4137,7 +4193,7 @@ export interface ClaimProcedure {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -4158,7 +4214,7 @@ export interface ClaimInsurance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4174,7 +4230,7 @@ export interface ClaimInsurance {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4182,7 +4238,7 @@ export interface ClaimInsurance {
      */
     focal: boolean;
     /**
-     * Contains extension information for property 'focal'
+     * Contains extension information for property 'focal'.
      */
     _focal?: Element;
     /**
@@ -4194,7 +4250,7 @@ export interface ClaimInsurance {
      */
     businessArrangement?: string;
     /**
-     * Contains extension information for property 'businessArrangement'
+     * Contains extension information for property 'businessArrangement'.
      */
     _businessArrangement?: Element;
     /**
@@ -4202,7 +4258,7 @@ export interface ClaimInsurance {
      */
     preAuthRef?: string[];
     /**
-     * Contains extension information for property 'preAuthRef'
+     * Contains extension information for property 'preAuthRef'.
      */
     _preAuthRef?: Element[];
     /**
@@ -4219,7 +4275,7 @@ export interface ClaimAccident {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4235,7 +4291,7 @@ export interface ClaimAccident {
      */
     date: date;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -4260,7 +4316,7 @@ export interface ClaimItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4276,7 +4332,7 @@ export interface ClaimItem {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4284,7 +4340,7 @@ export interface ClaimItem {
      */
     careTeamLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'careTeamLinkId'
+     * Contains extension information for property 'careTeamLinkId'.
      */
     _careTeamLinkId?: Element[];
     /**
@@ -4292,7 +4348,7 @@ export interface ClaimItem {
      */
     diagnosisLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'diagnosisLinkId'
+     * Contains extension information for property 'diagnosisLinkId'.
      */
     _diagnosisLinkId?: Element[];
     /**
@@ -4300,7 +4356,7 @@ export interface ClaimItem {
      */
     procedureLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'procedureLinkId'
+     * Contains extension information for property 'procedureLinkId'.
      */
     _procedureLinkId?: Element[];
     /**
@@ -4308,7 +4364,7 @@ export interface ClaimItem {
      */
     informationLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'informationLinkId'
+     * Contains extension information for property 'informationLinkId'.
      */
     _informationLinkId?: Element[];
     /**
@@ -4336,7 +4392,7 @@ export interface ClaimItem {
      */
     servicedDate?: date;
     /**
-     * Contains extension information for property 'servicedDate'
+     * Contains extension information for property 'servicedDate'.
      */
     _servicedDate?: Element;
     /**
@@ -4368,7 +4424,7 @@ export interface ClaimItem {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -4405,7 +4461,7 @@ export interface ClaimItemDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4421,7 +4477,7 @@ export interface ClaimItemDetail {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4457,7 +4513,7 @@ export interface ClaimItemDetail {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -4482,7 +4538,7 @@ export interface ClaimItemDetailSubDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4498,7 +4554,7 @@ export interface ClaimItemDetailSubDetail {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -4534,7 +4590,7 @@ export interface ClaimItemDetailSubDetail {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -4551,11 +4607,15 @@ export interface ClaimItemDetailSubDetail {
  */
 export interface ClaimResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ClaimResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4567,7 +4627,7 @@ export interface ClaimResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -4575,7 +4635,7 @@ export interface ClaimResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -4603,7 +4663,7 @@ export interface ClaimResponse {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -4615,7 +4675,7 @@ export interface ClaimResponse {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -4643,7 +4703,7 @@ export interface ClaimResponse {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -4708,7 +4768,7 @@ export interface ClaimResponseItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4724,7 +4784,7 @@ export interface ClaimResponseItem {
      */
     sequenceLinkId: positiveInt;
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element;
     /**
@@ -4732,7 +4792,7 @@ export interface ClaimResponseItem {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -4753,7 +4813,7 @@ export interface ClaimResponseItemAdjudication {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4781,7 +4841,7 @@ export interface ClaimResponseItemAdjudication {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -4794,7 +4854,7 @@ export interface ClaimResponseItemDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4810,7 +4870,7 @@ export interface ClaimResponseItemDetail {
      */
     sequenceLinkId: positiveInt;
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element;
     /**
@@ -4818,7 +4878,7 @@ export interface ClaimResponseItemDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -4839,7 +4899,7 @@ export interface ClaimResponseItemDetailSubDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4855,7 +4915,7 @@ export interface ClaimResponseItemDetailSubDetail {
      */
     sequenceLinkId: positiveInt;
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element;
     /**
@@ -4863,7 +4923,7 @@ export interface ClaimResponseItemDetailSubDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -4880,7 +4940,7 @@ export interface ClaimResponseAddItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4896,7 +4956,7 @@ export interface ClaimResponseAddItem {
      */
     sequenceLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element[];
     /**
@@ -4924,7 +4984,7 @@ export interface ClaimResponseAddItem {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -4945,7 +5005,7 @@ export interface ClaimResponseAddItemDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -4981,7 +5041,7 @@ export interface ClaimResponseAddItemDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -4998,7 +5058,7 @@ export interface ClaimResponseError {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5014,7 +5074,7 @@ export interface ClaimResponseError {
      */
     sequenceLinkId?: positiveInt;
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element;
     /**
@@ -5022,7 +5082,7 @@ export interface ClaimResponseError {
      */
     detailSequenceLinkId?: positiveInt;
     /**
-     * Contains extension information for property 'detailSequenceLinkId'
+     * Contains extension information for property 'detailSequenceLinkId'.
      */
     _detailSequenceLinkId?: Element;
     /**
@@ -5030,7 +5090,7 @@ export interface ClaimResponseError {
      */
     subdetailSequenceLinkId?: positiveInt;
     /**
-     * Contains extension information for property 'subdetailSequenceLinkId'
+     * Contains extension information for property 'subdetailSequenceLinkId'.
      */
     _subdetailSequenceLinkId?: Element;
     /**
@@ -5047,7 +5107,7 @@ export interface ClaimResponsePayment {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5075,7 +5135,7 @@ export interface ClaimResponsePayment {
      */
     date?: date;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -5096,7 +5156,7 @@ export interface ClaimResponseProcessNote {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5112,7 +5172,7 @@ export interface ClaimResponseProcessNote {
      */
     number?: positiveInt;
     /**
-     * Contains extension information for property 'number'
+     * Contains extension information for property 'number'.
      */
     _number?: Element;
     /**
@@ -5124,7 +5184,7 @@ export interface ClaimResponseProcessNote {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -5141,7 +5201,7 @@ export interface ClaimResponseInsurance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5157,7 +5217,7 @@ export interface ClaimResponseInsurance {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -5165,7 +5225,7 @@ export interface ClaimResponseInsurance {
      */
     focal: boolean;
     /**
-     * Contains extension information for property 'focal'
+     * Contains extension information for property 'focal'.
      */
     _focal?: Element;
     /**
@@ -5177,7 +5237,7 @@ export interface ClaimResponseInsurance {
      */
     businessArrangement?: string;
     /**
-     * Contains extension information for property 'businessArrangement'
+     * Contains extension information for property 'businessArrangement'.
      */
     _businessArrangement?: Element;
     /**
@@ -5185,7 +5245,7 @@ export interface ClaimResponseInsurance {
      */
     preAuthRef?: string[];
     /**
-     * Contains extension information for property 'preAuthRef'
+     * Contains extension information for property 'preAuthRef'.
      */
     _preAuthRef?: Element[];
     /**
@@ -5198,11 +5258,15 @@ export interface ClaimResponseInsurance {
  */
 export interface ClinicalImpression {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ClinicalImpression";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5214,7 +5278,7 @@ export interface ClinicalImpression {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -5222,7 +5286,7 @@ export interface ClinicalImpression {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -5250,7 +5314,7 @@ export interface ClinicalImpression {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -5262,7 +5326,7 @@ export interface ClinicalImpression {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -5278,7 +5342,7 @@ export interface ClinicalImpression {
      */
     effectiveDateTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveDateTime'
+     * Contains extension information for property 'effectiveDateTime'.
      */
     _effectiveDateTime?: Element;
     /**
@@ -5290,7 +5354,7 @@ export interface ClinicalImpression {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -5314,7 +5378,7 @@ export interface ClinicalImpression {
      */
     protocol?: uri[];
     /**
-     * Contains extension information for property 'protocol'
+     * Contains extension information for property 'protocol'.
      */
     _protocol?: Element[];
     /**
@@ -5322,7 +5386,7 @@ export interface ClinicalImpression {
      */
     summary?: string;
     /**
-     * Contains extension information for property 'summary'
+     * Contains extension information for property 'summary'.
      */
     _summary?: Element;
     /**
@@ -5355,7 +5419,7 @@ export interface ClinicalImpressionInvestigation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5384,7 +5448,7 @@ export interface ClinicalImpressionFinding {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5408,7 +5472,7 @@ export interface ClinicalImpressionFinding {
      */
     basis?: string;
     /**
-     * Contains extension information for property 'basis'
+     * Contains extension information for property 'basis'.
      */
     _basis?: Element;
 }
@@ -5421,7 +5485,7 @@ export interface CodeableConcept {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5437,7 +5501,7 @@ export interface CodeableConcept {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
 }
@@ -5446,11 +5510,15 @@ export interface CodeableConcept {
  */
 export interface CodeSystem {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CodeSystem";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5462,7 +5530,7 @@ export interface CodeSystem {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -5470,7 +5538,7 @@ export interface CodeSystem {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -5494,7 +5562,7 @@ export interface CodeSystem {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -5506,7 +5574,7 @@ export interface CodeSystem {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -5514,7 +5582,7 @@ export interface CodeSystem {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -5522,7 +5590,7 @@ export interface CodeSystem {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -5530,7 +5598,7 @@ export interface CodeSystem {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -5538,7 +5606,7 @@ export interface CodeSystem {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -5546,7 +5614,7 @@ export interface CodeSystem {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -5554,7 +5622,7 @@ export interface CodeSystem {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -5566,7 +5634,7 @@ export interface CodeSystem {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -5582,7 +5650,7 @@ export interface CodeSystem {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -5590,7 +5658,7 @@ export interface CodeSystem {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -5598,7 +5666,7 @@ export interface CodeSystem {
      */
     caseSensitive?: boolean;
     /**
-     * Contains extension information for property 'caseSensitive'
+     * Contains extension information for property 'caseSensitive'.
      */
     _caseSensitive?: Element;
     /**
@@ -5606,7 +5674,7 @@ export interface CodeSystem {
      */
     valueSet?: uri;
     /**
-     * Contains extension information for property 'valueSet'
+     * Contains extension information for property 'valueSet'.
      */
     _valueSet?: Element;
     /**
@@ -5614,7 +5682,7 @@ export interface CodeSystem {
      */
     hierarchyMeaning?: code;
     /**
-     * Contains extension information for property 'hierarchyMeaning'
+     * Contains extension information for property 'hierarchyMeaning'.
      */
     _hierarchyMeaning?: Element;
     /**
@@ -5622,7 +5690,7 @@ export interface CodeSystem {
      */
     compositional?: boolean;
     /**
-     * Contains extension information for property 'compositional'
+     * Contains extension information for property 'compositional'.
      */
     _compositional?: Element;
     /**
@@ -5630,7 +5698,7 @@ export interface CodeSystem {
      */
     versionNeeded?: boolean;
     /**
-     * Contains extension information for property 'versionNeeded'
+     * Contains extension information for property 'versionNeeded'.
      */
     _versionNeeded?: Element;
     /**
@@ -5638,7 +5706,7 @@ export interface CodeSystem {
      */
     content: code;
     /**
-     * Contains extension information for property 'content'
+     * Contains extension information for property 'content'.
      */
     _content?: Element;
     /**
@@ -5646,7 +5714,7 @@ export interface CodeSystem {
      */
     count?: unsignedInt;
     /**
-     * Contains extension information for property 'count'
+     * Contains extension information for property 'count'.
      */
     _count?: Element;
     /**
@@ -5671,7 +5739,7 @@ export interface CodeSystemFilter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5687,7 +5755,7 @@ export interface CodeSystemFilter {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -5695,7 +5763,7 @@ export interface CodeSystemFilter {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -5703,7 +5771,7 @@ export interface CodeSystemFilter {
      */
     operator: code[];
     /**
-     * Contains extension information for property 'operator'
+     * Contains extension information for property 'operator'.
      */
     _operator?: Element[];
     /**
@@ -5711,7 +5779,7 @@ export interface CodeSystemFilter {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -5724,7 +5792,7 @@ export interface CodeSystemProperty {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5740,7 +5808,7 @@ export interface CodeSystemProperty {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -5748,7 +5816,7 @@ export interface CodeSystemProperty {
      */
     uri?: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
     /**
@@ -5756,7 +5824,7 @@ export interface CodeSystemProperty {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -5764,7 +5832,7 @@ export interface CodeSystemProperty {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
 }
@@ -5777,7 +5845,7 @@ export interface CodeSystemConcept {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5793,7 +5861,7 @@ export interface CodeSystemConcept {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -5801,7 +5869,7 @@ export interface CodeSystemConcept {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -5809,7 +5877,7 @@ export interface CodeSystemConcept {
      */
     definition?: string;
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element;
     /**
@@ -5834,7 +5902,7 @@ export interface CodeSystemConceptDesignation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5850,7 +5918,7 @@ export interface CodeSystemConceptDesignation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -5862,7 +5930,7 @@ export interface CodeSystemConceptDesignation {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -5875,7 +5943,7 @@ export interface CodeSystemConceptProperty {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5891,7 +5959,7 @@ export interface CodeSystemConceptProperty {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -5899,7 +5967,7 @@ export interface CodeSystemConceptProperty {
      */
     valueCode: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
     /**
@@ -5911,7 +5979,7 @@ export interface CodeSystemConceptProperty {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -5919,7 +5987,7 @@ export interface CodeSystemConceptProperty {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -5927,7 +5995,7 @@ export interface CodeSystemConceptProperty {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -5935,7 +6003,7 @@ export interface CodeSystemConceptProperty {
      */
     valueDateTime: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
 }
@@ -5948,7 +6016,7 @@ export interface Coding {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -5960,7 +6028,7 @@ export interface Coding {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -5968,7 +6036,7 @@ export interface Coding {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -5976,7 +6044,7 @@ export interface Coding {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -5984,7 +6052,7 @@ export interface Coding {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -5992,7 +6060,7 @@ export interface Coding {
      */
     userSelected?: boolean;
     /**
-     * Contains extension information for property 'userSelected'
+     * Contains extension information for property 'userSelected'.
      */
     _userSelected?: Element;
 }
@@ -6001,11 +6069,15 @@ export interface Coding {
  */
 export interface Communication {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Communication";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6017,7 +6089,7 @@ export interface Communication {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -6025,7 +6097,7 @@ export interface Communication {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -6065,7 +6137,7 @@ export interface Communication {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -6073,7 +6145,7 @@ export interface Communication {
      */
     notDone?: boolean;
     /**
-     * Contains extension information for property 'notDone'
+     * Contains extension information for property 'notDone'.
      */
     _notDone?: Element;
     /**
@@ -6109,7 +6181,7 @@ export interface Communication {
      */
     sent?: dateTime;
     /**
-     * Contains extension information for property 'sent'
+     * Contains extension information for property 'sent'.
      */
     _sent?: Element;
     /**
@@ -6117,7 +6189,7 @@ export interface Communication {
      */
     received?: dateTime;
     /**
-     * Contains extension information for property 'received'
+     * Contains extension information for property 'received'.
      */
     _received?: Element;
     /**
@@ -6150,7 +6222,7 @@ export interface CommunicationPayload {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6166,7 +6238,7 @@ export interface CommunicationPayload {
      */
     contentString: string;
     /**
-     * Contains extension information for property 'contentString'
+     * Contains extension information for property 'contentString'.
      */
     _contentString?: Element;
     /**
@@ -6183,11 +6255,15 @@ export interface CommunicationPayload {
  */
 export interface CommunicationRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CommunicationRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6199,7 +6275,7 @@ export interface CommunicationRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -6207,7 +6283,7 @@ export interface CommunicationRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -6247,7 +6323,7 @@ export interface CommunicationRequest {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -6259,7 +6335,7 @@ export interface CommunicationRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -6291,7 +6367,7 @@ export interface CommunicationRequest {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -6303,7 +6379,7 @@ export interface CommunicationRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -6336,7 +6412,7 @@ export interface CommunicationRequestPayload {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6352,7 +6428,7 @@ export interface CommunicationRequestPayload {
      */
     contentString: string;
     /**
-     * Contains extension information for property 'contentString'
+     * Contains extension information for property 'contentString'.
      */
     _contentString?: Element;
     /**
@@ -6373,7 +6449,7 @@ export interface CommunicationRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6398,11 +6474,15 @@ export interface CommunicationRequestRequester {
  */
 export interface CompartmentDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "CompartmentDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6414,7 +6494,7 @@ export interface CompartmentDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -6422,7 +6502,7 @@ export interface CompartmentDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -6446,7 +6526,7 @@ export interface CompartmentDefinition {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -6454,7 +6534,7 @@ export interface CompartmentDefinition {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -6462,7 +6542,7 @@ export interface CompartmentDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -6470,7 +6550,7 @@ export interface CompartmentDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -6478,7 +6558,7 @@ export interface CompartmentDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -6486,7 +6566,7 @@ export interface CompartmentDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -6494,7 +6574,7 @@ export interface CompartmentDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -6506,7 +6586,7 @@ export interface CompartmentDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -6514,7 +6594,7 @@ export interface CompartmentDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -6530,7 +6610,7 @@ export interface CompartmentDefinition {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -6538,7 +6618,7 @@ export interface CompartmentDefinition {
      */
     search: boolean;
     /**
-     * Contains extension information for property 'search'
+     * Contains extension information for property 'search'.
      */
     _search?: Element;
     /**
@@ -6555,7 +6635,7 @@ export interface CompartmentDefinitionResource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6571,7 +6651,7 @@ export interface CompartmentDefinitionResource {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -6579,7 +6659,7 @@ export interface CompartmentDefinitionResource {
      */
     param?: string[];
     /**
-     * Contains extension information for property 'param'
+     * Contains extension information for property 'param'.
      */
     _param?: Element[];
     /**
@@ -6587,7 +6667,7 @@ export interface CompartmentDefinitionResource {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -6596,11 +6676,15 @@ export interface CompartmentDefinitionResource {
  */
 export interface Composition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Composition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6612,7 +6696,7 @@ export interface Composition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -6620,7 +6704,7 @@ export interface Composition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -6648,7 +6732,7 @@ export interface Composition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -6672,7 +6756,7 @@ export interface Composition {
      */
     date: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -6684,7 +6768,7 @@ export interface Composition {
      */
     title: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -6692,7 +6776,7 @@ export interface Composition {
      */
     confidentiality?: code;
     /**
-     * Contains extension information for property 'confidentiality'
+     * Contains extension information for property 'confidentiality'.
      */
     _confidentiality?: Element;
     /**
@@ -6725,7 +6809,7 @@ export interface CompositionAttester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6741,7 +6825,7 @@ export interface CompositionAttester {
      */
     mode: code[];
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element[];
     /**
@@ -6749,7 +6833,7 @@ export interface CompositionAttester {
      */
     time?: dateTime;
     /**
-     * Contains extension information for property 'time'
+     * Contains extension information for property 'time'.
      */
     _time?: Element;
     /**
@@ -6766,7 +6850,7 @@ export interface CompositionRelatesTo {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6782,7 +6866,7 @@ export interface CompositionRelatesTo {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -6803,7 +6887,7 @@ export interface CompositionEvent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6836,7 +6920,7 @@ export interface CompositionSection {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6852,7 +6936,7 @@ export interface CompositionSection {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -6868,7 +6952,7 @@ export interface CompositionSection {
      */
     mode?: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -6893,11 +6977,15 @@ export interface CompositionSection {
  */
 export interface ConceptMap {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ConceptMap";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -6909,7 +6997,7 @@ export interface ConceptMap {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -6917,7 +7005,7 @@ export interface ConceptMap {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -6941,7 +7029,7 @@ export interface ConceptMap {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -6953,7 +7041,7 @@ export interface ConceptMap {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -6961,7 +7049,7 @@ export interface ConceptMap {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -6969,7 +7057,7 @@ export interface ConceptMap {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -6977,7 +7065,7 @@ export interface ConceptMap {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -6985,7 +7073,7 @@ export interface ConceptMap {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -6993,7 +7081,7 @@ export interface ConceptMap {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -7001,7 +7089,7 @@ export interface ConceptMap {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -7013,7 +7101,7 @@ export interface ConceptMap {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -7029,7 +7117,7 @@ export interface ConceptMap {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -7037,7 +7125,7 @@ export interface ConceptMap {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -7045,7 +7133,7 @@ export interface ConceptMap {
      */
     sourceUri?: uri;
     /**
-     * Contains extension information for property 'sourceUri'
+     * Contains extension information for property 'sourceUri'.
      */
     _sourceUri?: Element;
     /**
@@ -7057,7 +7145,7 @@ export interface ConceptMap {
      */
     targetUri?: uri;
     /**
-     * Contains extension information for property 'targetUri'
+     * Contains extension information for property 'targetUri'.
      */
     _targetUri?: Element;
     /**
@@ -7078,7 +7166,7 @@ export interface ConceptMapGroup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7094,7 +7182,7 @@ export interface ConceptMapGroup {
      */
     source?: uri;
     /**
-     * Contains extension information for property 'source'
+     * Contains extension information for property 'source'.
      */
     _source?: Element;
     /**
@@ -7102,7 +7190,7 @@ export interface ConceptMapGroup {
      */
     sourceVersion?: string;
     /**
-     * Contains extension information for property 'sourceVersion'
+     * Contains extension information for property 'sourceVersion'.
      */
     _sourceVersion?: Element;
     /**
@@ -7110,7 +7198,7 @@ export interface ConceptMapGroup {
      */
     target?: uri;
     /**
-     * Contains extension information for property 'target'
+     * Contains extension information for property 'target'.
      */
     _target?: Element;
     /**
@@ -7118,7 +7206,7 @@ export interface ConceptMapGroup {
      */
     targetVersion?: string;
     /**
-     * Contains extension information for property 'targetVersion'
+     * Contains extension information for property 'targetVersion'.
      */
     _targetVersion?: Element;
     /**
@@ -7139,7 +7227,7 @@ export interface ConceptMapGroupElement {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7155,7 +7243,7 @@ export interface ConceptMapGroupElement {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -7163,7 +7251,7 @@ export interface ConceptMapGroupElement {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -7180,7 +7268,7 @@ export interface ConceptMapGroupElementTarget {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7196,7 +7284,7 @@ export interface ConceptMapGroupElementTarget {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -7204,7 +7292,7 @@ export interface ConceptMapGroupElementTarget {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -7212,7 +7300,7 @@ export interface ConceptMapGroupElementTarget {
      */
     equivalence?: code;
     /**
-     * Contains extension information for property 'equivalence'
+     * Contains extension information for property 'equivalence'.
      */
     _equivalence?: Element;
     /**
@@ -7220,7 +7308,7 @@ export interface ConceptMapGroupElementTarget {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -7241,7 +7329,7 @@ export interface ConceptMapGroupElementTargetDependsOn {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7257,7 +7345,7 @@ export interface ConceptMapGroupElementTargetDependsOn {
      */
     property: uri;
     /**
-     * Contains extension information for property 'property'
+     * Contains extension information for property 'property'.
      */
     _property?: Element;
     /**
@@ -7265,7 +7353,7 @@ export interface ConceptMapGroupElementTargetDependsOn {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -7273,7 +7361,7 @@ export interface ConceptMapGroupElementTargetDependsOn {
      */
     code: string;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -7281,7 +7369,7 @@ export interface ConceptMapGroupElementTargetDependsOn {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
 }
@@ -7294,7 +7382,7 @@ export interface ConceptMapGroupUnmapped {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7310,7 +7398,7 @@ export interface ConceptMapGroupUnmapped {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -7318,7 +7406,7 @@ export interface ConceptMapGroupUnmapped {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -7326,7 +7414,7 @@ export interface ConceptMapGroupUnmapped {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -7334,7 +7422,7 @@ export interface ConceptMapGroupUnmapped {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
 }
@@ -7343,11 +7431,15 @@ export interface ConceptMapGroupUnmapped {
  */
 export interface Condition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Condition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7359,7 +7451,7 @@ export interface Condition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -7367,7 +7459,7 @@ export interface Condition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -7395,7 +7487,7 @@ export interface Condition {
      */
     clinicalStatus?: code;
     /**
-     * Contains extension information for property 'clinicalStatus'
+     * Contains extension information for property 'clinicalStatus'.
      */
     _clinicalStatus?: Element;
     /**
@@ -7403,7 +7495,7 @@ export interface Condition {
      */
     verificationStatus?: code;
     /**
-     * Contains extension information for property 'verificationStatus'
+     * Contains extension information for property 'verificationStatus'.
      */
     _verificationStatus?: Element;
     /**
@@ -7435,7 +7527,7 @@ export interface Condition {
      */
     onsetDateTime?: dateTime;
     /**
-     * Contains extension information for property 'onsetDateTime'
+     * Contains extension information for property 'onsetDateTime'.
      */
     _onsetDateTime?: Element;
     /**
@@ -7455,7 +7547,7 @@ export interface Condition {
      */
     onsetString?: string;
     /**
-     * Contains extension information for property 'onsetString'
+     * Contains extension information for property 'onsetString'.
      */
     _onsetString?: Element;
     /**
@@ -7463,7 +7555,7 @@ export interface Condition {
      */
     abatementDateTime?: dateTime;
     /**
-     * Contains extension information for property 'abatementDateTime'
+     * Contains extension information for property 'abatementDateTime'.
      */
     _abatementDateTime?: Element;
     /**
@@ -7475,7 +7567,7 @@ export interface Condition {
      */
     abatementBoolean?: boolean;
     /**
-     * Contains extension information for property 'abatementBoolean'
+     * Contains extension information for property 'abatementBoolean'.
      */
     _abatementBoolean?: Element;
     /**
@@ -7491,7 +7583,7 @@ export interface Condition {
      */
     abatementString?: string;
     /**
-     * Contains extension information for property 'abatementString'
+     * Contains extension information for property 'abatementString'.
      */
     _abatementString?: Element;
     /**
@@ -7499,7 +7591,7 @@ export interface Condition {
      */
     assertedDate?: dateTime;
     /**
-     * Contains extension information for property 'assertedDate'
+     * Contains extension information for property 'assertedDate'.
      */
     _assertedDate?: Element;
     /**
@@ -7528,7 +7620,7 @@ export interface ConditionStage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7557,7 +7649,7 @@ export interface ConditionEvidence {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7582,11 +7674,15 @@ export interface ConditionEvidence {
  */
 export interface Consent {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Consent";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7598,7 +7694,7 @@ export interface Consent {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -7606,7 +7702,7 @@ export interface Consent {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -7634,7 +7730,7 @@ export interface Consent {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -7654,7 +7750,7 @@ export interface Consent {
      */
     dateTime?: dateTime;
     /**
-     * Contains extension information for property 'dateTime'
+     * Contains extension information for property 'dateTime'.
      */
     _dateTime?: Element;
     /**
@@ -7694,7 +7790,7 @@ export interface Consent {
      */
     policyRule?: uri;
     /**
-     * Contains extension information for property 'policyRule'
+     * Contains extension information for property 'policyRule'.
      */
     _policyRule?: Element;
     /**
@@ -7727,7 +7823,7 @@ export interface ConsentActor {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7756,7 +7852,7 @@ export interface ConsentPolicy {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7772,7 +7868,7 @@ export interface ConsentPolicy {
      */
     authority?: uri;
     /**
-     * Contains extension information for property 'authority'
+     * Contains extension information for property 'authority'.
      */
     _authority?: Element;
     /**
@@ -7780,7 +7876,7 @@ export interface ConsentPolicy {
      */
     uri?: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
 }
@@ -7793,7 +7889,7 @@ export interface ConsentData {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7809,7 +7905,7 @@ export interface ConsentData {
      */
     meaning: code;
     /**
-     * Contains extension information for property 'meaning'
+     * Contains extension information for property 'meaning'.
      */
     _meaning?: Element;
     /**
@@ -7826,7 +7922,7 @@ export interface ConsentExcept {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7842,7 +7938,7 @@ export interface ConsentExcept {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -7891,7 +7987,7 @@ export interface ConsentExceptActor {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7920,7 +8016,7 @@ export interface ConsentExceptData {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7936,7 +8032,7 @@ export interface ConsentExceptData {
      */
     meaning: code;
     /**
-     * Contains extension information for property 'meaning'
+     * Contains extension information for property 'meaning'.
      */
     _meaning?: Element;
     /**
@@ -7953,7 +8049,7 @@ export interface ContactDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7965,7 +8061,7 @@ export interface ContactDetail {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -7982,7 +8078,7 @@ export interface ContactPoint {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -7994,7 +8090,7 @@ export interface ContactPoint {
      */
     system?: code;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -8002,7 +8098,7 @@ export interface ContactPoint {
      */
     value?: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -8010,7 +8106,7 @@ export interface ContactPoint {
      */
     use?: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -8018,7 +8114,7 @@ export interface ContactPoint {
      */
     rank?: positiveInt;
     /**
-     * Contains extension information for property 'rank'
+     * Contains extension information for property 'rank'.
      */
     _rank?: Element;
     /**
@@ -8031,11 +8127,15 @@ export interface ContactPoint {
  */
 export interface Contract {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Contract";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8047,7 +8147,7 @@ export interface Contract {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -8055,7 +8155,7 @@ export interface Contract {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -8083,7 +8183,7 @@ export interface Contract {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -8091,7 +8191,7 @@ export interface Contract {
      */
     issued?: dateTime;
     /**
-     * Contains extension information for property 'issued'
+     * Contains extension information for property 'issued'.
      */
     _issued?: Element;
     /**
@@ -8188,7 +8288,7 @@ export interface ContractAgent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8217,7 +8317,7 @@ export interface ContractSigner {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8250,7 +8350,7 @@ export interface ContractValuedItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8278,7 +8378,7 @@ export interface ContractValuedItem {
      */
     effectiveTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveTime'
+     * Contains extension information for property 'effectiveTime'.
      */
     _effectiveTime?: Element;
     /**
@@ -8294,7 +8394,7 @@ export interface ContractValuedItem {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -8302,7 +8402,7 @@ export interface ContractValuedItem {
      */
     points?: decimal;
     /**
-     * Contains extension information for property 'points'
+     * Contains extension information for property 'points'.
      */
     _points?: Element;
     /**
@@ -8319,7 +8419,7 @@ export interface ContractTerm {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8339,7 +8439,7 @@ export interface ContractTerm {
      */
     issued?: dateTime;
     /**
-     * Contains extension information for property 'issued'
+     * Contains extension information for property 'issued'.
      */
     _issued?: Element;
     /**
@@ -8379,7 +8479,7 @@ export interface ContractTerm {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -8400,7 +8500,7 @@ export interface ContractTermAgent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8429,7 +8529,7 @@ export interface ContractTermValuedItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8457,7 +8557,7 @@ export interface ContractTermValuedItem {
      */
     effectiveTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveTime'
+     * Contains extension information for property 'effectiveTime'.
      */
     _effectiveTime?: Element;
     /**
@@ -8473,7 +8573,7 @@ export interface ContractTermValuedItem {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -8481,7 +8581,7 @@ export interface ContractTermValuedItem {
      */
     points?: decimal;
     /**
-     * Contains extension information for property 'points'
+     * Contains extension information for property 'points'.
      */
     _points?: Element;
     /**
@@ -8498,7 +8598,7 @@ export interface ContractFriendly {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8527,7 +8627,7 @@ export interface ContractLegal {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8556,7 +8656,7 @@ export interface ContractRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8585,7 +8685,7 @@ export interface Contributor {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8597,7 +8697,7 @@ export interface Contributor {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -8605,7 +8705,7 @@ export interface Contributor {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -8622,7 +8722,7 @@ export interface Count {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8634,7 +8734,7 @@ export interface Count {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -8642,7 +8742,7 @@ export interface Count {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -8650,7 +8750,7 @@ export interface Count {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -8658,7 +8758,7 @@ export interface Count {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -8666,7 +8766,7 @@ export interface Count {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -8675,11 +8775,15 @@ export interface Count {
  */
 export interface Coverage {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Coverage";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8691,7 +8795,7 @@ export interface Coverage {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -8699,7 +8803,7 @@ export interface Coverage {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -8727,7 +8831,7 @@ export interface Coverage {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -8747,7 +8851,7 @@ export interface Coverage {
      */
     subscriberId?: string;
     /**
-     * Contains extension information for property 'subscriberId'
+     * Contains extension information for property 'subscriberId'.
      */
     _subscriberId?: Element;
     /**
@@ -8775,7 +8879,7 @@ export interface Coverage {
      */
     dependent?: string;
     /**
-     * Contains extension information for property 'dependent'
+     * Contains extension information for property 'dependent'.
      */
     _dependent?: Element;
     /**
@@ -8783,7 +8887,7 @@ export interface Coverage {
      */
     sequence?: string;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -8791,7 +8895,7 @@ export interface Coverage {
      */
     order?: positiveInt;
     /**
-     * Contains extension information for property 'order'
+     * Contains extension information for property 'order'.
      */
     _order?: Element;
     /**
@@ -8799,7 +8903,7 @@ export interface Coverage {
      */
     network?: string;
     /**
-     * Contains extension information for property 'network'
+     * Contains extension information for property 'network'.
      */
     _network?: Element;
     /**
@@ -8816,7 +8920,7 @@ export interface CoverageGrouping {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8832,7 +8936,7 @@ export interface CoverageGrouping {
      */
     group?: string;
     /**
-     * Contains extension information for property 'group'
+     * Contains extension information for property 'group'.
      */
     _group?: Element;
     /**
@@ -8840,7 +8944,7 @@ export interface CoverageGrouping {
      */
     groupDisplay?: string;
     /**
-     * Contains extension information for property 'groupDisplay'
+     * Contains extension information for property 'groupDisplay'.
      */
     _groupDisplay?: Element;
     /**
@@ -8848,7 +8952,7 @@ export interface CoverageGrouping {
      */
     subGroup?: string;
     /**
-     * Contains extension information for property 'subGroup'
+     * Contains extension information for property 'subGroup'.
      */
     _subGroup?: Element;
     /**
@@ -8856,7 +8960,7 @@ export interface CoverageGrouping {
      */
     subGroupDisplay?: string;
     /**
-     * Contains extension information for property 'subGroupDisplay'
+     * Contains extension information for property 'subGroupDisplay'.
      */
     _subGroupDisplay?: Element;
     /**
@@ -8864,7 +8968,7 @@ export interface CoverageGrouping {
      */
     plan?: string;
     /**
-     * Contains extension information for property 'plan'
+     * Contains extension information for property 'plan'.
      */
     _plan?: Element;
     /**
@@ -8872,7 +8976,7 @@ export interface CoverageGrouping {
      */
     planDisplay?: string;
     /**
-     * Contains extension information for property 'planDisplay'
+     * Contains extension information for property 'planDisplay'.
      */
     _planDisplay?: Element;
     /**
@@ -8880,7 +8984,7 @@ export interface CoverageGrouping {
      */
     subPlan?: string;
     /**
-     * Contains extension information for property 'subPlan'
+     * Contains extension information for property 'subPlan'.
      */
     _subPlan?: Element;
     /**
@@ -8888,7 +8992,7 @@ export interface CoverageGrouping {
      */
     subPlanDisplay?: string;
     /**
-     * Contains extension information for property 'subPlanDisplay'
+     * Contains extension information for property 'subPlanDisplay'.
      */
     _subPlanDisplay?: Element;
     /**
@@ -8896,7 +9000,7 @@ export interface CoverageGrouping {
      */
     class?: string;
     /**
-     * Contains extension information for property 'class'
+     * Contains extension information for property 'class'.
      */
     _class?: Element;
     /**
@@ -8904,7 +9008,7 @@ export interface CoverageGrouping {
      */
     classDisplay?: string;
     /**
-     * Contains extension information for property 'classDisplay'
+     * Contains extension information for property 'classDisplay'.
      */
     _classDisplay?: Element;
     /**
@@ -8912,7 +9016,7 @@ export interface CoverageGrouping {
      */
     subClass?: string;
     /**
-     * Contains extension information for property 'subClass'
+     * Contains extension information for property 'subClass'.
      */
     _subClass?: Element;
     /**
@@ -8920,7 +9024,7 @@ export interface CoverageGrouping {
      */
     subClassDisplay?: string;
     /**
-     * Contains extension information for property 'subClassDisplay'
+     * Contains extension information for property 'subClassDisplay'.
      */
     _subClassDisplay?: Element;
 }
@@ -8929,11 +9033,15 @@ export interface CoverageGrouping {
  */
 export interface DataElement {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DataElement";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -8945,7 +9053,7 @@ export interface DataElement {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -8953,7 +9061,7 @@ export interface DataElement {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -8977,7 +9085,7 @@ export interface DataElement {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -8989,7 +9097,7 @@ export interface DataElement {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -8997,7 +9105,7 @@ export interface DataElement {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -9005,7 +9113,7 @@ export interface DataElement {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -9013,7 +9121,7 @@ export interface DataElement {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -9021,7 +9129,7 @@ export interface DataElement {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -9029,7 +9137,7 @@ export interface DataElement {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -9037,7 +9145,7 @@ export interface DataElement {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -9057,7 +9165,7 @@ export interface DataElement {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -9065,7 +9173,7 @@ export interface DataElement {
      */
     stringency?: code;
     /**
-     * Contains extension information for property 'stringency'
+     * Contains extension information for property 'stringency'.
      */
     _stringency?: Element;
     /**
@@ -9086,7 +9194,7 @@ export interface DataElementMapping {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9102,7 +9210,7 @@ export interface DataElementMapping {
      */
     identity: id;
     /**
-     * Contains extension information for property 'identity'
+     * Contains extension information for property 'identity'.
      */
     _identity?: Element;
     /**
@@ -9110,7 +9218,7 @@ export interface DataElementMapping {
      */
     uri?: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
     /**
@@ -9118,7 +9226,7 @@ export interface DataElementMapping {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -9126,7 +9234,7 @@ export interface DataElementMapping {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -9139,7 +9247,7 @@ export interface DataRequirement {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9151,7 +9259,7 @@ export interface DataRequirement {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -9159,7 +9267,7 @@ export interface DataRequirement {
      */
     profile?: uri[];
     /**
-     * Contains extension information for property 'profile'
+     * Contains extension information for property 'profile'.
      */
     _profile?: Element[];
     /**
@@ -9167,7 +9275,7 @@ export interface DataRequirement {
      */
     mustSupport?: string[];
     /**
-     * Contains extension information for property 'mustSupport'
+     * Contains extension information for property 'mustSupport'.
      */
     _mustSupport?: Element[];
     /**
@@ -9185,7 +9293,7 @@ export interface DataRequirementCodeFilter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9197,7 +9305,7 @@ export interface DataRequirementCodeFilter {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -9205,7 +9313,7 @@ export interface DataRequirementCodeFilter {
      */
     valuesetString?: string;
     /**
-     * Contains extension information for property 'valuesetString'
+     * Contains extension information for property 'valuesetString'.
      */
     _valuesetString?: Element;
     /**
@@ -9217,7 +9325,7 @@ export interface DataRequirementCodeFilter {
      */
     valueCode?: code[];
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element[];
     /**
@@ -9235,7 +9343,7 @@ export interface DataRequirementDateFilter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9247,7 +9355,7 @@ export interface DataRequirementDateFilter {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -9255,7 +9363,7 @@ export interface DataRequirementDateFilter {
      */
     valueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -9272,11 +9380,15 @@ export interface DataRequirementDateFilter {
  */
 export interface DetectedIssue {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DetectedIssue";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9288,7 +9400,7 @@ export interface DetectedIssue {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -9296,7 +9408,7 @@ export interface DetectedIssue {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -9324,7 +9436,7 @@ export interface DetectedIssue {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -9336,7 +9448,7 @@ export interface DetectedIssue {
      */
     severity?: code;
     /**
-     * Contains extension information for property 'severity'
+     * Contains extension information for property 'severity'.
      */
     _severity?: Element;
     /**
@@ -9348,7 +9460,7 @@ export interface DetectedIssue {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -9364,7 +9476,7 @@ export interface DetectedIssue {
      */
     detail?: string;
     /**
-     * Contains extension information for property 'detail'
+     * Contains extension information for property 'detail'.
      */
     _detail?: Element;
     /**
@@ -9372,7 +9484,7 @@ export interface DetectedIssue {
      */
     reference?: uri;
     /**
-     * Contains extension information for property 'reference'
+     * Contains extension information for property 'reference'.
      */
     _reference?: Element;
     /**
@@ -9389,7 +9501,7 @@ export interface DetectedIssueMitigation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9409,7 +9521,7 @@ export interface DetectedIssueMitigation {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -9422,11 +9534,15 @@ export interface DetectedIssueMitigation {
  */
 export interface Device {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Device";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9438,7 +9554,7 @@ export interface Device {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -9446,7 +9562,7 @@ export interface Device {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -9478,7 +9594,7 @@ export interface Device {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -9490,7 +9606,7 @@ export interface Device {
      */
     lotNumber?: string;
     /**
-     * Contains extension information for property 'lotNumber'
+     * Contains extension information for property 'lotNumber'.
      */
     _lotNumber?: Element;
     /**
@@ -9498,7 +9614,7 @@ export interface Device {
      */
     manufacturer?: string;
     /**
-     * Contains extension information for property 'manufacturer'
+     * Contains extension information for property 'manufacturer'.
      */
     _manufacturer?: Element;
     /**
@@ -9506,7 +9622,7 @@ export interface Device {
      */
     manufactureDate?: dateTime;
     /**
-     * Contains extension information for property 'manufactureDate'
+     * Contains extension information for property 'manufactureDate'.
      */
     _manufactureDate?: Element;
     /**
@@ -9514,7 +9630,7 @@ export interface Device {
      */
     expirationDate?: dateTime;
     /**
-     * Contains extension information for property 'expirationDate'
+     * Contains extension information for property 'expirationDate'.
      */
     _expirationDate?: Element;
     /**
@@ -9522,7 +9638,7 @@ export interface Device {
      */
     model?: string;
     /**
-     * Contains extension information for property 'model'
+     * Contains extension information for property 'model'.
      */
     _model?: Element;
     /**
@@ -9530,7 +9646,7 @@ export interface Device {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -9554,7 +9670,7 @@ export interface Device {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -9575,7 +9691,7 @@ export interface DeviceUdi {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9591,7 +9707,7 @@ export interface DeviceUdi {
      */
     deviceIdentifier?: string;
     /**
-     * Contains extension information for property 'deviceIdentifier'
+     * Contains extension information for property 'deviceIdentifier'.
      */
     _deviceIdentifier?: Element;
     /**
@@ -9599,7 +9715,7 @@ export interface DeviceUdi {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -9607,7 +9723,7 @@ export interface DeviceUdi {
      */
     jurisdiction?: uri;
     /**
-     * Contains extension information for property 'jurisdiction'
+     * Contains extension information for property 'jurisdiction'.
      */
     _jurisdiction?: Element;
     /**
@@ -9615,7 +9731,7 @@ export interface DeviceUdi {
      */
     carrierHRF?: string;
     /**
-     * Contains extension information for property 'carrierHRF'
+     * Contains extension information for property 'carrierHRF'.
      */
     _carrierHRF?: Element;
     /**
@@ -9623,7 +9739,7 @@ export interface DeviceUdi {
      */
     carrierAIDC?: base64Binary;
     /**
-     * Contains extension information for property 'carrierAIDC'
+     * Contains extension information for property 'carrierAIDC'.
      */
     _carrierAIDC?: Element;
     /**
@@ -9631,7 +9747,7 @@ export interface DeviceUdi {
      */
     issuer?: uri;
     /**
-     * Contains extension information for property 'issuer'
+     * Contains extension information for property 'issuer'.
      */
     _issuer?: Element;
     /**
@@ -9639,7 +9755,7 @@ export interface DeviceUdi {
      */
     entryType?: code;
     /**
-     * Contains extension information for property 'entryType'
+     * Contains extension information for property 'entryType'.
      */
     _entryType?: Element;
 }
@@ -9648,11 +9764,15 @@ export interface DeviceUdi {
  */
 export interface DeviceComponent {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DeviceComponent";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9664,7 +9784,7 @@ export interface DeviceComponent {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -9672,7 +9792,7 @@ export interface DeviceComponent {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -9704,7 +9824,7 @@ export interface DeviceComponent {
      */
     lastSystemChange?: instant;
     /**
-     * Contains extension information for property 'lastSystemChange'
+     * Contains extension information for property 'lastSystemChange'.
      */
     _lastSystemChange?: Element;
     /**
@@ -9728,7 +9848,7 @@ export interface DeviceComponent {
      */
     measurementPrinciple?: code;
     /**
-     * Contains extension information for property 'measurementPrinciple'
+     * Contains extension information for property 'measurementPrinciple'.
      */
     _measurementPrinciple?: Element;
     /**
@@ -9749,7 +9869,7 @@ export interface DeviceComponentProductionSpecification {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9773,7 +9893,7 @@ export interface DeviceComponentProductionSpecification {
      */
     productionSpec?: string;
     /**
-     * Contains extension information for property 'productionSpec'
+     * Contains extension information for property 'productionSpec'.
      */
     _productionSpec?: Element;
 }
@@ -9782,11 +9902,15 @@ export interface DeviceComponentProductionSpecification {
  */
 export interface DeviceMetric {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DeviceMetric";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9798,7 +9922,7 @@ export interface DeviceMetric {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -9806,7 +9930,7 @@ export interface DeviceMetric {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -9850,7 +9974,7 @@ export interface DeviceMetric {
      */
     operationalStatus?: code;
     /**
-     * Contains extension information for property 'operationalStatus'
+     * Contains extension information for property 'operationalStatus'.
      */
     _operationalStatus?: Element;
     /**
@@ -9858,7 +9982,7 @@ export interface DeviceMetric {
      */
     color?: code;
     /**
-     * Contains extension information for property 'color'
+     * Contains extension information for property 'color'.
      */
     _color?: Element;
     /**
@@ -9866,7 +9990,7 @@ export interface DeviceMetric {
      */
     category: code;
     /**
-     * Contains extension information for property 'category'
+     * Contains extension information for property 'category'.
      */
     _category?: Element;
     /**
@@ -9887,7 +10011,7 @@ export interface DeviceMetricCalibration {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9903,7 +10027,7 @@ export interface DeviceMetricCalibration {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -9911,7 +10035,7 @@ export interface DeviceMetricCalibration {
      */
     state?: code;
     /**
-     * Contains extension information for property 'state'
+     * Contains extension information for property 'state'.
      */
     _state?: Element;
     /**
@@ -9919,7 +10043,7 @@ export interface DeviceMetricCalibration {
      */
     time?: instant;
     /**
-     * Contains extension information for property 'time'
+     * Contains extension information for property 'time'.
      */
     _time?: Element;
 }
@@ -9928,11 +10052,15 @@ export interface DeviceMetricCalibration {
  */
 export interface DeviceRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DeviceRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -9944,7 +10072,7 @@ export interface DeviceRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -9952,7 +10080,7 @@ export interface DeviceRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -9996,7 +10124,7 @@ export interface DeviceRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -10008,7 +10136,7 @@ export interface DeviceRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -10032,7 +10160,7 @@ export interface DeviceRequest {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -10048,7 +10176,7 @@ export interface DeviceRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -10093,7 +10221,7 @@ export interface DeviceRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10118,11 +10246,15 @@ export interface DeviceRequestRequester {
  */
 export interface DeviceUseStatement {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DeviceUseStatement";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10134,7 +10266,7 @@ export interface DeviceUseStatement {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -10142,7 +10274,7 @@ export interface DeviceUseStatement {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -10170,7 +10302,7 @@ export interface DeviceUseStatement {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -10194,7 +10326,7 @@ export interface DeviceUseStatement {
      */
     timingDateTime?: dateTime;
     /**
-     * Contains extension information for property 'timingDateTime'
+     * Contains extension information for property 'timingDateTime'.
      */
     _timingDateTime?: Element;
     /**
@@ -10202,7 +10334,7 @@ export interface DeviceUseStatement {
      */
     recordedOn?: dateTime;
     /**
-     * Contains extension information for property 'recordedOn'
+     * Contains extension information for property 'recordedOn'.
      */
     _recordedOn?: Element;
     /**
@@ -10231,11 +10363,15 @@ export interface DeviceUseStatement {
  */
 export interface DiagnosticReport {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DiagnosticReport";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10247,7 +10383,7 @@ export interface DiagnosticReport {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -10255,7 +10391,7 @@ export interface DiagnosticReport {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -10287,7 +10423,7 @@ export interface DiagnosticReport {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -10311,7 +10447,7 @@ export interface DiagnosticReport {
      */
     effectiveDateTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveDateTime'
+     * Contains extension information for property 'effectiveDateTime'.
      */
     _effectiveDateTime?: Element;
     /**
@@ -10323,7 +10459,7 @@ export interface DiagnosticReport {
      */
     issued?: instant;
     /**
-     * Contains extension information for property 'issued'
+     * Contains extension information for property 'issued'.
      */
     _issued?: Element;
     /**
@@ -10351,7 +10487,7 @@ export interface DiagnosticReport {
      */
     conclusion?: string;
     /**
-     * Contains extension information for property 'conclusion'
+     * Contains extension information for property 'conclusion'.
      */
     _conclusion?: Element;
     /**
@@ -10372,7 +10508,7 @@ export interface DiagnosticReportPerformer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10401,7 +10537,7 @@ export interface DiagnosticReportImage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10417,7 +10553,7 @@ export interface DiagnosticReportImage {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -10434,7 +10570,7 @@ export interface Distance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10446,7 +10582,7 @@ export interface Distance {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -10454,7 +10590,7 @@ export interface Distance {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -10462,7 +10598,7 @@ export interface Distance {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -10470,7 +10606,7 @@ export interface Distance {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -10478,7 +10614,7 @@ export interface Distance {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -10487,11 +10623,15 @@ export interface Distance {
  */
 export interface DocumentManifest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DocumentManifest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10503,7 +10643,7 @@ export interface DocumentManifest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -10511,7 +10651,7 @@ export interface DocumentManifest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -10543,7 +10683,7 @@ export interface DocumentManifest {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -10559,7 +10699,7 @@ export interface DocumentManifest {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -10575,7 +10715,7 @@ export interface DocumentManifest {
      */
     source?: uri;
     /**
-     * Contains extension information for property 'source'
+     * Contains extension information for property 'source'.
      */
     _source?: Element;
     /**
@@ -10583,7 +10723,7 @@ export interface DocumentManifest {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -10604,7 +10744,7 @@ export interface DocumentManifestContent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10633,7 +10773,7 @@ export interface DocumentManifestRelated {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10658,11 +10798,15 @@ export interface DocumentManifestRelated {
  */
 export interface DocumentReference {
     /**
+     * The type of the resource.
+     */
+    resourceType: "DocumentReference";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10674,7 +10818,7 @@ export interface DocumentReference {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -10682,7 +10826,7 @@ export interface DocumentReference {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -10714,7 +10858,7 @@ export interface DocumentReference {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -10722,7 +10866,7 @@ export interface DocumentReference {
      */
     docStatus?: code;
     /**
-     * Contains extension information for property 'docStatus'
+     * Contains extension information for property 'docStatus'.
      */
     _docStatus?: Element;
     /**
@@ -10742,7 +10886,7 @@ export interface DocumentReference {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -10750,7 +10894,7 @@ export interface DocumentReference {
      */
     indexed: instant;
     /**
-     * Contains extension information for property 'indexed'
+     * Contains extension information for property 'indexed'.
      */
     _indexed?: Element;
     /**
@@ -10774,7 +10918,7 @@ export interface DocumentReference {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -10799,7 +10943,7 @@ export interface DocumentReferenceRelatesTo {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10815,7 +10959,7 @@ export interface DocumentReferenceRelatesTo {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -10832,7 +10976,7 @@ export interface DocumentReferenceContent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10861,7 +11005,7 @@ export interface DocumentReferenceContext {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10910,7 +11054,7 @@ export interface DocumentReferenceContextRelated {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10939,7 +11083,7 @@ export interface Dosage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -10951,7 +11095,7 @@ export interface Dosage {
      */
     sequence?: integer;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -10959,7 +11103,7 @@ export interface Dosage {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -10971,7 +11115,7 @@ export interface Dosage {
      */
     patientInstruction?: string;
     /**
-     * Contains extension information for property 'patientInstruction'
+     * Contains extension information for property 'patientInstruction'.
      */
     _patientInstruction?: Element;
     /**
@@ -10983,7 +11127,7 @@ export interface Dosage {
      */
     asneededBoolean?: boolean;
     /**
-     * Contains extension information for property 'asneededBoolean'
+     * Contains extension information for property 'asneededBoolean'.
      */
     _asneededBoolean?: Element;
     /**
@@ -11044,7 +11188,7 @@ export interface Duration {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -11056,7 +11200,7 @@ export interface Duration {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -11064,7 +11208,7 @@ export interface Duration {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -11072,7 +11216,7 @@ export interface Duration {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -11080,7 +11224,7 @@ export interface Duration {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -11088,7 +11232,7 @@ export interface Duration {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -11101,7 +11245,7 @@ export interface Element {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -11118,7 +11262,7 @@ export interface ElementDefinition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -11130,7 +11274,7 @@ export interface ElementDefinition {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -11138,7 +11282,7 @@ export interface ElementDefinition {
      */
     representation?: code[];
     /**
-     * Contains extension information for property 'representation'
+     * Contains extension information for property 'representation'.
      */
     _representation?: Element[];
     /**
@@ -11146,7 +11290,7 @@ export interface ElementDefinition {
      */
     sliceName?: string;
     /**
-     * Contains extension information for property 'sliceName'
+     * Contains extension information for property 'sliceName'.
      */
     _sliceName?: Element;
     /**
@@ -11154,7 +11298,7 @@ export interface ElementDefinition {
      */
     label?: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -11170,7 +11314,7 @@ export interface ElementDefinition {
      */
     short?: string;
     /**
-     * Contains extension information for property 'short'
+     * Contains extension information for property 'short'.
      */
     _short?: Element;
     /**
@@ -11178,7 +11322,7 @@ export interface ElementDefinition {
      */
     definition?: markdown;
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element;
     /**
@@ -11186,7 +11330,7 @@ export interface ElementDefinition {
      */
     comment?: markdown;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -11194,7 +11338,7 @@ export interface ElementDefinition {
      */
     requirements?: markdown;
     /**
-     * Contains extension information for property 'requirements'
+     * Contains extension information for property 'requirements'.
      */
     _requirements?: Element;
     /**
@@ -11202,7 +11346,7 @@ export interface ElementDefinition {
      */
     alias?: string[];
     /**
-     * Contains extension information for property 'alias'
+     * Contains extension information for property 'alias'.
      */
     _alias?: Element[];
     /**
@@ -11210,7 +11354,7 @@ export interface ElementDefinition {
      */
     min?: unsignedInt;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -11218,7 +11362,7 @@ export interface ElementDefinition {
      */
     max?: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
     /**
@@ -11230,7 +11374,7 @@ export interface ElementDefinition {
      */
     contentReference?: uri;
     /**
-     * Contains extension information for property 'contentReference'
+     * Contains extension information for property 'contentReference'.
      */
     _contentReference?: Element;
     /**
@@ -11242,7 +11386,7 @@ export interface ElementDefinition {
      */
     defaultvalueBase64Binary?: base64Binary;
     /**
-     * Contains extension information for property 'defaultvalueBase64Binary'
+     * Contains extension information for property 'defaultvalueBase64Binary'.
      */
     _defaultvalueBase64Binary?: Element;
     /**
@@ -11250,7 +11394,7 @@ export interface ElementDefinition {
      */
     defaultvalueBoolean?: boolean;
     /**
-     * Contains extension information for property 'defaultvalueBoolean'
+     * Contains extension information for property 'defaultvalueBoolean'.
      */
     _defaultvalueBoolean?: Element;
     /**
@@ -11258,7 +11402,7 @@ export interface ElementDefinition {
      */
     defaultvalueCode?: code;
     /**
-     * Contains extension information for property 'defaultvalueCode'
+     * Contains extension information for property 'defaultvalueCode'.
      */
     _defaultvalueCode?: Element;
     /**
@@ -11266,7 +11410,7 @@ export interface ElementDefinition {
      */
     defaultvalueDate?: date;
     /**
-     * Contains extension information for property 'defaultvalueDate'
+     * Contains extension information for property 'defaultvalueDate'.
      */
     _defaultvalueDate?: Element;
     /**
@@ -11274,7 +11418,7 @@ export interface ElementDefinition {
      */
     defaultvalueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'defaultvalueDateTime'
+     * Contains extension information for property 'defaultvalueDateTime'.
      */
     _defaultvalueDateTime?: Element;
     /**
@@ -11282,7 +11426,7 @@ export interface ElementDefinition {
      */
     defaultvalueDecimal?: decimal;
     /**
-     * Contains extension information for property 'defaultvalueDecimal'
+     * Contains extension information for property 'defaultvalueDecimal'.
      */
     _defaultvalueDecimal?: Element;
     /**
@@ -11290,7 +11434,7 @@ export interface ElementDefinition {
      */
     defaultvalueId?: id;
     /**
-     * Contains extension information for property 'defaultvalueId'
+     * Contains extension information for property 'defaultvalueId'.
      */
     _defaultvalueId?: Element;
     /**
@@ -11298,7 +11442,7 @@ export interface ElementDefinition {
      */
     defaultvalueInstant?: instant;
     /**
-     * Contains extension information for property 'defaultvalueInstant'
+     * Contains extension information for property 'defaultvalueInstant'.
      */
     _defaultvalueInstant?: Element;
     /**
@@ -11306,7 +11450,7 @@ export interface ElementDefinition {
      */
     defaultvalueInteger?: integer;
     /**
-     * Contains extension information for property 'defaultvalueInteger'
+     * Contains extension information for property 'defaultvalueInteger'.
      */
     _defaultvalueInteger?: Element;
     /**
@@ -11314,7 +11458,7 @@ export interface ElementDefinition {
      */
     defaultvalueMarkdown?: markdown;
     /**
-     * Contains extension information for property 'defaultvalueMarkdown'
+     * Contains extension information for property 'defaultvalueMarkdown'.
      */
     _defaultvalueMarkdown?: Element;
     /**
@@ -11322,7 +11466,7 @@ export interface ElementDefinition {
      */
     defaultvalueOid?: oid;
     /**
-     * Contains extension information for property 'defaultvalueOid'
+     * Contains extension information for property 'defaultvalueOid'.
      */
     _defaultvalueOid?: Element;
     /**
@@ -11330,7 +11474,7 @@ export interface ElementDefinition {
      */
     defaultvaluePositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'defaultvaluePositiveInt'
+     * Contains extension information for property 'defaultvaluePositiveInt'.
      */
     _defaultvaluePositiveInt?: Element;
     /**
@@ -11338,7 +11482,7 @@ export interface ElementDefinition {
      */
     defaultvalueString?: string;
     /**
-     * Contains extension information for property 'defaultvalueString'
+     * Contains extension information for property 'defaultvalueString'.
      */
     _defaultvalueString?: Element;
     /**
@@ -11346,7 +11490,7 @@ export interface ElementDefinition {
      */
     defaultvalueTime?: time;
     /**
-     * Contains extension information for property 'defaultvalueTime'
+     * Contains extension information for property 'defaultvalueTime'.
      */
     _defaultvalueTime?: Element;
     /**
@@ -11354,7 +11498,7 @@ export interface ElementDefinition {
      */
     defaultvalueUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'defaultvalueUnsignedInt'
+     * Contains extension information for property 'defaultvalueUnsignedInt'.
      */
     _defaultvalueUnsignedInt?: Element;
     /**
@@ -11362,7 +11506,7 @@ export interface ElementDefinition {
      */
     defaultvalueUri?: uri;
     /**
-     * Contains extension information for property 'defaultvalueUri'
+     * Contains extension information for property 'defaultvalueUri'.
      */
     _defaultvalueUri?: Element;
     /**
@@ -11458,7 +11602,7 @@ export interface ElementDefinition {
      */
     meaningWhenMissing?: markdown;
     /**
-     * Contains extension information for property 'meaningWhenMissing'
+     * Contains extension information for property 'meaningWhenMissing'.
      */
     _meaningWhenMissing?: Element;
     /**
@@ -11466,7 +11610,7 @@ export interface ElementDefinition {
      */
     orderMeaning?: string;
     /**
-     * Contains extension information for property 'orderMeaning'
+     * Contains extension information for property 'orderMeaning'.
      */
     _orderMeaning?: Element;
     /**
@@ -11474,7 +11618,7 @@ export interface ElementDefinition {
      */
     fixedBase64Binary?: base64Binary;
     /**
-     * Contains extension information for property 'fixedBase64Binary'
+     * Contains extension information for property 'fixedBase64Binary'.
      */
     _fixedBase64Binary?: Element;
     /**
@@ -11482,7 +11626,7 @@ export interface ElementDefinition {
      */
     fixedBoolean?: boolean;
     /**
-     * Contains extension information for property 'fixedBoolean'
+     * Contains extension information for property 'fixedBoolean'.
      */
     _fixedBoolean?: Element;
     /**
@@ -11490,7 +11634,7 @@ export interface ElementDefinition {
      */
     fixedCode?: code;
     /**
-     * Contains extension information for property 'fixedCode'
+     * Contains extension information for property 'fixedCode'.
      */
     _fixedCode?: Element;
     /**
@@ -11498,7 +11642,7 @@ export interface ElementDefinition {
      */
     fixedDate?: date;
     /**
-     * Contains extension information for property 'fixedDate'
+     * Contains extension information for property 'fixedDate'.
      */
     _fixedDate?: Element;
     /**
@@ -11506,7 +11650,7 @@ export interface ElementDefinition {
      */
     fixedDateTime?: dateTime;
     /**
-     * Contains extension information for property 'fixedDateTime'
+     * Contains extension information for property 'fixedDateTime'.
      */
     _fixedDateTime?: Element;
     /**
@@ -11514,7 +11658,7 @@ export interface ElementDefinition {
      */
     fixedDecimal?: decimal;
     /**
-     * Contains extension information for property 'fixedDecimal'
+     * Contains extension information for property 'fixedDecimal'.
      */
     _fixedDecimal?: Element;
     /**
@@ -11522,7 +11666,7 @@ export interface ElementDefinition {
      */
     fixedId?: id;
     /**
-     * Contains extension information for property 'fixedId'
+     * Contains extension information for property 'fixedId'.
      */
     _fixedId?: Element;
     /**
@@ -11530,7 +11674,7 @@ export interface ElementDefinition {
      */
     fixedInstant?: instant;
     /**
-     * Contains extension information for property 'fixedInstant'
+     * Contains extension information for property 'fixedInstant'.
      */
     _fixedInstant?: Element;
     /**
@@ -11538,7 +11682,7 @@ export interface ElementDefinition {
      */
     fixedInteger?: integer;
     /**
-     * Contains extension information for property 'fixedInteger'
+     * Contains extension information for property 'fixedInteger'.
      */
     _fixedInteger?: Element;
     /**
@@ -11546,7 +11690,7 @@ export interface ElementDefinition {
      */
     fixedMarkdown?: markdown;
     /**
-     * Contains extension information for property 'fixedMarkdown'
+     * Contains extension information for property 'fixedMarkdown'.
      */
     _fixedMarkdown?: Element;
     /**
@@ -11554,7 +11698,7 @@ export interface ElementDefinition {
      */
     fixedOid?: oid;
     /**
-     * Contains extension information for property 'fixedOid'
+     * Contains extension information for property 'fixedOid'.
      */
     _fixedOid?: Element;
     /**
@@ -11562,7 +11706,7 @@ export interface ElementDefinition {
      */
     fixedPositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'fixedPositiveInt'
+     * Contains extension information for property 'fixedPositiveInt'.
      */
     _fixedPositiveInt?: Element;
     /**
@@ -11570,7 +11714,7 @@ export interface ElementDefinition {
      */
     fixedString?: string;
     /**
-     * Contains extension information for property 'fixedString'
+     * Contains extension information for property 'fixedString'.
      */
     _fixedString?: Element;
     /**
@@ -11578,7 +11722,7 @@ export interface ElementDefinition {
      */
     fixedTime?: time;
     /**
-     * Contains extension information for property 'fixedTime'
+     * Contains extension information for property 'fixedTime'.
      */
     _fixedTime?: Element;
     /**
@@ -11586,7 +11730,7 @@ export interface ElementDefinition {
      */
     fixedUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'fixedUnsignedInt'
+     * Contains extension information for property 'fixedUnsignedInt'.
      */
     _fixedUnsignedInt?: Element;
     /**
@@ -11594,7 +11738,7 @@ export interface ElementDefinition {
      */
     fixedUri?: uri;
     /**
-     * Contains extension information for property 'fixedUri'
+     * Contains extension information for property 'fixedUri'.
      */
     _fixedUri?: Element;
     /**
@@ -11690,7 +11834,7 @@ export interface ElementDefinition {
      */
     patternBase64Binary?: base64Binary;
     /**
-     * Contains extension information for property 'patternBase64Binary'
+     * Contains extension information for property 'patternBase64Binary'.
      */
     _patternBase64Binary?: Element;
     /**
@@ -11698,7 +11842,7 @@ export interface ElementDefinition {
      */
     patternBoolean?: boolean;
     /**
-     * Contains extension information for property 'patternBoolean'
+     * Contains extension information for property 'patternBoolean'.
      */
     _patternBoolean?: Element;
     /**
@@ -11706,7 +11850,7 @@ export interface ElementDefinition {
      */
     patternCode?: code;
     /**
-     * Contains extension information for property 'patternCode'
+     * Contains extension information for property 'patternCode'.
      */
     _patternCode?: Element;
     /**
@@ -11714,7 +11858,7 @@ export interface ElementDefinition {
      */
     patternDate?: date;
     /**
-     * Contains extension information for property 'patternDate'
+     * Contains extension information for property 'patternDate'.
      */
     _patternDate?: Element;
     /**
@@ -11722,7 +11866,7 @@ export interface ElementDefinition {
      */
     patternDateTime?: dateTime;
     /**
-     * Contains extension information for property 'patternDateTime'
+     * Contains extension information for property 'patternDateTime'.
      */
     _patternDateTime?: Element;
     /**
@@ -11730,7 +11874,7 @@ export interface ElementDefinition {
      */
     patternDecimal?: decimal;
     /**
-     * Contains extension information for property 'patternDecimal'
+     * Contains extension information for property 'patternDecimal'.
      */
     _patternDecimal?: Element;
     /**
@@ -11738,7 +11882,7 @@ export interface ElementDefinition {
      */
     patternId?: id;
     /**
-     * Contains extension information for property 'patternId'
+     * Contains extension information for property 'patternId'.
      */
     _patternId?: Element;
     /**
@@ -11746,7 +11890,7 @@ export interface ElementDefinition {
      */
     patternInstant?: instant;
     /**
-     * Contains extension information for property 'patternInstant'
+     * Contains extension information for property 'patternInstant'.
      */
     _patternInstant?: Element;
     /**
@@ -11754,7 +11898,7 @@ export interface ElementDefinition {
      */
     patternInteger?: integer;
     /**
-     * Contains extension information for property 'patternInteger'
+     * Contains extension information for property 'patternInteger'.
      */
     _patternInteger?: Element;
     /**
@@ -11762,7 +11906,7 @@ export interface ElementDefinition {
      */
     patternMarkdown?: markdown;
     /**
-     * Contains extension information for property 'patternMarkdown'
+     * Contains extension information for property 'patternMarkdown'.
      */
     _patternMarkdown?: Element;
     /**
@@ -11770,7 +11914,7 @@ export interface ElementDefinition {
      */
     patternOid?: oid;
     /**
-     * Contains extension information for property 'patternOid'
+     * Contains extension information for property 'patternOid'.
      */
     _patternOid?: Element;
     /**
@@ -11778,7 +11922,7 @@ export interface ElementDefinition {
      */
     patternPositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'patternPositiveInt'
+     * Contains extension information for property 'patternPositiveInt'.
      */
     _patternPositiveInt?: Element;
     /**
@@ -11786,7 +11930,7 @@ export interface ElementDefinition {
      */
     patternString?: string;
     /**
-     * Contains extension information for property 'patternString'
+     * Contains extension information for property 'patternString'.
      */
     _patternString?: Element;
     /**
@@ -11794,7 +11938,7 @@ export interface ElementDefinition {
      */
     patternTime?: time;
     /**
-     * Contains extension information for property 'patternTime'
+     * Contains extension information for property 'patternTime'.
      */
     _patternTime?: Element;
     /**
@@ -11802,7 +11946,7 @@ export interface ElementDefinition {
      */
     patternUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'patternUnsignedInt'
+     * Contains extension information for property 'patternUnsignedInt'.
      */
     _patternUnsignedInt?: Element;
     /**
@@ -11810,7 +11954,7 @@ export interface ElementDefinition {
      */
     patternUri?: uri;
     /**
-     * Contains extension information for property 'patternUri'
+     * Contains extension information for property 'patternUri'.
      */
     _patternUri?: Element;
     /**
@@ -11910,7 +12054,7 @@ export interface ElementDefinition {
      */
     minvalueDate?: date;
     /**
-     * Contains extension information for property 'minvalueDate'
+     * Contains extension information for property 'minvalueDate'.
      */
     _minvalueDate?: Element;
     /**
@@ -11918,7 +12062,7 @@ export interface ElementDefinition {
      */
     minvalueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'minvalueDateTime'
+     * Contains extension information for property 'minvalueDateTime'.
      */
     _minvalueDateTime?: Element;
     /**
@@ -11926,7 +12070,7 @@ export interface ElementDefinition {
      */
     minvalueInstant?: instant;
     /**
-     * Contains extension information for property 'minvalueInstant'
+     * Contains extension information for property 'minvalueInstant'.
      */
     _minvalueInstant?: Element;
     /**
@@ -11934,7 +12078,7 @@ export interface ElementDefinition {
      */
     minvalueTime?: time;
     /**
-     * Contains extension information for property 'minvalueTime'
+     * Contains extension information for property 'minvalueTime'.
      */
     _minvalueTime?: Element;
     /**
@@ -11942,7 +12086,7 @@ export interface ElementDefinition {
      */
     minvalueDecimal?: decimal;
     /**
-     * Contains extension information for property 'minvalueDecimal'
+     * Contains extension information for property 'minvalueDecimal'.
      */
     _minvalueDecimal?: Element;
     /**
@@ -11950,7 +12094,7 @@ export interface ElementDefinition {
      */
     minvalueInteger?: integer;
     /**
-     * Contains extension information for property 'minvalueInteger'
+     * Contains extension information for property 'minvalueInteger'.
      */
     _minvalueInteger?: Element;
     /**
@@ -11958,7 +12102,7 @@ export interface ElementDefinition {
      */
     minvaluePositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'minvaluePositiveInt'
+     * Contains extension information for property 'minvaluePositiveInt'.
      */
     _minvaluePositiveInt?: Element;
     /**
@@ -11966,7 +12110,7 @@ export interface ElementDefinition {
      */
     minvalueUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'minvalueUnsignedInt'
+     * Contains extension information for property 'minvalueUnsignedInt'.
      */
     _minvalueUnsignedInt?: Element;
     /**
@@ -11978,7 +12122,7 @@ export interface ElementDefinition {
      */
     maxvalueDate?: date;
     /**
-     * Contains extension information for property 'maxvalueDate'
+     * Contains extension information for property 'maxvalueDate'.
      */
     _maxvalueDate?: Element;
     /**
@@ -11986,7 +12130,7 @@ export interface ElementDefinition {
      */
     maxvalueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'maxvalueDateTime'
+     * Contains extension information for property 'maxvalueDateTime'.
      */
     _maxvalueDateTime?: Element;
     /**
@@ -11994,7 +12138,7 @@ export interface ElementDefinition {
      */
     maxvalueInstant?: instant;
     /**
-     * Contains extension information for property 'maxvalueInstant'
+     * Contains extension information for property 'maxvalueInstant'.
      */
     _maxvalueInstant?: Element;
     /**
@@ -12002,7 +12146,7 @@ export interface ElementDefinition {
      */
     maxvalueTime?: time;
     /**
-     * Contains extension information for property 'maxvalueTime'
+     * Contains extension information for property 'maxvalueTime'.
      */
     _maxvalueTime?: Element;
     /**
@@ -12010,7 +12154,7 @@ export interface ElementDefinition {
      */
     maxvalueDecimal?: decimal;
     /**
-     * Contains extension information for property 'maxvalueDecimal'
+     * Contains extension information for property 'maxvalueDecimal'.
      */
     _maxvalueDecimal?: Element;
     /**
@@ -12018,7 +12162,7 @@ export interface ElementDefinition {
      */
     maxvalueInteger?: integer;
     /**
-     * Contains extension information for property 'maxvalueInteger'
+     * Contains extension information for property 'maxvalueInteger'.
      */
     _maxvalueInteger?: Element;
     /**
@@ -12026,7 +12170,7 @@ export interface ElementDefinition {
      */
     maxvaluePositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'maxvaluePositiveInt'
+     * Contains extension information for property 'maxvaluePositiveInt'.
      */
     _maxvaluePositiveInt?: Element;
     /**
@@ -12034,7 +12178,7 @@ export interface ElementDefinition {
      */
     maxvalueUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'maxvalueUnsignedInt'
+     * Contains extension information for property 'maxvalueUnsignedInt'.
      */
     _maxvalueUnsignedInt?: Element;
     /**
@@ -12046,7 +12190,7 @@ export interface ElementDefinition {
      */
     maxLength?: integer;
     /**
-     * Contains extension information for property 'maxLength'
+     * Contains extension information for property 'maxLength'.
      */
     _maxLength?: Element;
     /**
@@ -12054,7 +12198,7 @@ export interface ElementDefinition {
      */
     condition?: id[];
     /**
-     * Contains extension information for property 'condition'
+     * Contains extension information for property 'condition'.
      */
     _condition?: Element[];
     /**
@@ -12066,7 +12210,7 @@ export interface ElementDefinition {
      */
     mustSupport?: boolean;
     /**
-     * Contains extension information for property 'mustSupport'
+     * Contains extension information for property 'mustSupport'.
      */
     _mustSupport?: Element;
     /**
@@ -12074,7 +12218,7 @@ export interface ElementDefinition {
      */
     isModifier?: boolean;
     /**
-     * Contains extension information for property 'isModifier'
+     * Contains extension information for property 'isModifier'.
      */
     _isModifier?: Element;
     /**
@@ -12082,7 +12226,7 @@ export interface ElementDefinition {
      */
     isSummary?: boolean;
     /**
-     * Contains extension information for property 'isSummary'
+     * Contains extension information for property 'isSummary'.
      */
     _isSummary?: Element;
     /**
@@ -12100,7 +12244,7 @@ export interface ElementDefinitionSlicing {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12116,7 +12260,7 @@ export interface ElementDefinitionSlicing {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -12124,7 +12268,7 @@ export interface ElementDefinitionSlicing {
      */
     ordered?: boolean;
     /**
-     * Contains extension information for property 'ordered'
+     * Contains extension information for property 'ordered'.
      */
     _ordered?: Element;
     /**
@@ -12132,7 +12276,7 @@ export interface ElementDefinitionSlicing {
      */
     rules: code;
     /**
-     * Contains extension information for property 'rules'
+     * Contains extension information for property 'rules'.
      */
     _rules?: Element;
 }
@@ -12142,7 +12286,7 @@ export interface ElementDefinitionSlicingDiscriminator {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12154,7 +12298,7 @@ export interface ElementDefinitionSlicingDiscriminator {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -12162,7 +12306,7 @@ export interface ElementDefinitionSlicingDiscriminator {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
 }
@@ -12172,7 +12316,7 @@ export interface ElementDefinitionBase {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12184,7 +12328,7 @@ export interface ElementDefinitionBase {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -12192,7 +12336,7 @@ export interface ElementDefinitionBase {
      */
     min: unsignedInt;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -12200,7 +12344,7 @@ export interface ElementDefinitionBase {
      */
     max: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
 }
@@ -12210,7 +12354,7 @@ export interface ElementDefinitionType {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12222,7 +12366,7 @@ export interface ElementDefinitionType {
      */
     code: uri;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -12230,7 +12374,7 @@ export interface ElementDefinitionType {
      */
     profile?: uri;
     /**
-     * Contains extension information for property 'profile'
+     * Contains extension information for property 'profile'.
      */
     _profile?: Element;
     /**
@@ -12238,7 +12382,7 @@ export interface ElementDefinitionType {
      */
     targetProfile?: uri;
     /**
-     * Contains extension information for property 'targetProfile'
+     * Contains extension information for property 'targetProfile'.
      */
     _targetProfile?: Element;
     /**
@@ -12246,7 +12390,7 @@ export interface ElementDefinitionType {
      */
     aggregation?: code[];
     /**
-     * Contains extension information for property 'aggregation'
+     * Contains extension information for property 'aggregation'.
      */
     _aggregation?: Element[];
     /**
@@ -12254,7 +12398,7 @@ export interface ElementDefinitionType {
      */
     versioning?: code;
     /**
-     * Contains extension information for property 'versioning'
+     * Contains extension information for property 'versioning'.
      */
     _versioning?: Element;
 }
@@ -12264,7 +12408,7 @@ export interface ElementDefinitionExample {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12276,7 +12420,7 @@ export interface ElementDefinitionExample {
      */
     label: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -12284,7 +12428,7 @@ export interface ElementDefinitionExample {
      */
     valueBase64Binary: base64Binary;
     /**
-     * Contains extension information for property 'valueBase64Binary'
+     * Contains extension information for property 'valueBase64Binary'.
      */
     _valueBase64Binary?: Element;
     /**
@@ -12292,7 +12436,7 @@ export interface ElementDefinitionExample {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -12300,7 +12444,7 @@ export interface ElementDefinitionExample {
      */
     valueCode: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
     /**
@@ -12308,7 +12452,7 @@ export interface ElementDefinitionExample {
      */
     valueDate: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -12316,7 +12460,7 @@ export interface ElementDefinitionExample {
      */
     valueDateTime: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -12324,7 +12468,7 @@ export interface ElementDefinitionExample {
      */
     valueDecimal: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -12332,7 +12476,7 @@ export interface ElementDefinitionExample {
      */
     valueId: id;
     /**
-     * Contains extension information for property 'valueId'
+     * Contains extension information for property 'valueId'.
      */
     _valueId?: Element;
     /**
@@ -12340,7 +12484,7 @@ export interface ElementDefinitionExample {
      */
     valueInstant: instant;
     /**
-     * Contains extension information for property 'valueInstant'
+     * Contains extension information for property 'valueInstant'.
      */
     _valueInstant?: Element;
     /**
@@ -12348,7 +12492,7 @@ export interface ElementDefinitionExample {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -12356,7 +12500,7 @@ export interface ElementDefinitionExample {
      */
     valueMarkdown: markdown;
     /**
-     * Contains extension information for property 'valueMarkdown'
+     * Contains extension information for property 'valueMarkdown'.
      */
     _valueMarkdown?: Element;
     /**
@@ -12364,7 +12508,7 @@ export interface ElementDefinitionExample {
      */
     valueOid: oid;
     /**
-     * Contains extension information for property 'valueOid'
+     * Contains extension information for property 'valueOid'.
      */
     _valueOid?: Element;
     /**
@@ -12372,7 +12516,7 @@ export interface ElementDefinitionExample {
      */
     valuePositiveInt: positiveInt;
     /**
-     * Contains extension information for property 'valuePositiveInt'
+     * Contains extension information for property 'valuePositiveInt'.
      */
     _valuePositiveInt?: Element;
     /**
@@ -12380,7 +12524,7 @@ export interface ElementDefinitionExample {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -12388,7 +12532,7 @@ export interface ElementDefinitionExample {
      */
     valueTime: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -12396,7 +12540,7 @@ export interface ElementDefinitionExample {
      */
     valueUnsignedInt: unsignedInt;
     /**
-     * Contains extension information for property 'valueUnsignedInt'
+     * Contains extension information for property 'valueUnsignedInt'.
      */
     _valueUnsignedInt?: Element;
     /**
@@ -12404,7 +12548,7 @@ export interface ElementDefinitionExample {
      */
     valueUri: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -12502,7 +12646,7 @@ export interface ElementDefinitionConstraint {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12514,7 +12658,7 @@ export interface ElementDefinitionConstraint {
      */
     key: id;
     /**
-     * Contains extension information for property 'key'
+     * Contains extension information for property 'key'.
      */
     _key?: Element;
     /**
@@ -12522,7 +12666,7 @@ export interface ElementDefinitionConstraint {
      */
     requirements?: string;
     /**
-     * Contains extension information for property 'requirements'
+     * Contains extension information for property 'requirements'.
      */
     _requirements?: Element;
     /**
@@ -12530,7 +12674,7 @@ export interface ElementDefinitionConstraint {
      */
     severity: code;
     /**
-     * Contains extension information for property 'severity'
+     * Contains extension information for property 'severity'.
      */
     _severity?: Element;
     /**
@@ -12538,7 +12682,7 @@ export interface ElementDefinitionConstraint {
      */
     human: string;
     /**
-     * Contains extension information for property 'human'
+     * Contains extension information for property 'human'.
      */
     _human?: Element;
     /**
@@ -12546,7 +12690,7 @@ export interface ElementDefinitionConstraint {
      */
     expression: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
     /**
@@ -12554,7 +12698,7 @@ export interface ElementDefinitionConstraint {
      */
     xpath?: string;
     /**
-     * Contains extension information for property 'xpath'
+     * Contains extension information for property 'xpath'.
      */
     _xpath?: Element;
     /**
@@ -12562,7 +12706,7 @@ export interface ElementDefinitionConstraint {
      */
     source?: uri;
     /**
-     * Contains extension information for property 'source'
+     * Contains extension information for property 'source'.
      */
     _source?: Element;
 }
@@ -12572,7 +12716,7 @@ export interface ElementDefinitionBinding {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12584,7 +12728,7 @@ export interface ElementDefinitionBinding {
      */
     strength: code;
     /**
-     * Contains extension information for property 'strength'
+     * Contains extension information for property 'strength'.
      */
     _strength?: Element;
     /**
@@ -12592,7 +12736,7 @@ export interface ElementDefinitionBinding {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -12600,7 +12744,7 @@ export interface ElementDefinitionBinding {
      */
     valuesetUri?: uri;
     /**
-     * Contains extension information for property 'valuesetUri'
+     * Contains extension information for property 'valuesetUri'.
      */
     _valuesetUri?: Element;
     /**
@@ -12614,7 +12758,7 @@ export interface ElementDefinitionMapping {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12626,7 +12770,7 @@ export interface ElementDefinitionMapping {
      */
     identity: id;
     /**
-     * Contains extension information for property 'identity'
+     * Contains extension information for property 'identity'.
      */
     _identity?: Element;
     /**
@@ -12634,7 +12778,7 @@ export interface ElementDefinitionMapping {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -12642,7 +12786,7 @@ export interface ElementDefinitionMapping {
      */
     map: string;
     /**
-     * Contains extension information for property 'map'
+     * Contains extension information for property 'map'.
      */
     _map?: Element;
     /**
@@ -12650,7 +12794,7 @@ export interface ElementDefinitionMapping {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -12659,11 +12803,15 @@ export interface ElementDefinitionMapping {
  */
 export interface EligibilityRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "EligibilityRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12675,7 +12823,7 @@ export interface EligibilityRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -12683,7 +12831,7 @@ export interface EligibilityRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -12711,7 +12859,7 @@ export interface EligibilityRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -12727,7 +12875,7 @@ export interface EligibilityRequest {
      */
     servicedDate?: date;
     /**
-     * Contains extension information for property 'servicedDate'
+     * Contains extension information for property 'servicedDate'.
      */
     _servicedDate?: Element;
     /**
@@ -12739,7 +12887,7 @@ export interface EligibilityRequest {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -12771,7 +12919,7 @@ export interface EligibilityRequest {
      */
     businessArrangement?: string;
     /**
-     * Contains extension information for property 'businessArrangement'
+     * Contains extension information for property 'businessArrangement'.
      */
     _businessArrangement?: Element;
     /**
@@ -12788,11 +12936,15 @@ export interface EligibilityRequest {
  */
 export interface EligibilityResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "EligibilityResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12804,7 +12956,7 @@ export interface EligibilityResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -12812,7 +12964,7 @@ export interface EligibilityResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -12840,7 +12992,7 @@ export interface EligibilityResponse {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -12848,7 +13000,7 @@ export interface EligibilityResponse {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -12872,7 +13024,7 @@ export interface EligibilityResponse {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -12884,7 +13036,7 @@ export interface EligibilityResponse {
      */
     inforce?: boolean;
     /**
-     * Contains extension information for property 'inforce'
+     * Contains extension information for property 'inforce'.
      */
     _inforce?: Element;
     /**
@@ -12909,7 +13061,7 @@ export interface EligibilityResponseInsurance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12942,7 +13094,7 @@ export interface EligibilityResponseInsuranceBenefitBalance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -12966,7 +13118,7 @@ export interface EligibilityResponseInsuranceBenefitBalance {
      */
     excluded?: boolean;
     /**
-     * Contains extension information for property 'excluded'
+     * Contains extension information for property 'excluded'.
      */
     _excluded?: Element;
     /**
@@ -12974,7 +13126,7 @@ export interface EligibilityResponseInsuranceBenefitBalance {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -12982,7 +13134,7 @@ export interface EligibilityResponseInsuranceBenefitBalance {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -13011,7 +13163,7 @@ export interface EligibilityResponseInsuranceBenefitBalanceFinancial {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13031,7 +13183,7 @@ export interface EligibilityResponseInsuranceBenefitBalanceFinancial {
      */
     allowedUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'allowedUnsignedInt'
+     * Contains extension information for property 'allowedUnsignedInt'.
      */
     _allowedUnsignedInt?: Element;
     /**
@@ -13039,7 +13191,7 @@ export interface EligibilityResponseInsuranceBenefitBalanceFinancial {
      */
     allowedString?: string;
     /**
-     * Contains extension information for property 'allowedString'
+     * Contains extension information for property 'allowedString'.
      */
     _allowedString?: Element;
     /**
@@ -13051,7 +13203,7 @@ export interface EligibilityResponseInsuranceBenefitBalanceFinancial {
      */
     usedUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'usedUnsignedInt'
+     * Contains extension information for property 'usedUnsignedInt'.
      */
     _usedUnsignedInt?: Element;
     /**
@@ -13068,7 +13220,7 @@ export interface EligibilityResponseError {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13089,11 +13241,15 @@ export interface EligibilityResponseError {
  */
 export interface Encounter {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Encounter";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13105,7 +13261,7 @@ export interface Encounter {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13113,7 +13269,7 @@ export interface Encounter {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13141,7 +13297,7 @@ export interface Encounter {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13230,7 +13386,7 @@ export interface EncounterStatusHistory {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13246,7 +13402,7 @@ export interface EncounterStatusHistory {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13263,7 +13419,7 @@ export interface EncounterClassHistory {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13292,7 +13448,7 @@ export interface EncounterParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13325,7 +13481,7 @@ export interface EncounterDiagnosis {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13349,7 +13505,7 @@ export interface EncounterDiagnosis {
      */
     rank?: positiveInt;
     /**
-     * Contains extension information for property 'rank'
+     * Contains extension information for property 'rank'.
      */
     _rank?: Element;
 }
@@ -13362,7 +13518,7 @@ export interface EncounterHospitalization {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13419,7 +13575,7 @@ export interface EncounterLocation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13439,7 +13595,7 @@ export interface EncounterLocation {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13452,11 +13608,15 @@ export interface EncounterLocation {
  */
 export interface Endpoint {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Endpoint";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13468,7 +13628,7 @@ export interface Endpoint {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13476,7 +13636,7 @@ export interface Endpoint {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13504,7 +13664,7 @@ export interface Endpoint {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13516,7 +13676,7 @@ export interface Endpoint {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -13540,7 +13700,7 @@ export interface Endpoint {
      */
     payloadMimeType?: code[];
     /**
-     * Contains extension information for property 'payloadMimeType'
+     * Contains extension information for property 'payloadMimeType'.
      */
     _payloadMimeType?: Element[];
     /**
@@ -13548,7 +13708,7 @@ export interface Endpoint {
      */
     address: uri;
     /**
-     * Contains extension information for property 'address'
+     * Contains extension information for property 'address'.
      */
     _address?: Element;
     /**
@@ -13556,7 +13716,7 @@ export interface Endpoint {
      */
     header?: string[];
     /**
-     * Contains extension information for property 'header'
+     * Contains extension information for property 'header'.
      */
     _header?: Element[];
 }
@@ -13565,11 +13725,15 @@ export interface Endpoint {
  */
 export interface EnrollmentRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "EnrollmentRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13581,7 +13745,7 @@ export interface EnrollmentRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13589,7 +13753,7 @@ export interface EnrollmentRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13617,7 +13781,7 @@ export interface EnrollmentRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13625,7 +13789,7 @@ export interface EnrollmentRequest {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -13654,11 +13818,15 @@ export interface EnrollmentRequest {
  */
 export interface EnrollmentResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "EnrollmentResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13670,7 +13838,7 @@ export interface EnrollmentResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13678,7 +13846,7 @@ export interface EnrollmentResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13706,7 +13874,7 @@ export interface EnrollmentResponse {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13722,7 +13890,7 @@ export interface EnrollmentResponse {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -13730,7 +13898,7 @@ export interface EnrollmentResponse {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -13751,11 +13919,15 @@ export interface EnrollmentResponse {
  */
 export interface EpisodeOfCare {
     /**
+     * The type of the resource.
+     */
+    resourceType: "EpisodeOfCare";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13767,7 +13939,7 @@ export interface EpisodeOfCare {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13775,7 +13947,7 @@ export interface EpisodeOfCare {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13803,7 +13975,7 @@ export interface EpisodeOfCare {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13856,7 +14028,7 @@ export interface EpisodeOfCareStatusHistory {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13872,7 +14044,7 @@ export interface EpisodeOfCareStatusHistory {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -13889,7 +14061,7 @@ export interface EpisodeOfCareDiagnosis {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13913,7 +14085,7 @@ export interface EpisodeOfCareDiagnosis {
      */
     rank?: positiveInt;
     /**
-     * Contains extension information for property 'rank'
+     * Contains extension information for property 'rank'.
      */
     _rank?: Element;
 }
@@ -13922,11 +14094,15 @@ export interface EpisodeOfCareDiagnosis {
  */
 export interface ExpansionProfile {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ExpansionProfile";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -13938,7 +14114,7 @@ export interface ExpansionProfile {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -13946,7 +14122,7 @@ export interface ExpansionProfile {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -13970,7 +14146,7 @@ export interface ExpansionProfile {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -13982,7 +14158,7 @@ export interface ExpansionProfile {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -13990,7 +14166,7 @@ export interface ExpansionProfile {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -13998,7 +14174,7 @@ export interface ExpansionProfile {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -14006,7 +14182,7 @@ export interface ExpansionProfile {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -14014,7 +14190,7 @@ export interface ExpansionProfile {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -14022,7 +14198,7 @@ export interface ExpansionProfile {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -14034,7 +14210,7 @@ export interface ExpansionProfile {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -14058,7 +14234,7 @@ export interface ExpansionProfile {
      */
     includeDesignations?: boolean;
     /**
-     * Contains extension information for property 'includeDesignations'
+     * Contains extension information for property 'includeDesignations'.
      */
     _includeDesignations?: Element;
     /**
@@ -14070,7 +14246,7 @@ export interface ExpansionProfile {
      */
     includeDefinition?: boolean;
     /**
-     * Contains extension information for property 'includeDefinition'
+     * Contains extension information for property 'includeDefinition'.
      */
     _includeDefinition?: Element;
     /**
@@ -14078,7 +14254,7 @@ export interface ExpansionProfile {
      */
     activeOnly?: boolean;
     /**
-     * Contains extension information for property 'activeOnly'
+     * Contains extension information for property 'activeOnly'.
      */
     _activeOnly?: Element;
     /**
@@ -14086,7 +14262,7 @@ export interface ExpansionProfile {
      */
     excludeNested?: boolean;
     /**
-     * Contains extension information for property 'excludeNested'
+     * Contains extension information for property 'excludeNested'.
      */
     _excludeNested?: Element;
     /**
@@ -14094,7 +14270,7 @@ export interface ExpansionProfile {
      */
     excludeNotForUI?: boolean;
     /**
-     * Contains extension information for property 'excludeNotForUI'
+     * Contains extension information for property 'excludeNotForUI'.
      */
     _excludeNotForUI?: Element;
     /**
@@ -14102,7 +14278,7 @@ export interface ExpansionProfile {
      */
     excludePostCoordinated?: boolean;
     /**
-     * Contains extension information for property 'excludePostCoordinated'
+     * Contains extension information for property 'excludePostCoordinated'.
      */
     _excludePostCoordinated?: Element;
     /**
@@ -14110,7 +14286,7 @@ export interface ExpansionProfile {
      */
     displayLanguage?: code;
     /**
-     * Contains extension information for property 'displayLanguage'
+     * Contains extension information for property 'displayLanguage'.
      */
     _displayLanguage?: Element;
     /**
@@ -14118,7 +14294,7 @@ export interface ExpansionProfile {
      */
     limitedExpansion?: boolean;
     /**
-     * Contains extension information for property 'limitedExpansion'
+     * Contains extension information for property 'limitedExpansion'.
      */
     _limitedExpansion?: Element;
 }
@@ -14131,7 +14307,7 @@ export interface ExpansionProfileFixedVersion {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14147,7 +14323,7 @@ export interface ExpansionProfileFixedVersion {
      */
     system: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -14155,7 +14331,7 @@ export interface ExpansionProfileFixedVersion {
      */
     version: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -14163,7 +14339,7 @@ export interface ExpansionProfileFixedVersion {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
 }
@@ -14176,7 +14352,7 @@ export interface ExpansionProfileExcludedSystem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14192,7 +14368,7 @@ export interface ExpansionProfileExcludedSystem {
      */
     system: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -14200,7 +14376,7 @@ export interface ExpansionProfileExcludedSystem {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
 }
@@ -14213,7 +14389,7 @@ export interface ExpansionProfileDesignation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14242,7 +14418,7 @@ export interface ExpansionProfileDesignationInclude {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14267,7 +14443,7 @@ export interface ExpansionProfileDesignationIncludeDesignation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14283,7 +14459,7 @@ export interface ExpansionProfileDesignationIncludeDesignation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -14300,7 +14476,7 @@ export interface ExpansionProfileDesignationExclude {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14325,7 +14501,7 @@ export interface ExpansionProfileDesignationExcludeDesignation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14341,7 +14517,7 @@ export interface ExpansionProfileDesignationExcludeDesignation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -14354,11 +14530,15 @@ export interface ExpansionProfileDesignationExcludeDesignation {
  */
 export interface ExplanationOfBenefit {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ExplanationOfBenefit";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14370,7 +14550,7 @@ export interface ExplanationOfBenefit {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -14378,7 +14558,7 @@ export interface ExplanationOfBenefit {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -14406,7 +14586,7 @@ export interface ExplanationOfBenefit {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -14430,7 +14610,7 @@ export interface ExplanationOfBenefit {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -14474,7 +14654,7 @@ export interface ExplanationOfBenefit {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -14514,7 +14694,7 @@ export interface ExplanationOfBenefit {
      */
     precedence?: positiveInt;
     /**
-     * Contains extension information for property 'precedence'
+     * Contains extension information for property 'precedence'.
      */
     _precedence?: Element;
     /**
@@ -14579,7 +14759,7 @@ export interface ExplanationOfBenefitRelated {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14612,7 +14792,7 @@ export interface ExplanationOfBenefitPayee {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14645,7 +14825,7 @@ export interface ExplanationOfBenefitInformation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14661,7 +14841,7 @@ export interface ExplanationOfBenefitInformation {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -14677,7 +14857,7 @@ export interface ExplanationOfBenefitInformation {
      */
     timingDate?: date;
     /**
-     * Contains extension information for property 'timingDate'
+     * Contains extension information for property 'timingDate'.
      */
     _timingDate?: Element;
     /**
@@ -14689,7 +14869,7 @@ export interface ExplanationOfBenefitInformation {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -14718,7 +14898,7 @@ export interface ExplanationOfBenefitCareTeam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14734,7 +14914,7 @@ export interface ExplanationOfBenefitCareTeam {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -14746,7 +14926,7 @@ export interface ExplanationOfBenefitCareTeam {
      */
     responsible?: boolean;
     /**
-     * Contains extension information for property 'responsible'
+     * Contains extension information for property 'responsible'.
      */
     _responsible?: Element;
     /**
@@ -14767,7 +14947,7 @@ export interface ExplanationOfBenefitDiagnosis {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14783,7 +14963,7 @@ export interface ExplanationOfBenefitDiagnosis {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -14812,7 +14992,7 @@ export interface ExplanationOfBenefitProcedure {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14828,7 +15008,7 @@ export interface ExplanationOfBenefitProcedure {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -14836,7 +15016,7 @@ export interface ExplanationOfBenefitProcedure {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -14857,7 +15037,7 @@ export interface ExplanationOfBenefitInsurance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14877,7 +15057,7 @@ export interface ExplanationOfBenefitInsurance {
      */
     preAuthRef?: string[];
     /**
-     * Contains extension information for property 'preAuthRef'
+     * Contains extension information for property 'preAuthRef'.
      */
     _preAuthRef?: Element[];
 }
@@ -14890,7 +15070,7 @@ export interface ExplanationOfBenefitAccident {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14906,7 +15086,7 @@ export interface ExplanationOfBenefitAccident {
      */
     date?: date;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -14931,7 +15111,7 @@ export interface ExplanationOfBenefitItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -14947,7 +15127,7 @@ export interface ExplanationOfBenefitItem {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -14955,7 +15135,7 @@ export interface ExplanationOfBenefitItem {
      */
     careTeamLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'careTeamLinkId'
+     * Contains extension information for property 'careTeamLinkId'.
      */
     _careTeamLinkId?: Element[];
     /**
@@ -14963,7 +15143,7 @@ export interface ExplanationOfBenefitItem {
      */
     diagnosisLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'diagnosisLinkId'
+     * Contains extension information for property 'diagnosisLinkId'.
      */
     _diagnosisLinkId?: Element[];
     /**
@@ -14971,7 +15151,7 @@ export interface ExplanationOfBenefitItem {
      */
     procedureLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'procedureLinkId'
+     * Contains extension information for property 'procedureLinkId'.
      */
     _procedureLinkId?: Element[];
     /**
@@ -14979,7 +15159,7 @@ export interface ExplanationOfBenefitItem {
      */
     informationLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'informationLinkId'
+     * Contains extension information for property 'informationLinkId'.
      */
     _informationLinkId?: Element[];
     /**
@@ -15007,7 +15187,7 @@ export interface ExplanationOfBenefitItem {
      */
     servicedDate?: date;
     /**
-     * Contains extension information for property 'servicedDate'
+     * Contains extension information for property 'servicedDate'.
      */
     _servicedDate?: Element;
     /**
@@ -15039,7 +15219,7 @@ export interface ExplanationOfBenefitItem {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -15067,7 +15247,7 @@ export interface ExplanationOfBenefitItem {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -15088,7 +15268,7 @@ export interface ExplanationOfBenefitItemAdjudication {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15116,7 +15296,7 @@ export interface ExplanationOfBenefitItemAdjudication {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -15129,7 +15309,7 @@ export interface ExplanationOfBenefitItemDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15145,7 +15325,7 @@ export interface ExplanationOfBenefitItemDetail {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -15185,7 +15365,7 @@ export interface ExplanationOfBenefitItemDetail {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -15201,7 +15381,7 @@ export interface ExplanationOfBenefitItemDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -15222,7 +15402,7 @@ export interface ExplanationOfBenefitItemDetailSubDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15238,7 +15418,7 @@ export interface ExplanationOfBenefitItemDetailSubDetail {
      */
     sequence: positiveInt;
     /**
-     * Contains extension information for property 'sequence'
+     * Contains extension information for property 'sequence'.
      */
     _sequence?: Element;
     /**
@@ -15278,7 +15458,7 @@ export interface ExplanationOfBenefitItemDetailSubDetail {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -15294,7 +15474,7 @@ export interface ExplanationOfBenefitItemDetailSubDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -15311,7 +15491,7 @@ export interface ExplanationOfBenefitAddItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15327,7 +15507,7 @@ export interface ExplanationOfBenefitAddItem {
      */
     sequenceLinkId?: positiveInt[];
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element[];
     /**
@@ -15355,7 +15535,7 @@ export interface ExplanationOfBenefitAddItem {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -15376,7 +15556,7 @@ export interface ExplanationOfBenefitAddItemDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15412,7 +15592,7 @@ export interface ExplanationOfBenefitAddItemDetail {
      */
     noteNumber?: positiveInt[];
     /**
-     * Contains extension information for property 'noteNumber'
+     * Contains extension information for property 'noteNumber'.
      */
     _noteNumber?: Element[];
     /**
@@ -15429,7 +15609,7 @@ export interface ExplanationOfBenefitPayment {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15457,7 +15637,7 @@ export interface ExplanationOfBenefitPayment {
      */
     date?: date;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -15478,7 +15658,7 @@ export interface ExplanationOfBenefitProcessNote {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15494,7 +15674,7 @@ export interface ExplanationOfBenefitProcessNote {
      */
     number?: positiveInt;
     /**
-     * Contains extension information for property 'number'
+     * Contains extension information for property 'number'.
      */
     _number?: Element;
     /**
@@ -15506,7 +15686,7 @@ export interface ExplanationOfBenefitProcessNote {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -15523,7 +15703,7 @@ export interface ExplanationOfBenefitBenefitBalance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15547,7 +15727,7 @@ export interface ExplanationOfBenefitBenefitBalance {
      */
     excluded?: boolean;
     /**
-     * Contains extension information for property 'excluded'
+     * Contains extension information for property 'excluded'.
      */
     _excluded?: Element;
     /**
@@ -15555,7 +15735,7 @@ export interface ExplanationOfBenefitBenefitBalance {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -15563,7 +15743,7 @@ export interface ExplanationOfBenefitBenefitBalance {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -15592,7 +15772,7 @@ export interface ExplanationOfBenefitBenefitBalanceFinancial {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15612,7 +15792,7 @@ export interface ExplanationOfBenefitBenefitBalanceFinancial {
      */
     allowedUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'allowedUnsignedInt'
+     * Contains extension information for property 'allowedUnsignedInt'.
      */
     _allowedUnsignedInt?: Element;
     /**
@@ -15620,7 +15800,7 @@ export interface ExplanationOfBenefitBenefitBalanceFinancial {
      */
     allowedString?: string;
     /**
-     * Contains extension information for property 'allowedString'
+     * Contains extension information for property 'allowedString'.
      */
     _allowedString?: Element;
     /**
@@ -15632,7 +15812,7 @@ export interface ExplanationOfBenefitBenefitBalanceFinancial {
      */
     usedUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'usedUnsignedInt'
+     * Contains extension information for property 'usedUnsignedInt'.
      */
     _usedUnsignedInt?: Element;
     /**
@@ -15649,7 +15829,7 @@ export interface Extension {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15661,7 +15841,7 @@ export interface Extension {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -15669,7 +15849,7 @@ export interface Extension {
      */
     valueBase64Binary?: base64Binary;
     /**
-     * Contains extension information for property 'valueBase64Binary'
+     * Contains extension information for property 'valueBase64Binary'.
      */
     _valueBase64Binary?: Element;
     /**
@@ -15677,7 +15857,7 @@ export interface Extension {
      */
     valueBoolean?: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -15685,7 +15865,7 @@ export interface Extension {
      */
     valueCode?: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
     /**
@@ -15693,7 +15873,7 @@ export interface Extension {
      */
     valueDate?: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -15701,7 +15881,7 @@ export interface Extension {
      */
     valueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -15709,7 +15889,7 @@ export interface Extension {
      */
     valueDecimal?: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -15717,7 +15897,7 @@ export interface Extension {
      */
     valueId?: id;
     /**
-     * Contains extension information for property 'valueId'
+     * Contains extension information for property 'valueId'.
      */
     _valueId?: Element;
     /**
@@ -15725,7 +15905,7 @@ export interface Extension {
      */
     valueInstant?: instant;
     /**
-     * Contains extension information for property 'valueInstant'
+     * Contains extension information for property 'valueInstant'.
      */
     _valueInstant?: Element;
     /**
@@ -15733,7 +15913,7 @@ export interface Extension {
      */
     valueInteger?: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -15741,7 +15921,7 @@ export interface Extension {
      */
     valueMarkdown?: markdown;
     /**
-     * Contains extension information for property 'valueMarkdown'
+     * Contains extension information for property 'valueMarkdown'.
      */
     _valueMarkdown?: Element;
     /**
@@ -15749,7 +15929,7 @@ export interface Extension {
      */
     valueOid?: oid;
     /**
-     * Contains extension information for property 'valueOid'
+     * Contains extension information for property 'valueOid'.
      */
     _valueOid?: Element;
     /**
@@ -15757,7 +15937,7 @@ export interface Extension {
      */
     valuePositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'valuePositiveInt'
+     * Contains extension information for property 'valuePositiveInt'.
      */
     _valuePositiveInt?: Element;
     /**
@@ -15765,7 +15945,7 @@ export interface Extension {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -15773,7 +15953,7 @@ export interface Extension {
      */
     valueTime?: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -15781,7 +15961,7 @@ export interface Extension {
      */
     valueUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'valueUnsignedInt'
+     * Contains extension information for property 'valueUnsignedInt'.
      */
     _valueUnsignedInt?: Element;
     /**
@@ -15789,7 +15969,7 @@ export interface Extension {
      */
     valueUri?: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -15886,11 +16066,15 @@ export interface Extension {
  */
 export interface FamilyMemberHistory {
     /**
+     * The type of the resource.
+     */
+    resourceType: "FamilyMemberHistory";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -15902,7 +16086,7 @@ export interface FamilyMemberHistory {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -15910,7 +16094,7 @@ export interface FamilyMemberHistory {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -15942,7 +16126,7 @@ export interface FamilyMemberHistory {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -15950,7 +16134,7 @@ export interface FamilyMemberHistory {
      */
     notDone?: boolean;
     /**
-     * Contains extension information for property 'notDone'
+     * Contains extension information for property 'notDone'.
      */
     _notDone?: Element;
     /**
@@ -15966,7 +16150,7 @@ export interface FamilyMemberHistory {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -15974,7 +16158,7 @@ export interface FamilyMemberHistory {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -15986,7 +16170,7 @@ export interface FamilyMemberHistory {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -15998,7 +16182,7 @@ export interface FamilyMemberHistory {
      */
     bornDate?: date;
     /**
-     * Contains extension information for property 'bornDate'
+     * Contains extension information for property 'bornDate'.
      */
     _bornDate?: Element;
     /**
@@ -16006,7 +16190,7 @@ export interface FamilyMemberHistory {
      */
     bornString?: string;
     /**
-     * Contains extension information for property 'bornString'
+     * Contains extension information for property 'bornString'.
      */
     _bornString?: Element;
     /**
@@ -16022,7 +16206,7 @@ export interface FamilyMemberHistory {
      */
     ageString?: string;
     /**
-     * Contains extension information for property 'ageString'
+     * Contains extension information for property 'ageString'.
      */
     _ageString?: Element;
     /**
@@ -16030,7 +16214,7 @@ export interface FamilyMemberHistory {
      */
     estimatedAge?: boolean;
     /**
-     * Contains extension information for property 'estimatedAge'
+     * Contains extension information for property 'estimatedAge'.
      */
     _estimatedAge?: Element;
     /**
@@ -16038,7 +16222,7 @@ export interface FamilyMemberHistory {
      */
     deceasedBoolean?: boolean;
     /**
-     * Contains extension information for property 'deceasedBoolean'
+     * Contains extension information for property 'deceasedBoolean'.
      */
     _deceasedBoolean?: Element;
     /**
@@ -16054,7 +16238,7 @@ export interface FamilyMemberHistory {
      */
     deceasedDate?: date;
     /**
-     * Contains extension information for property 'deceasedDate'
+     * Contains extension information for property 'deceasedDate'.
      */
     _deceasedDate?: Element;
     /**
@@ -16062,7 +16246,7 @@ export interface FamilyMemberHistory {
      */
     deceasedString?: string;
     /**
-     * Contains extension information for property 'deceasedString'
+     * Contains extension information for property 'deceasedString'.
      */
     _deceasedString?: Element;
     /**
@@ -16091,7 +16275,7 @@ export interface FamilyMemberHistoryCondition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16127,7 +16311,7 @@ export interface FamilyMemberHistoryCondition {
      */
     onsetString?: string;
     /**
-     * Contains extension information for property 'onsetString'
+     * Contains extension information for property 'onsetString'.
      */
     _onsetString?: Element;
     /**
@@ -16140,11 +16324,15 @@ export interface FamilyMemberHistoryCondition {
  */
 export interface Flag {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Flag";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16156,7 +16344,7 @@ export interface Flag {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -16164,7 +16352,7 @@ export interface Flag {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -16192,7 +16380,7 @@ export interface Flag {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -16225,11 +16413,15 @@ export interface Flag {
  */
 export interface Goal {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Goal";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16241,7 +16433,7 @@ export interface Goal {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -16249,7 +16441,7 @@ export interface Goal {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -16277,7 +16469,7 @@ export interface Goal {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -16301,7 +16493,7 @@ export interface Goal {
      */
     startDate?: date;
     /**
-     * Contains extension information for property 'startDate'
+     * Contains extension information for property 'startDate'.
      */
     _startDate?: Element;
     /**
@@ -16317,7 +16509,7 @@ export interface Goal {
      */
     statusDate?: date;
     /**
-     * Contains extension information for property 'statusDate'
+     * Contains extension information for property 'statusDate'.
      */
     _statusDate?: Element;
     /**
@@ -16325,7 +16517,7 @@ export interface Goal {
      */
     statusReason?: string;
     /**
-     * Contains extension information for property 'statusReason'
+     * Contains extension information for property 'statusReason'.
      */
     _statusReason?: Element;
     /**
@@ -16358,7 +16550,7 @@ export interface GoalTarget {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16390,7 +16582,7 @@ export interface GoalTarget {
      */
     dueDate?: date;
     /**
-     * Contains extension information for property 'dueDate'
+     * Contains extension information for property 'dueDate'.
      */
     _dueDate?: Element;
     /**
@@ -16403,11 +16595,15 @@ export interface GoalTarget {
  */
 export interface GraphDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "GraphDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16419,7 +16615,7 @@ export interface GraphDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -16427,7 +16623,7 @@ export interface GraphDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -16451,7 +16647,7 @@ export interface GraphDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -16459,7 +16655,7 @@ export interface GraphDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -16467,7 +16663,7 @@ export interface GraphDefinition {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -16475,7 +16671,7 @@ export interface GraphDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -16483,7 +16679,7 @@ export interface GraphDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -16491,7 +16687,7 @@ export interface GraphDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -16499,7 +16695,7 @@ export interface GraphDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -16511,7 +16707,7 @@ export interface GraphDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -16527,7 +16723,7 @@ export interface GraphDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -16535,7 +16731,7 @@ export interface GraphDefinition {
      */
     start: code;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -16543,7 +16739,7 @@ export interface GraphDefinition {
      */
     profile?: uri;
     /**
-     * Contains extension information for property 'profile'
+     * Contains extension information for property 'profile'.
      */
     _profile?: Element;
     /**
@@ -16560,7 +16756,7 @@ export interface GraphDefinitionLink {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16576,7 +16772,7 @@ export interface GraphDefinitionLink {
      */
     path: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -16584,7 +16780,7 @@ export interface GraphDefinitionLink {
      */
     sliceName?: string;
     /**
-     * Contains extension information for property 'sliceName'
+     * Contains extension information for property 'sliceName'.
      */
     _sliceName?: Element;
     /**
@@ -16592,7 +16788,7 @@ export interface GraphDefinitionLink {
      */
     min?: integer;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -16600,7 +16796,7 @@ export interface GraphDefinitionLink {
      */
     max?: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
     /**
@@ -16608,7 +16804,7 @@ export interface GraphDefinitionLink {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -16625,7 +16821,7 @@ export interface GraphDefinitionLinkTarget {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16641,7 +16837,7 @@ export interface GraphDefinitionLinkTarget {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -16649,7 +16845,7 @@ export interface GraphDefinitionLinkTarget {
      */
     profile?: uri;
     /**
-     * Contains extension information for property 'profile'
+     * Contains extension information for property 'profile'.
      */
     _profile?: Element;
     /**
@@ -16670,7 +16866,7 @@ export interface GraphDefinitionLinkTargetCompartment {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16686,7 +16882,7 @@ export interface GraphDefinitionLinkTargetCompartment {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -16694,7 +16890,7 @@ export interface GraphDefinitionLinkTargetCompartment {
      */
     rule: code;
     /**
-     * Contains extension information for property 'rule'
+     * Contains extension information for property 'rule'.
      */
     _rule?: Element;
     /**
@@ -16702,7 +16898,7 @@ export interface GraphDefinitionLinkTargetCompartment {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
     /**
@@ -16710,7 +16906,7 @@ export interface GraphDefinitionLinkTargetCompartment {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
 }
@@ -16719,11 +16915,15 @@ export interface GraphDefinitionLinkTargetCompartment {
  */
 export interface Group {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Group";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16735,7 +16935,7 @@ export interface Group {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -16743,7 +16943,7 @@ export interface Group {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -16771,7 +16971,7 @@ export interface Group {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -16779,7 +16979,7 @@ export interface Group {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -16787,7 +16987,7 @@ export interface Group {
      */
     actual: boolean;
     /**
-     * Contains extension information for property 'actual'
+     * Contains extension information for property 'actual'.
      */
     _actual?: Element;
     /**
@@ -16799,7 +16999,7 @@ export interface Group {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -16807,7 +17007,7 @@ export interface Group {
      */
     quantity?: unsignedInt;
     /**
-     * Contains extension information for property 'quantity'
+     * Contains extension information for property 'quantity'.
      */
     _quantity?: Element;
     /**
@@ -16828,7 +17028,7 @@ export interface GroupCharacteristic {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16852,7 +17052,7 @@ export interface GroupCharacteristic {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -16868,7 +17068,7 @@ export interface GroupCharacteristic {
      */
     exclude: boolean;
     /**
-     * Contains extension information for property 'exclude'
+     * Contains extension information for property 'exclude'.
      */
     _exclude?: Element;
     /**
@@ -16885,7 +17085,7 @@ export interface GroupMember {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16909,7 +17109,7 @@ export interface GroupMember {
      */
     inactive?: boolean;
     /**
-     * Contains extension information for property 'inactive'
+     * Contains extension information for property 'inactive'.
      */
     _inactive?: Element;
 }
@@ -16918,11 +17118,15 @@ export interface GroupMember {
  */
 export interface GuidanceResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "GuidanceResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -16934,7 +17138,7 @@ export interface GuidanceResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -16942,7 +17146,7 @@ export interface GuidanceResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -16966,7 +17170,7 @@ export interface GuidanceResponse {
      */
     requestId?: id;
     /**
-     * Contains extension information for property 'requestId'
+     * Contains extension information for property 'requestId'.
      */
     _requestId?: Element;
     /**
@@ -16982,7 +17186,7 @@ export interface GuidanceResponse {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -16998,7 +17202,7 @@ export interface GuidanceResponse {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -17039,11 +17243,15 @@ export interface GuidanceResponse {
  */
 export interface HealthcareService {
     /**
+     * The type of the resource.
+     */
+    resourceType: "HealthcareService";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17055,7 +17263,7 @@ export interface HealthcareService {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -17063,7 +17271,7 @@ export interface HealthcareService {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -17091,7 +17299,7 @@ export interface HealthcareService {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -17119,7 +17327,7 @@ export interface HealthcareService {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -17127,7 +17335,7 @@ export interface HealthcareService {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -17135,7 +17343,7 @@ export interface HealthcareService {
      */
     extraDetails?: string;
     /**
-     * Contains extension information for property 'extraDetails'
+     * Contains extension information for property 'extraDetails'.
      */
     _extraDetails?: Element;
     /**
@@ -17163,7 +17371,7 @@ export interface HealthcareService {
      */
     eligibilityNote?: string;
     /**
-     * Contains extension information for property 'eligibilityNote'
+     * Contains extension information for property 'eligibilityNote'.
      */
     _eligibilityNote?: Element;
     /**
@@ -17171,7 +17379,7 @@ export interface HealthcareService {
      */
     programName?: string[];
     /**
-     * Contains extension information for property 'programName'
+     * Contains extension information for property 'programName'.
      */
     _programName?: Element[];
     /**
@@ -17187,7 +17395,7 @@ export interface HealthcareService {
      */
     appointmentRequired?: boolean;
     /**
-     * Contains extension information for property 'appointmentRequired'
+     * Contains extension information for property 'appointmentRequired'.
      */
     _appointmentRequired?: Element;
     /**
@@ -17203,7 +17411,7 @@ export interface HealthcareService {
      */
     availabilityExceptions?: string;
     /**
-     * Contains extension information for property 'availabilityExceptions'
+     * Contains extension information for property 'availabilityExceptions'.
      */
     _availabilityExceptions?: Element;
     /**
@@ -17220,7 +17428,7 @@ export interface HealthcareServiceAvailableTime {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17236,7 +17444,7 @@ export interface HealthcareServiceAvailableTime {
      */
     daysOfWeek?: code[];
     /**
-     * Contains extension information for property 'daysOfWeek'
+     * Contains extension information for property 'daysOfWeek'.
      */
     _daysOfWeek?: Element[];
     /**
@@ -17244,7 +17452,7 @@ export interface HealthcareServiceAvailableTime {
      */
     allDay?: boolean;
     /**
-     * Contains extension information for property 'allDay'
+     * Contains extension information for property 'allDay'.
      */
     _allDay?: Element;
     /**
@@ -17252,7 +17460,7 @@ export interface HealthcareServiceAvailableTime {
      */
     availableStartTime?: time;
     /**
-     * Contains extension information for property 'availableStartTime'
+     * Contains extension information for property 'availableStartTime'.
      */
     _availableStartTime?: Element;
     /**
@@ -17260,7 +17468,7 @@ export interface HealthcareServiceAvailableTime {
      */
     availableEndTime?: time;
     /**
-     * Contains extension information for property 'availableEndTime'
+     * Contains extension information for property 'availableEndTime'.
      */
     _availableEndTime?: Element;
 }
@@ -17273,7 +17481,7 @@ export interface HealthcareServiceNotAvailable {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17289,7 +17497,7 @@ export interface HealthcareServiceNotAvailable {
      */
     description: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -17306,7 +17514,7 @@ export interface HumanName {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17318,7 +17526,7 @@ export interface HumanName {
      */
     use?: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -17326,7 +17534,7 @@ export interface HumanName {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -17334,7 +17542,7 @@ export interface HumanName {
      */
     family?: string;
     /**
-     * Contains extension information for property 'family'
+     * Contains extension information for property 'family'.
      */
     _family?: Element;
     /**
@@ -17342,7 +17550,7 @@ export interface HumanName {
      */
     given?: string[];
     /**
-     * Contains extension information for property 'given'
+     * Contains extension information for property 'given'.
      */
     _given?: Element[];
     /**
@@ -17350,7 +17558,7 @@ export interface HumanName {
      */
     prefix?: string[];
     /**
-     * Contains extension information for property 'prefix'
+     * Contains extension information for property 'prefix'.
      */
     _prefix?: Element[];
     /**
@@ -17358,7 +17566,7 @@ export interface HumanName {
      */
     suffix?: string[];
     /**
-     * Contains extension information for property 'suffix'
+     * Contains extension information for property 'suffix'.
      */
     _suffix?: Element[];
     /**
@@ -17375,7 +17583,7 @@ export interface Identifier {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17387,7 +17595,7 @@ export interface Identifier {
      */
     use?: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -17399,7 +17607,7 @@ export interface Identifier {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -17407,7 +17615,7 @@ export interface Identifier {
      */
     value?: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -17424,11 +17632,15 @@ export interface Identifier {
  */
 export interface ImagingManifest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ImagingManifest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17440,7 +17652,7 @@ export interface ImagingManifest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -17448,7 +17660,7 @@ export interface ImagingManifest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -17480,7 +17692,7 @@ export interface ImagingManifest {
      */
     authoringTime?: dateTime;
     /**
-     * Contains extension information for property 'authoringTime'
+     * Contains extension information for property 'authoringTime'.
      */
     _authoringTime?: Element;
     /**
@@ -17492,7 +17704,7 @@ export interface ImagingManifest {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -17509,7 +17721,7 @@ export interface ImagingManifestStudy {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17525,7 +17737,7 @@ export interface ImagingManifestStudy {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
     /**
@@ -17550,7 +17762,7 @@ export interface ImagingManifestStudySeries {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17566,7 +17778,7 @@ export interface ImagingManifestStudySeries {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
     /**
@@ -17587,7 +17799,7 @@ export interface ImagingManifestStudySeriesInstance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17603,7 +17815,7 @@ export interface ImagingManifestStudySeriesInstance {
      */
     sopClass: oid;
     /**
-     * Contains extension information for property 'sopClass'
+     * Contains extension information for property 'sopClass'.
      */
     _sopClass?: Element;
     /**
@@ -17611,7 +17823,7 @@ export interface ImagingManifestStudySeriesInstance {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
 }
@@ -17620,11 +17832,15 @@ export interface ImagingManifestStudySeriesInstance {
  */
 export interface ImagingStudy {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ImagingStudy";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17636,7 +17852,7 @@ export interface ImagingStudy {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -17644,7 +17860,7 @@ export interface ImagingStudy {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -17668,7 +17884,7 @@ export interface ImagingStudy {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
     /**
@@ -17684,7 +17900,7 @@ export interface ImagingStudy {
      */
     availability?: code;
     /**
-     * Contains extension information for property 'availability'
+     * Contains extension information for property 'availability'.
      */
     _availability?: Element;
     /**
@@ -17704,7 +17920,7 @@ export interface ImagingStudy {
      */
     started?: dateTime;
     /**
-     * Contains extension information for property 'started'
+     * Contains extension information for property 'started'.
      */
     _started?: Element;
     /**
@@ -17728,7 +17944,7 @@ export interface ImagingStudy {
      */
     numberOfSeries?: unsignedInt;
     /**
-     * Contains extension information for property 'numberOfSeries'
+     * Contains extension information for property 'numberOfSeries'.
      */
     _numberOfSeries?: Element;
     /**
@@ -17736,7 +17952,7 @@ export interface ImagingStudy {
      */
     numberOfInstances?: unsignedInt;
     /**
-     * Contains extension information for property 'numberOfInstances'
+     * Contains extension information for property 'numberOfInstances'.
      */
     _numberOfInstances?: Element;
     /**
@@ -17756,7 +17972,7 @@ export interface ImagingStudy {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -17773,7 +17989,7 @@ export interface ImagingStudySeries {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17789,7 +18005,7 @@ export interface ImagingStudySeries {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
     /**
@@ -17797,7 +18013,7 @@ export interface ImagingStudySeries {
      */
     number?: unsignedInt;
     /**
-     * Contains extension information for property 'number'
+     * Contains extension information for property 'number'.
      */
     _number?: Element;
     /**
@@ -17809,7 +18025,7 @@ export interface ImagingStudySeries {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -17817,7 +18033,7 @@ export interface ImagingStudySeries {
      */
     numberOfInstances?: unsignedInt;
     /**
-     * Contains extension information for property 'numberOfInstances'
+     * Contains extension information for property 'numberOfInstances'.
      */
     _numberOfInstances?: Element;
     /**
@@ -17825,7 +18041,7 @@ export interface ImagingStudySeries {
      */
     availability?: code;
     /**
-     * Contains extension information for property 'availability'
+     * Contains extension information for property 'availability'.
      */
     _availability?: Element;
     /**
@@ -17845,7 +18061,7 @@ export interface ImagingStudySeries {
      */
     started?: dateTime;
     /**
-     * Contains extension information for property 'started'
+     * Contains extension information for property 'started'.
      */
     _started?: Element;
     /**
@@ -17866,7 +18082,7 @@ export interface ImagingStudySeriesInstance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17882,7 +18098,7 @@ export interface ImagingStudySeriesInstance {
      */
     uid: oid;
     /**
-     * Contains extension information for property 'uid'
+     * Contains extension information for property 'uid'.
      */
     _uid?: Element;
     /**
@@ -17890,7 +18106,7 @@ export interface ImagingStudySeriesInstance {
      */
     number?: unsignedInt;
     /**
-     * Contains extension information for property 'number'
+     * Contains extension information for property 'number'.
      */
     _number?: Element;
     /**
@@ -17898,7 +18114,7 @@ export interface ImagingStudySeriesInstance {
      */
     sopClass: oid;
     /**
-     * Contains extension information for property 'sopClass'
+     * Contains extension information for property 'sopClass'.
      */
     _sopClass?: Element;
     /**
@@ -17906,7 +18122,7 @@ export interface ImagingStudySeriesInstance {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
 }
@@ -17915,11 +18131,15 @@ export interface ImagingStudySeriesInstance {
  */
 export interface Immunization {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Immunization";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -17931,7 +18151,7 @@ export interface Immunization {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -17939,7 +18159,7 @@ export interface Immunization {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -17967,7 +18187,7 @@ export interface Immunization {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -17975,7 +18195,7 @@ export interface Immunization {
      */
     notGiven: boolean;
     /**
-     * Contains extension information for property 'notGiven'
+     * Contains extension information for property 'notGiven'.
      */
     _notGiven?: Element;
     /**
@@ -17995,7 +18215,7 @@ export interface Immunization {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -18003,7 +18223,7 @@ export interface Immunization {
      */
     primarySource: boolean;
     /**
-     * Contains extension information for property 'primarySource'
+     * Contains extension information for property 'primarySource'.
      */
     _primarySource?: Element;
     /**
@@ -18023,7 +18243,7 @@ export interface Immunization {
      */
     lotNumber?: string;
     /**
-     * Contains extension information for property 'lotNumber'
+     * Contains extension information for property 'lotNumber'.
      */
     _lotNumber?: Element;
     /**
@@ -18031,7 +18251,7 @@ export interface Immunization {
      */
     expirationDate?: date;
     /**
-     * Contains extension information for property 'expirationDate'
+     * Contains extension information for property 'expirationDate'.
      */
     _expirationDate?: Element;
     /**
@@ -18076,7 +18296,7 @@ export interface ImmunizationPractitioner {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18105,7 +18325,7 @@ export interface ImmunizationExplanation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18134,7 +18354,7 @@ export interface ImmunizationReaction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18150,7 +18370,7 @@ export interface ImmunizationReaction {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -18162,7 +18382,7 @@ export interface ImmunizationReaction {
      */
     reported?: boolean;
     /**
-     * Contains extension information for property 'reported'
+     * Contains extension information for property 'reported'.
      */
     _reported?: Element;
 }
@@ -18175,7 +18395,7 @@ export interface ImmunizationVaccinationProtocol {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18191,7 +18411,7 @@ export interface ImmunizationVaccinationProtocol {
      */
     doseSequence?: positiveInt;
     /**
-     * Contains extension information for property 'doseSequence'
+     * Contains extension information for property 'doseSequence'.
      */
     _doseSequence?: Element;
     /**
@@ -18199,7 +18419,7 @@ export interface ImmunizationVaccinationProtocol {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18211,7 +18431,7 @@ export interface ImmunizationVaccinationProtocol {
      */
     series?: string;
     /**
-     * Contains extension information for property 'series'
+     * Contains extension information for property 'series'.
      */
     _series?: Element;
     /**
@@ -18219,7 +18439,7 @@ export interface ImmunizationVaccinationProtocol {
      */
     seriesDoses?: positiveInt;
     /**
-     * Contains extension information for property 'seriesDoses'
+     * Contains extension information for property 'seriesDoses'.
      */
     _seriesDoses?: Element;
     /**
@@ -18240,11 +18460,15 @@ export interface ImmunizationVaccinationProtocol {
  */
 export interface ImmunizationRecommendation {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ImmunizationRecommendation";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18256,7 +18480,7 @@ export interface ImmunizationRecommendation {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -18264,7 +18488,7 @@ export interface ImmunizationRecommendation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -18305,7 +18529,7 @@ export interface ImmunizationRecommendationRecommendation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18321,7 +18545,7 @@ export interface ImmunizationRecommendationRecommendation {
      */
     date: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -18337,7 +18561,7 @@ export interface ImmunizationRecommendationRecommendation {
      */
     doseNumber?: positiveInt;
     /**
-     * Contains extension information for property 'doseNumber'
+     * Contains extension information for property 'doseNumber'.
      */
     _doseNumber?: Element;
     /**
@@ -18370,7 +18594,7 @@ export interface ImmunizationRecommendationRecommendationDateCriterion {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18390,7 +18614,7 @@ export interface ImmunizationRecommendationRecommendationDateCriterion {
      */
     value: dateTime;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -18403,7 +18627,7 @@ export interface ImmunizationRecommendationRecommendationProtocol {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18419,7 +18643,7 @@ export interface ImmunizationRecommendationRecommendationProtocol {
      */
     doseSequence?: positiveInt;
     /**
-     * Contains extension information for property 'doseSequence'
+     * Contains extension information for property 'doseSequence'.
      */
     _doseSequence?: Element;
     /**
@@ -18427,7 +18651,7 @@ export interface ImmunizationRecommendationRecommendationProtocol {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18439,7 +18663,7 @@ export interface ImmunizationRecommendationRecommendationProtocol {
      */
     series?: string;
     /**
-     * Contains extension information for property 'series'
+     * Contains extension information for property 'series'.
      */
     _series?: Element;
 }
@@ -18448,11 +18672,15 @@ export interface ImmunizationRecommendationRecommendationProtocol {
  */
 export interface ImplementationGuide {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ImplementationGuide";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18464,7 +18692,7 @@ export interface ImplementationGuide {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -18472,7 +18700,7 @@ export interface ImplementationGuide {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -18496,7 +18724,7 @@ export interface ImplementationGuide {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -18504,7 +18732,7 @@ export interface ImplementationGuide {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -18512,7 +18740,7 @@ export interface ImplementationGuide {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -18520,7 +18748,7 @@ export interface ImplementationGuide {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -18528,7 +18756,7 @@ export interface ImplementationGuide {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -18536,7 +18764,7 @@ export interface ImplementationGuide {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -18544,7 +18772,7 @@ export interface ImplementationGuide {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -18556,7 +18784,7 @@ export interface ImplementationGuide {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18572,7 +18800,7 @@ export interface ImplementationGuide {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -18580,7 +18808,7 @@ export interface ImplementationGuide {
      */
     fhirVersion?: id;
     /**
-     * Contains extension information for property 'fhirVersion'
+     * Contains extension information for property 'fhirVersion'.
      */
     _fhirVersion?: Element;
     /**
@@ -18600,7 +18828,7 @@ export interface ImplementationGuide {
      */
     binary?: uri[];
     /**
-     * Contains extension information for property 'binary'
+     * Contains extension information for property 'binary'.
      */
     _binary?: Element[];
     /**
@@ -18617,7 +18845,7 @@ export interface ImplementationGuideDependency {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18633,7 +18861,7 @@ export interface ImplementationGuideDependency {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -18641,7 +18869,7 @@ export interface ImplementationGuideDependency {
      */
     uri: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
 }
@@ -18654,7 +18882,7 @@ export interface ImplementationGuidePackage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18670,7 +18898,7 @@ export interface ImplementationGuidePackage {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -18678,7 +18906,7 @@ export interface ImplementationGuidePackage {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18695,7 +18923,7 @@ export interface ImplementationGuidePackageResource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18711,7 +18939,7 @@ export interface ImplementationGuidePackageResource {
      */
     example: boolean;
     /**
-     * Contains extension information for property 'example'
+     * Contains extension information for property 'example'.
      */
     _example?: Element;
     /**
@@ -18719,7 +18947,7 @@ export interface ImplementationGuidePackageResource {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -18727,7 +18955,7 @@ export interface ImplementationGuidePackageResource {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18735,7 +18963,7 @@ export interface ImplementationGuidePackageResource {
      */
     acronym?: string;
     /**
-     * Contains extension information for property 'acronym'
+     * Contains extension information for property 'acronym'.
      */
     _acronym?: Element;
     /**
@@ -18743,7 +18971,7 @@ export interface ImplementationGuidePackageResource {
      */
     sourceUri: uri;
     /**
-     * Contains extension information for property 'sourceUri'
+     * Contains extension information for property 'sourceUri'.
      */
     _sourceUri?: Element;
     /**
@@ -18764,7 +18992,7 @@ export interface ImplementationGuideGlobal {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18780,7 +19008,7 @@ export interface ImplementationGuideGlobal {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -18797,7 +19025,7 @@ export interface ImplementationGuidePage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18813,7 +19041,7 @@ export interface ImplementationGuidePage {
      */
     source: uri;
     /**
-     * Contains extension information for property 'source'
+     * Contains extension information for property 'source'.
      */
     _source?: Element;
     /**
@@ -18821,7 +19049,7 @@ export interface ImplementationGuidePage {
      */
     title: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -18829,7 +19057,7 @@ export interface ImplementationGuidePage {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -18837,7 +19065,7 @@ export interface ImplementationGuidePage {
      */
     type?: code[];
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element[];
     /**
@@ -18845,7 +19073,7 @@ export interface ImplementationGuidePage {
      */
     package?: string[];
     /**
-     * Contains extension information for property 'package'
+     * Contains extension information for property 'package'.
      */
     _package?: Element[];
     /**
@@ -18853,7 +19081,7 @@ export interface ImplementationGuidePage {
      */
     format?: code;
     /**
-     * Contains extension information for property 'format'
+     * Contains extension information for property 'format'.
      */
     _format?: Element;
     /**
@@ -18866,11 +19094,15 @@ export interface ImplementationGuidePage {
  */
 export interface Library {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Library";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -18882,7 +19114,7 @@ export interface Library {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -18890,7 +19122,7 @@ export interface Library {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -18914,7 +19146,7 @@ export interface Library {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -18926,7 +19158,7 @@ export interface Library {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -18934,7 +19166,7 @@ export interface Library {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -18942,7 +19174,7 @@ export interface Library {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -18950,7 +19182,7 @@ export interface Library {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -18958,7 +19190,7 @@ export interface Library {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -18970,7 +19202,7 @@ export interface Library {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -18978,7 +19210,7 @@ export interface Library {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -18986,7 +19218,7 @@ export interface Library {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -18994,7 +19226,7 @@ export interface Library {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -19002,7 +19234,7 @@ export interface Library {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -19010,7 +19242,7 @@ export interface Library {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -19018,7 +19250,7 @@ export interface Library {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -19050,7 +19282,7 @@ export interface Library {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -19075,11 +19307,15 @@ export interface Library {
  */
 export interface Linkage {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Linkage";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19091,7 +19327,7 @@ export interface Linkage {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -19099,7 +19335,7 @@ export interface Linkage {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -19123,7 +19359,7 @@ export interface Linkage {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -19144,7 +19380,7 @@ export interface LinkageItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19160,7 +19396,7 @@ export interface LinkageItem {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -19173,11 +19409,15 @@ export interface LinkageItem {
  */
 export interface List {
     /**
+     * The type of the resource.
+     */
+    resourceType: "List";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19189,7 +19429,7 @@ export interface List {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -19197,7 +19437,7 @@ export interface List {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -19225,7 +19465,7 @@ export interface List {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -19233,7 +19473,7 @@ export interface List {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -19241,7 +19481,7 @@ export interface List {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -19261,7 +19501,7 @@ export interface List {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -19294,7 +19534,7 @@ export interface ListEntry {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19314,7 +19554,7 @@ export interface ListEntry {
      */
     deleted?: boolean;
     /**
-     * Contains extension information for property 'deleted'
+     * Contains extension information for property 'deleted'.
      */
     _deleted?: Element;
     /**
@@ -19322,7 +19562,7 @@ export interface ListEntry {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -19335,11 +19575,15 @@ export interface ListEntry {
  */
 export interface Location {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Location";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19351,7 +19595,7 @@ export interface Location {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -19359,7 +19603,7 @@ export interface Location {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -19387,7 +19631,7 @@ export interface Location {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -19399,7 +19643,7 @@ export interface Location {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -19407,7 +19651,7 @@ export interface Location {
      */
     alias?: string[];
     /**
-     * Contains extension information for property 'alias'
+     * Contains extension information for property 'alias'.
      */
     _alias?: Element[];
     /**
@@ -19415,7 +19659,7 @@ export interface Location {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -19423,7 +19667,7 @@ export interface Location {
      */
     mode?: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -19468,7 +19712,7 @@ export interface LocationPosition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19484,7 +19728,7 @@ export interface LocationPosition {
      */
     longitude: decimal;
     /**
-     * Contains extension information for property 'longitude'
+     * Contains extension information for property 'longitude'.
      */
     _longitude?: Element;
     /**
@@ -19492,7 +19736,7 @@ export interface LocationPosition {
      */
     latitude: decimal;
     /**
-     * Contains extension information for property 'latitude'
+     * Contains extension information for property 'latitude'.
      */
     _latitude?: Element;
     /**
@@ -19500,7 +19744,7 @@ export interface LocationPosition {
      */
     altitude?: decimal;
     /**
-     * Contains extension information for property 'altitude'
+     * Contains extension information for property 'altitude'.
      */
     _altitude?: Element;
 }
@@ -19509,11 +19753,15 @@ export interface LocationPosition {
  */
 export interface Measure {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Measure";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19525,7 +19773,7 @@ export interface Measure {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -19533,7 +19781,7 @@ export interface Measure {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -19557,7 +19805,7 @@ export interface Measure {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -19569,7 +19817,7 @@ export interface Measure {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -19577,7 +19825,7 @@ export interface Measure {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -19585,7 +19833,7 @@ export interface Measure {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -19593,7 +19841,7 @@ export interface Measure {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -19601,7 +19849,7 @@ export interface Measure {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -19609,7 +19857,7 @@ export interface Measure {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -19617,7 +19865,7 @@ export interface Measure {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -19625,7 +19873,7 @@ export interface Measure {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -19633,7 +19881,7 @@ export interface Measure {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -19641,7 +19889,7 @@ export interface Measure {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -19649,7 +19897,7 @@ export interface Measure {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -19657,7 +19905,7 @@ export interface Measure {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -19689,7 +19937,7 @@ export interface Measure {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -19705,7 +19953,7 @@ export interface Measure {
      */
     disclaimer?: markdown;
     /**
-     * Contains extension information for property 'disclaimer'
+     * Contains extension information for property 'disclaimer'.
      */
     _disclaimer?: Element;
     /**
@@ -19725,7 +19973,7 @@ export interface Measure {
      */
     riskAdjustment?: string;
     /**
-     * Contains extension information for property 'riskAdjustment'
+     * Contains extension information for property 'riskAdjustment'.
      */
     _riskAdjustment?: Element;
     /**
@@ -19733,7 +19981,7 @@ export interface Measure {
      */
     rateAggregation?: string;
     /**
-     * Contains extension information for property 'rateAggregation'
+     * Contains extension information for property 'rateAggregation'.
      */
     _rateAggregation?: Element;
     /**
@@ -19741,7 +19989,7 @@ export interface Measure {
      */
     rationale?: markdown;
     /**
-     * Contains extension information for property 'rationale'
+     * Contains extension information for property 'rationale'.
      */
     _rationale?: Element;
     /**
@@ -19749,7 +19997,7 @@ export interface Measure {
      */
     clinicalRecommendationStatement?: markdown;
     /**
-     * Contains extension information for property 'clinicalRecommendationStatement'
+     * Contains extension information for property 'clinicalRecommendationStatement'.
      */
     _clinicalRecommendationStatement?: Element;
     /**
@@ -19757,7 +20005,7 @@ export interface Measure {
      */
     improvementNotation?: string;
     /**
-     * Contains extension information for property 'improvementNotation'
+     * Contains extension information for property 'improvementNotation'.
      */
     _improvementNotation?: Element;
     /**
@@ -19765,7 +20013,7 @@ export interface Measure {
      */
     definition?: markdown[];
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element[];
     /**
@@ -19773,7 +20021,7 @@ export interface Measure {
      */
     guidance?: markdown;
     /**
-     * Contains extension information for property 'guidance'
+     * Contains extension information for property 'guidance'.
      */
     _guidance?: Element;
     /**
@@ -19781,7 +20029,7 @@ export interface Measure {
      */
     set?: string;
     /**
-     * Contains extension information for property 'set'
+     * Contains extension information for property 'set'.
      */
     _set?: Element;
     /**
@@ -19802,7 +20050,7 @@ export interface MeasureGroup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19822,7 +20070,7 @@ export interface MeasureGroup {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -19830,7 +20078,7 @@ export interface MeasureGroup {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -19851,7 +20099,7 @@ export interface MeasureGroupPopulation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19875,7 +20123,7 @@ export interface MeasureGroupPopulation {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -19883,7 +20131,7 @@ export interface MeasureGroupPopulation {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -19891,7 +20139,7 @@ export interface MeasureGroupPopulation {
      */
     criteria: string;
     /**
-     * Contains extension information for property 'criteria'
+     * Contains extension information for property 'criteria'.
      */
     _criteria?: Element;
 }
@@ -19904,7 +20152,7 @@ export interface MeasureGroupStratifier {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19924,7 +20172,7 @@ export interface MeasureGroupStratifier {
      */
     criteria?: string;
     /**
-     * Contains extension information for property 'criteria'
+     * Contains extension information for property 'criteria'.
      */
     _criteria?: Element;
     /**
@@ -19932,7 +20180,7 @@ export interface MeasureGroupStratifier {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
 }
@@ -19945,7 +20193,7 @@ export interface MeasureSupplementalData {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -19969,7 +20217,7 @@ export interface MeasureSupplementalData {
      */
     criteria?: string;
     /**
-     * Contains extension information for property 'criteria'
+     * Contains extension information for property 'criteria'.
      */
     _criteria?: Element;
     /**
@@ -19977,7 +20225,7 @@ export interface MeasureSupplementalData {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
 }
@@ -19986,11 +20234,15 @@ export interface MeasureSupplementalData {
  */
 export interface MeasureReport {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MeasureReport";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20002,7 +20254,7 @@ export interface MeasureReport {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -20010,7 +20262,7 @@ export interface MeasureReport {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -20038,7 +20290,7 @@ export interface MeasureReport {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -20046,7 +20298,7 @@ export interface MeasureReport {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -20062,7 +20314,7 @@ export interface MeasureReport {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -20091,7 +20343,7 @@ export interface MeasureReportGroup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20115,7 +20367,7 @@ export interface MeasureReportGroup {
      */
     measureScore?: decimal;
     /**
-     * Contains extension information for property 'measureScore'
+     * Contains extension information for property 'measureScore'.
      */
     _measureScore?: Element;
     /**
@@ -20132,7 +20384,7 @@ export interface MeasureReportGroupPopulation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20156,7 +20408,7 @@ export interface MeasureReportGroupPopulation {
      */
     count?: integer;
     /**
-     * Contains extension information for property 'count'
+     * Contains extension information for property 'count'.
      */
     _count?: Element;
     /**
@@ -20173,7 +20425,7 @@ export interface MeasureReportGroupStratifier {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20202,7 +20454,7 @@ export interface MeasureReportGroupStratifierStratum {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20218,7 +20470,7 @@ export interface MeasureReportGroupStratifierStratum {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -20230,7 +20482,7 @@ export interface MeasureReportGroupStratifierStratum {
      */
     measureScore?: decimal;
     /**
-     * Contains extension information for property 'measureScore'
+     * Contains extension information for property 'measureScore'.
      */
     _measureScore?: Element;
 }
@@ -20243,7 +20495,7 @@ export interface MeasureReportGroupStratifierStratumPopulation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20267,7 +20519,7 @@ export interface MeasureReportGroupStratifierStratumPopulation {
      */
     count?: integer;
     /**
-     * Contains extension information for property 'count'
+     * Contains extension information for property 'count'.
      */
     _count?: Element;
     /**
@@ -20280,11 +20532,15 @@ export interface MeasureReportGroupStratifierStratumPopulation {
  */
 export interface Media {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Media";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20296,7 +20552,7 @@ export interface Media {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -20304,7 +20560,7 @@ export interface Media {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -20336,7 +20592,7 @@ export interface Media {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -20360,7 +20616,7 @@ export interface Media {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -20388,7 +20644,7 @@ export interface Media {
      */
     height?: positiveInt;
     /**
-     * Contains extension information for property 'height'
+     * Contains extension information for property 'height'.
      */
     _height?: Element;
     /**
@@ -20396,7 +20652,7 @@ export interface Media {
      */
     width?: positiveInt;
     /**
-     * Contains extension information for property 'width'
+     * Contains extension information for property 'width'.
      */
     _width?: Element;
     /**
@@ -20404,7 +20660,7 @@ export interface Media {
      */
     frames?: positiveInt;
     /**
-     * Contains extension information for property 'frames'
+     * Contains extension information for property 'frames'.
      */
     _frames?: Element;
     /**
@@ -20412,7 +20668,7 @@ export interface Media {
      */
     duration?: unsignedInt;
     /**
-     * Contains extension information for property 'duration'
+     * Contains extension information for property 'duration'.
      */
     _duration?: Element;
     /**
@@ -20429,11 +20685,15 @@ export interface Media {
  */
 export interface Medication {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Medication";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20445,7 +20705,7 @@ export interface Medication {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -20453,7 +20713,7 @@ export interface Medication {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -20481,7 +20741,7 @@ export interface Medication {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -20489,7 +20749,7 @@ export interface Medication {
      */
     isBrand?: boolean;
     /**
-     * Contains extension information for property 'isBrand'
+     * Contains extension information for property 'isBrand'.
      */
     _isBrand?: Element;
     /**
@@ -20497,7 +20757,7 @@ export interface Medication {
      */
     isOverTheCounter?: boolean;
     /**
-     * Contains extension information for property 'isOverTheCounter'
+     * Contains extension information for property 'isOverTheCounter'.
      */
     _isOverTheCounter?: Element;
     /**
@@ -20530,7 +20790,7 @@ export interface MedicationIngredient {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20554,7 +20814,7 @@ export interface MedicationIngredient {
      */
     isActive?: boolean;
     /**
-     * Contains extension information for property 'isActive'
+     * Contains extension information for property 'isActive'.
      */
     _isActive?: Element;
     /**
@@ -20571,7 +20831,7 @@ export interface MedicationPackage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20604,7 +20864,7 @@ export interface MedicationPackageContent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20637,7 +20897,7 @@ export interface MedicationPackageBatch {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20653,7 +20913,7 @@ export interface MedicationPackageBatch {
      */
     lotNumber?: string;
     /**
-     * Contains extension information for property 'lotNumber'
+     * Contains extension information for property 'lotNumber'.
      */
     _lotNumber?: Element;
     /**
@@ -20661,7 +20921,7 @@ export interface MedicationPackageBatch {
      */
     expirationDate?: dateTime;
     /**
-     * Contains extension information for property 'expirationDate'
+     * Contains extension information for property 'expirationDate'.
      */
     _expirationDate?: Element;
 }
@@ -20670,11 +20930,15 @@ export interface MedicationPackageBatch {
  */
 export interface MedicationAdministration {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MedicationAdministration";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20686,7 +20950,7 @@ export interface MedicationAdministration {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -20694,7 +20958,7 @@ export interface MedicationAdministration {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -20730,7 +20994,7 @@ export interface MedicationAdministration {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -20762,7 +21026,7 @@ export interface MedicationAdministration {
      */
     effectiveDateTime: dateTime;
     /**
-     * Contains extension information for property 'effectiveDateTime'
+     * Contains extension information for property 'effectiveDateTime'.
      */
     _effectiveDateTime?: Element;
     /**
@@ -20778,7 +21042,7 @@ export interface MedicationAdministration {
      */
     notGiven?: boolean;
     /**
-     * Contains extension information for property 'notGiven'
+     * Contains extension information for property 'notGiven'.
      */
     _notGiven?: Element;
     /**
@@ -20823,7 +21087,7 @@ export interface MedicationAdministrationPerformer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20852,7 +21116,7 @@ export interface MedicationAdministrationDosage {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20868,7 +21132,7 @@ export interface MedicationAdministrationDosage {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -20901,11 +21165,15 @@ export interface MedicationAdministrationDosage {
  */
 export interface MedicationDispense {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MedicationDispense";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -20917,7 +21185,7 @@ export interface MedicationDispense {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -20925,7 +21193,7 @@ export interface MedicationDispense {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -20957,7 +21225,7 @@ export interface MedicationDispense {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -21009,7 +21277,7 @@ export interface MedicationDispense {
      */
     whenPrepared?: dateTime;
     /**
-     * Contains extension information for property 'whenPrepared'
+     * Contains extension information for property 'whenPrepared'.
      */
     _whenPrepared?: Element;
     /**
@@ -21017,7 +21285,7 @@ export interface MedicationDispense {
      */
     whenHandedOver?: dateTime;
     /**
-     * Contains extension information for property 'whenHandedOver'
+     * Contains extension information for property 'whenHandedOver'.
      */
     _whenHandedOver?: Element;
     /**
@@ -21049,7 +21317,7 @@ export interface MedicationDispense {
      */
     notDone?: boolean;
     /**
-     * Contains extension information for property 'notDone'
+     * Contains extension information for property 'notDone'.
      */
     _notDone?: Element;
     /**
@@ -21074,7 +21342,7 @@ export interface MedicationDispensePerformer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21103,7 +21371,7 @@ export interface MedicationDispenseSubstitution {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21119,7 +21387,7 @@ export interface MedicationDispenseSubstitution {
      */
     wasSubstituted: boolean;
     /**
-     * Contains extension information for property 'wasSubstituted'
+     * Contains extension information for property 'wasSubstituted'.
      */
     _wasSubstituted?: Element;
     /**
@@ -21140,11 +21408,15 @@ export interface MedicationDispenseSubstitution {
  */
 export interface MedicationRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MedicationRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21156,7 +21428,7 @@ export interface MedicationRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -21164,7 +21436,7 @@ export interface MedicationRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -21204,7 +21476,7 @@ export interface MedicationRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -21212,7 +21484,7 @@ export interface MedicationRequest {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -21224,7 +21496,7 @@ export interface MedicationRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -21252,7 +21524,7 @@ export interface MedicationRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -21309,7 +21581,7 @@ export interface MedicationRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21338,7 +21610,7 @@ export interface MedicationRequestDispenseRequest {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21358,7 +21630,7 @@ export interface MedicationRequestDispenseRequest {
      */
     numberOfRepeatsAllowed?: positiveInt;
     /**
-     * Contains extension information for property 'numberOfRepeatsAllowed'
+     * Contains extension information for property 'numberOfRepeatsAllowed'.
      */
     _numberOfRepeatsAllowed?: Element;
     /**
@@ -21383,7 +21655,7 @@ export interface MedicationRequestSubstitution {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21399,7 +21671,7 @@ export interface MedicationRequestSubstitution {
      */
     allowed: boolean;
     /**
-     * Contains extension information for property 'allowed'
+     * Contains extension information for property 'allowed'.
      */
     _allowed?: Element;
     /**
@@ -21412,11 +21684,15 @@ export interface MedicationRequestSubstitution {
  */
 export interface MedicationStatement {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MedicationStatement";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21428,7 +21704,7 @@ export interface MedicationStatement {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -21436,7 +21712,7 @@ export interface MedicationStatement {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -21476,7 +21752,7 @@ export interface MedicationStatement {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -21496,7 +21772,7 @@ export interface MedicationStatement {
      */
     effectiveDateTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveDateTime'
+     * Contains extension information for property 'effectiveDateTime'.
      */
     _effectiveDateTime?: Element;
     /**
@@ -21508,7 +21784,7 @@ export interface MedicationStatement {
      */
     dateAsserted?: dateTime;
     /**
-     * Contains extension information for property 'dateAsserted'
+     * Contains extension information for property 'dateAsserted'.
      */
     _dateAsserted?: Element;
     /**
@@ -21528,7 +21804,7 @@ export interface MedicationStatement {
      */
     taken: code;
     /**
-     * Contains extension information for property 'taken'
+     * Contains extension information for property 'taken'.
      */
     _taken?: Element;
     /**
@@ -21557,11 +21833,15 @@ export interface MedicationStatement {
  */
 export interface MessageDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MessageDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21573,7 +21853,7 @@ export interface MessageDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -21581,7 +21861,7 @@ export interface MessageDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -21605,7 +21885,7 @@ export interface MessageDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -21617,7 +21897,7 @@ export interface MessageDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -21625,7 +21905,7 @@ export interface MessageDefinition {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -21633,7 +21913,7 @@ export interface MessageDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -21641,7 +21921,7 @@ export interface MessageDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -21649,7 +21929,7 @@ export interface MessageDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -21657,7 +21937,7 @@ export interface MessageDefinition {
      */
     date: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -21665,7 +21945,7 @@ export interface MessageDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -21677,7 +21957,7 @@ export interface MessageDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -21693,7 +21973,7 @@ export interface MessageDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -21701,7 +21981,7 @@ export interface MessageDefinition {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -21725,7 +22005,7 @@ export interface MessageDefinition {
      */
     category?: code;
     /**
-     * Contains extension information for property 'category'
+     * Contains extension information for property 'category'.
      */
     _category?: Element;
     /**
@@ -21737,7 +22017,7 @@ export interface MessageDefinition {
      */
     responseRequired?: boolean;
     /**
-     * Contains extension information for property 'responseRequired'
+     * Contains extension information for property 'responseRequired'.
      */
     _responseRequired?: Element;
     /**
@@ -21754,7 +22034,7 @@ export interface MessageDefinitionFocus {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21770,7 +22050,7 @@ export interface MessageDefinitionFocus {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -21782,7 +22062,7 @@ export interface MessageDefinitionFocus {
      */
     min?: unsignedInt;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -21790,7 +22070,7 @@ export interface MessageDefinitionFocus {
      */
     max?: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
 }
@@ -21803,7 +22083,7 @@ export interface MessageDefinitionAllowedResponse {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21823,7 +22103,7 @@ export interface MessageDefinitionAllowedResponse {
      */
     situation?: markdown;
     /**
-     * Contains extension information for property 'situation'
+     * Contains extension information for property 'situation'.
      */
     _situation?: Element;
 }
@@ -21832,11 +22112,15 @@ export interface MessageDefinitionAllowedResponse {
  */
 export interface MessageHeader {
     /**
+     * The type of the resource.
+     */
+    resourceType: "MessageHeader";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21848,7 +22132,7 @@ export interface MessageHeader {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -21856,7 +22140,7 @@ export interface MessageHeader {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -21896,7 +22180,7 @@ export interface MessageHeader {
      */
     timestamp: instant;
     /**
-     * Contains extension information for property 'timestamp'
+     * Contains extension information for property 'timestamp'.
      */
     _timestamp?: Element;
     /**
@@ -21937,7 +22221,7 @@ export interface MessageHeaderDestination {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21953,7 +22237,7 @@ export interface MessageHeaderDestination {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -21965,7 +22249,7 @@ export interface MessageHeaderDestination {
      */
     endpoint: uri;
     /**
-     * Contains extension information for property 'endpoint'
+     * Contains extension information for property 'endpoint'.
      */
     _endpoint?: Element;
 }
@@ -21978,7 +22262,7 @@ export interface MessageHeaderSource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -21994,7 +22278,7 @@ export interface MessageHeaderSource {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -22002,7 +22286,7 @@ export interface MessageHeaderSource {
      */
     software?: string;
     /**
-     * Contains extension information for property 'software'
+     * Contains extension information for property 'software'.
      */
     _software?: Element;
     /**
@@ -22010,7 +22294,7 @@ export interface MessageHeaderSource {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -22022,7 +22306,7 @@ export interface MessageHeaderSource {
      */
     endpoint: uri;
     /**
-     * Contains extension information for property 'endpoint'
+     * Contains extension information for property 'endpoint'.
      */
     _endpoint?: Element;
 }
@@ -22035,7 +22319,7 @@ export interface MessageHeaderResponse {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22051,7 +22335,7 @@ export interface MessageHeaderResponse {
      */
     identifier: id;
     /**
-     * Contains extension information for property 'identifier'
+     * Contains extension information for property 'identifier'.
      */
     _identifier?: Element;
     /**
@@ -22059,7 +22343,7 @@ export interface MessageHeaderResponse {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -22076,7 +22360,7 @@ export interface Meta {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22088,7 +22372,7 @@ export interface Meta {
      */
     versionId?: id;
     /**
-     * Contains extension information for property 'versionId'
+     * Contains extension information for property 'versionId'.
      */
     _versionId?: Element;
     /**
@@ -22096,7 +22380,7 @@ export interface Meta {
      */
     lastUpdated?: instant;
     /**
-     * Contains extension information for property 'lastUpdated'
+     * Contains extension information for property 'lastUpdated'.
      */
     _lastUpdated?: Element;
     /**
@@ -22104,7 +22388,7 @@ export interface Meta {
      */
     profile?: uri[];
     /**
-     * Contains extension information for property 'profile'
+     * Contains extension information for property 'profile'.
      */
     _profile?: Element[];
     /**
@@ -22125,7 +22409,7 @@ export interface Money {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22137,7 +22421,7 @@ export interface Money {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -22145,7 +22429,7 @@ export interface Money {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -22153,7 +22437,7 @@ export interface Money {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -22161,7 +22445,7 @@ export interface Money {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -22169,7 +22453,7 @@ export interface Money {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -22178,11 +22462,15 @@ export interface Money {
  */
 export interface NamingSystem {
     /**
+     * The type of the resource.
+     */
+    resourceType: "NamingSystem";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22194,7 +22482,7 @@ export interface NamingSystem {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -22202,7 +22490,7 @@ export interface NamingSystem {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -22226,7 +22514,7 @@ export interface NamingSystem {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -22234,7 +22522,7 @@ export interface NamingSystem {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -22242,7 +22530,7 @@ export interface NamingSystem {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -22250,7 +22538,7 @@ export interface NamingSystem {
      */
     date: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -22258,7 +22546,7 @@ export interface NamingSystem {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -22270,7 +22558,7 @@ export interface NamingSystem {
      */
     responsible?: string;
     /**
-     * Contains extension information for property 'responsible'
+     * Contains extension information for property 'responsible'.
      */
     _responsible?: Element;
     /**
@@ -22282,7 +22570,7 @@ export interface NamingSystem {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -22298,7 +22586,7 @@ export interface NamingSystem {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -22319,7 +22607,7 @@ export interface NamingSystemUniqueId {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22335,7 +22623,7 @@ export interface NamingSystemUniqueId {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -22343,7 +22631,7 @@ export interface NamingSystemUniqueId {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -22351,7 +22639,7 @@ export interface NamingSystemUniqueId {
      */
     preferred?: boolean;
     /**
-     * Contains extension information for property 'preferred'
+     * Contains extension information for property 'preferred'.
      */
     _preferred?: Element;
     /**
@@ -22359,7 +22647,7 @@ export interface NamingSystemUniqueId {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -22376,7 +22664,7 @@ export interface Narrative {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22388,7 +22676,7 @@ export interface Narrative {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -22396,7 +22684,7 @@ export interface Narrative {
      */
     div: xhtml;
     /**
-     * Contains extension information for property 'div'
+     * Contains extension information for property 'div'.
      */
     _div?: Element;
 }
@@ -22405,11 +22693,15 @@ export interface Narrative {
  */
 export interface NutritionOrder {
     /**
+     * The type of the resource.
+     */
+    resourceType: "NutritionOrder";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22421,7 +22713,7 @@ export interface NutritionOrder {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -22429,7 +22721,7 @@ export interface NutritionOrder {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -22457,7 +22749,7 @@ export interface NutritionOrder {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -22473,7 +22765,7 @@ export interface NutritionOrder {
      */
     dateTime: dateTime;
     /**
-     * Contains extension information for property 'dateTime'
+     * Contains extension information for property 'dateTime'.
      */
     _dateTime?: Element;
     /**
@@ -22514,7 +22806,7 @@ export interface NutritionOrderOralDiet {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22550,7 +22842,7 @@ export interface NutritionOrderOralDiet {
      */
     instruction?: string;
     /**
-     * Contains extension information for property 'instruction'
+     * Contains extension information for property 'instruction'.
      */
     _instruction?: Element;
 }
@@ -22563,7 +22855,7 @@ export interface NutritionOrderOralDietNutrient {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22592,7 +22884,7 @@ export interface NutritionOrderOralDietTexture {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22621,7 +22913,7 @@ export interface NutritionOrderSupplement {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22641,7 +22933,7 @@ export interface NutritionOrderSupplement {
      */
     productName?: string;
     /**
-     * Contains extension information for property 'productName'
+     * Contains extension information for property 'productName'.
      */
     _productName?: Element;
     /**
@@ -22657,7 +22949,7 @@ export interface NutritionOrderSupplement {
      */
     instruction?: string;
     /**
-     * Contains extension information for property 'instruction'
+     * Contains extension information for property 'instruction'.
      */
     _instruction?: Element;
 }
@@ -22670,7 +22962,7 @@ export interface NutritionOrderEnteralFormula {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22690,7 +22982,7 @@ export interface NutritionOrderEnteralFormula {
      */
     baseFormulaProductName?: string;
     /**
-     * Contains extension information for property 'baseFormulaProductName'
+     * Contains extension information for property 'baseFormulaProductName'.
      */
     _baseFormulaProductName?: Element;
     /**
@@ -22702,7 +22994,7 @@ export interface NutritionOrderEnteralFormula {
      */
     additiveProductName?: string;
     /**
-     * Contains extension information for property 'additiveProductName'
+     * Contains extension information for property 'additiveProductName'.
      */
     _additiveProductName?: Element;
     /**
@@ -22726,7 +23018,7 @@ export interface NutritionOrderEnteralFormula {
      */
     administrationInstruction?: string;
     /**
-     * Contains extension information for property 'administrationInstruction'
+     * Contains extension information for property 'administrationInstruction'.
      */
     _administrationInstruction?: Element;
 }
@@ -22739,7 +23031,7 @@ export interface NutritionOrderEnteralFormulaAdministration {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22772,11 +23064,15 @@ export interface NutritionOrderEnteralFormulaAdministration {
  */
 export interface Observation {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Observation";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -22788,7 +23084,7 @@ export interface Observation {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -22796,7 +23092,7 @@ export interface Observation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -22828,7 +23124,7 @@ export interface Observation {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -22852,7 +23148,7 @@ export interface Observation {
      */
     effectiveDateTime?: dateTime;
     /**
-     * Contains extension information for property 'effectiveDateTime'
+     * Contains extension information for property 'effectiveDateTime'.
      */
     _effectiveDateTime?: Element;
     /**
@@ -22864,7 +23160,7 @@ export interface Observation {
      */
     issued?: instant;
     /**
-     * Contains extension information for property 'issued'
+     * Contains extension information for property 'issued'.
      */
     _issued?: Element;
     /**
@@ -22884,7 +23180,7 @@ export interface Observation {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -22892,7 +23188,7 @@ export interface Observation {
      */
     valueBoolean?: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -22916,7 +23212,7 @@ export interface Observation {
      */
     valueTime?: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -22924,7 +23220,7 @@ export interface Observation {
      */
     valueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -22944,7 +23240,7 @@ export interface Observation {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -22985,7 +23281,7 @@ export interface ObservationReferenceRange {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23021,7 +23317,7 @@ export interface ObservationReferenceRange {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
 }
@@ -23034,7 +23330,7 @@ export interface ObservationRelated {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23050,7 +23346,7 @@ export interface ObservationRelated {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -23067,7 +23363,7 @@ export interface ObservationComponent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23095,7 +23391,7 @@ export interface ObservationComponent {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -23119,7 +23415,7 @@ export interface ObservationComponent {
      */
     valueTime?: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -23127,7 +23423,7 @@ export interface ObservationComponent {
      */
     valueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -23152,11 +23448,15 @@ export interface ObservationComponent {
  */
 export interface OperationDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "OperationDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23168,7 +23468,7 @@ export interface OperationDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -23176,7 +23476,7 @@ export interface OperationDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -23200,7 +23500,7 @@ export interface OperationDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -23208,7 +23508,7 @@ export interface OperationDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -23216,7 +23516,7 @@ export interface OperationDefinition {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -23224,7 +23524,7 @@ export interface OperationDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -23232,7 +23532,7 @@ export interface OperationDefinition {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -23240,7 +23540,7 @@ export interface OperationDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -23248,7 +23548,7 @@ export interface OperationDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -23256,7 +23556,7 @@ export interface OperationDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -23268,7 +23568,7 @@ export interface OperationDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -23284,7 +23584,7 @@ export interface OperationDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -23292,7 +23592,7 @@ export interface OperationDefinition {
      */
     idempotent?: boolean;
     /**
-     * Contains extension information for property 'idempotent'
+     * Contains extension information for property 'idempotent'.
      */
     _idempotent?: Element;
     /**
@@ -23300,7 +23600,7 @@ export interface OperationDefinition {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -23308,7 +23608,7 @@ export interface OperationDefinition {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
     /**
@@ -23320,7 +23620,7 @@ export interface OperationDefinition {
      */
     resource?: code[];
     /**
-     * Contains extension information for property 'resource'
+     * Contains extension information for property 'resource'.
      */
     _resource?: Element[];
     /**
@@ -23328,7 +23628,7 @@ export interface OperationDefinition {
      */
     system: boolean;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -23336,7 +23636,7 @@ export interface OperationDefinition {
      */
     type: boolean;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -23344,7 +23644,7 @@ export interface OperationDefinition {
      */
     instance: boolean;
     /**
-     * Contains extension information for property 'instance'
+     * Contains extension information for property 'instance'.
      */
     _instance?: Element;
     /**
@@ -23365,7 +23665,7 @@ export interface OperationDefinitionParameter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23381,7 +23681,7 @@ export interface OperationDefinitionParameter {
      */
     name: code;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -23389,7 +23689,7 @@ export interface OperationDefinitionParameter {
      */
     use: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -23397,7 +23697,7 @@ export interface OperationDefinitionParameter {
      */
     min: integer;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -23405,7 +23705,7 @@ export interface OperationDefinitionParameter {
      */
     max: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
     /**
@@ -23413,7 +23713,7 @@ export interface OperationDefinitionParameter {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -23421,7 +23721,7 @@ export interface OperationDefinitionParameter {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -23429,7 +23729,7 @@ export interface OperationDefinitionParameter {
      */
     searchType?: code;
     /**
-     * Contains extension information for property 'searchType'
+     * Contains extension information for property 'searchType'.
      */
     _searchType?: Element;
     /**
@@ -23454,7 +23754,7 @@ export interface OperationDefinitionParameterBinding {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23470,7 +23770,7 @@ export interface OperationDefinitionParameterBinding {
      */
     strength: code;
     /**
-     * Contains extension information for property 'strength'
+     * Contains extension information for property 'strength'.
      */
     _strength?: Element;
     /**
@@ -23478,7 +23778,7 @@ export interface OperationDefinitionParameterBinding {
      */
     valuesetUri: uri;
     /**
-     * Contains extension information for property 'valuesetUri'
+     * Contains extension information for property 'valuesetUri'.
      */
     _valuesetUri?: Element;
     /**
@@ -23495,7 +23795,7 @@ export interface OperationDefinitionOverload {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23511,7 +23811,7 @@ export interface OperationDefinitionOverload {
      */
     parameterName?: string[];
     /**
-     * Contains extension information for property 'parameterName'
+     * Contains extension information for property 'parameterName'.
      */
     _parameterName?: Element[];
     /**
@@ -23519,7 +23819,7 @@ export interface OperationDefinitionOverload {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -23528,11 +23828,15 @@ export interface OperationDefinitionOverload {
  */
 export interface OperationOutcome {
     /**
+     * The type of the resource.
+     */
+    resourceType: "OperationOutcome";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23544,7 +23848,7 @@ export interface OperationOutcome {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -23552,7 +23856,7 @@ export interface OperationOutcome {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -23585,7 +23889,7 @@ export interface OperationOutcomeIssue {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23601,7 +23905,7 @@ export interface OperationOutcomeIssue {
      */
     severity: code;
     /**
-     * Contains extension information for property 'severity'
+     * Contains extension information for property 'severity'.
      */
     _severity?: Element;
     /**
@@ -23609,7 +23913,7 @@ export interface OperationOutcomeIssue {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -23621,7 +23925,7 @@ export interface OperationOutcomeIssue {
      */
     diagnostics?: string;
     /**
-     * Contains extension information for property 'diagnostics'
+     * Contains extension information for property 'diagnostics'.
      */
     _diagnostics?: Element;
     /**
@@ -23629,7 +23933,7 @@ export interface OperationOutcomeIssue {
      */
     location?: string[];
     /**
-     * Contains extension information for property 'location'
+     * Contains extension information for property 'location'.
      */
     _location?: Element[];
     /**
@@ -23637,7 +23941,7 @@ export interface OperationOutcomeIssue {
      */
     expression?: string[];
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element[];
 }
@@ -23646,11 +23950,15 @@ export interface OperationOutcomeIssue {
  */
 export interface Organization {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Organization";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23662,7 +23970,7 @@ export interface Organization {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -23670,7 +23978,7 @@ export interface Organization {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -23698,7 +24006,7 @@ export interface Organization {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -23710,7 +24018,7 @@ export interface Organization {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -23718,7 +24026,7 @@ export interface Organization {
      */
     alias?: string[];
     /**
-     * Contains extension information for property 'alias'
+     * Contains extension information for property 'alias'.
      */
     _alias?: Element[];
     /**
@@ -23751,7 +24059,7 @@ export interface OrganizationContact {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23788,7 +24096,7 @@ export interface ParameterDefinition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23800,7 +24108,7 @@ export interface ParameterDefinition {
      */
     name?: code;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -23808,7 +24116,7 @@ export interface ParameterDefinition {
      */
     use: code;
     /**
-     * Contains extension information for property 'use'
+     * Contains extension information for property 'use'.
      */
     _use?: Element;
     /**
@@ -23816,7 +24124,7 @@ export interface ParameterDefinition {
      */
     min?: integer;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -23824,7 +24132,7 @@ export interface ParameterDefinition {
      */
     max?: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
     /**
@@ -23832,7 +24140,7 @@ export interface ParameterDefinition {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -23840,7 +24148,7 @@ export interface ParameterDefinition {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -23853,11 +24161,15 @@ export interface ParameterDefinition {
  */
 export interface Patient {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Patient";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -23869,7 +24181,7 @@ export interface Patient {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -23877,7 +24189,7 @@ export interface Patient {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -23905,7 +24217,7 @@ export interface Patient {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -23921,7 +24233,7 @@ export interface Patient {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -23929,7 +24241,7 @@ export interface Patient {
      */
     birthDate?: date;
     /**
-     * Contains extension information for property 'birthDate'
+     * Contains extension information for property 'birthDate'.
      */
     _birthDate?: Element;
     /**
@@ -23937,7 +24249,7 @@ export interface Patient {
      */
     deceasedBoolean?: boolean;
     /**
-     * Contains extension information for property 'deceasedBoolean'
+     * Contains extension information for property 'deceasedBoolean'.
      */
     _deceasedBoolean?: Element;
     /**
@@ -23945,7 +24257,7 @@ export interface Patient {
      */
     deceasedDateTime?: dateTime;
     /**
-     * Contains extension information for property 'deceasedDateTime'
+     * Contains extension information for property 'deceasedDateTime'.
      */
     _deceasedDateTime?: Element;
     /**
@@ -23961,7 +24273,7 @@ export interface Patient {
      */
     multiplebirthBoolean?: boolean;
     /**
-     * Contains extension information for property 'multiplebirthBoolean'
+     * Contains extension information for property 'multiplebirthBoolean'.
      */
     _multiplebirthBoolean?: Element;
     /**
@@ -23969,7 +24281,7 @@ export interface Patient {
      */
     multiplebirthInteger?: integer;
     /**
-     * Contains extension information for property 'multiplebirthInteger'
+     * Contains extension information for property 'multiplebirthInteger'.
      */
     _multiplebirthInteger?: Element;
     /**
@@ -24010,7 +24322,7 @@ export interface PatientContact {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24042,7 +24354,7 @@ export interface PatientContact {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -24063,7 +24375,7 @@ export interface PatientAnimal {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24096,7 +24408,7 @@ export interface PatientCommunication {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24116,7 +24428,7 @@ export interface PatientCommunication {
      */
     preferred?: boolean;
     /**
-     * Contains extension information for property 'preferred'
+     * Contains extension information for property 'preferred'.
      */
     _preferred?: Element;
 }
@@ -24129,7 +24441,7 @@ export interface PatientLink {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24149,7 +24461,7 @@ export interface PatientLink {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
 }
@@ -24158,11 +24470,15 @@ export interface PatientLink {
  */
 export interface PaymentNotice {
     /**
+     * The type of the resource.
+     */
+    resourceType: "PaymentNotice";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24174,7 +24490,7 @@ export interface PaymentNotice {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -24182,7 +24498,7 @@ export interface PaymentNotice {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -24210,7 +24526,7 @@ export interface PaymentNotice {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -24226,7 +24542,7 @@ export interface PaymentNotice {
      */
     statusDate?: date;
     /**
-     * Contains extension information for property 'statusDate'
+     * Contains extension information for property 'statusDate'.
      */
     _statusDate?: Element;
     /**
@@ -24234,7 +24550,7 @@ export interface PaymentNotice {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -24259,11 +24575,15 @@ export interface PaymentNotice {
  */
 export interface PaymentReconciliation {
     /**
+     * The type of the resource.
+     */
+    resourceType: "PaymentReconciliation";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24275,7 +24595,7 @@ export interface PaymentReconciliation {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -24283,7 +24603,7 @@ export interface PaymentReconciliation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -24311,7 +24631,7 @@ export interface PaymentReconciliation {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -24323,7 +24643,7 @@ export interface PaymentReconciliation {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -24343,7 +24663,7 @@ export interface PaymentReconciliation {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -24380,7 +24700,7 @@ export interface PaymentReconciliationDetail {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24416,7 +24736,7 @@ export interface PaymentReconciliationDetail {
      */
     date?: date;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -24433,7 +24753,7 @@ export interface PaymentReconciliationProcessNote {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24453,7 +24773,7 @@ export interface PaymentReconciliationProcessNote {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
 }
@@ -24466,7 +24786,7 @@ export interface Period {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24478,7 +24798,7 @@ export interface Period {
      */
     start?: dateTime;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -24486,7 +24806,7 @@ export interface Period {
      */
     end?: dateTime;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
 }
@@ -24495,11 +24815,15 @@ export interface Period {
  */
 export interface Person {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Person";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24511,7 +24835,7 @@ export interface Person {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -24519,7 +24843,7 @@ export interface Person {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -24555,7 +24879,7 @@ export interface Person {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -24563,7 +24887,7 @@ export interface Person {
      */
     birthDate?: date;
     /**
-     * Contains extension information for property 'birthDate'
+     * Contains extension information for property 'birthDate'.
      */
     _birthDate?: Element;
     /**
@@ -24583,7 +24907,7 @@ export interface Person {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -24600,7 +24924,7 @@ export interface PersonLink {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24620,7 +24944,7 @@ export interface PersonLink {
      */
     assurance?: code;
     /**
-     * Contains extension information for property 'assurance'
+     * Contains extension information for property 'assurance'.
      */
     _assurance?: Element;
 }
@@ -24629,11 +24953,15 @@ export interface PersonLink {
  */
 export interface PlanDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "PlanDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24645,7 +24973,7 @@ export interface PlanDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -24653,7 +24981,7 @@ export interface PlanDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -24677,7 +25005,7 @@ export interface PlanDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -24689,7 +25017,7 @@ export interface PlanDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -24697,7 +25025,7 @@ export interface PlanDefinition {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -24705,7 +25033,7 @@ export interface PlanDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -24717,7 +25045,7 @@ export interface PlanDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -24725,7 +25053,7 @@ export interface PlanDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -24733,7 +25061,7 @@ export interface PlanDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -24741,7 +25069,7 @@ export interface PlanDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -24749,7 +25077,7 @@ export interface PlanDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -24757,7 +25085,7 @@ export interface PlanDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -24765,7 +25093,7 @@ export interface PlanDefinition {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -24773,7 +25101,7 @@ export interface PlanDefinition {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -24781,7 +25109,7 @@ export interface PlanDefinition {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -24813,7 +25141,7 @@ export interface PlanDefinition {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -24842,7 +25170,7 @@ export interface PlanDefinitionGoal {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24891,7 +25219,7 @@ export interface PlanDefinitionGoalTarget {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24932,7 +25260,7 @@ export interface PlanDefinitionAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -24948,7 +25276,7 @@ export interface PlanDefinitionAction {
      */
     label?: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -24956,7 +25284,7 @@ export interface PlanDefinitionAction {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -24964,7 +25292,7 @@ export interface PlanDefinitionAction {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -24972,7 +25300,7 @@ export interface PlanDefinitionAction {
      */
     textEquivalent?: string;
     /**
-     * Contains extension information for property 'textEquivalent'
+     * Contains extension information for property 'textEquivalent'.
      */
     _textEquivalent?: Element;
     /**
@@ -24992,7 +25320,7 @@ export interface PlanDefinitionAction {
      */
     goalId?: id[];
     /**
-     * Contains extension information for property 'goalId'
+     * Contains extension information for property 'goalId'.
      */
     _goalId?: Element[];
     /**
@@ -25020,7 +25348,7 @@ export interface PlanDefinitionAction {
      */
     timingDateTime?: dateTime;
     /**
-     * Contains extension information for property 'timingDateTime'
+     * Contains extension information for property 'timingDateTime'.
      */
     _timingDateTime?: Element;
     /**
@@ -25052,7 +25380,7 @@ export interface PlanDefinitionAction {
      */
     groupingBehavior?: code;
     /**
-     * Contains extension information for property 'groupingBehavior'
+     * Contains extension information for property 'groupingBehavior'.
      */
     _groupingBehavior?: Element;
     /**
@@ -25060,7 +25388,7 @@ export interface PlanDefinitionAction {
      */
     selectionBehavior?: code;
     /**
-     * Contains extension information for property 'selectionBehavior'
+     * Contains extension information for property 'selectionBehavior'.
      */
     _selectionBehavior?: Element;
     /**
@@ -25068,7 +25396,7 @@ export interface PlanDefinitionAction {
      */
     requiredBehavior?: code;
     /**
-     * Contains extension information for property 'requiredBehavior'
+     * Contains extension information for property 'requiredBehavior'.
      */
     _requiredBehavior?: Element;
     /**
@@ -25076,7 +25404,7 @@ export interface PlanDefinitionAction {
      */
     precheckBehavior?: code;
     /**
-     * Contains extension information for property 'precheckBehavior'
+     * Contains extension information for property 'precheckBehavior'.
      */
     _precheckBehavior?: Element;
     /**
@@ -25084,7 +25412,7 @@ export interface PlanDefinitionAction {
      */
     cardinalityBehavior?: code;
     /**
-     * Contains extension information for property 'cardinalityBehavior'
+     * Contains extension information for property 'cardinalityBehavior'.
      */
     _cardinalityBehavior?: Element;
     /**
@@ -25113,7 +25441,7 @@ export interface PlanDefinitionActionCondition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25129,7 +25457,7 @@ export interface PlanDefinitionActionCondition {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -25137,7 +25465,7 @@ export interface PlanDefinitionActionCondition {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -25145,7 +25473,7 @@ export interface PlanDefinitionActionCondition {
      */
     language?: string;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25153,7 +25481,7 @@ export interface PlanDefinitionActionCondition {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
 }
@@ -25166,7 +25494,7 @@ export interface PlanDefinitionActionRelatedAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25182,7 +25510,7 @@ export interface PlanDefinitionActionRelatedAction {
      */
     actionId: id;
     /**
-     * Contains extension information for property 'actionId'
+     * Contains extension information for property 'actionId'.
      */
     _actionId?: Element;
     /**
@@ -25190,7 +25518,7 @@ export interface PlanDefinitionActionRelatedAction {
      */
     relationship: code;
     /**
-     * Contains extension information for property 'relationship'
+     * Contains extension information for property 'relationship'.
      */
     _relationship?: Element;
     /**
@@ -25211,7 +25539,7 @@ export interface PlanDefinitionActionParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25227,7 +25555,7 @@ export interface PlanDefinitionActionParticipant {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -25244,7 +25572,7 @@ export interface PlanDefinitionActionDynamicValue {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25260,7 +25588,7 @@ export interface PlanDefinitionActionDynamicValue {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -25268,7 +25596,7 @@ export interface PlanDefinitionActionDynamicValue {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -25276,7 +25604,7 @@ export interface PlanDefinitionActionDynamicValue {
      */
     language?: string;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25284,7 +25612,7 @@ export interface PlanDefinitionActionDynamicValue {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
 }
@@ -25293,11 +25621,15 @@ export interface PlanDefinitionActionDynamicValue {
  */
 export interface Practitioner {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Practitioner";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25309,7 +25641,7 @@ export interface Practitioner {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -25317,7 +25649,7 @@ export interface Practitioner {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25345,7 +25677,7 @@ export interface Practitioner {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -25365,7 +25697,7 @@ export interface Practitioner {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -25373,7 +25705,7 @@ export interface Practitioner {
      */
     birthDate?: date;
     /**
-     * Contains extension information for property 'birthDate'
+     * Contains extension information for property 'birthDate'.
      */
     _birthDate?: Element;
     /**
@@ -25398,7 +25730,7 @@ export interface PractitionerQualification {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25431,11 +25763,15 @@ export interface PractitionerQualification {
  */
 export interface PractitionerRole {
     /**
+     * The type of the resource.
+     */
+    resourceType: "PractitionerRole";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25447,7 +25783,7 @@ export interface PractitionerRole {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -25455,7 +25791,7 @@ export interface PractitionerRole {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25483,7 +25819,7 @@ export interface PractitionerRole {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -25531,7 +25867,7 @@ export interface PractitionerRole {
      */
     availabilityExceptions?: string;
     /**
-     * Contains extension information for property 'availabilityExceptions'
+     * Contains extension information for property 'availabilityExceptions'.
      */
     _availabilityExceptions?: Element;
     /**
@@ -25548,7 +25884,7 @@ export interface PractitionerRoleAvailableTime {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25564,7 +25900,7 @@ export interface PractitionerRoleAvailableTime {
      */
     daysOfWeek?: code[];
     /**
-     * Contains extension information for property 'daysOfWeek'
+     * Contains extension information for property 'daysOfWeek'.
      */
     _daysOfWeek?: Element[];
     /**
@@ -25572,7 +25908,7 @@ export interface PractitionerRoleAvailableTime {
      */
     allDay?: boolean;
     /**
-     * Contains extension information for property 'allDay'
+     * Contains extension information for property 'allDay'.
      */
     _allDay?: Element;
     /**
@@ -25580,7 +25916,7 @@ export interface PractitionerRoleAvailableTime {
      */
     availableStartTime?: time;
     /**
-     * Contains extension information for property 'availableStartTime'
+     * Contains extension information for property 'availableStartTime'.
      */
     _availableStartTime?: Element;
     /**
@@ -25588,7 +25924,7 @@ export interface PractitionerRoleAvailableTime {
      */
     availableEndTime?: time;
     /**
-     * Contains extension information for property 'availableEndTime'
+     * Contains extension information for property 'availableEndTime'.
      */
     _availableEndTime?: Element;
 }
@@ -25601,7 +25937,7 @@ export interface PractitionerRoleNotAvailable {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25617,7 +25953,7 @@ export interface PractitionerRoleNotAvailable {
      */
     description: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -25630,11 +25966,15 @@ export interface PractitionerRoleNotAvailable {
  */
 export interface Procedure {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Procedure";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25646,7 +25986,7 @@ export interface Procedure {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -25654,7 +25994,7 @@ export interface Procedure {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25694,7 +26034,7 @@ export interface Procedure {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -25702,7 +26042,7 @@ export interface Procedure {
      */
     notDone?: boolean;
     /**
-     * Contains extension information for property 'notDone'
+     * Contains extension information for property 'notDone'.
      */
     _notDone?: Element;
     /**
@@ -25730,7 +26070,7 @@ export interface Procedure {
      */
     performedDateTime?: dateTime;
     /**
-     * Contains extension information for property 'performedDateTime'
+     * Contains extension information for property 'performedDateTime'.
      */
     _performedDateTime?: Element;
     /**
@@ -25803,7 +26143,7 @@ export interface ProcedurePerformer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25836,7 +26176,7 @@ export interface ProcedureFocalDevice {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25861,11 +26201,15 @@ export interface ProcedureFocalDevice {
  */
 export interface ProcedureRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ProcedureRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -25877,7 +26221,7 @@ export interface ProcedureRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -25885,7 +26229,7 @@ export interface ProcedureRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -25929,7 +26273,7 @@ export interface ProcedureRequest {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -25937,7 +26281,7 @@ export interface ProcedureRequest {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -25945,7 +26289,7 @@ export interface ProcedureRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -25953,7 +26297,7 @@ export interface ProcedureRequest {
      */
     doNotPerform?: boolean;
     /**
-     * Contains extension information for property 'doNotPerform'
+     * Contains extension information for property 'doNotPerform'.
      */
     _doNotPerform?: Element;
     /**
@@ -25977,7 +26321,7 @@ export interface ProcedureRequest {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -25993,7 +26337,7 @@ export interface ProcedureRequest {
      */
     asneededBoolean?: boolean;
     /**
-     * Contains extension information for property 'asneededBoolean'
+     * Contains extension information for property 'asneededBoolean'.
      */
     _asneededBoolean?: Element;
     /**
@@ -26005,7 +26349,7 @@ export interface ProcedureRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -26058,7 +26402,7 @@ export interface ProcedureRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26083,11 +26427,15 @@ export interface ProcedureRequestRequester {
  */
 export interface ProcessRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ProcessRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26099,7 +26447,7 @@ export interface ProcessRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -26107,7 +26455,7 @@ export interface ProcessRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -26135,7 +26483,7 @@ export interface ProcessRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -26143,7 +26491,7 @@ export interface ProcessRequest {
      */
     action?: code;
     /**
-     * Contains extension information for property 'action'
+     * Contains extension information for property 'action'.
      */
     _action?: Element;
     /**
@@ -26155,7 +26503,7 @@ export interface ProcessRequest {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -26179,7 +26527,7 @@ export interface ProcessRequest {
      */
     nullify?: boolean;
     /**
-     * Contains extension information for property 'nullify'
+     * Contains extension information for property 'nullify'.
      */
     _nullify?: Element;
     /**
@@ -26187,7 +26535,7 @@ export interface ProcessRequest {
      */
     reference?: string;
     /**
-     * Contains extension information for property 'reference'
+     * Contains extension information for property 'reference'.
      */
     _reference?: Element;
     /**
@@ -26199,7 +26547,7 @@ export interface ProcessRequest {
      */
     include?: string[];
     /**
-     * Contains extension information for property 'include'
+     * Contains extension information for property 'include'.
      */
     _include?: Element[];
     /**
@@ -26207,7 +26555,7 @@ export interface ProcessRequest {
      */
     exclude?: string[];
     /**
-     * Contains extension information for property 'exclude'
+     * Contains extension information for property 'exclude'.
      */
     _exclude?: Element[];
     /**
@@ -26224,7 +26572,7 @@ export interface ProcessRequestItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26240,7 +26588,7 @@ export interface ProcessRequestItem {
      */
     sequenceLinkId: integer;
     /**
-     * Contains extension information for property 'sequenceLinkId'
+     * Contains extension information for property 'sequenceLinkId'.
      */
     _sequenceLinkId?: Element;
 }
@@ -26249,11 +26597,15 @@ export interface ProcessRequestItem {
  */
 export interface ProcessResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ProcessResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26265,7 +26617,7 @@ export interface ProcessResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -26273,7 +26625,7 @@ export interface ProcessResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -26301,7 +26653,7 @@ export interface ProcessResponse {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -26309,7 +26661,7 @@ export interface ProcessResponse {
      */
     created?: dateTime;
     /**
-     * Contains extension information for property 'created'
+     * Contains extension information for property 'created'.
      */
     _created?: Element;
     /**
@@ -26329,7 +26681,7 @@ export interface ProcessResponse {
      */
     disposition?: string;
     /**
-     * Contains extension information for property 'disposition'
+     * Contains extension information for property 'disposition'.
      */
     _disposition?: Element;
     /**
@@ -26366,7 +26718,7 @@ export interface ProcessResponseProcessNote {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26386,7 +26738,7 @@ export interface ProcessResponseProcessNote {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
 }
@@ -26395,11 +26747,15 @@ export interface ProcessResponseProcessNote {
  */
 export interface Provenance {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Provenance";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26411,7 +26767,7 @@ export interface Provenance {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -26419,7 +26775,7 @@ export interface Provenance {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -26451,7 +26807,7 @@ export interface Provenance {
      */
     recorded: instant;
     /**
-     * Contains extension information for property 'recorded'
+     * Contains extension information for property 'recorded'.
      */
     _recorded?: Element;
     /**
@@ -26459,7 +26815,7 @@ export interface Provenance {
      */
     policy?: uri[];
     /**
-     * Contains extension information for property 'policy'
+     * Contains extension information for property 'policy'.
      */
     _policy?: Element[];
     /**
@@ -26496,7 +26852,7 @@ export interface ProvenanceAgent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26516,7 +26872,7 @@ export interface ProvenanceAgent {
      */
     whoUri: uri;
     /**
-     * Contains extension information for property 'whoUri'
+     * Contains extension information for property 'whoUri'.
      */
     _whoUri?: Element;
     /**
@@ -26528,7 +26884,7 @@ export interface ProvenanceAgent {
      */
     onbehalfofUri?: uri;
     /**
-     * Contains extension information for property 'onbehalfofUri'
+     * Contains extension information for property 'onbehalfofUri'.
      */
     _onbehalfofUri?: Element;
     /**
@@ -26549,7 +26905,7 @@ export interface ProvenanceEntity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26565,7 +26921,7 @@ export interface ProvenanceEntity {
      */
     role: code;
     /**
-     * Contains extension information for property 'role'
+     * Contains extension information for property 'role'.
      */
     _role?: Element;
     /**
@@ -26573,7 +26929,7 @@ export interface ProvenanceEntity {
      */
     whatUri: uri;
     /**
-     * Contains extension information for property 'whatUri'
+     * Contains extension information for property 'whatUri'.
      */
     _whatUri?: Element;
     /**
@@ -26598,7 +26954,7 @@ export interface Quantity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26610,7 +26966,7 @@ export interface Quantity {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -26618,7 +26974,7 @@ export interface Quantity {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -26626,7 +26982,7 @@ export interface Quantity {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -26634,7 +26990,7 @@ export interface Quantity {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -26642,7 +26998,7 @@ export interface Quantity {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -26651,11 +27007,15 @@ export interface Quantity {
  */
 export interface Questionnaire {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Questionnaire";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26667,7 +27027,7 @@ export interface Questionnaire {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -26675,7 +27035,7 @@ export interface Questionnaire {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -26699,7 +27059,7 @@ export interface Questionnaire {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -26711,7 +27071,7 @@ export interface Questionnaire {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -26719,7 +27079,7 @@ export interface Questionnaire {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -26727,7 +27087,7 @@ export interface Questionnaire {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -26735,7 +27095,7 @@ export interface Questionnaire {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -26743,7 +27103,7 @@ export interface Questionnaire {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -26751,7 +27111,7 @@ export interface Questionnaire {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -26759,7 +27119,7 @@ export interface Questionnaire {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -26767,7 +27127,7 @@ export interface Questionnaire {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -26775,7 +27135,7 @@ export interface Questionnaire {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -26783,7 +27143,7 @@ export interface Questionnaire {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -26791,7 +27151,7 @@ export interface Questionnaire {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -26815,7 +27175,7 @@ export interface Questionnaire {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -26827,7 +27187,7 @@ export interface Questionnaire {
      */
     subjectType?: code[];
     /**
-     * Contains extension information for property 'subjectType'
+     * Contains extension information for property 'subjectType'.
      */
     _subjectType?: Element[];
     /**
@@ -26844,7 +27204,7 @@ export interface QuestionnaireItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -26860,7 +27220,7 @@ export interface QuestionnaireItem {
      */
     linkId: string;
     /**
-     * Contains extension information for property 'linkId'
+     * Contains extension information for property 'linkId'.
      */
     _linkId?: Element;
     /**
@@ -26868,7 +27228,7 @@ export interface QuestionnaireItem {
      */
     definition?: uri;
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element;
     /**
@@ -26880,7 +27240,7 @@ export interface QuestionnaireItem {
      */
     prefix?: string;
     /**
-     * Contains extension information for property 'prefix'
+     * Contains extension information for property 'prefix'.
      */
     _prefix?: Element;
     /**
@@ -26888,7 +27248,7 @@ export interface QuestionnaireItem {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -26896,7 +27256,7 @@ export interface QuestionnaireItem {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -26908,7 +27268,7 @@ export interface QuestionnaireItem {
      */
     required?: boolean;
     /**
-     * Contains extension information for property 'required'
+     * Contains extension information for property 'required'.
      */
     _required?: Element;
     /**
@@ -26916,7 +27276,7 @@ export interface QuestionnaireItem {
      */
     repeats?: boolean;
     /**
-     * Contains extension information for property 'repeats'
+     * Contains extension information for property 'repeats'.
      */
     _repeats?: Element;
     /**
@@ -26924,7 +27284,7 @@ export interface QuestionnaireItem {
      */
     readOnly?: boolean;
     /**
-     * Contains extension information for property 'readOnly'
+     * Contains extension information for property 'readOnly'.
      */
     _readOnly?: Element;
     /**
@@ -26932,7 +27292,7 @@ export interface QuestionnaireItem {
      */
     maxLength?: integer;
     /**
-     * Contains extension information for property 'maxLength'
+     * Contains extension information for property 'maxLength'.
      */
     _maxLength?: Element;
     /**
@@ -26948,7 +27308,7 @@ export interface QuestionnaireItem {
      */
     initialBoolean?: boolean;
     /**
-     * Contains extension information for property 'initialBoolean'
+     * Contains extension information for property 'initialBoolean'.
      */
     _initialBoolean?: Element;
     /**
@@ -26956,7 +27316,7 @@ export interface QuestionnaireItem {
      */
     initialDecimal?: decimal;
     /**
-     * Contains extension information for property 'initialDecimal'
+     * Contains extension information for property 'initialDecimal'.
      */
     _initialDecimal?: Element;
     /**
@@ -26964,7 +27324,7 @@ export interface QuestionnaireItem {
      */
     initialInteger?: integer;
     /**
-     * Contains extension information for property 'initialInteger'
+     * Contains extension information for property 'initialInteger'.
      */
     _initialInteger?: Element;
     /**
@@ -26972,7 +27332,7 @@ export interface QuestionnaireItem {
      */
     initialDate?: date;
     /**
-     * Contains extension information for property 'initialDate'
+     * Contains extension information for property 'initialDate'.
      */
     _initialDate?: Element;
     /**
@@ -26980,7 +27340,7 @@ export interface QuestionnaireItem {
      */
     initialDateTime?: dateTime;
     /**
-     * Contains extension information for property 'initialDateTime'
+     * Contains extension information for property 'initialDateTime'.
      */
     _initialDateTime?: Element;
     /**
@@ -26988,7 +27348,7 @@ export interface QuestionnaireItem {
      */
     initialTime?: time;
     /**
-     * Contains extension information for property 'initialTime'
+     * Contains extension information for property 'initialTime'.
      */
     _initialTime?: Element;
     /**
@@ -26996,7 +27356,7 @@ export interface QuestionnaireItem {
      */
     initialString?: string;
     /**
-     * Contains extension information for property 'initialString'
+     * Contains extension information for property 'initialString'.
      */
     _initialString?: Element;
     /**
@@ -27004,7 +27364,7 @@ export interface QuestionnaireItem {
      */
     initialUri?: uri;
     /**
-     * Contains extension information for property 'initialUri'
+     * Contains extension information for property 'initialUri'.
      */
     _initialUri?: Element;
     /**
@@ -27037,7 +27397,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27053,7 +27413,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     question: string;
     /**
-     * Contains extension information for property 'question'
+     * Contains extension information for property 'question'.
      */
     _question?: Element;
     /**
@@ -27061,7 +27421,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     hasAnswer?: boolean;
     /**
-     * Contains extension information for property 'hasAnswer'
+     * Contains extension information for property 'hasAnswer'.
      */
     _hasAnswer?: Element;
     /**
@@ -27069,7 +27429,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerBoolean?: boolean;
     /**
-     * Contains extension information for property 'answerBoolean'
+     * Contains extension information for property 'answerBoolean'.
      */
     _answerBoolean?: Element;
     /**
@@ -27077,7 +27437,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerDecimal?: decimal;
     /**
-     * Contains extension information for property 'answerDecimal'
+     * Contains extension information for property 'answerDecimal'.
      */
     _answerDecimal?: Element;
     /**
@@ -27085,7 +27445,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerInteger?: integer;
     /**
-     * Contains extension information for property 'answerInteger'
+     * Contains extension information for property 'answerInteger'.
      */
     _answerInteger?: Element;
     /**
@@ -27093,7 +27453,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerDate?: date;
     /**
-     * Contains extension information for property 'answerDate'
+     * Contains extension information for property 'answerDate'.
      */
     _answerDate?: Element;
     /**
@@ -27101,7 +27461,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerDateTime?: dateTime;
     /**
-     * Contains extension information for property 'answerDateTime'
+     * Contains extension information for property 'answerDateTime'.
      */
     _answerDateTime?: Element;
     /**
@@ -27109,7 +27469,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerTime?: time;
     /**
-     * Contains extension information for property 'answerTime'
+     * Contains extension information for property 'answerTime'.
      */
     _answerTime?: Element;
     /**
@@ -27117,7 +27477,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerString?: string;
     /**
-     * Contains extension information for property 'answerString'
+     * Contains extension information for property 'answerString'.
      */
     _answerString?: Element;
     /**
@@ -27125,7 +27485,7 @@ export interface QuestionnaireItemEnableWhen {
      */
     answerUri?: uri;
     /**
-     * Contains extension information for property 'answerUri'
+     * Contains extension information for property 'answerUri'.
      */
     _answerUri?: Element;
     /**
@@ -27154,7 +27514,7 @@ export interface QuestionnaireItemOption {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27170,7 +27530,7 @@ export interface QuestionnaireItemOption {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -27178,7 +27538,7 @@ export interface QuestionnaireItemOption {
      */
     valueDate: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -27186,7 +27546,7 @@ export interface QuestionnaireItemOption {
      */
     valueTime: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -27194,7 +27554,7 @@ export interface QuestionnaireItemOption {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -27207,11 +27567,15 @@ export interface QuestionnaireItemOption {
  */
 export interface QuestionnaireResponse {
     /**
+     * The type of the resource.
+     */
+    resourceType: "QuestionnaireResponse";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27223,7 +27587,7 @@ export interface QuestionnaireResponse {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -27231,7 +27595,7 @@ export interface QuestionnaireResponse {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -27271,7 +27635,7 @@ export interface QuestionnaireResponse {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -27287,7 +27651,7 @@ export interface QuestionnaireResponse {
      */
     authored?: dateTime;
     /**
-     * Contains extension information for property 'authored'
+     * Contains extension information for property 'authored'.
      */
     _authored?: Element;
     /**
@@ -27312,7 +27676,7 @@ export interface QuestionnaireResponseItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27328,7 +27692,7 @@ export interface QuestionnaireResponseItem {
      */
     linkId: string;
     /**
-     * Contains extension information for property 'linkId'
+     * Contains extension information for property 'linkId'.
      */
     _linkId?: Element;
     /**
@@ -27336,7 +27700,7 @@ export interface QuestionnaireResponseItem {
      */
     definition?: uri;
     /**
-     * Contains extension information for property 'definition'
+     * Contains extension information for property 'definition'.
      */
     _definition?: Element;
     /**
@@ -27344,7 +27708,7 @@ export interface QuestionnaireResponseItem {
      */
     text?: string;
     /**
-     * Contains extension information for property 'text'
+     * Contains extension information for property 'text'.
      */
     _text?: Element;
     /**
@@ -27369,7 +27733,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27385,7 +27749,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueBoolean?: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -27393,7 +27757,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueDecimal?: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -27401,7 +27765,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueInteger?: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -27409,7 +27773,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueDate?: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -27417,7 +27781,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -27425,7 +27789,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueTime?: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -27433,7 +27797,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -27441,7 +27805,7 @@ export interface QuestionnaireResponseItemAnswer {
      */
     valueUri?: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -27474,7 +27838,7 @@ export interface Range {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27499,7 +27863,7 @@ export interface Ratio {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27524,7 +27888,7 @@ export interface Reference {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27536,7 +27900,7 @@ export interface Reference {
      */
     reference?: string;
     /**
-     * Contains extension information for property 'reference'
+     * Contains extension information for property 'reference'.
      */
     _reference?: Element;
     /**
@@ -27548,7 +27912,7 @@ export interface Reference {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
 }
@@ -27557,11 +27921,15 @@ export interface Reference {
  */
 export interface ReferralRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ReferralRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27573,7 +27941,7 @@ export interface ReferralRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -27581,7 +27949,7 @@ export interface ReferralRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -27625,7 +27993,7 @@ export interface ReferralRequest {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -27633,7 +28001,7 @@ export interface ReferralRequest {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -27645,7 +28013,7 @@ export interface ReferralRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -27665,7 +28033,7 @@ export interface ReferralRequest {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -27677,7 +28045,7 @@ export interface ReferralRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -27705,7 +28073,7 @@ export interface ReferralRequest {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -27730,7 +28098,7 @@ export interface ReferralRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27759,7 +28127,7 @@ export interface RelatedArtifact {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27771,7 +28139,7 @@ export interface RelatedArtifact {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -27779,7 +28147,7 @@ export interface RelatedArtifact {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -27787,7 +28155,7 @@ export interface RelatedArtifact {
      */
     citation?: string;
     /**
-     * Contains extension information for property 'citation'
+     * Contains extension information for property 'citation'.
      */
     _citation?: Element;
     /**
@@ -27795,7 +28163,7 @@ export interface RelatedArtifact {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -27812,11 +28180,15 @@ export interface RelatedArtifact {
  */
 export interface RelatedPerson {
     /**
+     * The type of the resource.
+     */
+    resourceType: "RelatedPerson";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27828,7 +28200,7 @@ export interface RelatedPerson {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -27836,7 +28208,7 @@ export interface RelatedPerson {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -27864,7 +28236,7 @@ export interface RelatedPerson {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -27888,7 +28260,7 @@ export interface RelatedPerson {
      */
     gender?: code;
     /**
-     * Contains extension information for property 'gender'
+     * Contains extension information for property 'gender'.
      */
     _gender?: Element;
     /**
@@ -27896,7 +28268,7 @@ export interface RelatedPerson {
      */
     birthDate?: date;
     /**
-     * Contains extension information for property 'birthDate'
+     * Contains extension information for property 'birthDate'.
      */
     _birthDate?: Element;
     /**
@@ -27917,11 +28289,15 @@ export interface RelatedPerson {
  */
 export interface RequestGroup {
     /**
+     * The type of the resource.
+     */
+    resourceType: "RequestGroup";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -27933,7 +28309,7 @@ export interface RequestGroup {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -27941,7 +28317,7 @@ export interface RequestGroup {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -27985,7 +28361,7 @@ export interface RequestGroup {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -27993,7 +28369,7 @@ export interface RequestGroup {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -28001,7 +28377,7 @@ export interface RequestGroup {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -28017,7 +28393,7 @@ export interface RequestGroup {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -28050,7 +28426,7 @@ export interface RequestGroupAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28066,7 +28442,7 @@ export interface RequestGroupAction {
      */
     label?: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -28074,7 +28450,7 @@ export interface RequestGroupAction {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -28082,7 +28458,7 @@ export interface RequestGroupAction {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -28090,7 +28466,7 @@ export interface RequestGroupAction {
      */
     textEquivalent?: string;
     /**
-     * Contains extension information for property 'textEquivalent'
+     * Contains extension information for property 'textEquivalent'.
      */
     _textEquivalent?: Element;
     /**
@@ -28114,7 +28490,7 @@ export interface RequestGroupAction {
      */
     timingDateTime?: dateTime;
     /**
-     * Contains extension information for property 'timingDateTime'
+     * Contains extension information for property 'timingDateTime'.
      */
     _timingDateTime?: Element;
     /**
@@ -28146,7 +28522,7 @@ export interface RequestGroupAction {
      */
     groupingBehavior?: code;
     /**
-     * Contains extension information for property 'groupingBehavior'
+     * Contains extension information for property 'groupingBehavior'.
      */
     _groupingBehavior?: Element;
     /**
@@ -28154,7 +28530,7 @@ export interface RequestGroupAction {
      */
     selectionBehavior?: code;
     /**
-     * Contains extension information for property 'selectionBehavior'
+     * Contains extension information for property 'selectionBehavior'.
      */
     _selectionBehavior?: Element;
     /**
@@ -28162,7 +28538,7 @@ export interface RequestGroupAction {
      */
     requiredBehavior?: code;
     /**
-     * Contains extension information for property 'requiredBehavior'
+     * Contains extension information for property 'requiredBehavior'.
      */
     _requiredBehavior?: Element;
     /**
@@ -28170,7 +28546,7 @@ export interface RequestGroupAction {
      */
     precheckBehavior?: code;
     /**
-     * Contains extension information for property 'precheckBehavior'
+     * Contains extension information for property 'precheckBehavior'.
      */
     _precheckBehavior?: Element;
     /**
@@ -28178,7 +28554,7 @@ export interface RequestGroupAction {
      */
     cardinalityBehavior?: code;
     /**
-     * Contains extension information for property 'cardinalityBehavior'
+     * Contains extension information for property 'cardinalityBehavior'.
      */
     _cardinalityBehavior?: Element;
     /**
@@ -28199,7 +28575,7 @@ export interface RequestGroupActionCondition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28215,7 +28591,7 @@ export interface RequestGroupActionCondition {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -28223,7 +28599,7 @@ export interface RequestGroupActionCondition {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -28231,7 +28607,7 @@ export interface RequestGroupActionCondition {
      */
     language?: string;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -28239,7 +28615,7 @@ export interface RequestGroupActionCondition {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
 }
@@ -28252,7 +28628,7 @@ export interface RequestGroupActionRelatedAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28268,7 +28644,7 @@ export interface RequestGroupActionRelatedAction {
      */
     actionId: id;
     /**
-     * Contains extension information for property 'actionId'
+     * Contains extension information for property 'actionId'.
      */
     _actionId?: Element;
     /**
@@ -28276,7 +28652,7 @@ export interface RequestGroupActionRelatedAction {
      */
     relationship: code;
     /**
-     * Contains extension information for property 'relationship'
+     * Contains extension information for property 'relationship'.
      */
     _relationship?: Element;
     /**
@@ -28293,11 +28669,15 @@ export interface RequestGroupActionRelatedAction {
  */
 export interface ResearchStudy {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ResearchStudy";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28309,7 +28689,7 @@ export interface ResearchStudy {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28317,7 +28697,7 @@ export interface ResearchStudy {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -28345,7 +28725,7 @@ export interface ResearchStudy {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -28361,7 +28741,7 @@ export interface ResearchStudy {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -28393,7 +28773,7 @@ export interface ResearchStudy {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -28438,7 +28818,7 @@ export interface ResearchStudyArm {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28454,7 +28834,7 @@ export interface ResearchStudyArm {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -28466,7 +28846,7 @@ export interface ResearchStudyArm {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
 }
@@ -28475,11 +28855,15 @@ export interface ResearchStudyArm {
  */
 export interface ResearchSubject {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ResearchSubject";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28491,7 +28875,7 @@ export interface ResearchSubject {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28499,7 +28883,7 @@ export interface ResearchSubject {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -28527,7 +28911,7 @@ export interface ResearchSubject {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -28547,7 +28931,7 @@ export interface ResearchSubject {
      */
     assignedArm?: string;
     /**
-     * Contains extension information for property 'assignedArm'
+     * Contains extension information for property 'assignedArm'.
      */
     _assignedArm?: Element;
     /**
@@ -28555,7 +28939,7 @@ export interface ResearchSubject {
      */
     actualArm?: string;
     /**
-     * Contains extension information for property 'actualArm'
+     * Contains extension information for property 'actualArm'.
      */
     _actualArm?: Element;
     /**
@@ -28568,11 +28952,15 @@ export interface ResearchSubject {
  */
 export interface Resource {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Resource";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28584,7 +28972,7 @@ export interface Resource {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28592,7 +28980,7 @@ export interface Resource {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
 }
@@ -28601,11 +28989,15 @@ export interface Resource {
  */
 export interface RiskAssessment {
     /**
+     * The type of the resource.
+     */
+    resourceType: "RiskAssessment";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28617,7 +29009,7 @@ export interface RiskAssessment {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28625,7 +29017,7 @@ export interface RiskAssessment {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -28661,7 +29053,7 @@ export interface RiskAssessment {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -28685,7 +29077,7 @@ export interface RiskAssessment {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -28721,7 +29113,7 @@ export interface RiskAssessment {
      */
     mitigation?: string;
     /**
-     * Contains extension information for property 'mitigation'
+     * Contains extension information for property 'mitigation'.
      */
     _mitigation?: Element;
     /**
@@ -28729,7 +29121,7 @@ export interface RiskAssessment {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -28742,7 +29134,7 @@ export interface RiskAssessmentPrediction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28762,7 +29154,7 @@ export interface RiskAssessmentPrediction {
      */
     probabilityDecimal?: decimal;
     /**
-     * Contains extension information for property 'probabilityDecimal'
+     * Contains extension information for property 'probabilityDecimal'.
      */
     _probabilityDecimal?: Element;
     /**
@@ -28778,7 +29170,7 @@ export interface RiskAssessmentPrediction {
      */
     relativeRisk?: decimal;
     /**
-     * Contains extension information for property 'relativeRisk'
+     * Contains extension information for property 'relativeRisk'.
      */
     _relativeRisk?: Element;
     /**
@@ -28794,7 +29186,7 @@ export interface RiskAssessmentPrediction {
      */
     rationale?: string;
     /**
-     * Contains extension information for property 'rationale'
+     * Contains extension information for property 'rationale'.
      */
     _rationale?: Element;
 }
@@ -28807,7 +29199,7 @@ export interface SampledData {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28823,7 +29215,7 @@ export interface SampledData {
      */
     period: decimal;
     /**
-     * Contains extension information for property 'period'
+     * Contains extension information for property 'period'.
      */
     _period?: Element;
     /**
@@ -28831,7 +29223,7 @@ export interface SampledData {
      */
     factor?: decimal;
     /**
-     * Contains extension information for property 'factor'
+     * Contains extension information for property 'factor'.
      */
     _factor?: Element;
     /**
@@ -28839,7 +29231,7 @@ export interface SampledData {
      */
     lowerLimit?: decimal;
     /**
-     * Contains extension information for property 'lowerLimit'
+     * Contains extension information for property 'lowerLimit'.
      */
     _lowerLimit?: Element;
     /**
@@ -28847,7 +29239,7 @@ export interface SampledData {
      */
     upperLimit?: decimal;
     /**
-     * Contains extension information for property 'upperLimit'
+     * Contains extension information for property 'upperLimit'.
      */
     _upperLimit?: Element;
     /**
@@ -28855,7 +29247,7 @@ export interface SampledData {
      */
     dimensions: positiveInt;
     /**
-     * Contains extension information for property 'dimensions'
+     * Contains extension information for property 'dimensions'.
      */
     _dimensions?: Element;
     /**
@@ -28863,7 +29255,7 @@ export interface SampledData {
      */
     data: string;
     /**
-     * Contains extension information for property 'data'
+     * Contains extension information for property 'data'.
      */
     _data?: Element;
 }
@@ -28872,11 +29264,15 @@ export interface SampledData {
  */
 export interface Schedule {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Schedule";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28888,7 +29284,7 @@ export interface Schedule {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28896,7 +29292,7 @@ export interface Schedule {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -28924,7 +29320,7 @@ export interface Schedule {
      */
     active?: boolean;
     /**
-     * Contains extension information for property 'active'
+     * Contains extension information for property 'active'.
      */
     _active?: Element;
     /**
@@ -28952,7 +29348,7 @@ export interface Schedule {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -28961,11 +29357,15 @@ export interface Schedule {
  */
 export interface SearchParameter {
     /**
+     * The type of the resource.
+     */
+    resourceType: "SearchParameter";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -28977,7 +29377,7 @@ export interface SearchParameter {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -28985,7 +29385,7 @@ export interface SearchParameter {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -29009,7 +29409,7 @@ export interface SearchParameter {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -29017,7 +29417,7 @@ export interface SearchParameter {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -29025,7 +29425,7 @@ export interface SearchParameter {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -29033,7 +29433,7 @@ export interface SearchParameter {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -29041,7 +29441,7 @@ export interface SearchParameter {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -29049,7 +29449,7 @@ export interface SearchParameter {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -29057,7 +29457,7 @@ export interface SearchParameter {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -29077,7 +29477,7 @@ export interface SearchParameter {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -29085,7 +29485,7 @@ export interface SearchParameter {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -29093,7 +29493,7 @@ export interface SearchParameter {
      */
     base: code[];
     /**
-     * Contains extension information for property 'base'
+     * Contains extension information for property 'base'.
      */
     _base?: Element[];
     /**
@@ -29101,7 +29501,7 @@ export interface SearchParameter {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -29109,7 +29509,7 @@ export interface SearchParameter {
      */
     derivedFrom?: uri;
     /**
-     * Contains extension information for property 'derivedFrom'
+     * Contains extension information for property 'derivedFrom'.
      */
     _derivedFrom?: Element;
     /**
@@ -29117,7 +29517,7 @@ export interface SearchParameter {
      */
     description: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -29125,7 +29525,7 @@ export interface SearchParameter {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
     /**
@@ -29133,7 +29533,7 @@ export interface SearchParameter {
      */
     xpath?: string;
     /**
-     * Contains extension information for property 'xpath'
+     * Contains extension information for property 'xpath'.
      */
     _xpath?: Element;
     /**
@@ -29141,7 +29541,7 @@ export interface SearchParameter {
      */
     xpathUsage?: code;
     /**
-     * Contains extension information for property 'xpathUsage'
+     * Contains extension information for property 'xpathUsage'.
      */
     _xpathUsage?: Element;
     /**
@@ -29149,7 +29549,7 @@ export interface SearchParameter {
      */
     target?: code[];
     /**
-     * Contains extension information for property 'target'
+     * Contains extension information for property 'target'.
      */
     _target?: Element[];
     /**
@@ -29157,7 +29557,7 @@ export interface SearchParameter {
      */
     comparator?: code[];
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element[];
     /**
@@ -29165,7 +29565,7 @@ export interface SearchParameter {
      */
     modifier?: code[];
     /**
-     * Contains extension information for property 'modifier'
+     * Contains extension information for property 'modifier'.
      */
     _modifier?: Element[];
     /**
@@ -29173,7 +29573,7 @@ export interface SearchParameter {
      */
     chain?: string[];
     /**
-     * Contains extension information for property 'chain'
+     * Contains extension information for property 'chain'.
      */
     _chain?: Element[];
     /**
@@ -29190,7 +29590,7 @@ export interface SearchParameterComponent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29210,7 +29610,7 @@ export interface SearchParameterComponent {
      */
     expression: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
 }
@@ -29219,11 +29619,15 @@ export interface SearchParameterComponent {
  */
 export interface Sequence {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Sequence";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29235,7 +29639,7 @@ export interface Sequence {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -29243,7 +29647,7 @@ export interface Sequence {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -29271,7 +29675,7 @@ export interface Sequence {
      */
     type?: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -29279,7 +29683,7 @@ export interface Sequence {
      */
     coordinateSystem: integer;
     /**
-     * Contains extension information for property 'coordinateSystem'
+     * Contains extension information for property 'coordinateSystem'.
      */
     _coordinateSystem?: Element;
     /**
@@ -29315,7 +29719,7 @@ export interface Sequence {
      */
     observedSeq?: string;
     /**
-     * Contains extension information for property 'observedSeq'
+     * Contains extension information for property 'observedSeq'.
      */
     _observedSeq?: Element;
     /**
@@ -29327,7 +29731,7 @@ export interface Sequence {
      */
     readCoverage?: integer;
     /**
-     * Contains extension information for property 'readCoverage'
+     * Contains extension information for property 'readCoverage'.
      */
     _readCoverage?: Element;
     /**
@@ -29348,7 +29752,7 @@ export interface SequenceReferenceSeq {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29368,7 +29772,7 @@ export interface SequenceReferenceSeq {
      */
     genomeBuild?: string;
     /**
-     * Contains extension information for property 'genomeBuild'
+     * Contains extension information for property 'genomeBuild'.
      */
     _genomeBuild?: Element;
     /**
@@ -29384,7 +29788,7 @@ export interface SequenceReferenceSeq {
      */
     referenceSeqString?: string;
     /**
-     * Contains extension information for property 'referenceSeqString'
+     * Contains extension information for property 'referenceSeqString'.
      */
     _referenceSeqString?: Element;
     /**
@@ -29392,7 +29796,7 @@ export interface SequenceReferenceSeq {
      */
     strand?: integer;
     /**
-     * Contains extension information for property 'strand'
+     * Contains extension information for property 'strand'.
      */
     _strand?: Element;
     /**
@@ -29400,7 +29804,7 @@ export interface SequenceReferenceSeq {
      */
     windowStart: integer;
     /**
-     * Contains extension information for property 'windowStart'
+     * Contains extension information for property 'windowStart'.
      */
     _windowStart?: Element;
     /**
@@ -29408,7 +29812,7 @@ export interface SequenceReferenceSeq {
      */
     windowEnd: integer;
     /**
-     * Contains extension information for property 'windowEnd'
+     * Contains extension information for property 'windowEnd'.
      */
     _windowEnd?: Element;
 }
@@ -29421,7 +29825,7 @@ export interface SequenceVariant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29437,7 +29841,7 @@ export interface SequenceVariant {
      */
     start?: integer;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -29445,7 +29849,7 @@ export interface SequenceVariant {
      */
     end?: integer;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -29453,7 +29857,7 @@ export interface SequenceVariant {
      */
     observedAllele?: string;
     /**
-     * Contains extension information for property 'observedAllele'
+     * Contains extension information for property 'observedAllele'.
      */
     _observedAllele?: Element;
     /**
@@ -29461,7 +29865,7 @@ export interface SequenceVariant {
      */
     referenceAllele?: string;
     /**
-     * Contains extension information for property 'referenceAllele'
+     * Contains extension information for property 'referenceAllele'.
      */
     _referenceAllele?: Element;
     /**
@@ -29469,7 +29873,7 @@ export interface SequenceVariant {
      */
     cigar?: string;
     /**
-     * Contains extension information for property 'cigar'
+     * Contains extension information for property 'cigar'.
      */
     _cigar?: Element;
     /**
@@ -29486,7 +29890,7 @@ export interface SequenceQuality {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29502,7 +29906,7 @@ export interface SequenceQuality {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -29514,7 +29918,7 @@ export interface SequenceQuality {
      */
     start?: integer;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -29522,7 +29926,7 @@ export interface SequenceQuality {
      */
     end?: integer;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -29538,7 +29942,7 @@ export interface SequenceQuality {
      */
     truthTP?: decimal;
     /**
-     * Contains extension information for property 'truthTP'
+     * Contains extension information for property 'truthTP'.
      */
     _truthTP?: Element;
     /**
@@ -29546,7 +29950,7 @@ export interface SequenceQuality {
      */
     queryTP?: decimal;
     /**
-     * Contains extension information for property 'queryTP'
+     * Contains extension information for property 'queryTP'.
      */
     _queryTP?: Element;
     /**
@@ -29554,7 +29958,7 @@ export interface SequenceQuality {
      */
     truthFN?: decimal;
     /**
-     * Contains extension information for property 'truthFN'
+     * Contains extension information for property 'truthFN'.
      */
     _truthFN?: Element;
     /**
@@ -29562,7 +29966,7 @@ export interface SequenceQuality {
      */
     queryFP?: decimal;
     /**
-     * Contains extension information for property 'queryFP'
+     * Contains extension information for property 'queryFP'.
      */
     _queryFP?: Element;
     /**
@@ -29570,7 +29974,7 @@ export interface SequenceQuality {
      */
     gtFP?: decimal;
     /**
-     * Contains extension information for property 'gtFP'
+     * Contains extension information for property 'gtFP'.
      */
     _gtFP?: Element;
     /**
@@ -29578,7 +29982,7 @@ export interface SequenceQuality {
      */
     precision?: decimal;
     /**
-     * Contains extension information for property 'precision'
+     * Contains extension information for property 'precision'.
      */
     _precision?: Element;
     /**
@@ -29586,7 +29990,7 @@ export interface SequenceQuality {
      */
     recall?: decimal;
     /**
-     * Contains extension information for property 'recall'
+     * Contains extension information for property 'recall'.
      */
     _recall?: Element;
     /**
@@ -29594,7 +29998,7 @@ export interface SequenceQuality {
      */
     fScore?: decimal;
     /**
-     * Contains extension information for property 'fScore'
+     * Contains extension information for property 'fScore'.
      */
     _fScore?: Element;
 }
@@ -29607,7 +30011,7 @@ export interface SequenceRepository {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29623,7 +30027,7 @@ export interface SequenceRepository {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -29631,7 +30035,7 @@ export interface SequenceRepository {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -29639,7 +30043,7 @@ export interface SequenceRepository {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -29647,7 +30051,7 @@ export interface SequenceRepository {
      */
     datasetId?: string;
     /**
-     * Contains extension information for property 'datasetId'
+     * Contains extension information for property 'datasetId'.
      */
     _datasetId?: Element;
     /**
@@ -29655,7 +30059,7 @@ export interface SequenceRepository {
      */
     variantsetId?: string;
     /**
-     * Contains extension information for property 'variantsetId'
+     * Contains extension information for property 'variantsetId'.
      */
     _variantsetId?: Element;
     /**
@@ -29663,7 +30067,7 @@ export interface SequenceRepository {
      */
     readsetId?: string;
     /**
-     * Contains extension information for property 'readsetId'
+     * Contains extension information for property 'readsetId'.
      */
     _readsetId?: Element;
 }
@@ -29672,11 +30076,15 @@ export interface SequenceRepository {
  */
 export interface ServiceDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ServiceDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29688,7 +30096,7 @@ export interface ServiceDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -29696,7 +30104,7 @@ export interface ServiceDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -29720,7 +30128,7 @@ export interface ServiceDefinition {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -29732,7 +30140,7 @@ export interface ServiceDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -29740,7 +30148,7 @@ export interface ServiceDefinition {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -29748,7 +30156,7 @@ export interface ServiceDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -29756,7 +30164,7 @@ export interface ServiceDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -29764,7 +30172,7 @@ export interface ServiceDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -29772,7 +30180,7 @@ export interface ServiceDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -29780,7 +30188,7 @@ export interface ServiceDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -29788,7 +30196,7 @@ export interface ServiceDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -29796,7 +30204,7 @@ export interface ServiceDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -29804,7 +30212,7 @@ export interface ServiceDefinition {
      */
     usage?: string;
     /**
-     * Contains extension information for property 'usage'
+     * Contains extension information for property 'usage'.
      */
     _usage?: Element;
     /**
@@ -29812,7 +30220,7 @@ export interface ServiceDefinition {
      */
     approvalDate?: date;
     /**
-     * Contains extension information for property 'approvalDate'
+     * Contains extension information for property 'approvalDate'.
      */
     _approvalDate?: Element;
     /**
@@ -29820,7 +30228,7 @@ export interface ServiceDefinition {
      */
     lastReviewDate?: date;
     /**
-     * Contains extension information for property 'lastReviewDate'
+     * Contains extension information for property 'lastReviewDate'.
      */
     _lastReviewDate?: Element;
     /**
@@ -29852,7 +30260,7 @@ export interface ServiceDefinition {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -29881,7 +30289,7 @@ export interface Signature {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29897,7 +30305,7 @@ export interface Signature {
      */
     when: instant;
     /**
-     * Contains extension information for property 'when'
+     * Contains extension information for property 'when'.
      */
     _when?: Element;
     /**
@@ -29905,7 +30313,7 @@ export interface Signature {
      */
     whoUri: uri;
     /**
-     * Contains extension information for property 'whoUri'
+     * Contains extension information for property 'whoUri'.
      */
     _whoUri?: Element;
     /**
@@ -29917,7 +30325,7 @@ export interface Signature {
      */
     onbehalfofUri?: uri;
     /**
-     * Contains extension information for property 'onbehalfofUri'
+     * Contains extension information for property 'onbehalfofUri'.
      */
     _onbehalfofUri?: Element;
     /**
@@ -29929,7 +30337,7 @@ export interface Signature {
      */
     contentType?: code;
     /**
-     * Contains extension information for property 'contentType'
+     * Contains extension information for property 'contentType'.
      */
     _contentType?: Element;
     /**
@@ -29937,7 +30345,7 @@ export interface Signature {
      */
     blob?: base64Binary;
     /**
-     * Contains extension information for property 'blob'
+     * Contains extension information for property 'blob'.
      */
     _blob?: Element;
 }
@@ -29950,7 +30358,7 @@ export interface Quantity {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -29962,7 +30370,7 @@ export interface Quantity {
      */
     value?: decimal;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -29970,7 +30378,7 @@ export interface Quantity {
      */
     comparator?: code;
     /**
-     * Contains extension information for property 'comparator'
+     * Contains extension information for property 'comparator'.
      */
     _comparator?: Element;
     /**
@@ -29978,7 +30386,7 @@ export interface Quantity {
      */
     unit?: string;
     /**
-     * Contains extension information for property 'unit'
+     * Contains extension information for property 'unit'.
      */
     _unit?: Element;
     /**
@@ -29986,7 +30394,7 @@ export interface Quantity {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -29994,7 +30402,7 @@ export interface Quantity {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
 }
@@ -30003,11 +30411,15 @@ export interface Quantity {
  */
 export interface Slot {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Slot";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30019,7 +30431,7 @@ export interface Slot {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -30027,7 +30439,7 @@ export interface Slot {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -30075,7 +30487,7 @@ export interface Slot {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -30083,7 +30495,7 @@ export interface Slot {
      */
     start: instant;
     /**
-     * Contains extension information for property 'start'
+     * Contains extension information for property 'start'.
      */
     _start?: Element;
     /**
@@ -30091,7 +30503,7 @@ export interface Slot {
      */
     end: instant;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -30099,7 +30511,7 @@ export interface Slot {
      */
     overbooked?: boolean;
     /**
-     * Contains extension information for property 'overbooked'
+     * Contains extension information for property 'overbooked'.
      */
     _overbooked?: Element;
     /**
@@ -30107,7 +30519,7 @@ export interface Slot {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -30116,11 +30528,15 @@ export interface Slot {
  */
 export interface Specimen {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Specimen";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30132,7 +30548,7 @@ export interface Specimen {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -30140,7 +30556,7 @@ export interface Specimen {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -30172,7 +30588,7 @@ export interface Specimen {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -30188,7 +30604,7 @@ export interface Specimen {
      */
     receivedTime?: dateTime;
     /**
-     * Contains extension information for property 'receivedTime'
+     * Contains extension information for property 'receivedTime'.
      */
     _receivedTime?: Element;
     /**
@@ -30225,7 +30641,7 @@ export interface SpecimenCollection {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30245,7 +30661,7 @@ export interface SpecimenCollection {
      */
     collectedDateTime?: dateTime;
     /**
-     * Contains extension information for property 'collectedDateTime'
+     * Contains extension information for property 'collectedDateTime'.
      */
     _collectedDateTime?: Element;
     /**
@@ -30274,7 +30690,7 @@ export interface SpecimenProcessing {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30290,7 +30706,7 @@ export interface SpecimenProcessing {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -30306,7 +30722,7 @@ export interface SpecimenProcessing {
      */
     timeDateTime?: dateTime;
     /**
-     * Contains extension information for property 'timeDateTime'
+     * Contains extension information for property 'timeDateTime'.
      */
     _timeDateTime?: Element;
     /**
@@ -30323,7 +30739,7 @@ export interface SpecimenContainer {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30343,7 +30759,7 @@ export interface SpecimenContainer {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -30372,11 +30788,15 @@ export interface SpecimenContainer {
  */
 export interface StructureDefinition {
     /**
+     * The type of the resource.
+     */
+    resourceType: "StructureDefinition";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30388,7 +30808,7 @@ export interface StructureDefinition {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -30396,7 +30816,7 @@ export interface StructureDefinition {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -30420,7 +30840,7 @@ export interface StructureDefinition {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -30432,7 +30852,7 @@ export interface StructureDefinition {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -30440,7 +30860,7 @@ export interface StructureDefinition {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -30448,7 +30868,7 @@ export interface StructureDefinition {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -30456,7 +30876,7 @@ export interface StructureDefinition {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -30464,7 +30884,7 @@ export interface StructureDefinition {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -30472,7 +30892,7 @@ export interface StructureDefinition {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -30480,7 +30900,7 @@ export interface StructureDefinition {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -30492,7 +30912,7 @@ export interface StructureDefinition {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -30508,7 +30928,7 @@ export interface StructureDefinition {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -30516,7 +30936,7 @@ export interface StructureDefinition {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -30528,7 +30948,7 @@ export interface StructureDefinition {
      */
     fhirVersion?: id;
     /**
-     * Contains extension information for property 'fhirVersion'
+     * Contains extension information for property 'fhirVersion'.
      */
     _fhirVersion?: Element;
     /**
@@ -30540,7 +30960,7 @@ export interface StructureDefinition {
      */
     kind: code;
     /**
-     * Contains extension information for property 'kind'
+     * Contains extension information for property 'kind'.
      */
     _kind?: Element;
     /**
@@ -30548,7 +30968,7 @@ export interface StructureDefinition {
      */
     abstract: boolean;
     /**
-     * Contains extension information for property 'abstract'
+     * Contains extension information for property 'abstract'.
      */
     _abstract?: Element;
     /**
@@ -30556,7 +30976,7 @@ export interface StructureDefinition {
      */
     contextType?: code;
     /**
-     * Contains extension information for property 'contextType'
+     * Contains extension information for property 'contextType'.
      */
     _contextType?: Element;
     /**
@@ -30564,7 +30984,7 @@ export interface StructureDefinition {
      */
     context?: string[];
     /**
-     * Contains extension information for property 'context'
+     * Contains extension information for property 'context'.
      */
     _context?: Element[];
     /**
@@ -30572,7 +30992,7 @@ export interface StructureDefinition {
      */
     contextInvariant?: string[];
     /**
-     * Contains extension information for property 'contextInvariant'
+     * Contains extension information for property 'contextInvariant'.
      */
     _contextInvariant?: Element[];
     /**
@@ -30580,7 +31000,7 @@ export interface StructureDefinition {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -30588,7 +31008,7 @@ export interface StructureDefinition {
      */
     baseDefinition?: uri;
     /**
-     * Contains extension information for property 'baseDefinition'
+     * Contains extension information for property 'baseDefinition'.
      */
     _baseDefinition?: Element;
     /**
@@ -30596,7 +31016,7 @@ export interface StructureDefinition {
      */
     derivation?: code;
     /**
-     * Contains extension information for property 'derivation'
+     * Contains extension information for property 'derivation'.
      */
     _derivation?: Element;
     /**
@@ -30617,7 +31037,7 @@ export interface StructureDefinitionMapping {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30633,7 +31053,7 @@ export interface StructureDefinitionMapping {
      */
     identity: id;
     /**
-     * Contains extension information for property 'identity'
+     * Contains extension information for property 'identity'.
      */
     _identity?: Element;
     /**
@@ -30641,7 +31061,7 @@ export interface StructureDefinitionMapping {
      */
     uri?: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
     /**
@@ -30649,7 +31069,7 @@ export interface StructureDefinitionMapping {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -30657,7 +31077,7 @@ export interface StructureDefinitionMapping {
      */
     comment?: string;
     /**
-     * Contains extension information for property 'comment'
+     * Contains extension information for property 'comment'.
      */
     _comment?: Element;
 }
@@ -30670,7 +31090,7 @@ export interface StructureDefinitionSnapshot {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30695,7 +31115,7 @@ export interface StructureDefinitionDifferential {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30716,11 +31136,15 @@ export interface StructureDefinitionDifferential {
  */
 export interface StructureMap {
     /**
+     * The type of the resource.
+     */
+    resourceType: "StructureMap";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30732,7 +31156,7 @@ export interface StructureMap {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -30740,7 +31164,7 @@ export interface StructureMap {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -30764,7 +31188,7 @@ export interface StructureMap {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -30776,7 +31200,7 @@ export interface StructureMap {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -30784,7 +31208,7 @@ export interface StructureMap {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -30792,7 +31216,7 @@ export interface StructureMap {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -30800,7 +31224,7 @@ export interface StructureMap {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -30808,7 +31232,7 @@ export interface StructureMap {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -30816,7 +31240,7 @@ export interface StructureMap {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -30824,7 +31248,7 @@ export interface StructureMap {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -30836,7 +31260,7 @@ export interface StructureMap {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -30852,7 +31276,7 @@ export interface StructureMap {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -30860,7 +31284,7 @@ export interface StructureMap {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -30872,7 +31296,7 @@ export interface StructureMap {
      */
     import?: uri[];
     /**
-     * Contains extension information for property 'import'
+     * Contains extension information for property 'import'.
      */
     _import?: Element[];
     /**
@@ -30889,7 +31313,7 @@ export interface StructureMapStructure {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30905,7 +31329,7 @@ export interface StructureMapStructure {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -30913,7 +31337,7 @@ export interface StructureMapStructure {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -30921,7 +31345,7 @@ export interface StructureMapStructure {
      */
     alias?: string;
     /**
-     * Contains extension information for property 'alias'
+     * Contains extension information for property 'alias'.
      */
     _alias?: Element;
     /**
@@ -30929,7 +31353,7 @@ export interface StructureMapStructure {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -30942,7 +31366,7 @@ export interface StructureMapGroup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -30958,7 +31382,7 @@ export interface StructureMapGroup {
      */
     name: id;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -30966,7 +31390,7 @@ export interface StructureMapGroup {
      */
     extends?: id;
     /**
-     * Contains extension information for property 'extends'
+     * Contains extension information for property 'extends'.
      */
     _extends?: Element;
     /**
@@ -30974,7 +31398,7 @@ export interface StructureMapGroup {
      */
     typeMode: code;
     /**
-     * Contains extension information for property 'typeMode'
+     * Contains extension information for property 'typeMode'.
      */
     _typeMode?: Element;
     /**
@@ -30982,7 +31406,7 @@ export interface StructureMapGroup {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
     /**
@@ -31003,7 +31427,7 @@ export interface StructureMapGroupInput {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31019,7 +31443,7 @@ export interface StructureMapGroupInput {
      */
     name: id;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -31027,7 +31451,7 @@ export interface StructureMapGroupInput {
      */
     type?: string;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -31035,7 +31459,7 @@ export interface StructureMapGroupInput {
      */
     mode: code;
     /**
-     * Contains extension information for property 'mode'
+     * Contains extension information for property 'mode'.
      */
     _mode?: Element;
     /**
@@ -31043,7 +31467,7 @@ export interface StructureMapGroupInput {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -31056,7 +31480,7 @@ export interface StructureMapGroupRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31072,7 +31496,7 @@ export interface StructureMapGroupRule {
      */
     name: id;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -31096,7 +31520,7 @@ export interface StructureMapGroupRule {
      */
     documentation?: string;
     /**
-     * Contains extension information for property 'documentation'
+     * Contains extension information for property 'documentation'.
      */
     _documentation?: Element;
 }
@@ -31109,7 +31533,7 @@ export interface StructureMapGroupRuleSource {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31125,7 +31549,7 @@ export interface StructureMapGroupRuleSource {
      */
     context: id;
     /**
-     * Contains extension information for property 'context'
+     * Contains extension information for property 'context'.
      */
     _context?: Element;
     /**
@@ -31133,7 +31557,7 @@ export interface StructureMapGroupRuleSource {
      */
     min?: integer;
     /**
-     * Contains extension information for property 'min'
+     * Contains extension information for property 'min'.
      */
     _min?: Element;
     /**
@@ -31141,7 +31565,7 @@ export interface StructureMapGroupRuleSource {
      */
     max?: string;
     /**
-     * Contains extension information for property 'max'
+     * Contains extension information for property 'max'.
      */
     _max?: Element;
     /**
@@ -31149,7 +31573,7 @@ export interface StructureMapGroupRuleSource {
      */
     type?: string;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -31157,7 +31581,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueBase64Binary?: base64Binary;
     /**
-     * Contains extension information for property 'defaultvalueBase64Binary'
+     * Contains extension information for property 'defaultvalueBase64Binary'.
      */
     _defaultvalueBase64Binary?: Element;
     /**
@@ -31165,7 +31589,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueBoolean?: boolean;
     /**
-     * Contains extension information for property 'defaultvalueBoolean'
+     * Contains extension information for property 'defaultvalueBoolean'.
      */
     _defaultvalueBoolean?: Element;
     /**
@@ -31173,7 +31597,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueCode?: code;
     /**
-     * Contains extension information for property 'defaultvalueCode'
+     * Contains extension information for property 'defaultvalueCode'.
      */
     _defaultvalueCode?: Element;
     /**
@@ -31181,7 +31605,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueDate?: date;
     /**
-     * Contains extension information for property 'defaultvalueDate'
+     * Contains extension information for property 'defaultvalueDate'.
      */
     _defaultvalueDate?: Element;
     /**
@@ -31189,7 +31613,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueDateTime?: dateTime;
     /**
-     * Contains extension information for property 'defaultvalueDateTime'
+     * Contains extension information for property 'defaultvalueDateTime'.
      */
     _defaultvalueDateTime?: Element;
     /**
@@ -31197,7 +31621,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueDecimal?: decimal;
     /**
-     * Contains extension information for property 'defaultvalueDecimal'
+     * Contains extension information for property 'defaultvalueDecimal'.
      */
     _defaultvalueDecimal?: Element;
     /**
@@ -31205,7 +31629,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueId?: id;
     /**
-     * Contains extension information for property 'defaultvalueId'
+     * Contains extension information for property 'defaultvalueId'.
      */
     _defaultvalueId?: Element;
     /**
@@ -31213,7 +31637,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueInstant?: instant;
     /**
-     * Contains extension information for property 'defaultvalueInstant'
+     * Contains extension information for property 'defaultvalueInstant'.
      */
     _defaultvalueInstant?: Element;
     /**
@@ -31221,7 +31645,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueInteger?: integer;
     /**
-     * Contains extension information for property 'defaultvalueInteger'
+     * Contains extension information for property 'defaultvalueInteger'.
      */
     _defaultvalueInteger?: Element;
     /**
@@ -31229,7 +31653,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueMarkdown?: markdown;
     /**
-     * Contains extension information for property 'defaultvalueMarkdown'
+     * Contains extension information for property 'defaultvalueMarkdown'.
      */
     _defaultvalueMarkdown?: Element;
     /**
@@ -31237,7 +31661,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueOid?: oid;
     /**
-     * Contains extension information for property 'defaultvalueOid'
+     * Contains extension information for property 'defaultvalueOid'.
      */
     _defaultvalueOid?: Element;
     /**
@@ -31245,7 +31669,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvaluePositiveInt?: positiveInt;
     /**
-     * Contains extension information for property 'defaultvaluePositiveInt'
+     * Contains extension information for property 'defaultvaluePositiveInt'.
      */
     _defaultvaluePositiveInt?: Element;
     /**
@@ -31253,7 +31677,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueString?: string;
     /**
-     * Contains extension information for property 'defaultvalueString'
+     * Contains extension information for property 'defaultvalueString'.
      */
     _defaultvalueString?: Element;
     /**
@@ -31261,7 +31685,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueTime?: time;
     /**
-     * Contains extension information for property 'defaultvalueTime'
+     * Contains extension information for property 'defaultvalueTime'.
      */
     _defaultvalueTime?: Element;
     /**
@@ -31269,7 +31693,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueUnsignedInt?: unsignedInt;
     /**
-     * Contains extension information for property 'defaultvalueUnsignedInt'
+     * Contains extension information for property 'defaultvalueUnsignedInt'.
      */
     _defaultvalueUnsignedInt?: Element;
     /**
@@ -31277,7 +31701,7 @@ export interface StructureMapGroupRuleSource {
      */
     defaultvalueUri?: uri;
     /**
-     * Contains extension information for property 'defaultvalueUri'
+     * Contains extension information for property 'defaultvalueUri'.
      */
     _defaultvalueUri?: Element;
     /**
@@ -31373,7 +31797,7 @@ export interface StructureMapGroupRuleSource {
      */
     element?: string;
     /**
-     * Contains extension information for property 'element'
+     * Contains extension information for property 'element'.
      */
     _element?: Element;
     /**
@@ -31381,7 +31805,7 @@ export interface StructureMapGroupRuleSource {
      */
     listMode?: code;
     /**
-     * Contains extension information for property 'listMode'
+     * Contains extension information for property 'listMode'.
      */
     _listMode?: Element;
     /**
@@ -31389,7 +31813,7 @@ export interface StructureMapGroupRuleSource {
      */
     variable?: id;
     /**
-     * Contains extension information for property 'variable'
+     * Contains extension information for property 'variable'.
      */
     _variable?: Element;
     /**
@@ -31397,7 +31821,7 @@ export interface StructureMapGroupRuleSource {
      */
     condition?: string;
     /**
-     * Contains extension information for property 'condition'
+     * Contains extension information for property 'condition'.
      */
     _condition?: Element;
     /**
@@ -31405,7 +31829,7 @@ export interface StructureMapGroupRuleSource {
      */
     check?: string;
     /**
-     * Contains extension information for property 'check'
+     * Contains extension information for property 'check'.
      */
     _check?: Element;
 }
@@ -31418,7 +31842,7 @@ export interface StructureMapGroupRuleTarget {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31434,7 +31858,7 @@ export interface StructureMapGroupRuleTarget {
      */
     context?: id;
     /**
-     * Contains extension information for property 'context'
+     * Contains extension information for property 'context'.
      */
     _context?: Element;
     /**
@@ -31442,7 +31866,7 @@ export interface StructureMapGroupRuleTarget {
      */
     contextType?: code;
     /**
-     * Contains extension information for property 'contextType'
+     * Contains extension information for property 'contextType'.
      */
     _contextType?: Element;
     /**
@@ -31450,7 +31874,7 @@ export interface StructureMapGroupRuleTarget {
      */
     element?: string;
     /**
-     * Contains extension information for property 'element'
+     * Contains extension information for property 'element'.
      */
     _element?: Element;
     /**
@@ -31458,7 +31882,7 @@ export interface StructureMapGroupRuleTarget {
      */
     variable?: id;
     /**
-     * Contains extension information for property 'variable'
+     * Contains extension information for property 'variable'.
      */
     _variable?: Element;
     /**
@@ -31466,7 +31890,7 @@ export interface StructureMapGroupRuleTarget {
      */
     listMode?: code[];
     /**
-     * Contains extension information for property 'listMode'
+     * Contains extension information for property 'listMode'.
      */
     _listMode?: Element[];
     /**
@@ -31474,7 +31898,7 @@ export interface StructureMapGroupRuleTarget {
      */
     listRuleId?: id;
     /**
-     * Contains extension information for property 'listRuleId'
+     * Contains extension information for property 'listRuleId'.
      */
     _listRuleId?: Element;
     /**
@@ -31482,7 +31906,7 @@ export interface StructureMapGroupRuleTarget {
      */
     transform?: code;
     /**
-     * Contains extension information for property 'transform'
+     * Contains extension information for property 'transform'.
      */
     _transform?: Element;
     /**
@@ -31499,7 +31923,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31515,7 +31939,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     valueId: id;
     /**
-     * Contains extension information for property 'valueId'
+     * Contains extension information for property 'valueId'.
      */
     _valueId?: Element;
     /**
@@ -31523,7 +31947,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -31531,7 +31955,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -31539,7 +31963,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -31547,7 +31971,7 @@ export interface StructureMapGroupRuleTargetParameter {
      */
     valueDecimal: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
 }
@@ -31560,7 +31984,7 @@ export interface StructureMapGroupRuleDependent {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31576,7 +32000,7 @@ export interface StructureMapGroupRuleDependent {
      */
     name: id;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -31584,7 +32008,7 @@ export interface StructureMapGroupRuleDependent {
      */
     variable: string[];
     /**
-     * Contains extension information for property 'variable'
+     * Contains extension information for property 'variable'.
      */
     _variable?: Element[];
 }
@@ -31593,11 +32017,15 @@ export interface StructureMapGroupRuleDependent {
  */
 export interface Subscription {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Subscription";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31609,7 +32037,7 @@ export interface Subscription {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -31617,7 +32045,7 @@ export interface Subscription {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -31641,7 +32069,7 @@ export interface Subscription {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -31653,7 +32081,7 @@ export interface Subscription {
      */
     end?: instant;
     /**
-     * Contains extension information for property 'end'
+     * Contains extension information for property 'end'.
      */
     _end?: Element;
     /**
@@ -31661,7 +32089,7 @@ export interface Subscription {
      */
     reason: string;
     /**
-     * Contains extension information for property 'reason'
+     * Contains extension information for property 'reason'.
      */
     _reason?: Element;
     /**
@@ -31669,7 +32097,7 @@ export interface Subscription {
      */
     criteria: string;
     /**
-     * Contains extension information for property 'criteria'
+     * Contains extension information for property 'criteria'.
      */
     _criteria?: Element;
     /**
@@ -31677,7 +32105,7 @@ export interface Subscription {
      */
     error?: string;
     /**
-     * Contains extension information for property 'error'
+     * Contains extension information for property 'error'.
      */
     _error?: Element;
     /**
@@ -31698,7 +32126,7 @@ export interface SubscriptionChannel {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31714,7 +32142,7 @@ export interface SubscriptionChannel {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -31722,7 +32150,7 @@ export interface SubscriptionChannel {
      */
     endpoint?: uri;
     /**
-     * Contains extension information for property 'endpoint'
+     * Contains extension information for property 'endpoint'.
      */
     _endpoint?: Element;
     /**
@@ -31730,7 +32158,7 @@ export interface SubscriptionChannel {
      */
     payload?: string;
     /**
-     * Contains extension information for property 'payload'
+     * Contains extension information for property 'payload'.
      */
     _payload?: Element;
     /**
@@ -31738,7 +32166,7 @@ export interface SubscriptionChannel {
      */
     header?: string[];
     /**
-     * Contains extension information for property 'header'
+     * Contains extension information for property 'header'.
      */
     _header?: Element[];
 }
@@ -31747,11 +32175,15 @@ export interface SubscriptionChannel {
  */
 export interface Substance {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Substance";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31763,7 +32195,7 @@ export interface Substance {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -31771,7 +32203,7 @@ export interface Substance {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -31799,7 +32231,7 @@ export interface Substance {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -31815,7 +32247,7 @@ export interface Substance {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -31836,7 +32268,7 @@ export interface SubstanceInstance {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31856,7 +32288,7 @@ export interface SubstanceInstance {
      */
     expiry?: dateTime;
     /**
-     * Contains extension information for property 'expiry'
+     * Contains extension information for property 'expiry'.
      */
     _expiry?: Element;
     /**
@@ -31873,7 +32305,7 @@ export interface SubstanceIngredient {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31902,11 +32334,15 @@ export interface SubstanceIngredient {
  */
 export interface SupplyDelivery {
     /**
+     * The type of the resource.
+     */
+    resourceType: "SupplyDelivery";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -31918,7 +32354,7 @@ export interface SupplyDelivery {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -31926,7 +32362,7 @@ export interface SupplyDelivery {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -31962,7 +32398,7 @@ export interface SupplyDelivery {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -31982,7 +32418,7 @@ export interface SupplyDelivery {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -32015,7 +32451,7 @@ export interface SupplyDeliverySuppliedItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32044,11 +32480,15 @@ export interface SupplyDeliverySuppliedItem {
  */
 export interface SupplyRequest {
     /**
+     * The type of the resource.
+     */
+    resourceType: "SupplyRequest";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32060,7 +32500,7 @@ export interface SupplyRequest {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -32068,7 +32508,7 @@ export interface SupplyRequest {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -32096,7 +32536,7 @@ export interface SupplyRequest {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -32108,7 +32548,7 @@ export interface SupplyRequest {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -32120,7 +32560,7 @@ export interface SupplyRequest {
      */
     occurrenceDateTime?: dateTime;
     /**
-     * Contains extension information for property 'occurrenceDateTime'
+     * Contains extension information for property 'occurrenceDateTime'.
      */
     _occurrenceDateTime?: Element;
     /**
@@ -32136,7 +32576,7 @@ export interface SupplyRequest {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -32173,7 +32613,7 @@ export interface SupplyRequestOrderedItem {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32206,7 +32646,7 @@ export interface SupplyRequestRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32231,11 +32671,15 @@ export interface SupplyRequestRequester {
  */
 export interface Task {
     /**
+     * The type of the resource.
+     */
+    resourceType: "Task";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32247,7 +32691,7 @@ export interface Task {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -32255,7 +32699,7 @@ export interface Task {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -32283,7 +32727,7 @@ export interface Task {
      */
     definitionUri?: uri;
     /**
-     * Contains extension information for property 'definitionUri'
+     * Contains extension information for property 'definitionUri'.
      */
     _definitionUri?: Element;
     /**
@@ -32307,7 +32751,7 @@ export interface Task {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -32323,7 +32767,7 @@ export interface Task {
      */
     intent: code;
     /**
-     * Contains extension information for property 'intent'
+     * Contains extension information for property 'intent'.
      */
     _intent?: Element;
     /**
@@ -32331,7 +32775,7 @@ export interface Task {
      */
     priority?: code;
     /**
-     * Contains extension information for property 'priority'
+     * Contains extension information for property 'priority'.
      */
     _priority?: Element;
     /**
@@ -32343,7 +32787,7 @@ export interface Task {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -32367,7 +32811,7 @@ export interface Task {
      */
     authoredOn?: dateTime;
     /**
-     * Contains extension information for property 'authoredOn'
+     * Contains extension information for property 'authoredOn'.
      */
     _authoredOn?: Element;
     /**
@@ -32375,7 +32819,7 @@ export interface Task {
      */
     lastModified?: dateTime;
     /**
-     * Contains extension information for property 'lastModified'
+     * Contains extension information for property 'lastModified'.
      */
     _lastModified?: Element;
     /**
@@ -32424,7 +32868,7 @@ export interface TaskRequester {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32453,7 +32897,7 @@ export interface TaskRestriction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32469,7 +32913,7 @@ export interface TaskRestriction {
      */
     repetitions?: positiveInt;
     /**
-     * Contains extension information for property 'repetitions'
+     * Contains extension information for property 'repetitions'.
      */
     _repetitions?: Element;
     /**
@@ -32490,7 +32934,7 @@ export interface TaskInput {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32510,7 +32954,7 @@ export interface TaskInput {
      */
     valueBase64Binary: base64Binary;
     /**
-     * Contains extension information for property 'valueBase64Binary'
+     * Contains extension information for property 'valueBase64Binary'.
      */
     _valueBase64Binary?: Element;
     /**
@@ -32518,7 +32962,7 @@ export interface TaskInput {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -32526,7 +32970,7 @@ export interface TaskInput {
      */
     valueCode: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
     /**
@@ -32534,7 +32978,7 @@ export interface TaskInput {
      */
     valueDate: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -32542,7 +32986,7 @@ export interface TaskInput {
      */
     valueDateTime: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -32550,7 +32994,7 @@ export interface TaskInput {
      */
     valueDecimal: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -32558,7 +33002,7 @@ export interface TaskInput {
      */
     valueId: id;
     /**
-     * Contains extension information for property 'valueId'
+     * Contains extension information for property 'valueId'.
      */
     _valueId?: Element;
     /**
@@ -32566,7 +33010,7 @@ export interface TaskInput {
      */
     valueInstant: instant;
     /**
-     * Contains extension information for property 'valueInstant'
+     * Contains extension information for property 'valueInstant'.
      */
     _valueInstant?: Element;
     /**
@@ -32574,7 +33018,7 @@ export interface TaskInput {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -32582,7 +33026,7 @@ export interface TaskInput {
      */
     valueMarkdown: markdown;
     /**
-     * Contains extension information for property 'valueMarkdown'
+     * Contains extension information for property 'valueMarkdown'.
      */
     _valueMarkdown?: Element;
     /**
@@ -32590,7 +33034,7 @@ export interface TaskInput {
      */
     valueOid: oid;
     /**
-     * Contains extension information for property 'valueOid'
+     * Contains extension information for property 'valueOid'.
      */
     _valueOid?: Element;
     /**
@@ -32598,7 +33042,7 @@ export interface TaskInput {
      */
     valuePositiveInt: positiveInt;
     /**
-     * Contains extension information for property 'valuePositiveInt'
+     * Contains extension information for property 'valuePositiveInt'.
      */
     _valuePositiveInt?: Element;
     /**
@@ -32606,7 +33050,7 @@ export interface TaskInput {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -32614,7 +33058,7 @@ export interface TaskInput {
      */
     valueTime: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -32622,7 +33066,7 @@ export interface TaskInput {
      */
     valueUnsignedInt: unsignedInt;
     /**
-     * Contains extension information for property 'valueUnsignedInt'
+     * Contains extension information for property 'valueUnsignedInt'.
      */
     _valueUnsignedInt?: Element;
     /**
@@ -32630,7 +33074,7 @@ export interface TaskInput {
      */
     valueUri: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -32731,7 +33175,7 @@ export interface TaskOutput {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32751,7 +33195,7 @@ export interface TaskOutput {
      */
     valueBase64Binary: base64Binary;
     /**
-     * Contains extension information for property 'valueBase64Binary'
+     * Contains extension information for property 'valueBase64Binary'.
      */
     _valueBase64Binary?: Element;
     /**
@@ -32759,7 +33203,7 @@ export interface TaskOutput {
      */
     valueBoolean: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -32767,7 +33211,7 @@ export interface TaskOutput {
      */
     valueCode: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
     /**
@@ -32775,7 +33219,7 @@ export interface TaskOutput {
      */
     valueDate: date;
     /**
-     * Contains extension information for property 'valueDate'
+     * Contains extension information for property 'valueDate'.
      */
     _valueDate?: Element;
     /**
@@ -32783,7 +33227,7 @@ export interface TaskOutput {
      */
     valueDateTime: dateTime;
     /**
-     * Contains extension information for property 'valueDateTime'
+     * Contains extension information for property 'valueDateTime'.
      */
     _valueDateTime?: Element;
     /**
@@ -32791,7 +33235,7 @@ export interface TaskOutput {
      */
     valueDecimal: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -32799,7 +33243,7 @@ export interface TaskOutput {
      */
     valueId: id;
     /**
-     * Contains extension information for property 'valueId'
+     * Contains extension information for property 'valueId'.
      */
     _valueId?: Element;
     /**
@@ -32807,7 +33251,7 @@ export interface TaskOutput {
      */
     valueInstant: instant;
     /**
-     * Contains extension information for property 'valueInstant'
+     * Contains extension information for property 'valueInstant'.
      */
     _valueInstant?: Element;
     /**
@@ -32815,7 +33259,7 @@ export interface TaskOutput {
      */
     valueInteger: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -32823,7 +33267,7 @@ export interface TaskOutput {
      */
     valueMarkdown: markdown;
     /**
-     * Contains extension information for property 'valueMarkdown'
+     * Contains extension information for property 'valueMarkdown'.
      */
     _valueMarkdown?: Element;
     /**
@@ -32831,7 +33275,7 @@ export interface TaskOutput {
      */
     valueOid: oid;
     /**
-     * Contains extension information for property 'valueOid'
+     * Contains extension information for property 'valueOid'.
      */
     _valueOid?: Element;
     /**
@@ -32839,7 +33283,7 @@ export interface TaskOutput {
      */
     valuePositiveInt: positiveInt;
     /**
-     * Contains extension information for property 'valuePositiveInt'
+     * Contains extension information for property 'valuePositiveInt'.
      */
     _valuePositiveInt?: Element;
     /**
@@ -32847,7 +33291,7 @@ export interface TaskOutput {
      */
     valueString: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -32855,7 +33299,7 @@ export interface TaskOutput {
      */
     valueTime: time;
     /**
-     * Contains extension information for property 'valueTime'
+     * Contains extension information for property 'valueTime'.
      */
     _valueTime?: Element;
     /**
@@ -32863,7 +33307,7 @@ export interface TaskOutput {
      */
     valueUnsignedInt: unsignedInt;
     /**
-     * Contains extension information for property 'valueUnsignedInt'
+     * Contains extension information for property 'valueUnsignedInt'.
      */
     _valueUnsignedInt?: Element;
     /**
@@ -32871,7 +33315,7 @@ export interface TaskOutput {
      */
     valueUri: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -32968,11 +33412,15 @@ export interface TaskOutput {
  */
 export interface TestReport {
     /**
+     * The type of the resource.
+     */
+    resourceType: "TestReport";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -32984,7 +33432,7 @@ export interface TestReport {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -32992,7 +33440,7 @@ export interface TestReport {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -33020,7 +33468,7 @@ export interface TestReport {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -33028,7 +33476,7 @@ export interface TestReport {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -33040,7 +33488,7 @@ export interface TestReport {
      */
     result: code;
     /**
-     * Contains extension information for property 'result'
+     * Contains extension information for property 'result'.
      */
     _result?: Element;
     /**
@@ -33048,7 +33496,7 @@ export interface TestReport {
      */
     score?: decimal;
     /**
-     * Contains extension information for property 'score'
+     * Contains extension information for property 'score'.
      */
     _score?: Element;
     /**
@@ -33056,7 +33504,7 @@ export interface TestReport {
      */
     tester?: string;
     /**
-     * Contains extension information for property 'tester'
+     * Contains extension information for property 'tester'.
      */
     _tester?: Element;
     /**
@@ -33064,7 +33512,7 @@ export interface TestReport {
      */
     issued?: dateTime;
     /**
-     * Contains extension information for property 'issued'
+     * Contains extension information for property 'issued'.
      */
     _issued?: Element;
     /**
@@ -33093,7 +33541,7 @@ export interface TestReportParticipant {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33109,7 +33557,7 @@ export interface TestReportParticipant {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -33117,7 +33565,7 @@ export interface TestReportParticipant {
      */
     uri: uri;
     /**
-     * Contains extension information for property 'uri'
+     * Contains extension information for property 'uri'.
      */
     _uri?: Element;
     /**
@@ -33125,7 +33573,7 @@ export interface TestReportParticipant {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
 }
@@ -33138,7 +33586,7 @@ export interface TestReportSetup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33163,7 +33611,7 @@ export interface TestReportSetupAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33192,7 +33640,7 @@ export interface TestReportSetupActionOperation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33208,7 +33656,7 @@ export interface TestReportSetupActionOperation {
      */
     result: code;
     /**
-     * Contains extension information for property 'result'
+     * Contains extension information for property 'result'.
      */
     _result?: Element;
     /**
@@ -33216,7 +33664,7 @@ export interface TestReportSetupActionOperation {
      */
     message?: markdown;
     /**
-     * Contains extension information for property 'message'
+     * Contains extension information for property 'message'.
      */
     _message?: Element;
     /**
@@ -33224,7 +33672,7 @@ export interface TestReportSetupActionOperation {
      */
     detail?: uri;
     /**
-     * Contains extension information for property 'detail'
+     * Contains extension information for property 'detail'.
      */
     _detail?: Element;
 }
@@ -33237,7 +33685,7 @@ export interface TestReportSetupActionAssert {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33253,7 +33701,7 @@ export interface TestReportSetupActionAssert {
      */
     result: code;
     /**
-     * Contains extension information for property 'result'
+     * Contains extension information for property 'result'.
      */
     _result?: Element;
     /**
@@ -33261,7 +33709,7 @@ export interface TestReportSetupActionAssert {
      */
     message?: markdown;
     /**
-     * Contains extension information for property 'message'
+     * Contains extension information for property 'message'.
      */
     _message?: Element;
     /**
@@ -33269,7 +33717,7 @@ export interface TestReportSetupActionAssert {
      */
     detail?: string;
     /**
-     * Contains extension information for property 'detail'
+     * Contains extension information for property 'detail'.
      */
     _detail?: Element;
 }
@@ -33282,7 +33730,7 @@ export interface TestReportTest {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33298,7 +33746,7 @@ export interface TestReportTest {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -33306,7 +33754,7 @@ export interface TestReportTest {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -33323,7 +33771,7 @@ export interface TestReportTestAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33352,7 +33800,7 @@ export interface TestReportTeardown {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33377,7 +33825,7 @@ export interface TestReportTeardownAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33398,11 +33846,15 @@ export interface TestReportTeardownAction {
  */
 export interface TestScript {
     /**
+     * The type of the resource.
+     */
+    resourceType: "TestScript";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33414,7 +33866,7 @@ export interface TestScript {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -33422,7 +33874,7 @@ export interface TestScript {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -33446,7 +33898,7 @@ export interface TestScript {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -33458,7 +33910,7 @@ export interface TestScript {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -33466,7 +33918,7 @@ export interface TestScript {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -33474,7 +33926,7 @@ export interface TestScript {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -33482,7 +33934,7 @@ export interface TestScript {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -33490,7 +33942,7 @@ export interface TestScript {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -33498,7 +33950,7 @@ export interface TestScript {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -33506,7 +33958,7 @@ export interface TestScript {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -33518,7 +33970,7 @@ export interface TestScript {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -33534,7 +33986,7 @@ export interface TestScript {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -33542,7 +33994,7 @@ export interface TestScript {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -33599,7 +34051,7 @@ export interface TestScriptOrigin {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33615,7 +34067,7 @@ export interface TestScriptOrigin {
      */
     index: integer;
     /**
-     * Contains extension information for property 'index'
+     * Contains extension information for property 'index'.
      */
     _index?: Element;
     /**
@@ -33632,7 +34084,7 @@ export interface TestScriptDestination {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33648,7 +34100,7 @@ export interface TestScriptDestination {
      */
     index: integer;
     /**
-     * Contains extension information for property 'index'
+     * Contains extension information for property 'index'.
      */
     _index?: Element;
     /**
@@ -33665,7 +34117,7 @@ export interface TestScriptMetadata {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33694,7 +34146,7 @@ export interface TestScriptMetadataLink {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33710,7 +34162,7 @@ export interface TestScriptMetadataLink {
      */
     url: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -33718,7 +34170,7 @@ export interface TestScriptMetadataLink {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
 }
@@ -33731,7 +34183,7 @@ export interface TestScriptMetadataCapability {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33747,7 +34199,7 @@ export interface TestScriptMetadataCapability {
      */
     required?: boolean;
     /**
-     * Contains extension information for property 'required'
+     * Contains extension information for property 'required'.
      */
     _required?: Element;
     /**
@@ -33755,7 +34207,7 @@ export interface TestScriptMetadataCapability {
      */
     validated?: boolean;
     /**
-     * Contains extension information for property 'validated'
+     * Contains extension information for property 'validated'.
      */
     _validated?: Element;
     /**
@@ -33763,7 +34215,7 @@ export interface TestScriptMetadataCapability {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -33771,7 +34223,7 @@ export interface TestScriptMetadataCapability {
      */
     origin?: integer[];
     /**
-     * Contains extension information for property 'origin'
+     * Contains extension information for property 'origin'.
      */
     _origin?: Element[];
     /**
@@ -33779,7 +34231,7 @@ export interface TestScriptMetadataCapability {
      */
     destination?: integer;
     /**
-     * Contains extension information for property 'destination'
+     * Contains extension information for property 'destination'.
      */
     _destination?: Element;
     /**
@@ -33787,7 +34239,7 @@ export interface TestScriptMetadataCapability {
      */
     link?: uri[];
     /**
-     * Contains extension information for property 'link'
+     * Contains extension information for property 'link'.
      */
     _link?: Element[];
     /**
@@ -33804,7 +34256,7 @@ export interface TestScriptFixture {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33820,7 +34272,7 @@ export interface TestScriptFixture {
      */
     autocreate?: boolean;
     /**
-     * Contains extension information for property 'autocreate'
+     * Contains extension information for property 'autocreate'.
      */
     _autocreate?: Element;
     /**
@@ -33828,7 +34280,7 @@ export interface TestScriptFixture {
      */
     autodelete?: boolean;
     /**
-     * Contains extension information for property 'autodelete'
+     * Contains extension information for property 'autodelete'.
      */
     _autodelete?: Element;
     /**
@@ -33845,7 +34297,7 @@ export interface TestScriptVariable {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33861,7 +34313,7 @@ export interface TestScriptVariable {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -33869,7 +34321,7 @@ export interface TestScriptVariable {
      */
     defaultValue?: string;
     /**
-     * Contains extension information for property 'defaultValue'
+     * Contains extension information for property 'defaultValue'.
      */
     _defaultValue?: Element;
     /**
@@ -33877,7 +34329,7 @@ export interface TestScriptVariable {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -33885,7 +34337,7 @@ export interface TestScriptVariable {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
     /**
@@ -33893,7 +34345,7 @@ export interface TestScriptVariable {
      */
     headerField?: string;
     /**
-     * Contains extension information for property 'headerField'
+     * Contains extension information for property 'headerField'.
      */
     _headerField?: Element;
     /**
@@ -33901,7 +34353,7 @@ export interface TestScriptVariable {
      */
     hint?: string;
     /**
-     * Contains extension information for property 'hint'
+     * Contains extension information for property 'hint'.
      */
     _hint?: Element;
     /**
@@ -33909,7 +34361,7 @@ export interface TestScriptVariable {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -33917,7 +34369,7 @@ export interface TestScriptVariable {
      */
     sourceId?: id;
     /**
-     * Contains extension information for property 'sourceId'
+     * Contains extension information for property 'sourceId'.
      */
     _sourceId?: Element;
 }
@@ -33930,7 +34382,7 @@ export interface TestScriptRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33959,7 +34411,7 @@ export interface TestScriptRuleParam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -33975,7 +34427,7 @@ export interface TestScriptRuleParam {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -33983,7 +34435,7 @@ export interface TestScriptRuleParam {
      */
     value?: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -33996,7 +34448,7 @@ export interface TestScriptRuleset {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34025,7 +34477,7 @@ export interface TestScriptRulesetRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34041,7 +34493,7 @@ export interface TestScriptRulesetRule {
      */
     ruleId: id;
     /**
-     * Contains extension information for property 'ruleId'
+     * Contains extension information for property 'ruleId'.
      */
     _ruleId?: Element;
     /**
@@ -34058,7 +34510,7 @@ export interface TestScriptRulesetRuleParam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34074,7 +34526,7 @@ export interface TestScriptRulesetRuleParam {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -34082,7 +34534,7 @@ export interface TestScriptRulesetRuleParam {
      */
     value?: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -34095,7 +34547,7 @@ export interface TestScriptSetup {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34120,7 +34572,7 @@ export interface TestScriptSetupAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34149,7 +34601,7 @@ export interface TestScriptSetupActionOperation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34169,7 +34621,7 @@ export interface TestScriptSetupActionOperation {
      */
     resource?: code;
     /**
-     * Contains extension information for property 'resource'
+     * Contains extension information for property 'resource'.
      */
     _resource?: Element;
     /**
@@ -34177,7 +34629,7 @@ export interface TestScriptSetupActionOperation {
      */
     label?: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -34185,7 +34637,7 @@ export interface TestScriptSetupActionOperation {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -34193,7 +34645,7 @@ export interface TestScriptSetupActionOperation {
      */
     accept?: code;
     /**
-     * Contains extension information for property 'accept'
+     * Contains extension information for property 'accept'.
      */
     _accept?: Element;
     /**
@@ -34201,7 +34653,7 @@ export interface TestScriptSetupActionOperation {
      */
     contentType?: code;
     /**
-     * Contains extension information for property 'contentType'
+     * Contains extension information for property 'contentType'.
      */
     _contentType?: Element;
     /**
@@ -34209,7 +34661,7 @@ export interface TestScriptSetupActionOperation {
      */
     destination?: integer;
     /**
-     * Contains extension information for property 'destination'
+     * Contains extension information for property 'destination'.
      */
     _destination?: Element;
     /**
@@ -34217,7 +34669,7 @@ export interface TestScriptSetupActionOperation {
      */
     encodeRequestUrl?: boolean;
     /**
-     * Contains extension information for property 'encodeRequestUrl'
+     * Contains extension information for property 'encodeRequestUrl'.
      */
     _encodeRequestUrl?: Element;
     /**
@@ -34225,7 +34677,7 @@ export interface TestScriptSetupActionOperation {
      */
     origin?: integer;
     /**
-     * Contains extension information for property 'origin'
+     * Contains extension information for property 'origin'.
      */
     _origin?: Element;
     /**
@@ -34233,7 +34685,7 @@ export interface TestScriptSetupActionOperation {
      */
     params?: string;
     /**
-     * Contains extension information for property 'params'
+     * Contains extension information for property 'params'.
      */
     _params?: Element;
     /**
@@ -34245,7 +34697,7 @@ export interface TestScriptSetupActionOperation {
      */
     requestId?: id;
     /**
-     * Contains extension information for property 'requestId'
+     * Contains extension information for property 'requestId'.
      */
     _requestId?: Element;
     /**
@@ -34253,7 +34705,7 @@ export interface TestScriptSetupActionOperation {
      */
     responseId?: id;
     /**
-     * Contains extension information for property 'responseId'
+     * Contains extension information for property 'responseId'.
      */
     _responseId?: Element;
     /**
@@ -34261,7 +34713,7 @@ export interface TestScriptSetupActionOperation {
      */
     sourceId?: id;
     /**
-     * Contains extension information for property 'sourceId'
+     * Contains extension information for property 'sourceId'.
      */
     _sourceId?: Element;
     /**
@@ -34269,7 +34721,7 @@ export interface TestScriptSetupActionOperation {
      */
     targetId?: id;
     /**
-     * Contains extension information for property 'targetId'
+     * Contains extension information for property 'targetId'.
      */
     _targetId?: Element;
     /**
@@ -34277,7 +34729,7 @@ export interface TestScriptSetupActionOperation {
      */
     url?: string;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
 }
@@ -34290,7 +34742,7 @@ export interface TestScriptSetupActionOperationRequestHeader {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34306,7 +34758,7 @@ export interface TestScriptSetupActionOperationRequestHeader {
      */
     field: string;
     /**
-     * Contains extension information for property 'field'
+     * Contains extension information for property 'field'.
      */
     _field?: Element;
     /**
@@ -34314,7 +34766,7 @@ export interface TestScriptSetupActionOperationRequestHeader {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -34327,7 +34779,7 @@ export interface TestScriptSetupActionAssert {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34343,7 +34795,7 @@ export interface TestScriptSetupActionAssert {
      */
     label?: string;
     /**
-     * Contains extension information for property 'label'
+     * Contains extension information for property 'label'.
      */
     _label?: Element;
     /**
@@ -34351,7 +34803,7 @@ export interface TestScriptSetupActionAssert {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -34359,7 +34811,7 @@ export interface TestScriptSetupActionAssert {
      */
     direction?: code;
     /**
-     * Contains extension information for property 'direction'
+     * Contains extension information for property 'direction'.
      */
     _direction?: Element;
     /**
@@ -34367,7 +34819,7 @@ export interface TestScriptSetupActionAssert {
      */
     compareToSourceId?: string;
     /**
-     * Contains extension information for property 'compareToSourceId'
+     * Contains extension information for property 'compareToSourceId'.
      */
     _compareToSourceId?: Element;
     /**
@@ -34375,7 +34827,7 @@ export interface TestScriptSetupActionAssert {
      */
     compareToSourceExpression?: string;
     /**
-     * Contains extension information for property 'compareToSourceExpression'
+     * Contains extension information for property 'compareToSourceExpression'.
      */
     _compareToSourceExpression?: Element;
     /**
@@ -34383,7 +34835,7 @@ export interface TestScriptSetupActionAssert {
      */
     compareToSourcePath?: string;
     /**
-     * Contains extension information for property 'compareToSourcePath'
+     * Contains extension information for property 'compareToSourcePath'.
      */
     _compareToSourcePath?: Element;
     /**
@@ -34391,7 +34843,7 @@ export interface TestScriptSetupActionAssert {
      */
     contentType?: code;
     /**
-     * Contains extension information for property 'contentType'
+     * Contains extension information for property 'contentType'.
      */
     _contentType?: Element;
     /**
@@ -34399,7 +34851,7 @@ export interface TestScriptSetupActionAssert {
      */
     expression?: string;
     /**
-     * Contains extension information for property 'expression'
+     * Contains extension information for property 'expression'.
      */
     _expression?: Element;
     /**
@@ -34407,7 +34859,7 @@ export interface TestScriptSetupActionAssert {
      */
     headerField?: string;
     /**
-     * Contains extension information for property 'headerField'
+     * Contains extension information for property 'headerField'.
      */
     _headerField?: Element;
     /**
@@ -34415,7 +34867,7 @@ export interface TestScriptSetupActionAssert {
      */
     minimumId?: string;
     /**
-     * Contains extension information for property 'minimumId'
+     * Contains extension information for property 'minimumId'.
      */
     _minimumId?: Element;
     /**
@@ -34423,7 +34875,7 @@ export interface TestScriptSetupActionAssert {
      */
     navigationLinks?: boolean;
     /**
-     * Contains extension information for property 'navigationLinks'
+     * Contains extension information for property 'navigationLinks'.
      */
     _navigationLinks?: Element;
     /**
@@ -34431,7 +34883,7 @@ export interface TestScriptSetupActionAssert {
      */
     operator?: code;
     /**
-     * Contains extension information for property 'operator'
+     * Contains extension information for property 'operator'.
      */
     _operator?: Element;
     /**
@@ -34439,7 +34891,7 @@ export interface TestScriptSetupActionAssert {
      */
     path?: string;
     /**
-     * Contains extension information for property 'path'
+     * Contains extension information for property 'path'.
      */
     _path?: Element;
     /**
@@ -34447,7 +34899,7 @@ export interface TestScriptSetupActionAssert {
      */
     requestMethod?: code;
     /**
-     * Contains extension information for property 'requestMethod'
+     * Contains extension information for property 'requestMethod'.
      */
     _requestMethod?: Element;
     /**
@@ -34455,7 +34907,7 @@ export interface TestScriptSetupActionAssert {
      */
     requestURL?: string;
     /**
-     * Contains extension information for property 'requestURL'
+     * Contains extension information for property 'requestURL'.
      */
     _requestURL?: Element;
     /**
@@ -34463,7 +34915,7 @@ export interface TestScriptSetupActionAssert {
      */
     resource?: code;
     /**
-     * Contains extension information for property 'resource'
+     * Contains extension information for property 'resource'.
      */
     _resource?: Element;
     /**
@@ -34471,7 +34923,7 @@ export interface TestScriptSetupActionAssert {
      */
     response?: code;
     /**
-     * Contains extension information for property 'response'
+     * Contains extension information for property 'response'.
      */
     _response?: Element;
     /**
@@ -34479,7 +34931,7 @@ export interface TestScriptSetupActionAssert {
      */
     responseCode?: string;
     /**
-     * Contains extension information for property 'responseCode'
+     * Contains extension information for property 'responseCode'.
      */
     _responseCode?: Element;
     /**
@@ -34495,7 +34947,7 @@ export interface TestScriptSetupActionAssert {
      */
     sourceId?: id;
     /**
-     * Contains extension information for property 'sourceId'
+     * Contains extension information for property 'sourceId'.
      */
     _sourceId?: Element;
     /**
@@ -34503,7 +34955,7 @@ export interface TestScriptSetupActionAssert {
      */
     validateProfileId?: id;
     /**
-     * Contains extension information for property 'validateProfileId'
+     * Contains extension information for property 'validateProfileId'.
      */
     _validateProfileId?: Element;
     /**
@@ -34511,7 +34963,7 @@ export interface TestScriptSetupActionAssert {
      */
     value?: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
     /**
@@ -34519,7 +34971,7 @@ export interface TestScriptSetupActionAssert {
      */
     warningOnly?: boolean;
     /**
-     * Contains extension information for property 'warningOnly'
+     * Contains extension information for property 'warningOnly'.
      */
     _warningOnly?: Element;
 }
@@ -34532,7 +34984,7 @@ export interface TestScriptSetupActionAssertRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34548,7 +35000,7 @@ export interface TestScriptSetupActionAssertRule {
      */
     ruleId: id;
     /**
-     * Contains extension information for property 'ruleId'
+     * Contains extension information for property 'ruleId'.
      */
     _ruleId?: Element;
     /**
@@ -34565,7 +35017,7 @@ export interface TestScriptSetupActionAssertRuleParam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34581,7 +35033,7 @@ export interface TestScriptSetupActionAssertRuleParam {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -34589,7 +35041,7 @@ export interface TestScriptSetupActionAssertRuleParam {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -34602,7 +35054,7 @@ export interface TestScriptSetupActionAssertRuleset {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34618,7 +35070,7 @@ export interface TestScriptSetupActionAssertRuleset {
      */
     rulesetId: id;
     /**
-     * Contains extension information for property 'rulesetId'
+     * Contains extension information for property 'rulesetId'.
      */
     _rulesetId?: Element;
     /**
@@ -34635,7 +35087,7 @@ export interface TestScriptSetupActionAssertRulesetRule {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34651,7 +35103,7 @@ export interface TestScriptSetupActionAssertRulesetRule {
      */
     ruleId: id;
     /**
-     * Contains extension information for property 'ruleId'
+     * Contains extension information for property 'ruleId'.
      */
     _ruleId?: Element;
     /**
@@ -34668,7 +35120,7 @@ export interface TestScriptSetupActionAssertRulesetRuleParam {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34684,7 +35136,7 @@ export interface TestScriptSetupActionAssertRulesetRuleParam {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -34692,7 +35144,7 @@ export interface TestScriptSetupActionAssertRulesetRuleParam {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -34705,7 +35157,7 @@ export interface TestScriptTest {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34721,7 +35173,7 @@ export interface TestScriptTest {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -34729,7 +35181,7 @@ export interface TestScriptTest {
      */
     description?: string;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -34746,7 +35198,7 @@ export interface TestScriptTestAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34775,7 +35227,7 @@ export interface TestScriptTeardown {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34800,7 +35252,7 @@ export interface TestScriptTeardownAction {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34825,7 +35277,7 @@ export interface Timing {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34837,7 +35289,7 @@ export interface Timing {
      */
     event?: dateTime[];
     /**
-     * Contains extension information for property 'event'
+     * Contains extension information for property 'event'.
      */
     _event?: Element[];
     /**
@@ -34855,7 +35307,7 @@ export interface TimingRepeat {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -34879,7 +35331,7 @@ export interface TimingRepeat {
      */
     count?: integer;
     /**
-     * Contains extension information for property 'count'
+     * Contains extension information for property 'count'.
      */
     _count?: Element;
     /**
@@ -34887,7 +35339,7 @@ export interface TimingRepeat {
      */
     countMax?: integer;
     /**
-     * Contains extension information for property 'countMax'
+     * Contains extension information for property 'countMax'.
      */
     _countMax?: Element;
     /**
@@ -34895,7 +35347,7 @@ export interface TimingRepeat {
      */
     duration?: decimal;
     /**
-     * Contains extension information for property 'duration'
+     * Contains extension information for property 'duration'.
      */
     _duration?: Element;
     /**
@@ -34903,7 +35355,7 @@ export interface TimingRepeat {
      */
     durationMax?: decimal;
     /**
-     * Contains extension information for property 'durationMax'
+     * Contains extension information for property 'durationMax'.
      */
     _durationMax?: Element;
     /**
@@ -34911,7 +35363,7 @@ export interface TimingRepeat {
      */
     durationUnit?: code;
     /**
-     * Contains extension information for property 'durationUnit'
+     * Contains extension information for property 'durationUnit'.
      */
     _durationUnit?: Element;
     /**
@@ -34919,7 +35371,7 @@ export interface TimingRepeat {
      */
     frequency?: integer;
     /**
-     * Contains extension information for property 'frequency'
+     * Contains extension information for property 'frequency'.
      */
     _frequency?: Element;
     /**
@@ -34927,7 +35379,7 @@ export interface TimingRepeat {
      */
     frequencyMax?: integer;
     /**
-     * Contains extension information for property 'frequencyMax'
+     * Contains extension information for property 'frequencyMax'.
      */
     _frequencyMax?: Element;
     /**
@@ -34935,7 +35387,7 @@ export interface TimingRepeat {
      */
     period?: decimal;
     /**
-     * Contains extension information for property 'period'
+     * Contains extension information for property 'period'.
      */
     _period?: Element;
     /**
@@ -34943,7 +35395,7 @@ export interface TimingRepeat {
      */
     periodMax?: decimal;
     /**
-     * Contains extension information for property 'periodMax'
+     * Contains extension information for property 'periodMax'.
      */
     _periodMax?: Element;
     /**
@@ -34951,7 +35403,7 @@ export interface TimingRepeat {
      */
     periodUnit?: code;
     /**
-     * Contains extension information for property 'periodUnit'
+     * Contains extension information for property 'periodUnit'.
      */
     _periodUnit?: Element;
     /**
@@ -34959,7 +35411,7 @@ export interface TimingRepeat {
      */
     dayOfWeek?: code[];
     /**
-     * Contains extension information for property 'dayOfWeek'
+     * Contains extension information for property 'dayOfWeek'.
      */
     _dayOfWeek?: Element[];
     /**
@@ -34967,7 +35419,7 @@ export interface TimingRepeat {
      */
     timeOfDay?: time[];
     /**
-     * Contains extension information for property 'timeOfDay'
+     * Contains extension information for property 'timeOfDay'.
      */
     _timeOfDay?: Element[];
     /**
@@ -34975,7 +35427,7 @@ export interface TimingRepeat {
      */
     when?: code[];
     /**
-     * Contains extension information for property 'when'
+     * Contains extension information for property 'when'.
      */
     _when?: Element[];
     /**
@@ -34983,7 +35435,7 @@ export interface TimingRepeat {
      */
     offset?: unsignedInt;
     /**
-     * Contains extension information for property 'offset'
+     * Contains extension information for property 'offset'.
      */
     _offset?: Element;
 }
@@ -34996,7 +35448,7 @@ export interface TriggerDefinition {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35008,7 +35460,7 @@ export interface TriggerDefinition {
      */
     type: code;
     /**
-     * Contains extension information for property 'type'
+     * Contains extension information for property 'type'.
      */
     _type?: Element;
     /**
@@ -35016,7 +35468,7 @@ export interface TriggerDefinition {
      */
     eventName?: string;
     /**
-     * Contains extension information for property 'eventName'
+     * Contains extension information for property 'eventName'.
      */
     _eventName?: Element;
     /**
@@ -35032,7 +35484,7 @@ export interface TriggerDefinition {
      */
     eventtimingDate?: date;
     /**
-     * Contains extension information for property 'eventtimingDate'
+     * Contains extension information for property 'eventtimingDate'.
      */
     _eventtimingDate?: Element;
     /**
@@ -35040,7 +35492,7 @@ export interface TriggerDefinition {
      */
     eventtimingDateTime?: dateTime;
     /**
-     * Contains extension information for property 'eventtimingDateTime'
+     * Contains extension information for property 'eventtimingDateTime'.
      */
     _eventtimingDateTime?: Element;
     /**
@@ -35057,7 +35509,7 @@ export interface UsageContext {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35086,11 +35538,15 @@ export interface UsageContext {
  */
 export interface ValueSet {
     /**
+     * The type of the resource.
+     */
+    resourceType: "ValueSet";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35102,7 +35558,7 @@ export interface ValueSet {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -35110,7 +35566,7 @@ export interface ValueSet {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -35134,7 +35590,7 @@ export interface ValueSet {
      */
     url?: uri;
     /**
-     * Contains extension information for property 'url'
+     * Contains extension information for property 'url'.
      */
     _url?: Element;
     /**
@@ -35146,7 +35602,7 @@ export interface ValueSet {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -35154,7 +35610,7 @@ export interface ValueSet {
      */
     name?: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -35162,7 +35618,7 @@ export interface ValueSet {
      */
     title?: string;
     /**
-     * Contains extension information for property 'title'
+     * Contains extension information for property 'title'.
      */
     _title?: Element;
     /**
@@ -35170,7 +35626,7 @@ export interface ValueSet {
      */
     status: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -35178,7 +35634,7 @@ export interface ValueSet {
      */
     experimental?: boolean;
     /**
-     * Contains extension information for property 'experimental'
+     * Contains extension information for property 'experimental'.
      */
     _experimental?: Element;
     /**
@@ -35186,7 +35642,7 @@ export interface ValueSet {
      */
     date?: dateTime;
     /**
-     * Contains extension information for property 'date'
+     * Contains extension information for property 'date'.
      */
     _date?: Element;
     /**
@@ -35194,7 +35650,7 @@ export interface ValueSet {
      */
     publisher?: string;
     /**
-     * Contains extension information for property 'publisher'
+     * Contains extension information for property 'publisher'.
      */
     _publisher?: Element;
     /**
@@ -35206,7 +35662,7 @@ export interface ValueSet {
      */
     description?: markdown;
     /**
-     * Contains extension information for property 'description'
+     * Contains extension information for property 'description'.
      */
     _description?: Element;
     /**
@@ -35222,7 +35678,7 @@ export interface ValueSet {
      */
     immutable?: boolean;
     /**
-     * Contains extension information for property 'immutable'
+     * Contains extension information for property 'immutable'.
      */
     _immutable?: Element;
     /**
@@ -35230,7 +35686,7 @@ export interface ValueSet {
      */
     purpose?: markdown;
     /**
-     * Contains extension information for property 'purpose'
+     * Contains extension information for property 'purpose'.
      */
     _purpose?: Element;
     /**
@@ -35238,7 +35694,7 @@ export interface ValueSet {
      */
     copyright?: markdown;
     /**
-     * Contains extension information for property 'copyright'
+     * Contains extension information for property 'copyright'.
      */
     _copyright?: Element;
     /**
@@ -35246,7 +35702,7 @@ export interface ValueSet {
      */
     extensible?: boolean;
     /**
-     * Contains extension information for property 'extensible'
+     * Contains extension information for property 'extensible'.
      */
     _extensible?: Element;
     /**
@@ -35267,7 +35723,7 @@ export interface ValueSetCompose {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35283,7 +35739,7 @@ export interface ValueSetCompose {
      */
     lockedDate?: date;
     /**
-     * Contains extension information for property 'lockedDate'
+     * Contains extension information for property 'lockedDate'.
      */
     _lockedDate?: Element;
     /**
@@ -35291,7 +35747,7 @@ export interface ValueSetCompose {
      */
     inactive?: boolean;
     /**
-     * Contains extension information for property 'inactive'
+     * Contains extension information for property 'inactive'.
      */
     _inactive?: Element;
     /**
@@ -35312,7 +35768,7 @@ export interface ValueSetComposeInclude {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35328,7 +35784,7 @@ export interface ValueSetComposeInclude {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -35336,7 +35792,7 @@ export interface ValueSetComposeInclude {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -35352,7 +35808,7 @@ export interface ValueSetComposeInclude {
      */
     valueSet?: uri[];
     /**
-     * Contains extension information for property 'valueSet'
+     * Contains extension information for property 'valueSet'.
      */
     _valueSet?: Element[];
 }
@@ -35365,7 +35821,7 @@ export interface ValueSetComposeIncludeConcept {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35381,7 +35837,7 @@ export interface ValueSetComposeIncludeConcept {
      */
     code: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -35389,7 +35845,7 @@ export interface ValueSetComposeIncludeConcept {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -35406,7 +35862,7 @@ export interface ValueSetComposeIncludeConceptDesignation {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35422,7 +35878,7 @@ export interface ValueSetComposeIncludeConceptDesignation {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -35434,7 +35890,7 @@ export interface ValueSetComposeIncludeConceptDesignation {
      */
     value: string;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -35447,7 +35903,7 @@ export interface ValueSetComposeIncludeFilter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35463,7 +35919,7 @@ export interface ValueSetComposeIncludeFilter {
      */
     property: code;
     /**
-     * Contains extension information for property 'property'
+     * Contains extension information for property 'property'.
      */
     _property?: Element;
     /**
@@ -35471,7 +35927,7 @@ export interface ValueSetComposeIncludeFilter {
      */
     op: code;
     /**
-     * Contains extension information for property 'op'
+     * Contains extension information for property 'op'.
      */
     _op?: Element;
     /**
@@ -35479,7 +35935,7 @@ export interface ValueSetComposeIncludeFilter {
      */
     value: code;
     /**
-     * Contains extension information for property 'value'
+     * Contains extension information for property 'value'.
      */
     _value?: Element;
 }
@@ -35492,7 +35948,7 @@ export interface ValueSetExpansion {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35508,7 +35964,7 @@ export interface ValueSetExpansion {
      */
     identifier: uri;
     /**
-     * Contains extension information for property 'identifier'
+     * Contains extension information for property 'identifier'.
      */
     _identifier?: Element;
     /**
@@ -35516,7 +35972,7 @@ export interface ValueSetExpansion {
      */
     timestamp: dateTime;
     /**
-     * Contains extension information for property 'timestamp'
+     * Contains extension information for property 'timestamp'.
      */
     _timestamp?: Element;
     /**
@@ -35524,7 +35980,7 @@ export interface ValueSetExpansion {
      */
     total?: integer;
     /**
-     * Contains extension information for property 'total'
+     * Contains extension information for property 'total'.
      */
     _total?: Element;
     /**
@@ -35532,7 +35988,7 @@ export interface ValueSetExpansion {
      */
     offset?: integer;
     /**
-     * Contains extension information for property 'offset'
+     * Contains extension information for property 'offset'.
      */
     _offset?: Element;
     /**
@@ -35553,7 +36009,7 @@ export interface ValueSetExpansionParameter {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35569,7 +36025,7 @@ export interface ValueSetExpansionParameter {
      */
     name: string;
     /**
-     * Contains extension information for property 'name'
+     * Contains extension information for property 'name'.
      */
     _name?: Element;
     /**
@@ -35577,7 +36033,7 @@ export interface ValueSetExpansionParameter {
      */
     valueString?: string;
     /**
-     * Contains extension information for property 'valueString'
+     * Contains extension information for property 'valueString'.
      */
     _valueString?: Element;
     /**
@@ -35585,7 +36041,7 @@ export interface ValueSetExpansionParameter {
      */
     valueBoolean?: boolean;
     /**
-     * Contains extension information for property 'valueBoolean'
+     * Contains extension information for property 'valueBoolean'.
      */
     _valueBoolean?: Element;
     /**
@@ -35593,7 +36049,7 @@ export interface ValueSetExpansionParameter {
      */
     valueInteger?: integer;
     /**
-     * Contains extension information for property 'valueInteger'
+     * Contains extension information for property 'valueInteger'.
      */
     _valueInteger?: Element;
     /**
@@ -35601,7 +36057,7 @@ export interface ValueSetExpansionParameter {
      */
     valueDecimal?: decimal;
     /**
-     * Contains extension information for property 'valueDecimal'
+     * Contains extension information for property 'valueDecimal'.
      */
     _valueDecimal?: Element;
     /**
@@ -35609,7 +36065,7 @@ export interface ValueSetExpansionParameter {
      */
     valueUri?: uri;
     /**
-     * Contains extension information for property 'valueUri'
+     * Contains extension information for property 'valueUri'.
      */
     _valueUri?: Element;
     /**
@@ -35617,7 +36073,7 @@ export interface ValueSetExpansionParameter {
      */
     valueCode?: code;
     /**
-     * Contains extension information for property 'valueCode'
+     * Contains extension information for property 'valueCode'.
      */
     _valueCode?: Element;
 }
@@ -35630,7 +36086,7 @@ export interface ValueSetExpansionContains {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35646,7 +36102,7 @@ export interface ValueSetExpansionContains {
      */
     system?: uri;
     /**
-     * Contains extension information for property 'system'
+     * Contains extension information for property 'system'.
      */
     _system?: Element;
     /**
@@ -35654,7 +36110,7 @@ export interface ValueSetExpansionContains {
      */
     abstract?: boolean;
     /**
-     * Contains extension information for property 'abstract'
+     * Contains extension information for property 'abstract'.
      */
     _abstract?: Element;
     /**
@@ -35662,7 +36118,7 @@ export interface ValueSetExpansionContains {
      */
     inactive?: boolean;
     /**
-     * Contains extension information for property 'inactive'
+     * Contains extension information for property 'inactive'.
      */
     _inactive?: Element;
     /**
@@ -35670,7 +36126,7 @@ export interface ValueSetExpansionContains {
      */
     version?: string;
     /**
-     * Contains extension information for property 'version'
+     * Contains extension information for property 'version'.
      */
     _version?: Element;
     /**
@@ -35678,7 +36134,7 @@ export interface ValueSetExpansionContains {
      */
     code?: code;
     /**
-     * Contains extension information for property 'code'
+     * Contains extension information for property 'code'.
      */
     _code?: Element;
     /**
@@ -35686,7 +36142,7 @@ export interface ValueSetExpansionContains {
      */
     display?: string;
     /**
-     * Contains extension information for property 'display'
+     * Contains extension information for property 'display'.
      */
     _display?: Element;
     /**
@@ -35703,11 +36159,15 @@ export interface ValueSetExpansionContains {
  */
 export interface VisionPrescription {
     /**
+     * The type of the resource.
+     */
+    resourceType: "VisionPrescription";
+    /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
     id?: id;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35719,7 +36179,7 @@ export interface VisionPrescription {
      */
     implicitRules?: uri;
     /**
-     * Contains extension information for property 'implicitRules'
+     * Contains extension information for property 'implicitRules'.
      */
     _implicitRules?: Element;
     /**
@@ -35727,7 +36187,7 @@ export interface VisionPrescription {
      */
     language?: code;
     /**
-     * Contains extension information for property 'language'
+     * Contains extension information for property 'language'.
      */
     _language?: Element;
     /**
@@ -35755,7 +36215,7 @@ export interface VisionPrescription {
      */
     status?: code;
     /**
-     * Contains extension information for property 'status'
+     * Contains extension information for property 'status'.
      */
     _status?: Element;
     /**
@@ -35771,7 +36231,7 @@ export interface VisionPrescription {
      */
     dateWritten?: dateTime;
     /**
-     * Contains extension information for property 'dateWritten'
+     * Contains extension information for property 'dateWritten'.
      */
     _dateWritten?: Element;
     /**
@@ -35800,7 +36260,7 @@ export interface VisionPrescriptionDispense {
      */
     id?: string;
     /**
-     * Contains extension information for property 'id'
+     * Contains extension information for property 'id'.
      */
     _id?: Element;
     /**
@@ -35820,7 +36280,7 @@ export interface VisionPrescriptionDispense {
      */
     eye?: code;
     /**
-     * Contains extension information for property 'eye'
+     * Contains extension information for property 'eye'.
      */
     _eye?: Element;
     /**
@@ -35828,7 +36288,7 @@ export interface VisionPrescriptionDispense {
      */
     sphere?: decimal;
     /**
-     * Contains extension information for property 'sphere'
+     * Contains extension information for property 'sphere'.
      */
     _sphere?: Element;
     /**
@@ -35836,7 +36296,7 @@ export interface VisionPrescriptionDispense {
      */
     cylinder?: decimal;
     /**
-     * Contains extension information for property 'cylinder'
+     * Contains extension information for property 'cylinder'.
      */
     _cylinder?: Element;
     /**
@@ -35844,7 +36304,7 @@ export interface VisionPrescriptionDispense {
      */
     axis?: integer;
     /**
-     * Contains extension information for property 'axis'
+     * Contains extension information for property 'axis'.
      */
     _axis?: Element;
     /**
@@ -35852,7 +36312,7 @@ export interface VisionPrescriptionDispense {
      */
     prism?: decimal;
     /**
-     * Contains extension information for property 'prism'
+     * Contains extension information for property 'prism'.
      */
     _prism?: Element;
     /**
@@ -35860,7 +36320,7 @@ export interface VisionPrescriptionDispense {
      */
     base?: code;
     /**
-     * Contains extension information for property 'base'
+     * Contains extension information for property 'base'.
      */
     _base?: Element;
     /**
@@ -35868,7 +36328,7 @@ export interface VisionPrescriptionDispense {
      */
     add?: decimal;
     /**
-     * Contains extension information for property 'add'
+     * Contains extension information for property 'add'.
      */
     _add?: Element;
     /**
@@ -35876,7 +36336,7 @@ export interface VisionPrescriptionDispense {
      */
     power?: decimal;
     /**
-     * Contains extension information for property 'power'
+     * Contains extension information for property 'power'.
      */
     _power?: Element;
     /**
@@ -35884,7 +36344,7 @@ export interface VisionPrescriptionDispense {
      */
     backCurve?: decimal;
     /**
-     * Contains extension information for property 'backCurve'
+     * Contains extension information for property 'backCurve'.
      */
     _backCurve?: Element;
     /**
@@ -35892,7 +36352,7 @@ export interface VisionPrescriptionDispense {
      */
     diameter?: decimal;
     /**
-     * Contains extension information for property 'diameter'
+     * Contains extension information for property 'diameter'.
      */
     _diameter?: Element;
     /**
@@ -35904,7 +36364,7 @@ export interface VisionPrescriptionDispense {
      */
     color?: string;
     /**
-     * Contains extension information for property 'color'
+     * Contains extension information for property 'color'.
      */
     _color?: Element;
     /**
@@ -35912,7 +36372,7 @@ export interface VisionPrescriptionDispense {
      */
     brand?: string;
     /**
-     * Contains extension information for property 'brand'
+     * Contains extension information for property 'brand'.
      */
     _brand?: Element;
     /**

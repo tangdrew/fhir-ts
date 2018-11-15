@@ -99,25 +99,38 @@ export const generateDefinitions = (
 const createInterfaceDeclarationsFromStructureDefinition = (
   structureDefinition
 ): InterfaceDeclarationStructure[] => {
-  const { differential, snapshot } = structureDefinition;
+  const { differential, kind, snapshot, type } = structureDefinition;
   const interfaces = interfacesFromSnapshot(snapshot);
+  const isResource = kind === "resource";
 
   return Object.keys(interfaces).map(interfaceName => {
-    const { docs, elementDefinitions } = interfaces[interfaceName];
+    const { backbone, docs, elementDefinitions } = interfaces[interfaceName];
+
     return {
       docs: (docs || []).map(doc => formatComment(doc)),
       isExported: true,
       name: interfaceName,
-      properties: Object.keys(elementDefinitions).map(elementKey => {
-        const elementDefinition = elementDefinitions[elementKey];
-        const { definition } = elementDefinition;
-        return {
-          docs: [formatComment(definition)],
-          hasQuestionToken: !isRequired(elementDefinition),
-          name: elementKey,
-          type: propertyTypeName(elementDefinition)
-        };
-      })
+      properties: [
+        ...(isResource && !backbone
+          ? [
+              {
+                docs: ["The type of the resource."],
+                name: "resourceType",
+                type: `"${type}"`
+              }
+            ]
+          : []),
+        ...Object.keys(elementDefinitions).map(elementKey => {
+          const elementDefinition = elementDefinitions[elementKey];
+          const { definition } = elementDefinition;
+          return {
+            docs: [formatComment(definition)],
+            hasQuestionToken: !isRequired(elementDefinition),
+            name: elementKey,
+            type: propertyTypeName(elementDefinition)
+          };
+        })
+      ]
     };
   });
 };
@@ -129,6 +142,7 @@ const interfacesFromSnapshot = snapshot =>
     if (isBaseElement) {
       return {
         [path]: {
+          backbone: false,
           docs: [formatComment(definition)]
         }
       };
@@ -178,6 +192,7 @@ const interfacesFromSnapshot = snapshot =>
         ...updatedInterfaceDefinitions,
         [backboneElementName]: {
           ...updatedInterfaceDefinitions[backboneElementName],
+          backbone: true,
           docs: [formatComment(definition)]
         }
       };

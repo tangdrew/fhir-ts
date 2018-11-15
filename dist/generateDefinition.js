@@ -69,24 +69,36 @@ exports.generateDefinitions = (pattern, outputPath, version = "3.0.1") => {
     return files;
 };
 const createInterfaceDeclarationsFromStructureDefinition = (structureDefinition) => {
-    const { differential, snapshot } = structureDefinition;
+    const { differential, kind, snapshot, type } = structureDefinition;
     const interfaces = interfacesFromSnapshot(snapshot);
+    const isResource = kind === "resource";
     return Object.keys(interfaces).map(interfaceName => {
-        const { docs, elementDefinitions } = interfaces[interfaceName];
+        const { backbone, docs, elementDefinitions } = interfaces[interfaceName];
         return {
             docs: (docs || []).map(doc => helpers_1.formatComment(doc)),
             isExported: true,
             name: interfaceName,
-            properties: Object.keys(elementDefinitions).map(elementKey => {
-                const elementDefinition = elementDefinitions[elementKey];
-                const { definition } = elementDefinition;
-                return {
-                    docs: [helpers_1.formatComment(definition)],
-                    hasQuestionToken: !helpers_1.isRequired(elementDefinition),
-                    name: elementKey,
-                    type: helpers_1.propertyTypeName(elementDefinition)
-                };
-            })
+            properties: [
+                ...(isResource && !backbone
+                    ? [
+                        {
+                            docs: ["The type of the resource."],
+                            name: "resourceType",
+                            type: `"${type}"`
+                        }
+                    ]
+                    : []),
+                ...Object.keys(elementDefinitions).map(elementKey => {
+                    const elementDefinition = elementDefinitions[elementKey];
+                    const { definition } = elementDefinition;
+                    return {
+                        docs: [helpers_1.formatComment(definition)],
+                        hasQuestionToken: !helpers_1.isRequired(elementDefinition),
+                        name: elementKey,
+                        type: helpers_1.propertyTypeName(elementDefinition)
+                    };
+                })
+            ]
         };
     });
 };
@@ -96,6 +108,7 @@ const interfacesFromSnapshot = snapshot => snapshot.element.reduce((interfaceDef
     if (isBaseElement) {
         return {
             [path]: {
+                backbone: false,
                 docs: [helpers_1.formatComment(definition)]
             }
         };
@@ -108,14 +121,14 @@ const interfacesFromSnapshot = snapshot => snapshot.element.reduce((interfaceDef
         const elName = helpers_1.elementName(curr, currType);
         return Object.assign({}, accumPropDef, { [elName]: Object.assign({}, curr, { type: [currType] }) }, (PRIMITIVE_TYPES_SET.has(currType.code)
             ? {
-                [`_${elName}`]: Object.assign({}, curr, { definition: `Contains extension information for property '${elName}'`, min: 0, type: [{ code: "Element" }] })
+                [`_${elName}`]: Object.assign({}, curr, { definition: `Contains extension information for property '${elName}'.`, min: 0, type: [{ code: "Element" }] })
             }
             : {}));
     }, {});
     let updatedInterfaceDefinitions = Object.assign({}, interfaceDefinitions, { [helpers_1.parentName(curr)]: Object.assign({}, interfaceDefinitions[helpers_1.parentName(curr)], { elementDefinitions: Object.assign({}, (interfaceDefinitions[helpers_1.parentName(curr)] || {}).elementDefinitions, normalizedElementDefinitions) }) });
     if (helpers_1.isBackboneElement(curr)) {
         const backboneElementName = helpers_1.pathToPascalCase(path);
-        updatedInterfaceDefinitions = Object.assign({}, updatedInterfaceDefinitions, { [backboneElementName]: Object.assign({}, updatedInterfaceDefinitions[backboneElementName], { docs: [helpers_1.formatComment(definition)] }) });
+        updatedInterfaceDefinitions = Object.assign({}, updatedInterfaceDefinitions, { [backboneElementName]: Object.assign({}, updatedInterfaceDefinitions[backboneElementName], { backbone: true, docs: [helpers_1.formatComment(definition)] }) });
     }
     return updatedInterfaceDefinitions;
 }, {});
