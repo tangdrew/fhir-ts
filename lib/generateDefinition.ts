@@ -116,7 +116,7 @@ const createInterfaceDeclarationsFromStructureDefinition = (
               {
                 docs: ["The type of the resource."],
                 name: "resourceType",
-                type: `"${type}"`
+                type: "string"
               }
             ]
           : []),

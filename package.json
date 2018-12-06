@@ -1,6 +1,6 @@
 {
   "name": "fhir-ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "FHIR TypeScript definitions generator",
   "main": "dist/index.js",
   "types": "types/fhir.d.ts",

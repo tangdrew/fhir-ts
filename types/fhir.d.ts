@@ -20,7 +20,7 @@ export interface Account {
     /**
      * The type of the resource.
      */
-    resourceType: "Account";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -203,7 +203,7 @@ export interface ActivityDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "ActivityDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -651,7 +651,7 @@ export interface AdverseEvent {
     /**
      * The type of the resource.
      */
-    resourceType: "AdverseEvent";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -894,7 +894,7 @@ export interface AllergyIntolerance {
     /**
      * The type of the resource.
      */
-    resourceType: "AllergyIntolerance";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -1165,7 +1165,7 @@ export interface Appointment {
     /**
      * The type of the resource.
      */
-    resourceType: "Appointment";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -1375,7 +1375,7 @@ export interface AppointmentResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "AppointmentResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -1557,7 +1557,7 @@ export interface AuditEvent {
     /**
      * The type of the resource.
      */
-    resourceType: "AuditEvent";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -1952,7 +1952,7 @@ export interface Basic {
     /**
      * The type of the resource.
      */
-    resourceType: "Basic";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -2029,7 +2029,7 @@ export interface BodySite {
     /**
      * The type of the resource.
      */
-    resourceType: "BodySite";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -2118,7 +2118,7 @@ export interface CapabilityStatement {
     /**
      * The type of the resource.
      */
-    resourceType: "CapabilityStatement";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -3090,7 +3090,7 @@ export interface CarePlan {
     /**
      * The type of the resource.
      */
-    resourceType: "CarePlan";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -3397,7 +3397,7 @@ export interface CareTeam {
     /**
      * The type of the resource.
      */
-    resourceType: "CareTeam";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -3543,7 +3543,7 @@ export interface ChargeItem {
     /**
      * The type of the resource.
      */
-    resourceType: "ChargeItem";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -3749,7 +3749,7 @@ export interface Claim {
     /**
      * The type of the resource.
      */
-    resourceType: "Claim";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -4609,7 +4609,7 @@ export interface ClaimResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "ClaimResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -5260,7 +5260,7 @@ export interface ClinicalImpression {
     /**
      * The type of the resource.
      */
-    resourceType: "ClinicalImpression";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -5512,7 +5512,7 @@ export interface CodeSystem {
     /**
      * The type of the resource.
      */
-    resourceType: "CodeSystem";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -6071,7 +6071,7 @@ export interface Communication {
     /**
      * The type of the resource.
      */
-    resourceType: "Communication";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -6257,7 +6257,7 @@ export interface CommunicationRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "CommunicationRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -6476,7 +6476,7 @@ export interface CompartmentDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "CompartmentDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -6678,7 +6678,7 @@ export interface Composition {
     /**
      * The type of the resource.
      */
-    resourceType: "Composition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -6979,7 +6979,7 @@ export interface ConceptMap {
     /**
      * The type of the resource.
      */
-    resourceType: "ConceptMap";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -7433,7 +7433,7 @@ export interface Condition {
     /**
      * The type of the resource.
      */
-    resourceType: "Condition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -7676,7 +7676,7 @@ export interface Consent {
     /**
      * The type of the resource.
      */
-    resourceType: "Consent";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -8129,7 +8129,7 @@ export interface Contract {
     /**
      * The type of the resource.
      */
-    resourceType: "Contract";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -8777,7 +8777,7 @@ export interface Coverage {
     /**
      * The type of the resource.
      */
-    resourceType: "Coverage";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -9035,7 +9035,7 @@ export interface DataElement {
     /**
      * The type of the resource.
      */
-    resourceType: "DataElement";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -9382,7 +9382,7 @@ export interface DetectedIssue {
     /**
      * The type of the resource.
      */
-    resourceType: "DetectedIssue";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -9536,7 +9536,7 @@ export interface Device {
     /**
      * The type of the resource.
      */
-    resourceType: "Device";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -9766,7 +9766,7 @@ export interface DeviceComponent {
     /**
      * The type of the resource.
      */
-    resourceType: "DeviceComponent";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -9904,7 +9904,7 @@ export interface DeviceMetric {
     /**
      * The type of the resource.
      */
-    resourceType: "DeviceMetric";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -10054,7 +10054,7 @@ export interface DeviceRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "DeviceRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -10248,7 +10248,7 @@ export interface DeviceUseStatement {
     /**
      * The type of the resource.
      */
-    resourceType: "DeviceUseStatement";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -10365,7 +10365,7 @@ export interface DiagnosticReport {
     /**
      * The type of the resource.
      */
-    resourceType: "DiagnosticReport";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -10625,7 +10625,7 @@ export interface DocumentManifest {
     /**
      * The type of the resource.
      */
-    resourceType: "DocumentManifest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -10800,7 +10800,7 @@ export interface DocumentReference {
     /**
      * The type of the resource.
      */
-    resourceType: "DocumentReference";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -12805,7 +12805,7 @@ export interface EligibilityRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "EligibilityRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -12938,7 +12938,7 @@ export interface EligibilityResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "EligibilityResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -13243,7 +13243,7 @@ export interface Encounter {
     /**
      * The type of the resource.
      */
-    resourceType: "Encounter";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -13610,7 +13610,7 @@ export interface Endpoint {
     /**
      * The type of the resource.
      */
-    resourceType: "Endpoint";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -13727,7 +13727,7 @@ export interface EnrollmentRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "EnrollmentRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -13820,7 +13820,7 @@ export interface EnrollmentResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "EnrollmentResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -13921,7 +13921,7 @@ export interface EpisodeOfCare {
     /**
      * The type of the resource.
      */
-    resourceType: "EpisodeOfCare";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -14096,7 +14096,7 @@ export interface ExpansionProfile {
     /**
      * The type of the resource.
      */
-    resourceType: "ExpansionProfile";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -14532,7 +14532,7 @@ export interface ExplanationOfBenefit {
     /**
      * The type of the resource.
      */
-    resourceType: "ExplanationOfBenefit";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -16068,7 +16068,7 @@ export interface FamilyMemberHistory {
     /**
      * The type of the resource.
      */
-    resourceType: "FamilyMemberHistory";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -16326,7 +16326,7 @@ export interface Flag {
     /**
      * The type of the resource.
      */
-    resourceType: "Flag";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -16415,7 +16415,7 @@ export interface Goal {
     /**
      * The type of the resource.
      */
-    resourceType: "Goal";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -16597,7 +16597,7 @@ export interface GraphDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "GraphDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -16917,7 +16917,7 @@ export interface Group {
     /**
      * The type of the resource.
      */
-    resourceType: "Group";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -17120,7 +17120,7 @@ export interface GuidanceResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "GuidanceResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -17245,7 +17245,7 @@ export interface HealthcareService {
     /**
      * The type of the resource.
      */
-    resourceType: "HealthcareService";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -17634,7 +17634,7 @@ export interface ImagingManifest {
     /**
      * The type of the resource.
      */
-    resourceType: "ImagingManifest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -17834,7 +17834,7 @@ export interface ImagingStudy {
     /**
      * The type of the resource.
      */
-    resourceType: "ImagingStudy";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -18133,7 +18133,7 @@ export interface Immunization {
     /**
      * The type of the resource.
      */
-    resourceType: "Immunization";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -18462,7 +18462,7 @@ export interface ImmunizationRecommendation {
     /**
      * The type of the resource.
      */
-    resourceType: "ImmunizationRecommendation";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -18674,7 +18674,7 @@ export interface ImplementationGuide {
     /**
      * The type of the resource.
      */
-    resourceType: "ImplementationGuide";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -19096,7 +19096,7 @@ export interface Library {
     /**
      * The type of the resource.
      */
-    resourceType: "Library";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -19309,7 +19309,7 @@ export interface Linkage {
     /**
      * The type of the resource.
      */
-    resourceType: "Linkage";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -19411,7 +19411,7 @@ export interface List {
     /**
      * The type of the resource.
      */
-    resourceType: "List";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -19577,7 +19577,7 @@ export interface Location {
     /**
      * The type of the resource.
      */
-    resourceType: "Location";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -19755,7 +19755,7 @@ export interface Measure {
     /**
      * The type of the resource.
      */
-    resourceType: "Measure";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -20236,7 +20236,7 @@ export interface MeasureReport {
     /**
      * The type of the resource.
      */
-    resourceType: "MeasureReport";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -20534,7 +20534,7 @@ export interface Media {
     /**
      * The type of the resource.
      */
-    resourceType: "Media";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -20687,7 +20687,7 @@ export interface Medication {
     /**
      * The type of the resource.
      */
-    resourceType: "Medication";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -20932,7 +20932,7 @@ export interface MedicationAdministration {
     /**
      * The type of the resource.
      */
-    resourceType: "MedicationAdministration";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -21167,7 +21167,7 @@ export interface MedicationDispense {
     /**
      * The type of the resource.
      */
-    resourceType: "MedicationDispense";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -21410,7 +21410,7 @@ export interface MedicationRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "MedicationRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -21686,7 +21686,7 @@ export interface MedicationStatement {
     /**
      * The type of the resource.
      */
-    resourceType: "MedicationStatement";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -21835,7 +21835,7 @@ export interface MessageDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "MessageDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -22114,7 +22114,7 @@ export interface MessageHeader {
     /**
      * The type of the resource.
      */
-    resourceType: "MessageHeader";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -22464,7 +22464,7 @@ export interface NamingSystem {
     /**
      * The type of the resource.
      */
-    resourceType: "NamingSystem";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -22695,7 +22695,7 @@ export interface NutritionOrder {
     /**
      * The type of the resource.
      */
-    resourceType: "NutritionOrder";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -23066,7 +23066,7 @@ export interface Observation {
     /**
      * The type of the resource.
      */
-    resourceType: "Observation";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -23450,7 +23450,7 @@ export interface OperationDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "OperationDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -23830,7 +23830,7 @@ export interface OperationOutcome {
     /**
      * The type of the resource.
      */
-    resourceType: "OperationOutcome";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -23952,7 +23952,7 @@ export interface Organization {
     /**
      * The type of the resource.
      */
-    resourceType: "Organization";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -24163,7 +24163,7 @@ export interface Patient {
     /**
      * The type of the resource.
      */
-    resourceType: "Patient";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -24472,7 +24472,7 @@ export interface PaymentNotice {
     /**
      * The type of the resource.
      */
-    resourceType: "PaymentNotice";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -24577,7 +24577,7 @@ export interface PaymentReconciliation {
     /**
      * The type of the resource.
      */
-    resourceType: "PaymentReconciliation";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -24817,7 +24817,7 @@ export interface Person {
     /**
      * The type of the resource.
      */
-    resourceType: "Person";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -24955,7 +24955,7 @@ export interface PlanDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "PlanDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -25623,7 +25623,7 @@ export interface Practitioner {
     /**
      * The type of the resource.
      */
-    resourceType: "Practitioner";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -25765,7 +25765,7 @@ export interface PractitionerRole {
     /**
      * The type of the resource.
      */
-    resourceType: "PractitionerRole";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -25968,7 +25968,7 @@ export interface Procedure {
     /**
      * The type of the resource.
      */
-    resourceType: "Procedure";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -26203,7 +26203,7 @@ export interface ProcedureRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "ProcedureRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -26429,7 +26429,7 @@ export interface ProcessRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "ProcessRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -26599,7 +26599,7 @@ export interface ProcessResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "ProcessResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -26749,7 +26749,7 @@ export interface Provenance {
     /**
      * The type of the resource.
      */
-    resourceType: "Provenance";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -27009,7 +27009,7 @@ export interface Questionnaire {
     /**
      * The type of the resource.
      */
-    resourceType: "Questionnaire";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -27569,7 +27569,7 @@ export interface QuestionnaireResponse {
     /**
      * The type of the resource.
      */
-    resourceType: "QuestionnaireResponse";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -27923,7 +27923,7 @@ export interface ReferralRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "ReferralRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28182,7 +28182,7 @@ export interface RelatedPerson {
     /**
      * The type of the resource.
      */
-    resourceType: "RelatedPerson";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28291,7 +28291,7 @@ export interface RequestGroup {
     /**
      * The type of the resource.
      */
-    resourceType: "RequestGroup";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28671,7 +28671,7 @@ export interface ResearchStudy {
     /**
      * The type of the resource.
      */
-    resourceType: "ResearchStudy";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28857,7 +28857,7 @@ export interface ResearchSubject {
     /**
      * The type of the resource.
      */
-    resourceType: "ResearchSubject";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28954,7 +28954,7 @@ export interface Resource {
     /**
      * The type of the resource.
      */
-    resourceType: "Resource";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -28991,7 +28991,7 @@ export interface RiskAssessment {
     /**
      * The type of the resource.
      */
-    resourceType: "RiskAssessment";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -29266,7 +29266,7 @@ export interface Schedule {
     /**
      * The type of the resource.
      */
-    resourceType: "Schedule";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -29359,7 +29359,7 @@ export interface SearchParameter {
     /**
      * The type of the resource.
      */
-    resourceType: "SearchParameter";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -29621,7 +29621,7 @@ export interface Sequence {
     /**
      * The type of the resource.
      */
-    resourceType: "Sequence";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -30078,7 +30078,7 @@ export interface ServiceDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "ServiceDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -30413,7 +30413,7 @@ export interface Slot {
     /**
      * The type of the resource.
      */
-    resourceType: "Slot";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -30530,7 +30530,7 @@ export interface Specimen {
     /**
      * The type of the resource.
      */
-    resourceType: "Specimen";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -30790,7 +30790,7 @@ export interface StructureDefinition {
     /**
      * The type of the resource.
      */
-    resourceType: "StructureDefinition";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -31138,7 +31138,7 @@ export interface StructureMap {
     /**
      * The type of the resource.
      */
-    resourceType: "StructureMap";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -32019,7 +32019,7 @@ export interface Subscription {
     /**
      * The type of the resource.
      */
-    resourceType: "Subscription";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -32177,7 +32177,7 @@ export interface Substance {
     /**
      * The type of the resource.
      */
-    resourceType: "Substance";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -32336,7 +32336,7 @@ export interface SupplyDelivery {
     /**
      * The type of the resource.
      */
-    resourceType: "SupplyDelivery";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -32482,7 +32482,7 @@ export interface SupplyRequest {
     /**
      * The type of the resource.
      */
-    resourceType: "SupplyRequest";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -32673,7 +32673,7 @@ export interface Task {
     /**
      * The type of the resource.
      */
-    resourceType: "Task";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -33414,7 +33414,7 @@ export interface TestReport {
     /**
      * The type of the resource.
      */
-    resourceType: "TestReport";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -33848,7 +33848,7 @@ export interface TestScript {
     /**
      * The type of the resource.
      */
-    resourceType: "TestScript";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -35540,7 +35540,7 @@ export interface ValueSet {
     /**
      * The type of the resource.
      */
-    resourceType: "ValueSet";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
@@ -36161,7 +36161,7 @@ export interface VisionPrescription {
     /**
      * The type of the resource.
      */
-    resourceType: "VisionPrescription";
+    resourceType: string;
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
      */
