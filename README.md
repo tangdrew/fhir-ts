@@ -1,6 +1,9 @@
 # fhir-ts
 FHIR TypeScript definitions generator.
 
+## Disclaimer
+This project is still in early stages of development and should not be considered "production-ready".
+
 ## Installation
 ```sh
 npm install fhir-ts -g
@@ -32,3 +35,6 @@ fhir-ts "structure-defintions/**.profile.json" "types"
     - [x] Type aliases
     - [x] Extensions
  - CLI options
+
+## License
+[MIT licensed](./LICENSE).
