@@ -1,7 +1,24 @@
 {
-  "name": "root",
+  "name": "fhir-ts",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
   "devDependencies": {
-    "lerna": "^3.10.5"
+    "@types/glob": "^5.0.35",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.9.3",
+    "jest": "^23.6.0",
+    "lerna": "^3.10.5",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "fhir-ts-codegen": "file:packages/fhir-ts-codegen"
   }
 }
