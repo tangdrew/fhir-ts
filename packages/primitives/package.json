@@ -1,0 +1,22 @@
+{
+  "name": "primitives",
+  "version": "0.0.1",
+  "description": "FHIR primitive runtime types.",
+  "keywords": [
+    "fhir"
+  ],
+  "author": "Andrew Tang <andrew.yishiou.tang@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  }
+}

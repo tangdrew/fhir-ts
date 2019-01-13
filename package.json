@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "build": "yarn install && lerna -v && lerna bootstrap && lerna run build --sort",
+    "test": "yarn build && lerna run test"
   },
   "devDependencies": {
     "@types/glob": "^5.0.35",
