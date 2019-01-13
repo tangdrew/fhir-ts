@@ -15,8 +15,30 @@
   "files": [
     "src"
   ],
-  "scripts": {},
+  "scripts": {
+    "coverage": "jest --coverage",
+    "test": "jest"
+  },
   "devDependencies": {
     "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "fp-ts": "^1.12.3",
+    "io-ts": "^1.5.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "collectCoverageFrom": [
+      "src/*"
+    ]
   }
 }
