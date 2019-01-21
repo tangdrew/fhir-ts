@@ -10,6 +10,7 @@ import { DateType, date } from "./date";
 import { DecimalType, decimal } from "./decimal";
 import { InstantType, instant } from "./instant";
 import { IntegerType, integer } from "./integer";
+import { OIDType, oid } from "./oid";
 import { StringType, string } from "./string";
 import { TimeType, time } from "./time";
 import { URIType, uri } from "./uri";
@@ -32,6 +33,8 @@ export {
   InstantType,
   integer,
   IntegerType,
+  oid,
+  OIDType,
   string,
   StringType,
   time,
