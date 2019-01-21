@@ -2,10 +2,11 @@
  * FHIR Primitive Runtime Types
  */
 
-import { BooleanType, boolean } from "./boolean";
 import { Base64BinaryType, base64binary } from "./base64binary";
+import { BooleanType, boolean } from "./boolean";
 import { CanonicalType, canonical } from "./canonical";
 import { DecimalType, decimal } from "./decimal";
+import { InstantType, instant } from "./instant";
 import { IntegerType, integer } from "./integer";
 import { StringType, string } from "./string";
 import { URIType, uri } from "./uri";
@@ -20,6 +21,8 @@ export {
   CanonicalType,
   decimal,
   DecimalType,
+  instant,
+  InstantType,
   integer,
   IntegerType,
   string,
