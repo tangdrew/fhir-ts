@@ -6,6 +6,7 @@ import { BooleanType, boolean } from "./boolean";
 import { DecimalType, decimal } from "./decimal";
 import { IntegerType, integer } from "./integer";
 import { StringType, string } from "./string";
+import { URIType, uri } from "./uri";
 
 export {
   boolean,
@@ -15,5 +16,7 @@ export {
   integer,
   IntegerType,
   string,
-  StringType
+  StringType,
+  uri,
+  URIType
 };
