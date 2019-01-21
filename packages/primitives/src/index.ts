@@ -11,6 +11,7 @@ import { DecimalType, decimal } from "./decimal";
 import { IDType, id } from "./id";
 import { InstantType, instant } from "./instant";
 import { IntegerType, integer } from "./integer";
+import { MarkdownType, markdown } from "./markdown";
 import { OIDType, oid } from "./oid";
 import { StringType, string } from "./string";
 import { TimeType, time } from "./time";
@@ -36,6 +37,8 @@ export {
   InstantType,
   integer,
   IntegerType,
+  markdown,
+  MarkdownType,
   oid,
   OIDType,
   string,
