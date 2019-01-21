@@ -13,6 +13,7 @@ import { InstantType, instant } from "./instant";
 import { IntegerType, integer } from "./integer";
 import { MarkdownType, markdown } from "./markdown";
 import { OIDType, oid } from "./oid";
+import { PositiveIntegerType, positiveInt } from "./positiveInt";
 import { StringType, string } from "./string";
 import { TimeType, time } from "./time";
 import { UnsignedIntegerType, unsignedInt } from "./unsignedInt";
@@ -42,6 +43,8 @@ export {
   MarkdownType,
   oid,
   OIDType,
+  positiveInt,
+  PositiveIntegerType,
   string,
   StringType,
   time,
