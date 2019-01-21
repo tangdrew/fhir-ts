@@ -1,33 +1,31 @@
 /**
- * Tests for Boolean Runtime Type
+ * Tests for Integer Runtime Type
  */
 
-import { boolean } from "../src";
+import { IntegerType, integer } from "../src";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
-describe("BooleanType", () => {
+describe("IntegerType", () => {
   it("should succeed validating a valid value", () => {
-    const T = boolean;
-    assertSuccess(T.decode(true));
+    const T = integer;
+    assertSuccess(T.decode(2));
   });
 
   it("should return the same reference if validation succeeded and nothing changed", () => {
-    const T = boolean;
-    const value = false;
+    const T = integer;
+    const value = 2;
     assertStrictEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {
-    const T = boolean;
-    assertFailure(T.decode("abc"), [
-      'Invalid value "abc" supplied to : boolean'
-    ]);
+    const T = integer;
+    assertFailure(T.decode(1.1), ["Invalid value 1.1 supplied to : integer"]);
   });
 
   it("should type guard", () => {
-    const T = boolean;
-    expect(T.is(false)).toEqual(true);
-    expect(T.is("b")).toEqual(false);
+    const T = new IntegerType();
+    expect(T.is(2)).toEqual(true);
+    expect(T.is(1.1)).toEqual(false);
     expect(T.is(undefined)).toEqual(false);
   });
 });

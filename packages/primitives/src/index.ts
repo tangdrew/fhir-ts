@@ -2,6 +2,7 @@
  * FHIR Primitive Runtime Types
  */
 
-import { Boolean, boolean } from "./boolean";
+import { BooleanType, boolean } from "./boolean";
+import { IntegerType, integer } from "./integer";
 
-export { Boolean, boolean };
+export { BooleanType, boolean, IntegerType, integer };

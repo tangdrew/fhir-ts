@@ -4,4 +4,4 @@
 
 import { BooleanType, boolean } from "io-ts";
 
-export { BooleanType as Boolean, boolean };
+export { BooleanType, boolean };
