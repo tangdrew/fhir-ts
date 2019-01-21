@@ -7,6 +7,7 @@ import { BooleanType, boolean } from "./boolean";
 import { CanonicalType, canonical } from "./canonical";
 import { CodeType, code } from "./code";
 import { DateType, date } from "./date";
+import { DateTimeType, dateTime } from "./dateTime";
 import { DecimalType, decimal } from "./decimal";
 import { IDType, id } from "./id";
 import { InstantType, instant } from "./instant";
@@ -32,6 +33,8 @@ export {
   CodeType,
   date,
   DateType,
+  dateTime,
+  DateTimeType,
   decimal,
   DecimalType,
   id,
