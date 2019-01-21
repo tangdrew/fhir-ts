@@ -3,6 +3,7 @@
  */
 
 import { BooleanType, boolean } from "./boolean";
+import { Base64BinaryType, base64binary } from "./base64binary";
 import { CanonicalType, canonical } from "./canonical";
 import { DecimalType, decimal } from "./decimal";
 import { IntegerType, integer } from "./integer";
@@ -11,6 +12,8 @@ import { URIType, uri } from "./uri";
 import { URLType, url } from "./url";
 
 export {
+  base64binary,
+  Base64BinaryType,
   boolean,
   BooleanType,
   canonical,
