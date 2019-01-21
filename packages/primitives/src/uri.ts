@@ -18,4 +18,7 @@ export class URIType extends Type<string> {
   }
 }
 
+/**
+ * A Uniform Resource Identifier Reference.
+ */
 export const uri = new URIType();

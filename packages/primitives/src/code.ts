@@ -19,4 +19,7 @@ export class CodeType extends Type<string> {
   }
 }
 
+/**
+ * Indicates that the value is taken from a set of controlled strings defined elsewhere.
+ */
 export const code = new CodeType();

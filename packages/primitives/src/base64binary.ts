@@ -18,4 +18,7 @@ export class Base64BinaryType extends Type<string> {
   }
 }
 
+/**
+ * A stream of bytes, base64 encoded.
+ */
 export const base64binary = new Base64BinaryType();

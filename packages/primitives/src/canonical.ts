@@ -17,4 +17,7 @@ export class CanonicalType extends Type<string> {
   }
 }
 
+/**
+ * A URI that refers to a resource by its canonical URL.
+ */
 export const canonical = new CanonicalType();

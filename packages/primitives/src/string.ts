@@ -18,4 +18,7 @@ export class StringType extends Type<string> {
   }
 }
 
+/**
+ * A sequence of Unicode characters.
+ */
 export const string = new StringType();

@@ -19,4 +19,7 @@ export class DateTimeType extends Type<string> {
   }
 }
 
+/**
+ * A date, date-time or partial date (e.g. just year or year + month) as used in human communication.
+ */
 export const dateTime = new DateTimeType();

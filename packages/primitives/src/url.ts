@@ -17,4 +17,7 @@ export class URLType extends Type<string> {
   }
 }
 
+/**
+ * A Uniform Resource Locator.
+ */
 export const url = new URLType();

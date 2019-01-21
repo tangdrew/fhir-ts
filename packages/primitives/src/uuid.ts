@@ -17,4 +17,7 @@ export class UUIDType extends Type<string> {
   }
 }
 
+/**
+ * A UUID (aka GUID) represented as a URI.
+ */
 export const uuid = new UUIDType();

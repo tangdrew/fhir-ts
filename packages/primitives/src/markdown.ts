@@ -18,4 +18,7 @@ export class MarkdownType extends Type<string> {
   }
 }
 
+/**
+ * A FHIR string that may contain markdown syntax for optional processing by a markdown presentation engine, in the GFM extension of CommonMark format.
+ */
 export const markdown = new MarkdownType();

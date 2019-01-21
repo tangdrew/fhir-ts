@@ -18,4 +18,7 @@ export class TimeType extends Type<string> {
   }
 }
 
+/**
+ * A time during the day, in the format hh:mm:ss.
+ */
 export const time = new TimeType();

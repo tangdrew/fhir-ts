@@ -18,4 +18,7 @@ export class InstantType extends Type<string> {
   }
 }
 
+/**
+ * An instant in time in the format YYYY-MM-DDThh:mm:ss.sss+zz:zz.
+ */
 export const instant = new InstantType();

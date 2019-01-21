@@ -16,4 +16,7 @@ export class IntegerType extends Type<number> {
   }
 }
 
+/**
+ * A signed integer in the range −2,147,483,648..2,147,483,647 (32-bit; for larger values, use decimal).
+ */
 export const integer = new IntegerType();

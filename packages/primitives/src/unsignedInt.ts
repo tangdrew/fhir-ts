@@ -17,4 +17,7 @@ export class UnsignedIntegerType extends Type<number> {
   }
 }
 
+/**
+ * Any non-negative integer in the range 0..2,147,483,647.
+ */
 export const unsignedInt = new UnsignedIntegerType();

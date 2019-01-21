@@ -19,4 +19,7 @@ export class OIDType extends Type<string> {
   }
 }
 
+/**
+ * An OID represented as a URI.
+ */
 export const oid = new OIDType();

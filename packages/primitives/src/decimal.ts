@@ -56,4 +56,7 @@ export class DecimalType extends Type<Decimal, string, unknown> {
   }
 }
 
+/**
+ * Rational numbers that have a decimal representation.
+ */
 export const decimal = new DecimalType();

@@ -19,4 +19,8 @@ export class IDType extends Type<string> {
   }
 }
 
+/**
+ * Any combination of upper- or lower-case ASCII letters ('A'..'Z', and 'a'..'z', numerals ('0'..'9'),
+ * '-' and '.', with a length limit of 64 characters.
+ */
 export const id = new IDType();

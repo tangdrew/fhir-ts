@@ -16,4 +16,7 @@ export class PositiveIntegerType extends Type<number> {
   }
 }
 
+/**
+ * Any positive integer in the range 1..2,147,483,647.
+ */
 export const positiveInt = new PositiveIntegerType();
