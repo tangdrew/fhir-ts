@@ -9,7 +9,7 @@ This project is still in early stages of development and should not be considere
 ## Installation
 
 ```sh
-npm install fhir-ts-codegen -g
+npm install @tangdrew/fhir-ts-codegen -g
 ```
 
 ## Usage
