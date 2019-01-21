@@ -1,6 +1,6 @@
 {
   "name": "@tangdrew/fhir-ts-codegen",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "FHIR TypeScript definitions generator",
   "main": "dist/index.js",
   "types": "types/fhir.d.ts",
