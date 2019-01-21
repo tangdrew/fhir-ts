@@ -7,6 +7,7 @@ import { DecimalType, decimal } from "./decimal";
 import { IntegerType, integer } from "./integer";
 import { StringType, string } from "./string";
 import { URIType, uri } from "./uri";
+import { URLType, url } from "./url";
 
 export {
   boolean,
@@ -18,5 +19,7 @@ export {
   string,
   StringType,
   uri,
-  URIType
+  URIType,
+  url,
+  URLType
 };
