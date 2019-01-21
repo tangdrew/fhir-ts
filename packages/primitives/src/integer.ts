@@ -10,8 +10,7 @@ export class IntegerType extends Type<number> {
     super(
       "integer",
       (m): m is number => typeof m === "number" && Number.isInteger(m),
-      (m, c) =>
-        this.is(m) && Number.isInteger(m) ? success(m) : failure(m, c),
+      (m, c) => (this.is(m) ? success(m) : failure(m, c)),
       identity
     );
   }
