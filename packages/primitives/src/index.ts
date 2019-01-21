@@ -10,6 +10,7 @@ import { DecimalType, decimal } from "./decimal";
 import { InstantType, instant } from "./instant";
 import { IntegerType, integer } from "./integer";
 import { StringType, string } from "./string";
+import { TimeType, time } from "./time";
 import { URIType, uri } from "./uri";
 import { URLType, url } from "./url";
 
@@ -30,6 +31,8 @@ export {
   IntegerType,
   string,
   StringType,
+  time,
+  TimeType,
   uri,
   URIType,
   url,
