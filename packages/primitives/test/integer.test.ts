@@ -2,7 +2,7 @@
  * Tests for Integer Runtime Type
  */
 
-import { IntegerType, integer } from "../src";
+import { integer } from "../src";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("IntegerType", () => {
@@ -23,7 +23,7 @@ describe("IntegerType", () => {
   });
 
   it("should type guard", () => {
-    const T = new IntegerType();
+    const T = integer;
     expect(T.is(2)).toEqual(true);
     expect(T.is(1.1)).toEqual(false);
     expect(T.is(undefined)).toEqual(false);

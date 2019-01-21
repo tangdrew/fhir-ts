@@ -15,6 +15,7 @@ import { MarkdownType, markdown } from "./markdown";
 import { OIDType, oid } from "./oid";
 import { StringType, string } from "./string";
 import { TimeType, time } from "./time";
+import { UnsignedIntegerType, unsignedInt } from "./unsignedInt";
 import { URIType, uri } from "./uri";
 import { URLType, url } from "./url";
 
@@ -45,6 +46,8 @@ export {
   StringType,
   time,
   TimeType,
+  unsignedInt,
+  UnsignedIntegerType,
   uri,
   URIType,
   url,
