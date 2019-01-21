@@ -19,6 +19,7 @@ import { TimeType, time } from "./time";
 import { UnsignedIntegerType, unsignedInt } from "./unsignedInt";
 import { URIType, uri } from "./uri";
 import { URLType, url } from "./url";
+import { UUIDType, uuid } from "./uuid";
 
 export {
   base64binary,
@@ -54,5 +55,7 @@ export {
   uri,
   URIType,
   url,
-  URLType
+  URLType,
+  uuid,
+  UUIDType
 };
