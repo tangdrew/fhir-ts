@@ -4,6 +4,9 @@
   "description": "FHIR TypeScript definitions generator",
   "main": "dist/index.js",
   "types": "types/fhir.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "fhir-ts-codegen": "./dist/index.js"
   },

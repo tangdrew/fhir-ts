@@ -8,6 +8,9 @@
   "author": "Andrew Tang <andrew.yishiou.tang@gmail.com>",
   "license": "MIT",
   "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "lib": "src",
     "test": "test"
