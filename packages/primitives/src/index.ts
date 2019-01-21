@@ -5,6 +5,7 @@
 import { Base64BinaryType, base64binary } from "./base64binary";
 import { BooleanType, boolean } from "./boolean";
 import { CanonicalType, canonical } from "./canonical";
+import { CodeType, code } from "./code";
 import { DateType, date } from "./date";
 import { DecimalType, decimal } from "./decimal";
 import { InstantType, instant } from "./instant";
@@ -21,6 +22,8 @@ export {
   BooleanType,
   canonical,
   CanonicalType,
+  code,
+  CodeType,
   date,
   DateType,
   decimal,
