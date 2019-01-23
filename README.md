@@ -2,6 +2,10 @@
 
 Mono-repo of tools for FHIR development in TypeScript.
 
+## Disclaimer
+
+This project is still in early stages of development and should not be considered "production-ready".
+
 ## Projects
 
 | Project                                                   | Version                                                                                                                           | Changelog                                            | Description                         |
