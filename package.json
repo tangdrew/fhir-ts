@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build:typescript": "tsc -b packages",
     "build": "yarn install && lerna -v && lerna bootstrap && lerna run build --sort",
     "test": "yarn build && lerna run test"
   },
