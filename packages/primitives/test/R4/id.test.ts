@@ -3,7 +3,7 @@
  */
 
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
-import { id } from "../src";
+import { id } from "../../src/R4";
 
 describe("IDType", () => {
   it("should succeed validating a valid value", () => {

@@ -2,7 +2,7 @@
  * Tests for Base64Binary Runtime Type
  */
 
-import { base64binary } from "../src";
+import { base64binary } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("Base64BinaryType", () => {

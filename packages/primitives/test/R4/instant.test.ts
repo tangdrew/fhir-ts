@@ -2,7 +2,7 @@
  * Tests for Instant Runtime Type
  */
 
-import { instant } from "../src";
+import { instant } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("InstantType", () => {

@@ -2,7 +2,7 @@
  * Tests for Integer Runtime Type
  */
 
-import { integer } from "../src";
+import { integer } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("IntegerType", () => {

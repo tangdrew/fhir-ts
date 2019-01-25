@@ -2,7 +2,7 @@
  * Tests for Boolean Runtime Type
  */
 
-import { boolean } from "../src";
+import { boolean } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("BooleanType", () => {

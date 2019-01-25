@@ -2,7 +2,7 @@
  * Tests for String Runtime Type
  */
 
-import { string } from "../src";
+import { string } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("StringType", () => {

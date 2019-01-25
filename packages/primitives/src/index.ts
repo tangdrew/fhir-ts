@@ -2,63 +2,6 @@
  * FHIR Primitive Runtime Types
  */
 
-import { Base64BinaryType, base64binary } from "./base64binary";
-import { BooleanType, boolean } from "./boolean";
-import { CanonicalType, canonical } from "./canonical";
-import { CodeType, code } from "./code";
-import { DateType, date } from "./date";
-import { DateTimeType, dateTime } from "./dateTime";
-import { DecimalType, decimal } from "./decimal";
-import { IDType, id } from "./id";
-import { InstantType, instant } from "./instant";
-import { IntegerType, integer } from "./integer";
-import { MarkdownType, markdown } from "./markdown";
-import { OIDType, oid } from "./oid";
-import { PositiveIntegerType, positiveInt } from "./positiveInt";
-import { StringType, string } from "./string";
-import { TimeType, time } from "./time";
-import { UnsignedIntegerType, unsignedInt } from "./unsignedInt";
-import { URIType, uri } from "./uri";
-import { URLType, url } from "./url";
-import { UUIDType, uuid } from "./uuid";
+import * as R4 from "./R4";
 
-export {
-  base64binary,
-  Base64BinaryType,
-  boolean,
-  BooleanType,
-  canonical,
-  CanonicalType,
-  code,
-  CodeType,
-  date,
-  DateType,
-  dateTime,
-  DateTimeType,
-  decimal,
-  DecimalType,
-  id,
-  IDType,
-  instant,
-  InstantType,
-  integer,
-  IntegerType,
-  markdown,
-  MarkdownType,
-  oid,
-  OIDType,
-  positiveInt,
-  PositiveIntegerType,
-  string,
-  StringType,
-  time,
-  TimeType,
-  unsignedInt,
-  UnsignedIntegerType,
-  uri,
-  URIType,
-  url,
-  URLType,
-  uuid,
-  UUIDType
-};
+export { R4 };

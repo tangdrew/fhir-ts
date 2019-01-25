@@ -2,7 +2,7 @@
  * Tests for Time Runtime Type
  */
 
-import { time } from "../src";
+import { time } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("TimeType", () => {

@@ -3,8 +3,8 @@
  */
 
 import { assertSuccess, assertFailure } from "./helpers";
-import { decimal } from "../src";
-import { Decimal } from "../src/decimal";
+import { decimal } from "../../src/R4";
+import { Decimal } from "../../src/R4/decimal";
 
 describe("DecimalType", () => {
   it("should succeed validating a valid value", () => {

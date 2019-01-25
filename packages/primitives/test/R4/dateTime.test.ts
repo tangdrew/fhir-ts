@@ -2,7 +2,7 @@
  * Tests for DateTime Runtime Type
  */
 
-import { dateTime } from "../src";
+import { dateTime } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("DateTimeType", () => {

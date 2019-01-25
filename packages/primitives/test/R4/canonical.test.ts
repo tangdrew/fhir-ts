@@ -3,7 +3,7 @@
  */
 
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
-import { canonical } from "../src";
+import { canonical } from "../../src/R4";
 
 describe("CanonicalType", () => {
   it("should succeed validating a valid value", () => {

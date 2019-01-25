@@ -2,7 +2,7 @@
  * Tests for Code Runtime Type
  */
 
-import { code } from "../src";
+import { code } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("CodeType", () => {

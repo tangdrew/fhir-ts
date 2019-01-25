@@ -3,7 +3,7 @@
  */
 
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
-import { oid } from "../src";
+import { oid } from "../../src/R4";
 
 describe("OIDType", () => {
   it("should succeed validating a valid value", () => {

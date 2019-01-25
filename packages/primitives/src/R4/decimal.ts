@@ -10,7 +10,7 @@ import { Type, success, failure } from "io-ts";
  */
 export class Decimal extends Big {
   private dp: number;
-  constructor(n) {
+  constructor(n: string | number) {
     super(n);
     this.dp = this.decimalPlaces(n);
   }

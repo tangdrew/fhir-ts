@@ -2,7 +2,7 @@
  * Tests for Markdown Runtime Type
  */
 
-import { markdown } from "../src";
+import { markdown } from "../../src/R4";
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
 
 describe("MarkdownType", () => {

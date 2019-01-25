@@ -3,7 +3,7 @@
  */
 
 import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
-import { uri } from "../src";
+import { uri } from "../../src/R4";
 
 describe("URIType", () => {
   it("should succeed validating a valid value", () => {
