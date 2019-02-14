@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.2.0...@tangdrew/fhir-ts-codegen@0.2.1) (2019-02-14)
+
+
+### Bug Fixes
+
+* **fhir-ts-codegen:** include dist in npm package ([a2cfdf5](https://github.com/tangdrew/fhir-ts/commit/a2cfdf5))
+
+
+
+
+
 # [0.2.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.1.1...@tangdrew/fhir-ts-codegen@0.2.0) (2019-02-14)
 
 
