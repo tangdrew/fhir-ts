@@ -1,6 +1,6 @@
 {
   "name": "@tangdrew/fhir-ts-codegen",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Generate io-ts runtime types from FHIR StructureDefinitions.",
   "publishConfig": {
     "access": "public"
