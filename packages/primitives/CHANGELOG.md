@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.1.1...@tangdrew/primitives@0.2.0) (2019-02-14)
+
+
+### Features
+
+* **primitives:** expose FHIR versioning ([f40d24d](https://github.com/tangdrew/fhir-ts/commit/f40d24d))
+
+
+
+
+
 ## [0.1.1](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.1.0...@tangdrew/primitives@0.1.1) (2019-01-21)
 
 **Note:** Version bump only for package @tangdrew/primitives
