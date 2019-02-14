@@ -1,15 +1,8 @@
 {
+  "extends": "../tsconfig.settings.json",
   "compilerOptions": {
-    "lib": ["es7"],
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "outDir": "./dist",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "declaration": true
+    "rootDir": "./lib",
+    "outDir": "./dist"
   },
-  "include": ["lib/**/**.ts"],
-  "exclude": ["node_modules"]
+  "include": ["./lib"]
 }

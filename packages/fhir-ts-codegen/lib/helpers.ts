@@ -1,11 +1,139 @@
-import { readFileSync } from "fs";
-import * as Path from "path";
-
 /**
- * Helper methods
+ * Helper Functions
  */
 
-const capitalize = (str: string) =>
+import { writeFile } from "fs";
+import { promisify } from "util";
+
+import { ElementDefinition, FHIRPrimitives } from "./conformance";
+
+export const writeFileAsync = promisify(writeFile);
+
+/**
+ * Groups list of ElementDefinitions by BackboneElements
+ */
+export const getBackboneElementDefinitions = (
+  resourceName: string,
+  elementDefinitions: ElementDefinition[]
+): { [key: string]: ElementDefinition[] } => {
+  const backboneElements = elementDefinitions
+    .filter(isBackboneDefinition)
+    .map(e => pathToPascalCase(e.path));
+
+  return elementDefinitions.reduce<{ [key: string]: ElementDefinition[] }>(
+    (accum, curr) => {
+      const { path } = curr;
+      const parentName = pathToPascalCase(
+        path
+          .split(".")
+          .slice(0, -1)
+          .join(".")
+      );
+
+      const isBackboneChild = backboneElements.includes(parentName);
+
+      if (isBackboneChild) {
+        return {
+          ...accum,
+          [parentName]: [...(accum[parentName] || []), curr]
+        };
+      }
+      return {
+        ...accum,
+        [resourceName]: [...(accum[resourceName] || []), curr]
+      };
+    },
+    {}
+  );
+};
+
+/**
+ * Generates sorted import statements for non-primitive types
+ */
+export const getImports = (
+  elementDefinitions: ElementDefinition[]
+): string[] => {
+  return Array.from(
+    new Set(
+      elementDefinitions.reduce<string[]>((accum, curr) => {
+        const { type } = curr;
+        const nonPrimitiveTypes = (type || [])
+          .filter(
+            ({ code }) =>
+              !Object.values(FHIRPrimitives).includes(code) &&
+              code !== "BackboneElement"
+          )
+          .map(({ code }) => code);
+        return [...accum, ...nonPrimitiveTypes];
+      }, [])
+    )
+  ).sort();
+};
+
+/**
+ * Given an array of types, returns io-ts type declaration string
+ */
+export const typeDeclaration = (elementDefinition: ElementDefinition) => {
+  const { contentReference, path, type } = elementDefinition;
+
+  // TODO: Why is Element type only an extension?
+  if (path === "Element.id" || path === "Extension.url") {
+    return "primitives.R4.string";
+  }
+
+  if (!!contentReference) {
+    return pathToPascalCase(contentReference.slice(1));
+  }
+
+  if (isBackboneDefinition(elementDefinition)) {
+    return pathToPascalCase(path);
+  }
+
+  const declarations = (type || []).map(({ code }) =>
+    Object.values(FHIRPrimitives).includes(code)
+      ? `primitives.R4.${code}`
+      : code
+  );
+  if (declarations.length === 1) {
+    return declarations[0];
+  }
+  return `t.union([${declarations.join(", ")}])`;
+};
+
+export const elementName = (elementDefinition: ElementDefinition) => {
+  const { path, type } = elementDefinition;
+  if (path.split(".").length === 1) {
+    return "";
+  }
+  const [elName] = path.split(".").slice(-1);
+  return isChoiceType(elementDefinition)
+    ? stringsToCamelCase([
+        elName.substring(0, elName.length - 3),
+        ...type!.map(({ code }) => code)
+      ])
+    : elName;
+};
+
+/**
+ * Determines if ElementDefinition is root declaration of BackboneElement
+ */
+export const isBackboneDefinition = (e: ElementDefinition) =>
+  (e.type || []).some(({ code }) => code === "BackboneElement");
+
+/**
+ * Whether an Element Definition is defining a Choice Type
+ * https://www.hl7.org/fhir/formats.html#choice
+ */
+export const isChoiceType = ({ path }: ElementDefinition) =>
+  !!path && path.substr(-3) === "[x]";
+
+/**
+ * Formats ElementDefinition path to pascal case
+ */
+export const pathToPascalCase = (path: string) =>
+  stringsToPascalCase(path.split("."));
+
+export const capitalize = (str: string) =>
   str.length > 0 ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : "";
 
 export const stringsToPascalCase = (strs: string[]) => {
@@ -21,110 +149,3 @@ export const stringsToCamelCase = (strs: string[]) => {
       : `${accum}${curr.toLowerCase()}`;
   }, "");
 };
-
-export const convertToPascalCase = (s: string) => {
-  return s
-    .split(".")
-    .reduce(
-      (prev, cur) => `${prev}${cur.charAt(0).toUpperCase() + cur.slice(1)}`,
-      ""
-    );
-};
-
-export const convertToCamelCase = (s: string) => {
-  // If all caps just return the same string
-  if (s === s.toUpperCase()) {
-    return s;
-  }
-
-  s = s
-    .replace(
-      /(?:^\w|[A-Z]|\b\w)/g,
-      (ltr, idx) => (idx === 0 ? ltr.toLowerCase() : ltr.toUpperCase())
-    )
-    .replace(/\s+/g, "");
-  s = s.replace(/_/g, "");
-  s = s.replace(/-/g, "");
-  return s;
-};
-
-/**
- * Formats ElementDefinition path to camel case
- */
-export const pathToCamelCase = (path: string) =>
-  stringsToCamelCase(path.split("."));
-
-/**
- * Formats ElementDefinition path to pascal case
- */
-export const pathToPascalCase = (path: string) =>
-  stringsToPascalCase(path.split("."));
-
-export const loadFromFile = (pathString: string): any =>
-  JSON.parse((readFileSync(
-    Path.join(__dirname, "..", pathString)
-  ) as any) as string);
-
-/**
- * Parses the parent element name from the ElementDefinition path
- */
-export const parentName = ({ path }) =>
-  stringsToPascalCase(path.split(".").slice(0, -1));
-
-/**
- * Parses the element name from the ElementDefinition path and a given type
- */
-export const elementName = (elementDefinition, type) => {
-  const { path } = elementDefinition;
-  if (path.split(".").length === 1) {
-    return "";
-  }
-  const [elName] = path.split(".").slice(-1);
-  return isChoiceType(elementDefinition)
-    ? stringsToCamelCase([elName.substring(0, elName.length - 3), type.code])
-    : elName;
-};
-
-/**
- * Whether an Element Definition is defining a BackboneElement
- */
-export const isBackboneElement = ({ type }: any) =>
-  !!type && type.some(t => t.code === "BackboneElement");
-
-/**
- * Whether an Element Definition is defining a Choice Type
- * https://www.hl7.org/fhir/formats.html#choice
- */
-export const isChoiceType = ({ path }) => !!path && path.substr(-3) === "[x]";
-
-/**
- * Whether an Element Definition is required
- */
-export const isRequired = ({ min }) => min > 0;
-
-/**
- * Whether an Element Definition is a list
- */
-const isArray = ({ max }) =>
-  max === "*" || (!isNaN(parseInt(max, 10)) && parseInt(max, 10) > 1);
-
-/**
- * Format a TS property type name from an Element Definition
- */
-export const propertyTypeName = elementDefinition => {
-  const { contentReference, path, type } = elementDefinition;
-  return (!contentReference
-    ? type.map(
-        t => `${t.code === "BackboneElement" ? pathToPascalCase(path) : t.code}`
-      )
-    : [stringsToPascalCase(contentReference.slice(1).split("."))]
-  )
-    .map(name => `${name}${isArray(elementDefinition) ? "[]" : ""}`)
-    .join(" | ");
-};
-
-/**
- * Removes all line breaks from string
- */
-export const formatComment = (comment: string) =>
-  comment.replace(/\r?\n|\r/g, "");

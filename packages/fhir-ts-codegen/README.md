@@ -1,6 +1,6 @@
 # fhir-ts-codegen
 
-FHIR TypeScript definitions generator.
+Generate [io-ts](https://github.com/gcanti/io-ts) runtime types from FHIR StructureDefinitions.
 
 ## Disclaimer
 
@@ -15,32 +15,20 @@ npm install @tangdrew/fhir-ts-codegen -g
 ## Usage
 
 ```sh
-fhir-ts-codegen <pattern> <output-directory>
+Usage: fhir-ts-codegen [options]
+
+Options:
+  -i, --input <dir>   input pattern to StructureDefinitions
+  -o, --output <dir>  path to output directory
+  -V, --version       output the version number
+  -h, --help          output usage information
 ```
 
 Example:
 
 ```sh
-fhir-ts-codegen "structure-defintions/**.profile.json" "types"
+fhir-ts-codegen "structure-definitions/**.profile.json" "types"
 ```
-
-## Roadmap
-
-- Resource Definitions
-  - [x] Interface declaration from snapshot
-  - [x] Property names
-  - [x] Property type names
-  - [x] Optional properties
-  - [x] Array properties
-  - [x] JSDoc comments
-  - [x] Backbone Element properties
-  - [ ] Interface declaration from differential
-  - [ ] Default values
-  - [x] Content reference
-- Primitive types
-  - [x] Type aliases
-  - [x] Extensions
-- CLI options
 
 ## License
 
