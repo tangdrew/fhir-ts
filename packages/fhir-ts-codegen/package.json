@@ -9,6 +9,7 @@
     "fhir-ts-codegen": "./bin/index.js"
   },
   "files": [
+    "bin/index.js",
     "dist/**"
   ],
   "scripts": {
