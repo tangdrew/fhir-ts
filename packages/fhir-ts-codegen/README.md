@@ -27,7 +27,7 @@ Options:
 Example:
 
 ```sh
-fhir-ts-codegen "structure-definitions/**.profile.json" "types"
+fhir-ts-codegen --input "structure-definitions/**.profile.canonical.json" types
 ```
 
 ## License

@@ -4,7 +4,6 @@
 
 import { readFileSync } from "fs";
 import * as glob from "glob";
-import { join } from "path";
 import { format } from "prettier";
 
 import { ElementDefinition, StructureDefinition } from "./conformance";
@@ -44,8 +43,9 @@ export class Generator {
    * Read files from input glob pattern
    */
   private readInput = (input: string) => {
-    return glob.sync(input).map(fileName => {
-      return readFileSync(join(__dirname, "..", fileName)).toString();
+    const cwd = process.cwd();
+    return glob.sync(`${cwd}/${input}`).map(fileName => {
+      return readFileSync(fileName).toString();
     });
   };
 
