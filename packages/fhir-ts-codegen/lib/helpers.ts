@@ -5,46 +5,76 @@
 import { writeFile } from "fs";
 import { promisify } from "util";
 
-import { ElementDefinition, FHIRPrimitives } from "./conformance";
+import {
+  ElementDefinition,
+  ElementGroup,
+  FHIRPrimitives,
+  FHIRPrimitivesTypes
+} from "./conformance";
 
 export const writeFileAsync = promisify(writeFile);
 
 /**
- * Groups list of ElementDefinitions by BackboneElements
+ * Groups list of ElementDefinitions into related elements
+ * E.g. the root resource and the embedded backbone elements
  */
-export const getBackboneElementDefinitions = (
+export const getElementGroups = (
   resourceName: string,
   elementDefinitions: ElementDefinition[]
-): { [key: string]: ElementDefinition[] } => {
-  const backboneElements = elementDefinitions
-    .filter(isBackboneDefinition)
+): ElementGroup[] => {
+  const groupNames = elementDefinitions
+    .filter(
+      el =>
+        isBackboneDefinition(el) ||
+        isElementDefinition(el) ||
+        isResourceDefinition(resourceName, el)
+    )
     .map(e => pathToPascalCase(e.path));
 
-  return elementDefinitions.reduce<{ [key: string]: ElementDefinition[] }>(
+  const groups = elementDefinitions.reduce<{ [key: string]: ElementGroup }>(
     (accum, curr) => {
       const { path } = curr;
-      const parentName = pathToPascalCase(
-        path
-          .split(".")
-          .slice(0, -1)
-          .join(".")
-      );
+      const parentName = isResourceDefinition(resourceName, curr)
+        ? ""
+        : pathToPascalCase(
+            path
+              .split(".")
+              .slice(0, -1)
+              .join(".")
+          );
 
-      const isBackboneChild = backboneElements.includes(parentName);
+      const name = pathToPascalCase(path);
+      const isGroupRoot = groupNames.includes(name);
+      const group = accum[name] || {};
+      const isGroupChild = groupNames.includes(parentName);
+      const parentGroup = accum[parentName] || {};
 
-      if (isBackboneChild) {
-        return {
-          ...accum,
-          [parentName]: [...(accum[parentName] || []), curr]
-        };
-      }
       return {
         ...accum,
-        [resourceName]: [...(accum[resourceName] || []), curr]
+        ...(isGroupRoot && {
+          [name]: {
+            ...group,
+            comment: curr.short || "",
+            definitions: [],
+            name
+          }
+        }),
+        ...(isGroupChild && {
+          [parentName]: {
+            ...parentGroup,
+            definitions: [...(parentGroup.definitions || []), curr]
+          }
+        })
       };
     },
     {}
   );
+
+  // Sorts list reverse alphabetically so deeper nested groups are defined first
+  return Object.keys(groups)
+    .sort()
+    .reverse()
+    .map(key => groups[key]);
 };
 
 /**
@@ -60,8 +90,10 @@ export const getImports = (
         const nonPrimitiveTypes = (type || [])
           .filter(
             ({ code }) =>
+              code &&
               !Object.values(FHIRPrimitives).includes(code) &&
-              code !== "BackboneElement"
+              code !== "BackboneElement" &&
+              code !== "Element"
           )
           .map(({ code }) => code);
         return [...accum, ...nonPrimitiveTypes];
@@ -71,54 +103,140 @@ export const getImports = (
 };
 
 /**
- * Given an array of types, returns io-ts type declaration string
+ * Wrap io-ts RuntimeType declaration in recursive type boilerplate
+ * to provide TypeScript static type hint
  */
-export const typeDeclaration = (elementDefinition: ElementDefinition) => {
+export const wrapRecursive = (name: string, runType: string) => {
+  return `export const ${name}: t.RecursiveType<t.Type<I${name}>> = t.recursion('${name}', () =>
+    ${runType}
+  )`;
+};
+
+interface TypeInfo {
+  display: string[];
+  array: boolean;
+}
+
+/**
+ * Parses ElementDefinition into info needed to display types
+ * Encodes special cases like content references
+ */
+export const parseType = (elementDefinition: ElementDefinition): TypeInfo => {
   const { contentReference, path, type } = elementDefinition;
+  const array = isArray(elementDefinition);
 
   // TODO: Why is Element type only an extension?
   if (path === "Element.id" || path === "Extension.url") {
-    return "primitives.R4.string";
+    return {
+      array,
+      display: ["string"]
+    };
   }
 
+  // If contentReference, type is reference name
   if (!!contentReference) {
-    return pathToPascalCase(contentReference.slice(1));
+    return {
+      array,
+      display: [pathToPascalCase(contentReference.slice(1))]
+    };
   }
 
-  if (isBackboneDefinition(elementDefinition)) {
-    return pathToPascalCase(path);
+  // If backbone or element definition, type is element name
+  if (
+    isBackboneDefinition(elementDefinition) ||
+    isElementDefinition(elementDefinition)
+  ) {
+    return {
+      array,
+      display: [pathToPascalCase(path)]
+    };
   }
 
-  const declarations = (type || []).map(({ code }) =>
-    Object.values(FHIRPrimitives).includes(code)
-      ? `primitives.R4.${code}`
-      : code
+  return {
+    array,
+    display: (type || []).map(({ code }) => code)
+  };
+};
+
+/**
+ * Given an array of types, returns io-ts type declaration string
+ */
+export const typeDeclaration = (elementDefinition: ElementDefinition) => {
+  const { array, display } = parseType(elementDefinition);
+
+  const declarations = display.map(type =>
+    Object.values(FHIRPrimitives).includes(type)
+      ? `primitives.R4.${type}`
+      : type
   );
-  if (declarations.length === 1) {
-    return declarations[0];
-  }
-  return `t.union([${declarations.join(", ")}])`;
+  const declaration =
+    declarations.length === 1
+      ? declarations[0]
+      : `t.union([${declarations.join(", ")}])`;
+  return array ? `t.array(${declaration})` : declaration;
+};
+
+/**
+ * Generates TypeScript interface from list of ElementDefinitions
+ */
+export const generateInterface = ({ name, definitions }: ElementGroup) => {
+  return `interface I${name} {
+    ${definitions
+      .map(element => {
+        const { min, path } = element;
+        const propertyName = elementName(element);
+        const { array, display } = parseType(element);
+        const isRequired = min! > 0;
+        const typeName = display
+          .map(type =>
+            Object.values(FHIRPrimitives).includes(type)
+              ? `t.TypeOf<primitives.R4.${FHIRPrimitivesTypes[type]}>`
+              : type
+          )
+          .join(" | ");
+
+        if (!typeName) {
+          throw new Error(`Expected a type for element ${path}.`);
+        }
+
+        return `${propertyName}${isRequired ? "" : "?"}: ${typeName}${
+          array ? "[]" : ""
+        };`;
+      })
+      .join("\n")}
+  }`;
 };
 
 export const elementName = (elementDefinition: ElementDefinition) => {
-  const { path, type } = elementDefinition;
+  const { path } = elementDefinition;
   if (path.split(".").length === 1) {
     return "";
   }
   const [elName] = path.split(".").slice(-1);
   return isChoiceType(elementDefinition)
-    ? stringsToCamelCase([
-        elName.substring(0, elName.length - 3),
-        ...type!.map(({ code }) => code)
-      ])
+    ? stringsToCamelCase([elName.substring(0, elName.length - 3)])
     : elName;
 };
 
 /**
- * Determines if ElementDefinition is root declaration of BackboneElement
+ * Determines if ElementDefinition is root declaration of Resource
+ */
+export const isResourceDefinition = (
+  resourceName: string,
+  e: ElementDefinition
+) => e.path === resourceName;
+
+/**
+ * Determines if ElementDefinition is root declaration of BackboneElement on a Resource
  */
 export const isBackboneDefinition = (e: ElementDefinition) =>
   (e.type || []).some(({ code }) => code === "BackboneElement");
+
+/**
+ * Determines if ElementDefinition is root declaration of Element on a complex type
+ */
+export const isElementDefinition = (e: ElementDefinition) =>
+  (e.type || []).some(({ code }) => code === "Element");
 
 /**
  * Whether an Element Definition is defining a Choice Type
@@ -126,6 +244,15 @@ export const isBackboneDefinition = (e: ElementDefinition) =>
  */
 export const isChoiceType = ({ path }: ElementDefinition) =>
   !!path && path.substr(-3) === "[x]";
+
+/**
+ * Whether an Element Definition is a list
+ */
+const isArray = ({ max }: ElementDefinition) =>
+  !!(
+    max &&
+    (max === "*" || (!isNaN(parseInt(max, 10)) && parseInt(max, 10) > 1))
+  );
 
 /**
  * Formats ElementDefinition path to pascal case

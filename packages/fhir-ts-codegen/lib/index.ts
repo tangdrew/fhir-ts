@@ -6,12 +6,19 @@ import { readFileSync } from "fs";
 import * as glob from "glob";
 import { format } from "prettier";
 
-import { ElementDefinition, StructureDefinition } from "./conformance";
+import {
+  ElementDefinition,
+  ElementGroup,
+  StructureDefinition
+} from "./conformance";
 import {
   elementName,
-  getBackboneElementDefinitions,
+  generateInterface,
+  getElementGroups,
   getImports,
+  parseType,
   typeDeclaration,
+  wrapRecursive,
   writeFileAsync
 } from "./helpers";
 
@@ -78,34 +85,25 @@ export class Generator {
   private renderModule = (structureDefinition: StructureDefinition): File => {
     const { name, snapshot, type } = structureDefinition;
     // TODO: Support from Differential
-    const elementDefinitions = (snapshot!.element || []).filter(
-      element => element.path !== type
-    ); // Filter out root ElementDefinition
+    const elementDefinitions = snapshot!.element || [];
 
-    const backboneElements = getBackboneElementDefinitions(
-      name,
-      elementDefinitions
-    );
+    const elementGroups = getElementGroups(name, elementDefinitions);
 
     const imports = this.configuration.singleFile
       ? ""
-      : `${getImports(elementDefinitions)
+      : `${getImports(
+          elementDefinitions.filter(element => element.path !== type) // Filter out root ElementDefinition
+        )
+          .filter(i => i !== type)
           .map(i => `import {${i}} from "./${i}"`)
           .join("\n")}`;
 
-    const typeDeclarations = Object.keys(backboneElements)
-      .sort()
-      .reverse()
-      .map(elName => {
-        const elements = backboneElements[elName];
-        return this.generateType(elName, elements);
-      })
-      .join("\n\n");
+    const typeDeclarations = elementGroups.map(this.generateType).join("\n\n");
 
     const code = format(
       `
       /**
-       * Module Comment
+       * ${name} Module
        */
       import * as primitives from "@tangdrew/primitives";
       import * as t from "io-ts";
@@ -126,23 +124,34 @@ export class Generator {
   /**
    * Generates io-ts type code from list of ElementDefinitions
    */
-  private generateType = (
-    name: string,
-    elementDefinitions: ElementDefinition[]
-  ): string => {
-    const [required, optional] = this.categorizeElementDefinitions(
-      elementDefinitions
-    );
+  private generateType = (elementGroup: ElementGroup): string => {
+    const { comment, definitions, name } = elementGroup;
+    const [required, optional] = this.categorizeElementDefinitions(definitions);
     const requiredProperties = this.getProperties(required);
     const optionalProperties = this.getProperties(optional);
-    return `export const ${name} = t.intersection([
+    const isRecursive = definitions.some(definition => {
+      const { display } = parseType(definition);
+      return display.some(type => type === name);
+    });
+
+    const runType = `t.intersection([
         t.type({
           ${requiredProperties.join(",\n")}
         }),
         t.partial({
           ${optionalProperties.join(",\n")}
         })
-      ], "${name}");
+      ], "${name}")`;
+
+    return `/**
+    * ${comment}
+    */
+    ${isRecursive ? generateInterface(elementGroup) : ""}
+    ${
+      isRecursive
+        ? wrapRecursive(name, runType)
+        : `export const ${name} = ${runType}`
+    }
       export interface ${name} extends t.TypeOf<typeof ${name}> {}`;
   };
 
