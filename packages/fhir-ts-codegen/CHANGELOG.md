@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.2.3...@tangdrew/fhir-ts-codegen@0.3.0) (2019-02-17)
+
+
+### Features
+
+* **fhir-ts-codegen:** support recursive types ([dad837b](https://github.com/tangdrew/fhir-ts/commit/dad837b))
+
+
+
+
+
 ## [0.2.3](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.2.2...@tangdrew/fhir-ts-codegen@0.2.3) (2019-02-14)
 
 

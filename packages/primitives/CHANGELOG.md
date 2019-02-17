@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.2.0...@tangdrew/primitives@0.2.1) (2019-02-17)
+
+
+### Bug Fixes
+
+* **primitives:** fixed base64Binary spelling ([7d64ee1](https://github.com/tangdrew/fhir-ts/commit/7d64ee1))
+
+
+
+
+
 # [0.2.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.1.1...@tangdrew/primitives@0.2.0) (2019-02-14)
 
 
