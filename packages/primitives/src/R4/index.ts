@@ -2,7 +2,7 @@
  * FHIR R4 Primitive Runtime Types
  */
 
-import { Base64BinaryType, base64binary } from "./base64binary";
+import { Base64BinaryType, base64Binary } from "./base64Binary";
 import { BooleanType, boolean } from "./boolean";
 import { CanonicalType, canonical } from "./canonical";
 import { CodeType, code } from "./code";
@@ -23,7 +23,7 @@ import { URLType, url } from "./url";
 import { UUIDType, uuid } from "./uuid";
 
 export {
-  base64binary,
+  base64Binary,
   Base64BinaryType,
   boolean,
   BooleanType,

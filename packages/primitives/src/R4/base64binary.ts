@@ -10,7 +10,7 @@ export class Base64BinaryType extends Type<string> {
   readonly _tag: "Base64BinaryType" = "Base64BinaryType";
   constructor() {
     super(
-      "base64binary",
+      "base64Binary",
       (m): m is string => typeof m === "string" && BASE64_BINARY_REGEX.test(m),
       (m, c) => (this.is(m) ? success(m) : failure(m, c)),
       identity
@@ -21,4 +21,4 @@ export class Base64BinaryType extends Type<string> {
 /**
  * A stream of bytes, base64 encoded.
  */
-export const base64binary = new Base64BinaryType();
+export const base64Binary = new Base64BinaryType();
