@@ -29,6 +29,7 @@ interface File {
 
 export class Generator {
   public configuration = {
+    barrel: true,
     fromDifferential: true,
     singleFile: false
   };
@@ -66,7 +67,11 @@ export class Generator {
    * Generates code from StructureDefinitions based on configuration
    */
   private generate = (structureDefinitions: StructureDefinition[]): File[] => {
-    return structureDefinitions.map(this.renderModule);
+    const code = structureDefinitions.map(this.renderModule);
+    if (this.configuration.barrel) {
+      return [...code, this.generateBarrel(structureDefinitions)];
+    }
+    return code;
   };
 
   /**
@@ -195,5 +200,20 @@ export class Generator {
         return `/** ${short} */
         ${propertyName}: ${typeName}`;
       });
+  };
+
+  /**
+   * Generates TypeScript barrel code for the module
+   */
+  private generateBarrel = (
+    structureDefinitions: StructureDefinition[]
+  ): File => {
+    const code = structureDefinitions
+      .map(({ name }) => `export { ${name} } from "./${name}";`)
+      .join("\n");
+    return {
+      code,
+      name: "index"
+    };
   };
 }
