@@ -87,7 +87,7 @@ export class Generator {
     // TODO: Support from Differential
     const elementDefinitions = snapshot!.element || [];
 
-    const elementGroups = getElementGroups(name, elementDefinitions);
+    const elementGroups = getElementGroups(name, type, elementDefinitions);
 
     const imports = this.configuration.singleFile
       ? ""

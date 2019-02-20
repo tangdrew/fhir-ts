@@ -16,34 +16,61 @@ export const writeFileAsync = promisify(writeFile);
 
 /**
  * Groups list of ElementDefinitions into related elements
- * E.g. the root resource and the embedded backbone elements
+ * e.g. the root resource and the embedded backbone elements.
+ * Root resource is grouped using the type name, but assigned
+ * the StructureDefinition name. For example, for MoneyQuantity,
+ * the root resource type is Quantity, but the name of the type
+ * will be MoneyQuantity.
  */
 export const getElementGroups = (
   resourceName: string,
+  resourceTypeName: string,
   elementDefinitions: ElementDefinition[]
 ): ElementGroup[] => {
+  /**
+   * If the target and comparison string are the same, return
+   * the alternative string else return the target.
+   * Useful for renaming profile ElementDefinition paths from
+   * the base type to the name of the profile e.g. Quantity -> MoneyQuantity
+   */
+  const replaceIfMatch = (
+    target: string,
+    comparison: string,
+    alternative: string
+  ) => (target === comparison ? alternative : target);
+
   const groupNames = elementDefinitions
     .filter(
       el =>
         isBackboneDefinition(el) ||
         isElementDefinition(el) ||
-        isResourceDefinition(resourceName, el)
+        isResourceDefinition(resourceTypeName, el)
     )
-    .map(e => pathToPascalCase(e.path));
+    .map(e =>
+      replaceIfMatch(pathToPascalCase(e.path), resourceTypeName, resourceName)
+    );
 
   const groups = elementDefinitions.reduce<{ [key: string]: ElementGroup }>(
     (accum, curr) => {
       const { path } = curr;
-      const parentName = isResourceDefinition(resourceName, curr)
-        ? ""
-        : pathToPascalCase(
-            path
-              .split(".")
-              .slice(0, -1)
-              .join(".")
-          );
+      const parentName = replaceIfMatch(
+        isResourceDefinition(resourceTypeName, curr)
+          ? ""
+          : pathToPascalCase(
+              path
+                .split(".")
+                .slice(0, -1)
+                .join(".")
+            ),
+        resourceTypeName,
+        resourceName
+      );
 
-      const name = pathToPascalCase(path);
+      const name = replaceIfMatch(
+        pathToPascalCase(path),
+        resourceTypeName,
+        resourceName
+      );
       const isGroupRoot = groupNames.includes(name);
       const group = accum[name] || {};
       const isGroupChild = groupNames.includes(parentName);
@@ -222,9 +249,9 @@ export const elementName = (elementDefinition: ElementDefinition) => {
  * Determines if ElementDefinition is root declaration of Resource
  */
 export const isResourceDefinition = (
-  resourceName: string,
+  resourceTypeName: string,
   e: ElementDefinition
-) => e.path === resourceName;
+) => e.path === resourceTypeName;
 
 /**
  * Determines if ElementDefinition is root declaration of BackboneElement on a Resource
