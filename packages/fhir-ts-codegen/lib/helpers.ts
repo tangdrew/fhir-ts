@@ -134,7 +134,7 @@ export const getImports = (
  * to provide TypeScript static type hint
  */
 export const wrapRecursive = (name: string, runType: string) => {
-  return `export const ${name}: t.RecursiveType<t.Type<I${name}>> = t.recursion('${name}', () =>
+  return `export const ${name}: t.RecursiveType<t.Type<${name}>, ${name}> = t.recursion('${name}', () =>
     ${runType}
   )`;
 };
@@ -207,10 +207,10 @@ export const typeDeclaration = (elementDefinition: ElementDefinition) => {
  * Generates TypeScript interface from list of ElementDefinitions
  */
 export const generateInterface = ({ name, definitions }: ElementGroup) => {
-  return `interface I${name} {
+  return `export interface ${name} {
     ${definitions
       .map(element => {
-        const { min, path } = element;
+        const { min, path, short } = element;
         const propertyName = elementName(element);
         const { array, display } = parseType(element);
         const isRequired = min! > 0;
@@ -226,7 +226,8 @@ export const generateInterface = ({ name, definitions }: ElementGroup) => {
           throw new Error(`Expected a type for element ${path}.`);
         }
 
-        return `${propertyName}${isRequired ? "" : "?"}: ${typeName}${
+        return `/** ${short} */
+        ${propertyName}${isRequired ? "" : "?"}: ${typeName}${
           array ? "[]" : ""
         };`;
       })

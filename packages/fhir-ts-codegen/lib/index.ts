@@ -135,17 +135,6 @@ export class Generator {
     const requiredProperties = this.getProperties(required);
     const optionalProperties = this.getProperties(optional);
 
-    /**
-     * TODO: Determine if type is mutually recursive with another type.
-     * Fine to make all types recursive for now. Unsure about perf impacts.
-     */
-    const isRecursive = true;
-    // const isRecursive =
-    //   definitions.some(definition => {
-    //     const { display } = parseType(definition);
-    //     return display.some(type => type === name);
-    //   });
-
     const runType = `t.intersection([
         t.type({
           ${requiredProperties.join(",\n")}
@@ -158,13 +147,8 @@ export class Generator {
     return `/**
     * ${comment}
     */
-    ${isRecursive ? generateInterface(elementGroup) : ""}
-    ${
-      isRecursive
-        ? wrapRecursive(name, runType)
-        : `export const ${name} = ${runType}`
-    }
-      export interface ${name} extends t.TypeOf<typeof ${name}> {}`;
+    ${generateInterface(elementGroup)}
+    ${wrapRecursive(name, runType)}`;
   };
 
   /**
