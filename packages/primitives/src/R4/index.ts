@@ -6,8 +6,8 @@ import { Base64BinaryType, base64Binary } from "./base64Binary";
 import { BooleanType, boolean } from "./boolean";
 import { CanonicalType, canonical } from "./canonical";
 import { CodeType, code } from "./code";
-import { DateType, date } from "./date";
 import { DateTimeType, dateTime } from "./dateTime";
+import { DateType, date } from "./date";
 import { DecimalType, decimal } from "./decimal";
 import { IDType, id } from "./id";
 import { InstantType, instant } from "./instant";
@@ -21,6 +21,7 @@ import { UnsignedIntegerType, unsignedInt } from "./unsignedInt";
 import { URIType, uri } from "./uri";
 import { URLType, url } from "./url";
 import { UUIDType, uuid } from "./uuid";
+import { XHTMLType, xhtml } from "./xhtml";
 
 export {
   base64Binary,
@@ -60,5 +61,7 @@ export {
   url,
   URLType,
   uuid,
-  UUIDType
+  UUIDType,
+  xhtml,
+  XHTMLType
 };
