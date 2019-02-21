@@ -106,8 +106,10 @@ export const getElementGroups = (
 
 /**
  * Generates sorted import statements for non-primitive types
+ * Imports the Runtime and Output interfaces
  */
 export const getImports = (
+  rootType: string,
   elementDefinitions: ElementDefinition[]
 ): string[] => {
   return Array.from(
@@ -118,11 +120,15 @@ export const getImports = (
           .filter(
             ({ code }) =>
               code &&
+              code !== rootType &&
               !Object.values(FHIRPrimitives).includes(code) &&
               code !== "BackboneElement" &&
               code !== "Element"
           )
-          .map(({ code }) => code);
+          .map(
+            ({ code }) =>
+              `import { ${code}, ${code}OutputType } from "./${code}";`
+          );
         return [...accum, ...nonPrimitiveTypes];
       }, [])
     )
@@ -134,7 +140,11 @@ export const getImports = (
  * to provide TypeScript static type hint
  */
 export const wrapRecursive = (name: string, runType: string) => {
-  return `export const ${name}: t.RecursiveType<t.Type<${name}>, ${name}> = t.recursion('${name}', () =>
+  return `export const ${name}: t.RecursiveType<
+    t.Type<${name}, ${name}OutputType>,
+    ${name},
+    ${name}OutputType
+  > = t.recursion<${name}, ${name}OutputType>('${name}', () =>
     ${runType}
   )`;
 };
@@ -204,9 +214,17 @@ export const typeDeclaration = (elementDefinition: ElementDefinition) => {
 };
 
 /**
- * Generates TypeScript interface from list of ElementDefinitions
+ * Generates TypeScript interface of io-ts runtime type and output type
+ * from list of ElementDefinitions
  */
-export const generateInterface = ({ name, definitions }: ElementGroup) => {
+export const generateInterfaces = (elementGroup: ElementGroup) => {
+  return [
+    generateRuntimeInterface(elementGroup),
+    generateOutputInterface(elementGroup)
+  ].join("\n\n");
+};
+
+const generateRuntimeInterface = ({ name, definitions }: ElementGroup) => {
   return `export interface ${name} {
     ${definitions
       .map(element => {
@@ -219,6 +237,35 @@ export const generateInterface = ({ name, definitions }: ElementGroup) => {
             Object.values(FHIRPrimitives).includes(type)
               ? `t.TypeOf<primitives.R4.${FHIRPrimitivesTypes[type]}>`
               : type
+          )
+          .join(" | ");
+
+        if (!typeName) {
+          throw new Error(`Expected a type for element ${path}.`);
+        }
+
+        return `/** ${short} */
+        ${propertyName}${isRequired ? "" : "?"}: ${typeName}${
+          array ? "[]" : ""
+        };`;
+      })
+      .join("\n")}
+  }`;
+};
+
+const generateOutputInterface = ({ name, definitions }: ElementGroup) => {
+  return `export interface ${name}OutputType {
+    ${definitions
+      .map(element => {
+        const { min, path, short } = element;
+        const propertyName = elementName(element);
+        const { array, display } = parseType(element);
+        const isRequired = min! > 0;
+        const typeName = display
+          .map(type =>
+            Object.values(FHIRPrimitives).includes(type)
+              ? `t.OutputOf<primitives.R4.${FHIRPrimitivesTypes[type]}>`
+              : `${type}OutputType`
           )
           .join(" | ");
 

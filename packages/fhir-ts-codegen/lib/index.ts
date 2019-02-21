@@ -13,10 +13,9 @@ import {
 } from "./conformance";
 import {
   elementName,
-  generateInterface,
+  generateInterfaces,
   getElementGroups,
   getImports,
-  parseType,
   typeDeclaration,
   wrapRecursive,
   writeFileAsync
@@ -97,11 +96,9 @@ export class Generator {
     const imports = this.configuration.singleFile
       ? ""
       : `${getImports(
+          type,
           elementDefinitions.filter(element => element.path !== type) // Filter out root ElementDefinition
-        )
-          .filter(i => i !== type)
-          .map(i => `import {${i}} from "./${i}"`)
-          .join("\n")}`;
+        ).join("\n")}`;
 
     const typeDeclarations = elementGroups.map(this.generateType).join("\n\n");
 
@@ -147,7 +144,8 @@ export class Generator {
     return `/**
     * ${comment}
     */
-    ${generateInterface(elementGroup)}
+    ${generateInterfaces(elementGroup)}
+
     ${wrapRecursive(name, runType)}`;
   };
 
