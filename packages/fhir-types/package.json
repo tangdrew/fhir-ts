@@ -1,0 +1,33 @@
+{
+  "name": "fhir-types",
+  "version": "0.1.0",
+  "description": "Runtime types for FHIR using io-ts.",
+  "keywords": [
+    "FHIR"
+  ],
+  "author": "Andrew Tang <andrew.yishiou.tang@gmail.com>",
+  "homepage": "https://github.com/tangdrew/fhir-ts#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangdrew/fhir-ts.git"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/tangdrew/fhir-ts/issues"
+  },
+  "dependencies": {
+    "@tangdrew/fhir-ts-codegen": "^0.3.0",
+    "@tangdrew/primitives": "^0.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3"
+  }
+}
