@@ -21,7 +21,8 @@ export enum FHIRPrimitives {
   unsignedInt = "unsignedInt",
   uri = "uri",
   url = "url",
-  uuid = "uuid"
+  uuid = "uuid",
+  xhtml = "xhtml"
 }
 
 /**
@@ -47,7 +48,8 @@ export const FHIRPrimitivesTypes: { [index: string]: string } = {
   unsignedInt: "UnsignedIntegerType",
   uri: "URIType",
   url: "URLType",
-  uuid: "UUIDType"
+  uuid: "UUIDType",
+  xhtml: "XHTMLType"
 };
 
 export interface StructureDefinition {
