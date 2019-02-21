@@ -1,6 +1,6 @@
 {
   "name": "@tangdrew/fhir-types",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Runtime types for FHIR using io-ts.",
   "keywords": [
     "FHIR"
