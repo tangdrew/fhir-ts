@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.2.1...@tangdrew/primitives@0.4.0) (2019-02-21)
+
+
+### Features
+
+* **primitives:** implement xhtml type ([67b5a29](https://github.com/tangdrew/fhir-ts/commit/67b5a29))
+
+
+
+
+
 # [0.3.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.2.1...@tangdrew/primitives@0.3.0) (2019-02-21)
 
 

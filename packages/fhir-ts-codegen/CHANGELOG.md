@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.3.0...@tangdrew/fhir-ts-codegen@0.5.0) (2019-02-21)
+
+
+### Bug Fixes
+
+* **fhir-ts-codegen:** add output interfaces ([ec628cc](https://github.com/tangdrew/fhir-ts/commit/ec628cc))
+* **fhir-ts-codegen:** fix mutual recursion ([23274f6](https://github.com/tangdrew/fhir-ts/commit/23274f6))
+* **fhir-ts-codegen:** group elements by type ([6f46af6](https://github.com/tangdrew/fhir-ts/commit/6f46af6))
+
+
+### Features
+
+* **fhir-ts-codegen:** add xhtml primitive ([d87f4c7](https://github.com/tangdrew/fhir-ts/commit/d87f4c7))
+* **fhir-ts-codegen:** generate barrel ([cafcd26](https://github.com/tangdrew/fhir-ts/commit/cafcd26))
+* **fhir-ts-codegen:** support mutual recursion ([4a869f3](https://github.com/tangdrew/fhir-ts/commit/4a869f3))
+
+
+
+
+
 # [0.4.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.3.0...@tangdrew/fhir-ts-codegen@0.4.0) (2019-02-21)
 
 
