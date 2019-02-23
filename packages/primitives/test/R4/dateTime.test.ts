@@ -11,8 +11,7 @@ describe("DateTimeType", () => {
     assertSuccess(T.decode("2017-01-01T00:00:00.000Z"));
   });
 
-  // TODO: Improve regex so this passes
-  xit("should succeed validating a partial dateTime", () => {
+  it("should succeed validating a partial dateTime", () => {
     const T = dateTime;
     assertSuccess(T.decode("2017"));
   });
