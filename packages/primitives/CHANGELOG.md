@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.1...@tangdrew/primitives@0.4.2) (2019-03-08)
+
+
+### Bug Fixes
+
+* **primitives:** fix dateTime regex ([9f1cc2a](https://github.com/tangdrew/fhir-ts/commit/9f1cc2a))
+* **primitives:** git rename b64Binary ([460f832](https://github.com/tangdrew/fhir-ts/commit/460f832))
+
+
+
+
+
 ## [0.4.1](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.0...@tangdrew/primitives@0.4.1) (2019-02-21)
 
 **Note:** Version bump only for package @tangdrew/primitives
