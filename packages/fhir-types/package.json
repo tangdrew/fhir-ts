@@ -21,7 +21,8 @@
     "url": "git+https://github.com/tangdrew/fhir-ts.git"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "yarn clean && tsc",
+    "clean": "rimraf dist"
   },
   "bugs": {
     "url": "https://github.com/tangdrew/fhir-ts/issues"
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@tangdrew/fhir-ts-codegen": "^0.5.2",
+    "rimraf": "^2.6.3",
     "typescript": "^3.3.3"
   }
 }

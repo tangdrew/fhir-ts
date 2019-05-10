@@ -13,11 +13,12 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc",
-    "lint": "tslint -c tslint.json 'lib/**/*.ts'",
-    "test": "jest",
+    "build": "yarn clean && tsc",
+    "clean": "rimraf dist",
     "coverage": "jest --coverage",
-    "download-structure-definitions": "ts-node scripts/download.ts"
+    "download-structure-definitions": "ts-node scripts/download.ts",
+    "lint": "tslint -c tslint.json 'lib/**/*.ts'",
+    "test": "jest"
   },
   "keywords": [
     "fhir"
@@ -50,6 +51,7 @@
     "@types/node-fetch": "^2.1.4",
     "@types/prettier": "^1.15.2",
     "io-ts": "^1.8.1",
+    "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
