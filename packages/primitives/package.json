@@ -20,12 +20,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "yarn clean && tsc",
+    "clean": "rimraf dist",
     "coverage": "jest --coverage",
     "test": "jest"
   },
   "devDependencies": {
     "@types/big.js": "^4.0.5",
+    "rimraf": "^2.6.3",
     "typescript": "^3.3.3"
   },
   "dependencies": {
