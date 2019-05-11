@@ -1,6 +1,6 @@
 {
   "name": "@tangdrew/fhir-types",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Runtime types for FHIR using io-ts.",
   "keywords": [
     "FHIR"
@@ -28,10 +28,10 @@
     "url": "https://github.com/tangdrew/fhir-ts/issues"
   },
   "dependencies": {
-    "@tangdrew/primitives": "^0.4.2"
+    "@tangdrew/primitives": "^0.4.3"
   },
   "devDependencies": {
-    "@tangdrew/fhir-ts-codegen": "^0.5.2",
+    "@tangdrew/fhir-ts-codegen": "^0.5.3",
     "rimraf": "^2.6.3",
     "typescript": "^3.3.3"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@tangdrew/fhir-ts-codegen",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Generate io-ts runtime types from FHIR StructureDefinitions.",
   "publishConfig": {
     "access": "public"
@@ -26,7 +26,7 @@
   "author": "Andrew Tang <andrew.yishiou.tang@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@tangdrew/primitives": "^0.4.2",
+    "@tangdrew/primitives": "^0.4.3",
     "commander": "^2.19.0",
     "glob": "^7.1.3",
     "node-fetch": "^2.3.0",

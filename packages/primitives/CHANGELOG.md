@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.2...@tangdrew/primitives@0.4.3) (2019-05-11)
+
+
+### Bug Fixes
+
+* clean build directory before building ([8915702](https://github.com/tangdrew/fhir-ts/commit/8915702))
+
+
+
+
+
 ## [0.4.2](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.1...@tangdrew/primitives@0.4.2) (2019-03-08)
 
 
