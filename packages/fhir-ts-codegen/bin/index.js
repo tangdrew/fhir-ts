@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-
 const program = require("commander");
 const config = require("../package.json");
-const { Generator } = require("../dist");
+const { run } = require("../dist");
 
 program
   .name("fhir-ts-codegen")
@@ -12,8 +11,7 @@ program
   .parse(process.argv);
 
 if (program.input && program.output) {
-  const generator = new Generator(program.input, program.output);
-  generator.run();
+  run(program.input, program.output);
 } else {
   program.help()
 }

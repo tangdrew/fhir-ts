@@ -1,3 +1,5 @@
+import { NonEmptyArray } from "fp-ts/lib/NonEmptyArray";
+
 /**
  * FHIR Conformance Types
  */
@@ -24,33 +26,6 @@ export enum FHIRPrimitives {
   uuid = "uuid",
   xhtml = "xhtml"
 }
-
-/**
- * Map from FHIR Primitive type name to FHIR io-ts primitive type
- * TODO: Move this to primitives package
- */
-export const FHIRPrimitivesTypes: { [index: string]: string } = {
-  base64Binary: "Base64BinaryType",
-  boolean: "BooleanType",
-  canonical: "CanonicalType",
-  code: "CodeType",
-  date: "DateType",
-  dateTime: "DateTimeType",
-  decimal: "DecimalType",
-  id: "IDType",
-  instant: "InstantType",
-  integer: "IntegerType",
-  markdown: "MarkdownType",
-  oid: "OIDType",
-  positiveInt: "PositiveIntegerType",
-  string: "StringType",
-  time: "TimeType",
-  unsignedInt: "UnsignedIntegerType",
-  uri: "URIType",
-  url: "URLType",
-  uuid: "UUIDType",
-  xhtml: "XHTMLType"
-};
 
 export interface StructureDefinition {
   resourceType: string;
@@ -86,6 +61,15 @@ export interface ElementDefinition {
   short?: string;
   contentReference?: string;
 }
+
+export type ChoiceElementDefinition = ElementDefinition & {
+  type: NonEmptyArray<{ code: string }>;
+};
+
+export type ContentReferenceElementDefinition = ElementDefinition & {
+  contentReference: string;
+  type: undefined;
+};
 
 /**
  * Logical grouping of element definitions, e.g. a BackboneElement and it's elements
