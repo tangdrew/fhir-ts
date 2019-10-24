@@ -2,7 +2,7 @@
  * Tests for ID Runtime Type
  */
 
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 import { id } from "../../src/R4";
 
 describe("IDType", () => {
@@ -15,7 +15,7 @@ describe("IDType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = id;
     const value = "5e8c5a39-ac09-4a1e-9769-c61192b4355d";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

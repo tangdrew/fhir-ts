@@ -3,7 +3,7 @@
  */
 
 import { xhtml } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("XHTMLType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("XHTMLType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = xhtml;
     const value = "<div>Hello World!</div>";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

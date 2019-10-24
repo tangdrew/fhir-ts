@@ -3,7 +3,7 @@
  */
 
 import { positiveInt } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("PositiveIntegerType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("PositiveIntegerType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = positiveInt;
     const value = 2;
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating a float", () => {

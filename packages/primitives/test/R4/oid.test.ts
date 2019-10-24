@@ -2,7 +2,7 @@
  * Tests for OID Runtime Type
  */
 
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 import { oid } from "../../src/R4";
 
 describe("OIDType", () => {
@@ -15,7 +15,7 @@ describe("OIDType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = oid;
     const value = "urn:oid:1.2.3.4.5";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

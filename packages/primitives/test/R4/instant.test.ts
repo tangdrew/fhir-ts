@@ -3,7 +3,7 @@
  */
 
 import { instant } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("InstantType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("InstantType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = instant;
     const value = "2015-02-07T13:28:17.239+02:00";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

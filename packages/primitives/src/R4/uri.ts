@@ -2,23 +2,21 @@
  * URI FHIR Primitive Runtime Type
  */
 
-import { Type, success, failure, identity } from "io-ts";
+import { Type, success, failure, identity, TypeOf } from "io-ts";
 
 const URI_REGEX = /\S*/;
 
-export class URIType extends Type<string> {
-  readonly _tag: "URIType" = "URIType";
-  constructor() {
-    super(
-      "uri",
-      (m): m is string => typeof m === "string" && URI_REGEX.test(m),
-      (m, c) => (this.is(m) ? success(m) : failure(m, c)),
-      identity
-    );
-  }
-}
+const isUri = (m: unknown): m is string =>
+  typeof m === "string" && URI_REGEX.test(m);
 
 /**
  * A Uniform Resource Identifier Reference.
  */
-export const uri = new URIType();
+export const uri = new Type<string>(
+  "uri",
+  isUri,
+  (m, c) => (isUri(m) ? success(m) : failure(m, c)),
+  identity
+);
+
+export type uri = TypeOf<typeof uri>;

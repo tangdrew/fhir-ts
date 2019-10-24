@@ -2,7 +2,7 @@
  * Tests for URI Runtime Type
  */
 
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 import { uri } from "../../src/R4";
 
 describe("URIType", () => {
@@ -15,7 +15,7 @@ describe("URIType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = uri;
     const value = "http://snomed.info/sct";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

@@ -2,7 +2,7 @@
  * Tests for Canonical URL Runtime Type
  */
 
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 import { canonical } from "../../src/R4";
 
 describe("CanonicalType", () => {
@@ -15,7 +15,7 @@ describe("CanonicalType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = canonical;
     const value = "http://snomed.info/sct";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

@@ -3,7 +3,7 @@
  */
 
 import { code } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("CodeType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("CodeType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = code;
     const value = "55423-8";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

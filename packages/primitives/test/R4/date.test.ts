@@ -3,7 +3,7 @@
  */
 
 import { date } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("DateType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("DateType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = date;
     const value = "1905-08-23";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

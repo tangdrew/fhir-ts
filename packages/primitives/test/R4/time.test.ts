@@ -3,7 +3,7 @@
  */
 
 import { time } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("TimeType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("TimeType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = time;
     const value = "11:48:22";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

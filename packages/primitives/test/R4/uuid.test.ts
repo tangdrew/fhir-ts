@@ -2,7 +2,7 @@
  * Tests for UUID Runtime Type
  */
 
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 import { uuid } from "../../src/R4";
 
 describe("UUIDType", () => {
@@ -15,7 +15,7 @@ describe("UUIDType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = uuid;
     const value = "urn:uuid:c757873d-ec9a-4326-a141-556f43239520";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

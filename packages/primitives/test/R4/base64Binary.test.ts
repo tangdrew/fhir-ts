@@ -3,7 +3,7 @@
  */
 
 import { base64Binary } from "../../src/R4";
-import { assertSuccess, assertFailure, assertStrictEqual } from "./helpers";
+import { assertSuccess, assertFailure, assertEqual } from "./helpers";
 
 describe("Base64BinaryType", () => {
   it("should succeed validating a valid value", () => {
@@ -14,7 +14,7 @@ describe("Base64BinaryType", () => {
   it("should return the same reference if validation succeeded and nothing changed", () => {
     const T = base64Binary;
     const value = "aGVsbG8gd29ybGQ=";
-    assertStrictEqual(T.decode(value), value);
+    assertEqual(T.decode(value), value);
   });
 
   it("should fail validating an invalid value", () => {

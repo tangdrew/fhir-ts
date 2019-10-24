@@ -2,22 +2,21 @@
  * UUID FHIR Primitive Runtime Type
  */
 
-import { uri } from "./uri";
-import { Type, success, failure, identity } from "io-ts";
+import { Type, success, failure, identity, TypeOf } from "io-ts";
 
-export class UUIDType extends Type<string> {
-  readonly _tag: "UUIDType" = "UUIDType";
-  constructor() {
-    super(
-      "uuid",
-      uri.is,
-      (m, c) => (this.is(m) ? success(m) : failure(m, c)),
-      identity
-    );
-  }
-}
+const UUID_REGEX = /\S*/;
+
+const isUuid = (m: unknown): m is string =>
+  typeof m === "string" && UUID_REGEX.test(m);
 
 /**
  * A UUID (aka GUID) represented as a URI.
  */
-export const uuid = new UUIDType();
+export const uuid = new Type<string>(
+  "uuid",
+  isUuid,
+  (m, c) => (isUuid(m) ? success(m) : failure(m, c)),
+  identity
+);
+
+export type uuid = TypeOf<typeof uuid>;

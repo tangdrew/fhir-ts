@@ -2,21 +2,19 @@
  * Positive Integer FHIR Primitive Runtime Type
  */
 
-import { Type, success, failure, identity } from "io-ts";
+import { Type, success, failure, identity, TypeOf } from "io-ts";
 
-export class PositiveIntegerType extends Type<number> {
-  readonly _tag: "PositiveIntegerType" = "PositiveIntegerType";
-  constructor() {
-    super(
-      "positiveInt",
-      (m): m is number => typeof m === "number" && Number.isInteger(m) && m > 0,
-      (m, c) => (this.is(m) ? success(m) : failure(m, c)),
-      identity
-    );
-  }
-}
+const isPositiveInt = (m: unknown): m is number =>
+  typeof m === "number" && Number.isInteger(m) && m > 0;
 
 /**
  * Any positive integer in the range 1..2,147,483,647.
  */
-export const positiveInt = new PositiveIntegerType();
+export const positiveInt = new Type<number>(
+  "positiveInt",
+  isPositiveInt,
+  (m, c) => (isPositiveInt(m) ? success(m) : failure(m, c)),
+  identity
+);
+
+export type positiveInt = TypeOf<typeof positiveInt>;
