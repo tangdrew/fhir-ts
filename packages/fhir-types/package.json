@@ -21,14 +21,16 @@
     "url": "git+https://github.com/tangdrew/fhir-ts.git"
   },
   "scripts": {
-    "build": "yarn clean && tsc",
-    "clean": "rimraf dist"
+    "build": "yarn clean && tsc -b tsconfig.json",
+    "clean": "rimraf dist && rm -f tsconfig.tsbuildinfo"
   },
   "bugs": {
     "url": "https://github.com/tangdrew/fhir-ts/issues"
   },
   "dependencies": {
-    "@tangdrew/primitives": "^0.4.3"
+    "@tangdrew/primitives": "^0.4.3",
+    "fp-ts": "^2.0.5",
+    "io-ts": "^2.0.1"
   },
   "devDependencies": {
     "@tangdrew/fhir-ts-codegen": "^0.5.3",

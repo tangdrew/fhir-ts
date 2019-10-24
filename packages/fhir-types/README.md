@@ -13,7 +13,7 @@ FHIR promises a future of interoperability and much easier exchange of healthcar
 ## Installation
 
 ```sh
-npm install @tangdrew/fhir-types -g
+npm install @tangdrew/fhir-types
 ```
 
 ## Usage

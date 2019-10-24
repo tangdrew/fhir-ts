@@ -1,8 +1,13 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "composite": true,
     "rootDir": "./lib",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": "./"
   },
-  "include": ["./lib"]
+  "references": [
+    { "path": "../primitives/tsconfig.json" }
+  ],
+  "include": ["lib/**/*"]
 }

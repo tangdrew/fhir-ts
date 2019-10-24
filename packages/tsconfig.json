@@ -1,8 +1,0 @@
-{
-  "files": [],
-  "references": [
-    { "path": "fhir-ts-codegen" },
-    { "path": "fhir-types" },
-    { "path": "primitives" }
-  ]
-}

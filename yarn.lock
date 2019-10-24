@@ -2395,10 +2395,11 @@ fb-watchman@^2.0.0:
     bser "^2.0.0"
 
 "fhir-ts-codegen@file:packages/fhir-ts-codegen":
-  version "0.5.2"
+  version "0.5.3"
   dependencies:
-    "@tangdrew/primitives" "^0.4.2"
+    "@tangdrew/primitives" "^0.4.3"
     commander "^2.19.0"
+    fp-ts "^2.1.0"
     glob "^7.1.3"
     node-fetch "^2.3.0"
     prettier "^1.16.1"
@@ -2510,10 +2511,15 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-fp-ts@^1.0.0, fp-ts@^1.12.3:
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-1.12.3.tgz#2a694e8ba5707d3a32c82b0e0d6871050a3392a9"
-  integrity sha512-0l3UGPhoU8tn8xu7xZviis09iulDtQK7yE594dEFMdgT+RovdlRhJRCEupFgKxHQjvgghG+y907psuKiW28sjA==
+fp-ts@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.0.5.tgz#9560d8a6a4f53cbda9f9b31ed8d1458e41939e07"
+  integrity sha512-opI5r+rVlpZE7Rhk0YtqsrmxGkbIw0dRNqGca8FEAMMnjomXotG+R9QkLQg20onx7R8qhepAn4CCOP8usma/Xw==
+
+fp-ts@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.1.0.tgz#dac1b13ade6d52deb823bee53e99e3a804cc6e05"
+  integrity sha512-2xTHhLuP0uLjpaHAARpGQ1TpIPqEUMu8fGN5jv8py0T+HgB6a4bV57p5EQoOyeHws4SuYxiUi2/m0isHs6F/cA==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -3093,12 +3099,10 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-io-ts@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-1.8.1.tgz#8e4534e5eb491f0b624394ba42085f68dc84268b"
-  integrity sha512-MhFHaBbzw1MK6s16QPW8Tgkj5SW5wBjeQERsk5hupfBSC6WQeQ4MoPACPbm7LUUXU8jZJaqrVGuBTWqCuZYP0A==
-  dependencies:
-    fp-ts "^1.0.0"
+io-ts@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-2.0.1.tgz#1261c12f915c2f48d16393a36966636b48a45aa1"
+  integrity sha512-RezD+WcCfW4VkMkEcQWL/Nmy/nqsWTvTYg7oUmTGzglvSSV2P9h2z1PVeREPFf0GWNzruYleAt1XCMQZSg1xxQ==
 
 ip-regex@^3.0.0:
   version "3.0.0"
@@ -6304,7 +6308,7 @@ tslint-config-prettier@^1.15.0:
   resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.17.0.tgz#946ed6117f98f3659a65848279156d87628c33dc"
   integrity sha512-NKWNkThwqE4Snn4Cm6SZB7lV5RMDDFsBwz6fWUkTxOKGjMx8ycOHnjIbhn7dZd5XmssW3CwqUjlANR6EhP9YQw==
 
-tslint@^5.11.0, tslint@^5.12.1:
+tslint@^5.11.0:
   version "5.12.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
   integrity sha512-sfodBHOucFg6egff8d1BvuofoOQ/nOeYNfbp7LDlKBcLNrL3lmS5zoiDGyOMdT7YsEXAwWpTdAHwOGOc8eRZAw==
@@ -6353,10 +6357,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3.tgz#f1657fc7daa27e1a8930758ace9ae8da31403221"
-  integrity sha512-Y21Xqe54TBVp+VDSNbuDYdGw0BpoR/Q6wo/+35M8PAU0vipahnyduJWirxxdxjsAkS7hue53x2zp8gz7F05u0A==
+typescript@^3.3.3, typescript@^3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
+  integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
 
 uglify-js@^3.1.4:
   version "3.4.9"
