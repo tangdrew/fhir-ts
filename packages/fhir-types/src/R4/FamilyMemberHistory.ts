@@ -4,110 +4,37 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Age, AgeOutputType } from "./Age";
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Range, RangeOutputType } from "./Range";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-
-/**
- * Condition that the related person had
- */
-export interface FamilyMemberHistoryCondition {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Condition suffered by relation */
-  code: CodeableConcept;
-  /** deceased | permanent disability | etc. */
-  outcome?: CodeableConcept;
-  /** Whether the condition contributed to the cause of death */
-  contributedToDeath?: t.TypeOf<primitives.R4.BooleanType>;
-  /** When condition first manifested */
-  onset?: Age | Range | Period | t.TypeOf<primitives.R4.StringType>;
-  /** Extra information about condition */
-  note?: Annotation[];
-}
-
-export interface FamilyMemberHistoryConditionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Condition suffered by relation */
-  code: CodeableConceptOutputType;
-  /** deceased | permanent disability | etc. */
-  outcome?: CodeableConceptOutputType;
-  /** Whether the condition contributed to the cause of death */
-  contributedToDeath?: t.OutputOf<primitives.R4.BooleanType>;
-  /** When condition first manifested */
-  onset?:
-    | AgeOutputType
-    | RangeOutputType
-    | PeriodOutputType
-    | t.OutputOf<primitives.R4.StringType>;
-  /** Extra information about condition */
-  note?: AnnotationOutputType[];
-}
-
-export const FamilyMemberHistoryCondition: t.RecursiveType<
-  t.Type<FamilyMemberHistoryCondition, FamilyMemberHistoryConditionOutputType>,
-  FamilyMemberHistoryCondition,
-  FamilyMemberHistoryConditionOutputType
-> = t.recursion<
-  FamilyMemberHistoryCondition,
-  FamilyMemberHistoryConditionOutputType
->("FamilyMemberHistoryCondition", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Condition suffered by relation */
-        code: CodeableConcept
-      }),
-      t.partial({
-        /** Whether the condition contributed to the cause of death */
-        contributedToDeath: primitives.R4.boolean,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension),
-        /** Extra information about condition */
-        note: t.array(Annotation),
-        /** When condition first manifested */
-        onset: t.union([Age, Range, Period, primitives.R4.string]),
-        /** deceased | permanent disability | etc. */
-        outcome: CodeableConcept
-      })
-    ],
-    "FamilyMemberHistoryCondition"
-  )
-);
+import { Age } from "./Age";
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Range } from "./Range";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Information about patient's relatives, relevant for patient
  */
 export interface FamilyMemberHistory {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -119,184 +46,261 @@ export interface FamilyMemberHistory {
   /** External Id(s) for this record */
   identifier?: Identifier[];
   /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.TypeOf<primitives.R4.CanonicalType>[];
+  instantiatesCanonical?: primitives.R4.canonical[];
+  /** Extension of instantiatesCanonical element */
+  _instantiatesCanonical?: Element[];
   /** Instantiates external protocol or definition */
-  instantiatesUri?: t.TypeOf<primitives.R4.URIType>[];
+  instantiatesUri?: primitives.R4.uri[];
+  /** Extension of instantiatesUri element */
+  _instantiatesUri?: Element[];
   /** partial | completed | entered-in-error | health-unknown */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** subject-unknown | withheld | unable-to-obtain | deferred */
   dataAbsentReason?: CodeableConcept;
   /** Patient history is about */
   patient: Reference;
   /** When history was recorded or last updated */
-  date?: t.TypeOf<primitives.R4.DateTimeType>;
+  date?: primitives.R4.dateTime;
+  /** Extension of date element */
+  _date?: Element;
   /** The family member described */
-  name?: t.TypeOf<primitives.R4.StringType>;
+  name?: string;
+  /** Extension of name element */
+  _name?: Element;
   /** Relationship to the subject */
   relationship: CodeableConcept;
   /** male | female | other | unknown */
   sex?: CodeableConcept;
   /** (approximate) date of birth */
-  born?:
-    | Period
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.StringType>;
+  bornPeriod?: Period;
+  /** (approximate) date of birth */
+  bornDate?: primitives.R4.date;
+  /** Extension of bornDate element */
+  _bornDate?: Element;
+  /** (approximate) date of birth */
+  bornString?: string;
+  /** Extension of bornString element */
+  _bornString?: Element;
   /** (approximate) age */
-  age?: Age | Range | t.TypeOf<primitives.R4.StringType>;
+  ageAge?: Age;
+  /** (approximate) age */
+  ageRange?: Range;
+  /** (approximate) age */
+  ageString?: string;
+  /** Extension of ageString element */
+  _ageString?: Element;
   /** Age is estimated? */
-  estimatedAge?: t.TypeOf<primitives.R4.BooleanType>;
+  estimatedAge?: boolean;
+  /** Extension of estimatedAge element */
+  _estimatedAge?: Element;
   /** Dead? How old/when? */
-  deceased?:
-    | t.TypeOf<primitives.R4.BooleanType>
-    | Age
-    | Range
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.StringType>;
+  deceasedBoolean?: boolean;
+  /** Extension of deceasedBoolean element */
+  _deceasedBoolean?: Element;
+  /** Dead? How old/when? */
+  deceasedAge?: Age;
+  /** Dead? How old/when? */
+  deceasedRange?: Range;
+  /** Dead? How old/when? */
+  deceasedDate?: primitives.R4.date;
+  /** Extension of deceasedDate element */
+  _deceasedDate?: Element;
+  /** Dead? How old/when? */
+  deceasedString?: string;
+  /** Extension of deceasedString element */
+  _deceasedString?: Element;
   /** Why was family member history performed? */
   reasonCode?: CodeableConcept[];
   /** Why was family member history performed? */
   reasonReference?: Reference[];
   /** General note about related person */
   note?: Annotation[];
-  /** Condition that the related person had */
-  condition?: FamilyMemberHistoryCondition[];
 }
+/**
+ * Information about patient's relatives, relevant for patient
+ */
+export const FamilyMemberHistory: t.Type<FamilyMemberHistory> = t.recursion<
+  FamilyMemberHistory
+>("FamilyMemberHistory", () =>
+  t.intersection([
+    t.type({
+      /** partial | completed | entered-in-error | health-unknown */
+      status: primitives.R4.code,
+      /** Patient history is about */
+      patient: Reference,
+      /** Relationship to the subject */
+      relationship: CodeableConcept
+    }),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** External Id(s) for this record */
+      identifier: t.array(Identifier),
+      /** Instantiates FHIR protocol or definition */
+      instantiatesCanonical: t.array(primitives.R4.canonical),
+      /** Extension of instantiatesCanonical element */
+      _instantiatesCanonical: t.array(Element),
+      /** Instantiates external protocol or definition */
+      instantiatesUri: t.array(primitives.R4.uri),
+      /** Extension of instantiatesUri element */
+      _instantiatesUri: t.array(Element),
+      /** Extension of status element */
+      _status: Element,
+      /** subject-unknown | withheld | unable-to-obtain | deferred */
+      dataAbsentReason: CodeableConcept,
+      /** When history was recorded or last updated */
+      date: primitives.R4.dateTime,
+      /** Extension of date element */
+      _date: Element,
+      /** The family member described */
+      name: primitives.R4.string,
+      /** Extension of name element */
+      _name: Element,
+      /** male | female | other | unknown */
+      sex: CodeableConcept,
+      /** (approximate) date of birth */
+      bornPeriod: Period,
+      /** (approximate) date of birth */
+      bornDate: primitives.R4.date,
+      /** Extension of bornDate element */
+      _bornDate: Element,
+      /** (approximate) date of birth */
+      bornString: primitives.R4.string,
+      /** Extension of bornString element */
+      _bornString: Element,
+      /** (approximate) age */
+      ageAge: Age,
+      /** (approximate) age */
+      ageRange: Range,
+      /** (approximate) age */
+      ageString: primitives.R4.string,
+      /** Extension of ageString element */
+      _ageString: Element,
+      /** Age is estimated? */
+      estimatedAge: primitives.R4.boolean,
+      /** Extension of estimatedAge element */
+      _estimatedAge: Element,
+      /** Dead? How old/when? */
+      deceasedBoolean: primitives.R4.boolean,
+      /** Extension of deceasedBoolean element */
+      _deceasedBoolean: Element,
+      /** Dead? How old/when? */
+      deceasedAge: Age,
+      /** Dead? How old/when? */
+      deceasedRange: Range,
+      /** Dead? How old/when? */
+      deceasedDate: primitives.R4.date,
+      /** Extension of deceasedDate element */
+      _deceasedDate: Element,
+      /** Dead? How old/when? */
+      deceasedString: primitives.R4.string,
+      /** Extension of deceasedString element */
+      _deceasedString: Element,
+      /** Why was family member history performed? */
+      reasonCode: t.array(CodeableConcept),
+      /** Why was family member history performed? */
+      reasonReference: t.array(Reference),
+      /** General note about related person */
+      note: t.array(Annotation)
+    })
+  ])
+);
 
-export interface FamilyMemberHistoryOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
+/**
+ * Condition that the related person had
+ */
+export interface FamilyMemberHistoryCondition {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** External Id(s) for this record */
-  identifier?: IdentifierOutputType[];
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.OutputOf<primitives.R4.URIType>[];
-  /** partial | completed | entered-in-error | health-unknown */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** subject-unknown | withheld | unable-to-obtain | deferred */
-  dataAbsentReason?: CodeableConceptOutputType;
-  /** Patient history is about */
-  patient: ReferenceOutputType;
-  /** When history was recorded or last updated */
-  date?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** The family member described */
-  name?: t.OutputOf<primitives.R4.StringType>;
-  /** Relationship to the subject */
-  relationship: CodeableConceptOutputType;
-  /** male | female | other | unknown */
-  sex?: CodeableConceptOutputType;
-  /** (approximate) date of birth */
-  born?:
-    | PeriodOutputType
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.StringType>;
-  /** (approximate) age */
-  age?: AgeOutputType | RangeOutputType | t.OutputOf<primitives.R4.StringType>;
-  /** Age is estimated? */
-  estimatedAge?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Dead? How old/when? */
-  deceased?:
-    | t.OutputOf<primitives.R4.BooleanType>
-    | AgeOutputType
-    | RangeOutputType
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.StringType>;
-  /** Why was family member history performed? */
-  reasonCode?: CodeableConceptOutputType[];
-  /** Why was family member history performed? */
-  reasonReference?: ReferenceOutputType[];
-  /** General note about related person */
-  note?: AnnotationOutputType[];
-  /** Condition that the related person had */
-  condition?: FamilyMemberHistoryConditionOutputType[];
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Condition suffered by relation */
+  code: CodeableConcept;
+  /** deceased | permanent disability | etc. */
+  outcome?: CodeableConcept;
+  /** Whether the condition contributed to the cause of death */
+  contributedToDeath?: boolean;
+  /** Extension of contributedToDeath element */
+  _contributedToDeath?: Element;
+  /** When condition first manifested */
+  onsetAge?: Age;
+  /** When condition first manifested */
+  onsetRange?: Range;
+  /** When condition first manifested */
+  onsetPeriod?: Period;
+  /** When condition first manifested */
+  onsetString?: string;
+  /** Extension of onsetString element */
+  _onsetString?: Element;
+  /** Extra information about condition */
+  note?: Annotation[];
 }
-
-export const FamilyMemberHistory: t.RecursiveType<
-  t.Type<FamilyMemberHistory, FamilyMemberHistoryOutputType>,
-  FamilyMemberHistory,
-  FamilyMemberHistoryOutputType
-> = t.recursion<FamilyMemberHistory, FamilyMemberHistoryOutputType>(
-  "FamilyMemberHistory",
+/**
+ * Condition that the related person had
+ */
+export const FamilyMemberHistoryCondition: t.Type<
+  FamilyMemberHistoryCondition
+> = t.recursion<FamilyMemberHistoryCondition>(
+  "FamilyMemberHistoryCondition",
   () =>
-    t.intersection(
-      [
-        t.type({
-          /** Patient history is about */
-          patient: Reference,
-          /** Relationship to the subject */
-          relationship: CodeableConcept,
-          /** partial | completed | entered-in-error | health-unknown */
-          status: primitives.R4.code
-        }),
-        t.partial({
-          /** (approximate) age */
-          age: t.union([Age, Range, primitives.R4.string]),
-          /** (approximate) date of birth */
-          born: t.union([Period, primitives.R4.date, primitives.R4.string]),
-          /** Condition that the related person had */
-          condition: t.array(FamilyMemberHistoryCondition),
-          /** Contained, inline Resources */
-          contained: t.array(Resource),
-          /** subject-unknown | withheld | unable-to-obtain | deferred */
-          dataAbsentReason: CodeableConcept,
-          /** When history was recorded or last updated */
-          date: primitives.R4.dateTime,
-          /** Dead? How old/when? */
-          deceased: t.union([
-            primitives.R4.boolean,
-            Age,
-            Range,
-            primitives.R4.date,
-            primitives.R4.string
-          ]),
-          /** Age is estimated? */
-          estimatedAge: primitives.R4.boolean,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Logical id of this artifact */
-          id: primitives.R4.id,
-          /** External Id(s) for this record */
-          identifier: t.array(Identifier),
-          /** A set of rules under which this content was created */
-          implicitRules: primitives.R4.uri,
-          /** Instantiates FHIR protocol or definition */
-          instantiatesCanonical: t.array(primitives.R4.canonical),
-          /** Instantiates external protocol or definition */
-          instantiatesUri: t.array(primitives.R4.uri),
-          /** Language of the resource content */
-          language: primitives.R4.code,
-          /** Metadata about the resource */
-          meta: Meta,
-          /** Extensions that cannot be ignored */
-          modifierExtension: t.array(Extension),
-          /** The family member described */
-          name: primitives.R4.string,
-          /** General note about related person */
-          note: t.array(Annotation),
-          /** Why was family member history performed? */
-          reasonCode: t.array(CodeableConcept),
-          /** Why was family member history performed? */
-          reasonReference: t.array(Reference),
-          /** male | female | other | unknown */
-          sex: CodeableConcept,
-          /** Text summary of the resource, for human interpretation */
-          text: Narrative
-        })
-      ],
-      "FamilyMemberHistory"
-    )
+    t.intersection([
+      t.type({
+        /** Condition suffered by relation */
+        code: CodeableConcept
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** deceased | permanent disability | etc. */
+        outcome: CodeableConcept,
+        /** Whether the condition contributed to the cause of death */
+        contributedToDeath: primitives.R4.boolean,
+        /** Extension of contributedToDeath element */
+        _contributedToDeath: Element,
+        /** When condition first manifested */
+        onsetAge: Age,
+        /** When condition first manifested */
+        onsetRange: Range,
+        /** When condition first manifested */
+        onsetPeriod: Period,
+        /** When condition first manifested */
+        onsetString: primitives.R4.string,
+        /** Extension of onsetString element */
+        _onsetString: Element,
+        /** Extra information about condition */
+        note: t.array(Annotation)
+      })
+    ])
 );

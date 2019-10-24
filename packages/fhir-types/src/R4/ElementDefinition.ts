@@ -4,1434 +4,1974 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Address, AddressOutputType } from "./Address";
-import { Age, AgeOutputType } from "./Age";
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { Attachment, AttachmentOutputType } from "./Attachment";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Coding, CodingOutputType } from "./Coding";
-import { ContactDetail, ContactDetailOutputType } from "./ContactDetail";
-import { ContactPoint, ContactPointOutputType } from "./ContactPoint";
-import { Contributor, ContributorOutputType } from "./Contributor";
-import { Count, CountOutputType } from "./Count";
-import { DataRequirement, DataRequirementOutputType } from "./DataRequirement";
-import { Distance, DistanceOutputType } from "./Distance";
-import { Dosage, DosageOutputType } from "./Dosage";
-import { Duration, DurationOutputType } from "./Duration";
-import { Expression, ExpressionOutputType } from "./Expression";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { HumanName, HumanNameOutputType } from "./HumanName";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Money, MoneyOutputType } from "./Money";
-import {
-  ParameterDefinition,
-  ParameterDefinitionOutputType
-} from "./ParameterDefinition";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Range, RangeOutputType } from "./Range";
-import { Ratio, RatioOutputType } from "./Ratio";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { RelatedArtifact, RelatedArtifactOutputType } from "./RelatedArtifact";
-import { SampledData, SampledDataOutputType } from "./SampledData";
-import { Signature, SignatureOutputType } from "./Signature";
-import { Timing, TimingOutputType } from "./Timing";
-import {
-  TriggerDefinition,
-  TriggerDefinitionOutputType
-} from "./TriggerDefinition";
-import { UsageContext, UsageContextOutputType } from "./UsageContext";
-
-/**
- * Data type and Profile for this element
- */
-export interface ElementDefinitionType {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Data type or Resource (reference to definition) */
-  code: t.TypeOf<primitives.R4.URIType>;
-  /** Profiles (StructureDefinition or IG) - one must apply */
-  profile?: t.TypeOf<primitives.R4.CanonicalType>[];
-  /** Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply */
-  targetProfile?: t.TypeOf<primitives.R4.CanonicalType>[];
-  /** contained | referenced | bundled - how aggregated */
-  aggregation?: t.TypeOf<primitives.R4.CodeType>[];
-  /** either | independent | specific */
-  versioning?: t.TypeOf<primitives.R4.CodeType>;
-}
-
-export interface ElementDefinitionTypeOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Data type or Resource (reference to definition) */
-  code: t.OutputOf<primitives.R4.URIType>;
-  /** Profiles (StructureDefinition or IG) - one must apply */
-  profile?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply */
-  targetProfile?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** contained | referenced | bundled - how aggregated */
-  aggregation?: t.OutputOf<primitives.R4.CodeType>[];
-  /** either | independent | specific */
-  versioning?: t.OutputOf<primitives.R4.CodeType>;
-}
-
-export const ElementDefinitionType: t.RecursiveType<
-  t.Type<ElementDefinitionType, ElementDefinitionTypeOutputType>,
-  ElementDefinitionType,
-  ElementDefinitionTypeOutputType
-> = t.recursion<ElementDefinitionType, ElementDefinitionTypeOutputType>(
-  "ElementDefinitionType",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Data type or Resource (reference to definition) */
-          code: primitives.R4.uri
-        }),
-        t.partial({
-          /** contained | referenced | bundled - how aggregated */
-          aggregation: t.array(primitives.R4.code),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Profiles (StructureDefinition or IG) - one must apply */
-          profile: t.array(primitives.R4.canonical),
-          /** Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply */
-          targetProfile: t.array(primitives.R4.canonical),
-          /** either | independent | specific */
-          versioning: primitives.R4.code
-        })
-      ],
-      "ElementDefinitionType"
-    )
-);
-
-/**
- * Element values that are used to distinguish the slices
- */
-export interface ElementDefinitionSlicingDiscriminator {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** value | exists | pattern | type | profile */
-  type: t.TypeOf<primitives.R4.CodeType>;
-  /** Path to element value */
-  path: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface ElementDefinitionSlicingDiscriminatorOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** value | exists | pattern | type | profile */
-  type: t.OutputOf<primitives.R4.CodeType>;
-  /** Path to element value */
-  path: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const ElementDefinitionSlicingDiscriminator: t.RecursiveType<
-  t.Type<
-    ElementDefinitionSlicingDiscriminator,
-    ElementDefinitionSlicingDiscriminatorOutputType
-  >,
-  ElementDefinitionSlicingDiscriminator,
-  ElementDefinitionSlicingDiscriminatorOutputType
-> = t.recursion<
-  ElementDefinitionSlicingDiscriminator,
-  ElementDefinitionSlicingDiscriminatorOutputType
->("ElementDefinitionSlicingDiscriminator", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Path to element value */
-        path: primitives.R4.string,
-        /** value | exists | pattern | type | profile */
-        type: primitives.R4.code
-      }),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string
-      })
-    ],
-    "ElementDefinitionSlicingDiscriminator"
-  )
-);
-
-/**
- * This element is sliced - slices follow
- */
-export interface ElementDefinitionSlicing {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Element values that are used to distinguish the slices */
-  discriminator?: ElementDefinitionSlicingDiscriminator[];
-  /** Text description of how slicing works (or not) */
-  description?: t.TypeOf<primitives.R4.StringType>;
-  /** If elements must be in same order as slices */
-  ordered?: t.TypeOf<primitives.R4.BooleanType>;
-  /** closed | open | openAtEnd */
-  rules: t.TypeOf<primitives.R4.CodeType>;
-}
-
-export interface ElementDefinitionSlicingOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Element values that are used to distinguish the slices */
-  discriminator?: ElementDefinitionSlicingDiscriminatorOutputType[];
-  /** Text description of how slicing works (or not) */
-  description?: t.OutputOf<primitives.R4.StringType>;
-  /** If elements must be in same order as slices */
-  ordered?: t.OutputOf<primitives.R4.BooleanType>;
-  /** closed | open | openAtEnd */
-  rules: t.OutputOf<primitives.R4.CodeType>;
-}
-
-export const ElementDefinitionSlicing: t.RecursiveType<
-  t.Type<ElementDefinitionSlicing, ElementDefinitionSlicingOutputType>,
-  ElementDefinitionSlicing,
-  ElementDefinitionSlicingOutputType
-> = t.recursion<ElementDefinitionSlicing, ElementDefinitionSlicingOutputType>(
-  "ElementDefinitionSlicing",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** closed | open | openAtEnd */
-          rules: primitives.R4.code
-        }),
-        t.partial({
-          /** Text description of how slicing works (or not) */
-          description: primitives.R4.string,
-          /** Element values that are used to distinguish the slices */
-          discriminator: t.array(ElementDefinitionSlicingDiscriminator),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** If elements must be in same order as slices */
-          ordered: primitives.R4.boolean
-        })
-      ],
-      "ElementDefinitionSlicing"
-    )
-);
-
-/**
- * Map element to another set of definitions
- */
-export interface ElementDefinitionMapping {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Reference to mapping declaration */
-  identity: t.TypeOf<primitives.R4.IDType>;
-  /** Computable language of mapping */
-  language?: t.TypeOf<primitives.R4.CodeType>;
-  /** Details of the mapping */
-  map: t.TypeOf<primitives.R4.StringType>;
-  /** Comments about the mapping or its use */
-  comment?: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface ElementDefinitionMappingOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Reference to mapping declaration */
-  identity: t.OutputOf<primitives.R4.IDType>;
-  /** Computable language of mapping */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Details of the mapping */
-  map: t.OutputOf<primitives.R4.StringType>;
-  /** Comments about the mapping or its use */
-  comment?: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const ElementDefinitionMapping: t.RecursiveType<
-  t.Type<ElementDefinitionMapping, ElementDefinitionMappingOutputType>,
-  ElementDefinitionMapping,
-  ElementDefinitionMappingOutputType
-> = t.recursion<ElementDefinitionMapping, ElementDefinitionMappingOutputType>(
-  "ElementDefinitionMapping",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Reference to mapping declaration */
-          identity: primitives.R4.id,
-          /** Details of the mapping */
-          map: primitives.R4.string
-        }),
-        t.partial({
-          /** Comments about the mapping or its use */
-          comment: primitives.R4.string,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Computable language of mapping */
-          language: primitives.R4.code
-        })
-      ],
-      "ElementDefinitionMapping"
-    )
-);
-
-/**
- * Example value (as defined for type)
- */
-export interface ElementDefinitionExample {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Describes the purpose of this example */
-  label: t.TypeOf<primitives.R4.StringType>;
-  /** Value of Example (one of allowed types) */
-  value:
-    | t.TypeOf<primitives.R4.Base64BinaryType>
-    | t.TypeOf<primitives.R4.BooleanType>
-    | t.TypeOf<primitives.R4.CanonicalType>
-    | t.TypeOf<primitives.R4.CodeType>
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IDType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.MarkdownType>
-    | t.TypeOf<primitives.R4.OIDType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | t.TypeOf<primitives.R4.URIType>
-    | t.TypeOf<primitives.R4.URLType>
-    | t.TypeOf<primitives.R4.UUIDType>
-    | Address
-    | Age
-    | Annotation
-    | Attachment
-    | CodeableConcept
-    | Coding
-    | ContactPoint
-    | Count
-    | Distance
-    | Duration
-    | HumanName
-    | Identifier
-    | Money
-    | Period
-    | Quantity
-    | Range
-    | Ratio
-    | Reference
-    | SampledData
-    | Signature
-    | Timing
-    | ContactDetail
-    | Contributor
-    | DataRequirement
-    | Expression
-    | ParameterDefinition
-    | RelatedArtifact
-    | TriggerDefinition
-    | UsageContext
-    | Dosage;
-}
-
-export interface ElementDefinitionExampleOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Describes the purpose of this example */
-  label: t.OutputOf<primitives.R4.StringType>;
-  /** Value of Example (one of allowed types) */
-  value:
-    | t.OutputOf<primitives.R4.Base64BinaryType>
-    | t.OutputOf<primitives.R4.BooleanType>
-    | t.OutputOf<primitives.R4.CanonicalType>
-    | t.OutputOf<primitives.R4.CodeType>
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IDType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.MarkdownType>
-    | t.OutputOf<primitives.R4.OIDType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | t.OutputOf<primitives.R4.URIType>
-    | t.OutputOf<primitives.R4.URLType>
-    | t.OutputOf<primitives.R4.UUIDType>
-    | AddressOutputType
-    | AgeOutputType
-    | AnnotationOutputType
-    | AttachmentOutputType
-    | CodeableConceptOutputType
-    | CodingOutputType
-    | ContactPointOutputType
-    | CountOutputType
-    | DistanceOutputType
-    | DurationOutputType
-    | HumanNameOutputType
-    | IdentifierOutputType
-    | MoneyOutputType
-    | PeriodOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | RatioOutputType
-    | ReferenceOutputType
-    | SampledDataOutputType
-    | SignatureOutputType
-    | TimingOutputType
-    | ContactDetailOutputType
-    | ContributorOutputType
-    | DataRequirementOutputType
-    | ExpressionOutputType
-    | ParameterDefinitionOutputType
-    | RelatedArtifactOutputType
-    | TriggerDefinitionOutputType
-    | UsageContextOutputType
-    | DosageOutputType;
-}
-
-export const ElementDefinitionExample: t.RecursiveType<
-  t.Type<ElementDefinitionExample, ElementDefinitionExampleOutputType>,
-  ElementDefinitionExample,
-  ElementDefinitionExampleOutputType
-> = t.recursion<ElementDefinitionExample, ElementDefinitionExampleOutputType>(
-  "ElementDefinitionExample",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Describes the purpose of this example */
-          label: primitives.R4.string,
-          /** Value of Example (one of allowed types) */
-          value: t.union([
-            primitives.R4.base64Binary,
-            primitives.R4.boolean,
-            primitives.R4.canonical,
-            primitives.R4.code,
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.decimal,
-            primitives.R4.id,
-            primitives.R4.instant,
-            primitives.R4.integer,
-            primitives.R4.markdown,
-            primitives.R4.oid,
-            primitives.R4.positiveInt,
-            primitives.R4.string,
-            primitives.R4.time,
-            primitives.R4.unsignedInt,
-            primitives.R4.uri,
-            primitives.R4.url,
-            primitives.R4.uuid,
-            Address,
-            Age,
-            Annotation,
-            Attachment,
-            CodeableConcept,
-            Coding,
-            ContactPoint,
-            Count,
-            Distance,
-            Duration,
-            HumanName,
-            Identifier,
-            Money,
-            Period,
-            Quantity,
-            Range,
-            Ratio,
-            Reference,
-            SampledData,
-            Signature,
-            Timing,
-            ContactDetail,
-            Contributor,
-            DataRequirement,
-            Expression,
-            ParameterDefinition,
-            RelatedArtifact,
-            TriggerDefinition,
-            UsageContext,
-            Dosage
-          ])
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string
-        })
-      ],
-      "ElementDefinitionExample"
-    )
-);
-
-/**
- * Condition that must evaluate to true
- */
-export interface ElementDefinitionConstraint {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Target of 'condition' reference above */
-  key: t.TypeOf<primitives.R4.IDType>;
-  /** Why this constraint is necessary or appropriate */
-  requirements?: t.TypeOf<primitives.R4.StringType>;
-  /** error | warning */
-  severity: t.TypeOf<primitives.R4.CodeType>;
-  /** Human description of constraint */
-  human: t.TypeOf<primitives.R4.StringType>;
-  /** FHIRPath expression of constraint */
-  expression?: t.TypeOf<primitives.R4.StringType>;
-  /** XPath expression of constraint */
-  xpath?: t.TypeOf<primitives.R4.StringType>;
-  /** Reference to original source of constraint */
-  source?: t.TypeOf<primitives.R4.CanonicalType>;
-}
-
-export interface ElementDefinitionConstraintOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Target of 'condition' reference above */
-  key: t.OutputOf<primitives.R4.IDType>;
-  /** Why this constraint is necessary or appropriate */
-  requirements?: t.OutputOf<primitives.R4.StringType>;
-  /** error | warning */
-  severity: t.OutputOf<primitives.R4.CodeType>;
-  /** Human description of constraint */
-  human: t.OutputOf<primitives.R4.StringType>;
-  /** FHIRPath expression of constraint */
-  expression?: t.OutputOf<primitives.R4.StringType>;
-  /** XPath expression of constraint */
-  xpath?: t.OutputOf<primitives.R4.StringType>;
-  /** Reference to original source of constraint */
-  source?: t.OutputOf<primitives.R4.CanonicalType>;
-}
-
-export const ElementDefinitionConstraint: t.RecursiveType<
-  t.Type<ElementDefinitionConstraint, ElementDefinitionConstraintOutputType>,
-  ElementDefinitionConstraint,
-  ElementDefinitionConstraintOutputType
-> = t.recursion<
-  ElementDefinitionConstraint,
-  ElementDefinitionConstraintOutputType
->("ElementDefinitionConstraint", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Human description of constraint */
-        human: primitives.R4.string,
-        /** Target of 'condition' reference above */
-        key: primitives.R4.id,
-        /** error | warning */
-        severity: primitives.R4.code
-      }),
-      t.partial({
-        /** FHIRPath expression of constraint */
-        expression: primitives.R4.string,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Why this constraint is necessary or appropriate */
-        requirements: primitives.R4.string,
-        /** Reference to original source of constraint */
-        source: primitives.R4.canonical,
-        /** XPath expression of constraint */
-        xpath: primitives.R4.string
-      })
-    ],
-    "ElementDefinitionConstraint"
-  )
-);
-
-/**
- * ValueSet details if this is coded
- */
-export interface ElementDefinitionBinding {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** required | extensible | preferred | example */
-  strength: t.TypeOf<primitives.R4.CodeType>;
-  /** Human explanation of the value set */
-  description?: t.TypeOf<primitives.R4.StringType>;
-  /** Source of value set */
-  valueSet?: t.TypeOf<primitives.R4.CanonicalType>;
-}
-
-export interface ElementDefinitionBindingOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** required | extensible | preferred | example */
-  strength: t.OutputOf<primitives.R4.CodeType>;
-  /** Human explanation of the value set */
-  description?: t.OutputOf<primitives.R4.StringType>;
-  /** Source of value set */
-  valueSet?: t.OutputOf<primitives.R4.CanonicalType>;
-}
-
-export const ElementDefinitionBinding: t.RecursiveType<
-  t.Type<ElementDefinitionBinding, ElementDefinitionBindingOutputType>,
-  ElementDefinitionBinding,
-  ElementDefinitionBindingOutputType
-> = t.recursion<ElementDefinitionBinding, ElementDefinitionBindingOutputType>(
-  "ElementDefinitionBinding",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** required | extensible | preferred | example */
-          strength: primitives.R4.code
-        }),
-        t.partial({
-          /** Human explanation of the value set */
-          description: primitives.R4.string,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Source of value set */
-          valueSet: primitives.R4.canonical
-        })
-      ],
-      "ElementDefinitionBinding"
-    )
-);
-
-/**
- * Base definition information for tools
- */
-export interface ElementDefinitionBase {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Path that identifies the base element */
-  path: t.TypeOf<primitives.R4.StringType>;
-  /** Min cardinality of the base element */
-  min: t.TypeOf<primitives.R4.UnsignedIntegerType>;
-  /** Max cardinality of the base element */
-  max: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface ElementDefinitionBaseOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Path that identifies the base element */
-  path: t.OutputOf<primitives.R4.StringType>;
-  /** Min cardinality of the base element */
-  min: t.OutputOf<primitives.R4.UnsignedIntegerType>;
-  /** Max cardinality of the base element */
-  max: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const ElementDefinitionBase: t.RecursiveType<
-  t.Type<ElementDefinitionBase, ElementDefinitionBaseOutputType>,
-  ElementDefinitionBase,
-  ElementDefinitionBaseOutputType
-> = t.recursion<ElementDefinitionBase, ElementDefinitionBaseOutputType>(
-  "ElementDefinitionBase",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Max cardinality of the base element */
-          max: primitives.R4.string,
-          /** Min cardinality of the base element */
-          min: primitives.R4.unsignedInt,
-          /** Path that identifies the base element */
-          path: primitives.R4.string
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string
-        })
-      ],
-      "ElementDefinitionBase"
-    )
-);
+import { Address } from "./Address";
+import { Age } from "./Age";
+import { Annotation } from "./Annotation";
+import { Attachment } from "./Attachment";
+import { CodeableConcept } from "./CodeableConcept";
+import { Coding } from "./Coding";
+import { ContactDetail } from "./ContactDetail";
+import { ContactPoint } from "./ContactPoint";
+import { Contributor } from "./Contributor";
+import { Count } from "./Count";
+import { DataRequirement } from "./DataRequirement";
+import { Distance } from "./Distance";
+import { Dosage } from "./Dosage";
+import { Duration } from "./Duration";
+import { Element } from "./Element";
+import { Expression } from "./Expression";
+import { Extension } from "./Extension";
+import { HumanName } from "./HumanName";
+import { Identifier } from "./Identifier";
+import { Money } from "./Money";
+import { ParameterDefinition } from "./ParameterDefinition";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Range } from "./Range";
+import { Ratio } from "./Ratio";
+import { Reference } from "./Reference";
+import { RelatedArtifact } from "./RelatedArtifact";
+import { SampledData } from "./SampledData";
+import { Signature } from "./Signature";
+import { Timing } from "./Timing";
+import { TriggerDefinition } from "./TriggerDefinition";
+import { UsageContext } from "./UsageContext";
 
 /**
  * Definition of an element in a resource or extension
  */
 export interface ElementDefinition {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
   modifierExtension?: Extension[];
   /** Path of the element in the hierarchy of elements */
-  path: t.TypeOf<primitives.R4.StringType>;
+  path: string;
+  /** Extension of path element */
+  _path?: Element;
   /** xmlAttr | xmlText | typeAttr | cdaText | xhtml */
-  representation?: t.TypeOf<primitives.R4.CodeType>[];
+  representation?: primitives.R4.code[];
+  /** Extension of representation element */
+  _representation?: Element[];
   /** Name for this particular element (in a set of slices) */
-  sliceName?: t.TypeOf<primitives.R4.StringType>;
+  sliceName?: string;
+  /** Extension of sliceName element */
+  _sliceName?: Element;
   /** If this slice definition constrains an inherited slice definition (or not) */
-  sliceIsConstraining?: t.TypeOf<primitives.R4.BooleanType>;
+  sliceIsConstraining?: boolean;
+  /** Extension of sliceIsConstraining element */
+  _sliceIsConstraining?: Element;
   /** Name for element to display with or prompt for element */
-  label?: t.TypeOf<primitives.R4.StringType>;
+  label?: string;
+  /** Extension of label element */
+  _label?: Element;
   /** Corresponding codes in terminologies */
   code?: Coding[];
   /** This element is sliced - slices follow */
-  slicing?: ElementDefinitionSlicing;
+  slicing?: Element;
   /** Concise definition for space-constrained presentation */
-  short?: t.TypeOf<primitives.R4.StringType>;
+  short?: string;
+  /** Extension of short element */
+  _short?: Element;
   /** Full formal definition as narrative text */
-  definition?: t.TypeOf<primitives.R4.MarkdownType>;
+  definition?: primitives.R4.markdown;
+  /** Extension of definition element */
+  _definition?: Element;
   /** Comments about the use of this element */
-  comment?: t.TypeOf<primitives.R4.MarkdownType>;
+  comment?: primitives.R4.markdown;
+  /** Extension of comment element */
+  _comment?: Element;
   /** Why this resource has been created */
-  requirements?: t.TypeOf<primitives.R4.MarkdownType>;
+  requirements?: primitives.R4.markdown;
+  /** Extension of requirements element */
+  _requirements?: Element;
   /** Other names */
-  alias?: t.TypeOf<primitives.R4.StringType>[];
+  alias?: string[];
+  /** Extension of alias element */
+  _alias?: Element[];
   /** Minimum Cardinality */
-  min?: t.TypeOf<primitives.R4.UnsignedIntegerType>;
+  min?: primitives.R4.unsignedInt;
+  /** Extension of min element */
+  _min?: Element;
   /** Maximum Cardinality (a number or *) */
-  max?: t.TypeOf<primitives.R4.StringType>;
+  max?: string;
+  /** Extension of max element */
+  _max?: Element;
   /** Base definition information for tools */
-  base?: ElementDefinitionBase;
+  base?: Element;
   /** Reference to definition of content for the element */
-  contentReference?: t.TypeOf<primitives.R4.URIType>;
+  contentReference?: primitives.R4.uri;
+  /** Extension of contentReference element */
+  _contentReference?: Element;
   /** Data type and Profile for this element */
-  type?: ElementDefinitionType[];
+  type?: Element[];
   /** Specified value if missing from instance */
-  defaultvalue?:
-    | t.TypeOf<primitives.R4.Base64BinaryType>
-    | t.TypeOf<primitives.R4.BooleanType>
-    | t.TypeOf<primitives.R4.CanonicalType>
-    | t.TypeOf<primitives.R4.CodeType>
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IDType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.MarkdownType>
-    | t.TypeOf<primitives.R4.OIDType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | t.TypeOf<primitives.R4.URIType>
-    | t.TypeOf<primitives.R4.URLType>
-    | t.TypeOf<primitives.R4.UUIDType>
-    | Address
-    | Age
-    | Annotation
-    | Attachment
-    | CodeableConcept
-    | Coding
-    | ContactPoint
-    | Count
-    | Distance
-    | Duration
-    | HumanName
-    | Identifier
-    | Money
-    | Period
-    | Quantity
-    | Range
-    | Ratio
-    | Reference
-    | SampledData
-    | Signature
-    | Timing
-    | ContactDetail
-    | Contributor
-    | DataRequirement
-    | Expression
-    | ParameterDefinition
-    | RelatedArtifact
-    | TriggerDefinition
-    | UsageContext
-    | Dosage;
+  defaultvalueBase64Binary?: primitives.R4.base64Binary;
+  /** Extension of defaultvalueBase64Binary element */
+  _defaultvalueBase64Binary?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueBoolean?: boolean;
+  /** Extension of defaultvalueBoolean element */
+  _defaultvalueBoolean?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueCanonical?: primitives.R4.canonical;
+  /** Extension of defaultvalueCanonical element */
+  _defaultvalueCanonical?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueCode?: primitives.R4.code;
+  /** Extension of defaultvalueCode element */
+  _defaultvalueCode?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueDate?: primitives.R4.date;
+  /** Extension of defaultvalueDate element */
+  _defaultvalueDate?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueDateTime?: primitives.R4.dateTime;
+  /** Extension of defaultvalueDateTime element */
+  _defaultvalueDateTime?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueDecimal?: primitives.R4.decimal;
+  /** Extension of defaultvalueDecimal element */
+  _defaultvalueDecimal?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueId?: primitives.R4.id;
+  /** Extension of defaultvalueId element */
+  _defaultvalueId?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueInstant?: primitives.R4.instant;
+  /** Extension of defaultvalueInstant element */
+  _defaultvalueInstant?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueInteger?: primitives.R4.integer;
+  /** Extension of defaultvalueInteger element */
+  _defaultvalueInteger?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueMarkdown?: primitives.R4.markdown;
+  /** Extension of defaultvalueMarkdown element */
+  _defaultvalueMarkdown?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueOid?: primitives.R4.oid;
+  /** Extension of defaultvalueOid element */
+  _defaultvalueOid?: Element;
+  /** Specified value if missing from instance */
+  defaultvaluePositiveInt?: primitives.R4.positiveInt;
+  /** Extension of defaultvaluePositiveInt element */
+  _defaultvaluePositiveInt?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueString?: string;
+  /** Extension of defaultvalueString element */
+  _defaultvalueString?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueTime?: primitives.R4.time;
+  /** Extension of defaultvalueTime element */
+  _defaultvalueTime?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueUnsignedInt?: primitives.R4.unsignedInt;
+  /** Extension of defaultvalueUnsignedInt element */
+  _defaultvalueUnsignedInt?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueUri?: primitives.R4.uri;
+  /** Extension of defaultvalueUri element */
+  _defaultvalueUri?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueUrl?: primitives.R4.url;
+  /** Extension of defaultvalueUrl element */
+  _defaultvalueUrl?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueUuid?: primitives.R4.uuid;
+  /** Extension of defaultvalueUuid element */
+  _defaultvalueUuid?: Element;
+  /** Specified value if missing from instance */
+  defaultvalueAddress?: Address;
+  /** Specified value if missing from instance */
+  defaultvalueAge?: Age;
+  /** Specified value if missing from instance */
+  defaultvalueAnnotation?: Annotation;
+  /** Specified value if missing from instance */
+  defaultvalueAttachment?: Attachment;
+  /** Specified value if missing from instance */
+  defaultvalueCodeableConcept?: CodeableConcept;
+  /** Specified value if missing from instance */
+  defaultvalueCoding?: Coding;
+  /** Specified value if missing from instance */
+  defaultvalueContactPoint?: ContactPoint;
+  /** Specified value if missing from instance */
+  defaultvalueCount?: Count;
+  /** Specified value if missing from instance */
+  defaultvalueDistance?: Distance;
+  /** Specified value if missing from instance */
+  defaultvalueDuration?: Duration;
+  /** Specified value if missing from instance */
+  defaultvalueHumanName?: HumanName;
+  /** Specified value if missing from instance */
+  defaultvalueIdentifier?: Identifier;
+  /** Specified value if missing from instance */
+  defaultvalueMoney?: Money;
+  /** Specified value if missing from instance */
+  defaultvaluePeriod?: Period;
+  /** Specified value if missing from instance */
+  defaultvalueQuantity?: Quantity;
+  /** Specified value if missing from instance */
+  defaultvalueRange?: Range;
+  /** Specified value if missing from instance */
+  defaultvalueRatio?: Ratio;
+  /** Specified value if missing from instance */
+  defaultvalueReference?: Reference;
+  /** Specified value if missing from instance */
+  defaultvalueSampledData?: SampledData;
+  /** Specified value if missing from instance */
+  defaultvalueSignature?: Signature;
+  /** Specified value if missing from instance */
+  defaultvalueTiming?: Timing;
+  /** Specified value if missing from instance */
+  defaultvalueContactDetail?: ContactDetail;
+  /** Specified value if missing from instance */
+  defaultvalueContributor?: Contributor;
+  /** Specified value if missing from instance */
+  defaultvalueDataRequirement?: DataRequirement;
+  /** Specified value if missing from instance */
+  defaultvalueExpression?: Expression;
+  /** Specified value if missing from instance */
+  defaultvalueParameterDefinition?: ParameterDefinition;
+  /** Specified value if missing from instance */
+  defaultvalueRelatedArtifact?: RelatedArtifact;
+  /** Specified value if missing from instance */
+  defaultvalueTriggerDefinition?: TriggerDefinition;
+  /** Specified value if missing from instance */
+  defaultvalueUsageContext?: UsageContext;
+  /** Specified value if missing from instance */
+  defaultvalueDosage?: Dosage;
   /** Implicit meaning when this element is missing */
-  meaningWhenMissing?: t.TypeOf<primitives.R4.MarkdownType>;
+  meaningWhenMissing?: primitives.R4.markdown;
+  /** Extension of meaningWhenMissing element */
+  _meaningWhenMissing?: Element;
   /** What the order of the elements means */
-  orderMeaning?: t.TypeOf<primitives.R4.StringType>;
+  orderMeaning?: string;
+  /** Extension of orderMeaning element */
+  _orderMeaning?: Element;
   /** Value must be exactly this */
-  fixed?:
-    | t.TypeOf<primitives.R4.Base64BinaryType>
-    | t.TypeOf<primitives.R4.BooleanType>
-    | t.TypeOf<primitives.R4.CanonicalType>
-    | t.TypeOf<primitives.R4.CodeType>
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IDType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.MarkdownType>
-    | t.TypeOf<primitives.R4.OIDType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | t.TypeOf<primitives.R4.URIType>
-    | t.TypeOf<primitives.R4.URLType>
-    | t.TypeOf<primitives.R4.UUIDType>
-    | Address
-    | Age
-    | Annotation
-    | Attachment
-    | CodeableConcept
-    | Coding
-    | ContactPoint
-    | Count
-    | Distance
-    | Duration
-    | HumanName
-    | Identifier
-    | Money
-    | Period
-    | Quantity
-    | Range
-    | Ratio
-    | Reference
-    | SampledData
-    | Signature
-    | Timing
-    | ContactDetail
-    | Contributor
-    | DataRequirement
-    | Expression
-    | ParameterDefinition
-    | RelatedArtifact
-    | TriggerDefinition
-    | UsageContext
-    | Dosage;
+  fixedBase64Binary?: primitives.R4.base64Binary;
+  /** Extension of fixedBase64Binary element */
+  _fixedBase64Binary?: Element;
+  /** Value must be exactly this */
+  fixedBoolean?: boolean;
+  /** Extension of fixedBoolean element */
+  _fixedBoolean?: Element;
+  /** Value must be exactly this */
+  fixedCanonical?: primitives.R4.canonical;
+  /** Extension of fixedCanonical element */
+  _fixedCanonical?: Element;
+  /** Value must be exactly this */
+  fixedCode?: primitives.R4.code;
+  /** Extension of fixedCode element */
+  _fixedCode?: Element;
+  /** Value must be exactly this */
+  fixedDate?: primitives.R4.date;
+  /** Extension of fixedDate element */
+  _fixedDate?: Element;
+  /** Value must be exactly this */
+  fixedDateTime?: primitives.R4.dateTime;
+  /** Extension of fixedDateTime element */
+  _fixedDateTime?: Element;
+  /** Value must be exactly this */
+  fixedDecimal?: primitives.R4.decimal;
+  /** Extension of fixedDecimal element */
+  _fixedDecimal?: Element;
+  /** Value must be exactly this */
+  fixedId?: primitives.R4.id;
+  /** Extension of fixedId element */
+  _fixedId?: Element;
+  /** Value must be exactly this */
+  fixedInstant?: primitives.R4.instant;
+  /** Extension of fixedInstant element */
+  _fixedInstant?: Element;
+  /** Value must be exactly this */
+  fixedInteger?: primitives.R4.integer;
+  /** Extension of fixedInteger element */
+  _fixedInteger?: Element;
+  /** Value must be exactly this */
+  fixedMarkdown?: primitives.R4.markdown;
+  /** Extension of fixedMarkdown element */
+  _fixedMarkdown?: Element;
+  /** Value must be exactly this */
+  fixedOid?: primitives.R4.oid;
+  /** Extension of fixedOid element */
+  _fixedOid?: Element;
+  /** Value must be exactly this */
+  fixedPositiveInt?: primitives.R4.positiveInt;
+  /** Extension of fixedPositiveInt element */
+  _fixedPositiveInt?: Element;
+  /** Value must be exactly this */
+  fixedString?: string;
+  /** Extension of fixedString element */
+  _fixedString?: Element;
+  /** Value must be exactly this */
+  fixedTime?: primitives.R4.time;
+  /** Extension of fixedTime element */
+  _fixedTime?: Element;
+  /** Value must be exactly this */
+  fixedUnsignedInt?: primitives.R4.unsignedInt;
+  /** Extension of fixedUnsignedInt element */
+  _fixedUnsignedInt?: Element;
+  /** Value must be exactly this */
+  fixedUri?: primitives.R4.uri;
+  /** Extension of fixedUri element */
+  _fixedUri?: Element;
+  /** Value must be exactly this */
+  fixedUrl?: primitives.R4.url;
+  /** Extension of fixedUrl element */
+  _fixedUrl?: Element;
+  /** Value must be exactly this */
+  fixedUuid?: primitives.R4.uuid;
+  /** Extension of fixedUuid element */
+  _fixedUuid?: Element;
+  /** Value must be exactly this */
+  fixedAddress?: Address;
+  /** Value must be exactly this */
+  fixedAge?: Age;
+  /** Value must be exactly this */
+  fixedAnnotation?: Annotation;
+  /** Value must be exactly this */
+  fixedAttachment?: Attachment;
+  /** Value must be exactly this */
+  fixedCodeableConcept?: CodeableConcept;
+  /** Value must be exactly this */
+  fixedCoding?: Coding;
+  /** Value must be exactly this */
+  fixedContactPoint?: ContactPoint;
+  /** Value must be exactly this */
+  fixedCount?: Count;
+  /** Value must be exactly this */
+  fixedDistance?: Distance;
+  /** Value must be exactly this */
+  fixedDuration?: Duration;
+  /** Value must be exactly this */
+  fixedHumanName?: HumanName;
+  /** Value must be exactly this */
+  fixedIdentifier?: Identifier;
+  /** Value must be exactly this */
+  fixedMoney?: Money;
+  /** Value must be exactly this */
+  fixedPeriod?: Period;
+  /** Value must be exactly this */
+  fixedQuantity?: Quantity;
+  /** Value must be exactly this */
+  fixedRange?: Range;
+  /** Value must be exactly this */
+  fixedRatio?: Ratio;
+  /** Value must be exactly this */
+  fixedReference?: Reference;
+  /** Value must be exactly this */
+  fixedSampledData?: SampledData;
+  /** Value must be exactly this */
+  fixedSignature?: Signature;
+  /** Value must be exactly this */
+  fixedTiming?: Timing;
+  /** Value must be exactly this */
+  fixedContactDetail?: ContactDetail;
+  /** Value must be exactly this */
+  fixedContributor?: Contributor;
+  /** Value must be exactly this */
+  fixedDataRequirement?: DataRequirement;
+  /** Value must be exactly this */
+  fixedExpression?: Expression;
+  /** Value must be exactly this */
+  fixedParameterDefinition?: ParameterDefinition;
+  /** Value must be exactly this */
+  fixedRelatedArtifact?: RelatedArtifact;
+  /** Value must be exactly this */
+  fixedTriggerDefinition?: TriggerDefinition;
+  /** Value must be exactly this */
+  fixedUsageContext?: UsageContext;
+  /** Value must be exactly this */
+  fixedDosage?: Dosage;
   /** Value must have at least these property values */
-  pattern?:
-    | t.TypeOf<primitives.R4.Base64BinaryType>
-    | t.TypeOf<primitives.R4.BooleanType>
-    | t.TypeOf<primitives.R4.CanonicalType>
-    | t.TypeOf<primitives.R4.CodeType>
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IDType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.MarkdownType>
-    | t.TypeOf<primitives.R4.OIDType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | t.TypeOf<primitives.R4.URIType>
-    | t.TypeOf<primitives.R4.URLType>
-    | t.TypeOf<primitives.R4.UUIDType>
-    | Address
-    | Age
-    | Annotation
-    | Attachment
-    | CodeableConcept
-    | Coding
-    | ContactPoint
-    | Count
-    | Distance
-    | Duration
-    | HumanName
-    | Identifier
-    | Money
-    | Period
-    | Quantity
-    | Range
-    | Ratio
-    | Reference
-    | SampledData
-    | Signature
-    | Timing
-    | ContactDetail
-    | Contributor
-    | DataRequirement
-    | Expression
-    | ParameterDefinition
-    | RelatedArtifact
-    | TriggerDefinition
-    | UsageContext
-    | Dosage;
+  patternBase64Binary?: primitives.R4.base64Binary;
+  /** Extension of patternBase64Binary element */
+  _patternBase64Binary?: Element;
+  /** Value must have at least these property values */
+  patternBoolean?: boolean;
+  /** Extension of patternBoolean element */
+  _patternBoolean?: Element;
+  /** Value must have at least these property values */
+  patternCanonical?: primitives.R4.canonical;
+  /** Extension of patternCanonical element */
+  _patternCanonical?: Element;
+  /** Value must have at least these property values */
+  patternCode?: primitives.R4.code;
+  /** Extension of patternCode element */
+  _patternCode?: Element;
+  /** Value must have at least these property values */
+  patternDate?: primitives.R4.date;
+  /** Extension of patternDate element */
+  _patternDate?: Element;
+  /** Value must have at least these property values */
+  patternDateTime?: primitives.R4.dateTime;
+  /** Extension of patternDateTime element */
+  _patternDateTime?: Element;
+  /** Value must have at least these property values */
+  patternDecimal?: primitives.R4.decimal;
+  /** Extension of patternDecimal element */
+  _patternDecimal?: Element;
+  /** Value must have at least these property values */
+  patternId?: primitives.R4.id;
+  /** Extension of patternId element */
+  _patternId?: Element;
+  /** Value must have at least these property values */
+  patternInstant?: primitives.R4.instant;
+  /** Extension of patternInstant element */
+  _patternInstant?: Element;
+  /** Value must have at least these property values */
+  patternInteger?: primitives.R4.integer;
+  /** Extension of patternInteger element */
+  _patternInteger?: Element;
+  /** Value must have at least these property values */
+  patternMarkdown?: primitives.R4.markdown;
+  /** Extension of patternMarkdown element */
+  _patternMarkdown?: Element;
+  /** Value must have at least these property values */
+  patternOid?: primitives.R4.oid;
+  /** Extension of patternOid element */
+  _patternOid?: Element;
+  /** Value must have at least these property values */
+  patternPositiveInt?: primitives.R4.positiveInt;
+  /** Extension of patternPositiveInt element */
+  _patternPositiveInt?: Element;
+  /** Value must have at least these property values */
+  patternString?: string;
+  /** Extension of patternString element */
+  _patternString?: Element;
+  /** Value must have at least these property values */
+  patternTime?: primitives.R4.time;
+  /** Extension of patternTime element */
+  _patternTime?: Element;
+  /** Value must have at least these property values */
+  patternUnsignedInt?: primitives.R4.unsignedInt;
+  /** Extension of patternUnsignedInt element */
+  _patternUnsignedInt?: Element;
+  /** Value must have at least these property values */
+  patternUri?: primitives.R4.uri;
+  /** Extension of patternUri element */
+  _patternUri?: Element;
+  /** Value must have at least these property values */
+  patternUrl?: primitives.R4.url;
+  /** Extension of patternUrl element */
+  _patternUrl?: Element;
+  /** Value must have at least these property values */
+  patternUuid?: primitives.R4.uuid;
+  /** Extension of patternUuid element */
+  _patternUuid?: Element;
+  /** Value must have at least these property values */
+  patternAddress?: Address;
+  /** Value must have at least these property values */
+  patternAge?: Age;
+  /** Value must have at least these property values */
+  patternAnnotation?: Annotation;
+  /** Value must have at least these property values */
+  patternAttachment?: Attachment;
+  /** Value must have at least these property values */
+  patternCodeableConcept?: CodeableConcept;
+  /** Value must have at least these property values */
+  patternCoding?: Coding;
+  /** Value must have at least these property values */
+  patternContactPoint?: ContactPoint;
+  /** Value must have at least these property values */
+  patternCount?: Count;
+  /** Value must have at least these property values */
+  patternDistance?: Distance;
+  /** Value must have at least these property values */
+  patternDuration?: Duration;
+  /** Value must have at least these property values */
+  patternHumanName?: HumanName;
+  /** Value must have at least these property values */
+  patternIdentifier?: Identifier;
+  /** Value must have at least these property values */
+  patternMoney?: Money;
+  /** Value must have at least these property values */
+  patternPeriod?: Period;
+  /** Value must have at least these property values */
+  patternQuantity?: Quantity;
+  /** Value must have at least these property values */
+  patternRange?: Range;
+  /** Value must have at least these property values */
+  patternRatio?: Ratio;
+  /** Value must have at least these property values */
+  patternReference?: Reference;
+  /** Value must have at least these property values */
+  patternSampledData?: SampledData;
+  /** Value must have at least these property values */
+  patternSignature?: Signature;
+  /** Value must have at least these property values */
+  patternTiming?: Timing;
+  /** Value must have at least these property values */
+  patternContactDetail?: ContactDetail;
+  /** Value must have at least these property values */
+  patternContributor?: Contributor;
+  /** Value must have at least these property values */
+  patternDataRequirement?: DataRequirement;
+  /** Value must have at least these property values */
+  patternExpression?: Expression;
+  /** Value must have at least these property values */
+  patternParameterDefinition?: ParameterDefinition;
+  /** Value must have at least these property values */
+  patternRelatedArtifact?: RelatedArtifact;
+  /** Value must have at least these property values */
+  patternTriggerDefinition?: TriggerDefinition;
+  /** Value must have at least these property values */
+  patternUsageContext?: UsageContext;
+  /** Value must have at least these property values */
+  patternDosage?: Dosage;
   /** Example value (as defined for type) */
-  example?: ElementDefinitionExample[];
+  example?: Element[];
   /** Minimum Allowed Value (for some types) */
-  minvalue?:
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | Quantity;
+  minvalueDate?: primitives.R4.date;
+  /** Extension of minvalueDate element */
+  _minvalueDate?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueDateTime?: primitives.R4.dateTime;
+  /** Extension of minvalueDateTime element */
+  _minvalueDateTime?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueInstant?: primitives.R4.instant;
+  /** Extension of minvalueInstant element */
+  _minvalueInstant?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueTime?: primitives.R4.time;
+  /** Extension of minvalueTime element */
+  _minvalueTime?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueDecimal?: primitives.R4.decimal;
+  /** Extension of minvalueDecimal element */
+  _minvalueDecimal?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueInteger?: primitives.R4.integer;
+  /** Extension of minvalueInteger element */
+  _minvalueInteger?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvaluePositiveInt?: primitives.R4.positiveInt;
+  /** Extension of minvaluePositiveInt element */
+  _minvaluePositiveInt?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueUnsignedInt?: primitives.R4.unsignedInt;
+  /** Extension of minvalueUnsignedInt element */
+  _minvalueUnsignedInt?: Element;
+  /** Minimum Allowed Value (for some types) */
+  minvalueQuantity?: Quantity;
   /** Maximum Allowed Value (for some types) */
-  maxvalue?:
-    | t.TypeOf<primitives.R4.DateType>
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | t.TypeOf<primitives.R4.InstantType>
-    | t.TypeOf<primitives.R4.TimeType>
-    | t.TypeOf<primitives.R4.DecimalType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.UnsignedIntegerType>
-    | Quantity;
+  maxvalueDate?: primitives.R4.date;
+  /** Extension of maxvalueDate element */
+  _maxvalueDate?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueDateTime?: primitives.R4.dateTime;
+  /** Extension of maxvalueDateTime element */
+  _maxvalueDateTime?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueInstant?: primitives.R4.instant;
+  /** Extension of maxvalueInstant element */
+  _maxvalueInstant?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueTime?: primitives.R4.time;
+  /** Extension of maxvalueTime element */
+  _maxvalueTime?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueDecimal?: primitives.R4.decimal;
+  /** Extension of maxvalueDecimal element */
+  _maxvalueDecimal?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueInteger?: primitives.R4.integer;
+  /** Extension of maxvalueInteger element */
+  _maxvalueInteger?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvaluePositiveInt?: primitives.R4.positiveInt;
+  /** Extension of maxvaluePositiveInt element */
+  _maxvaluePositiveInt?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueUnsignedInt?: primitives.R4.unsignedInt;
+  /** Extension of maxvalueUnsignedInt element */
+  _maxvalueUnsignedInt?: Element;
+  /** Maximum Allowed Value (for some types) */
+  maxvalueQuantity?: Quantity;
   /** Max length for strings */
-  maxLength?: t.TypeOf<primitives.R4.IntegerType>;
+  maxLength?: primitives.R4.integer;
+  /** Extension of maxLength element */
+  _maxLength?: Element;
   /** Reference to invariant about presence */
-  condition?: t.TypeOf<primitives.R4.IDType>[];
+  condition?: primitives.R4.id[];
+  /** Extension of condition element */
+  _condition?: Element[];
   /** Condition that must evaluate to true */
-  constraint?: ElementDefinitionConstraint[];
+  constraint?: Element[];
   /** If the element must be supported */
-  mustSupport?: t.TypeOf<primitives.R4.BooleanType>;
+  mustSupport?: boolean;
+  /** Extension of mustSupport element */
+  _mustSupport?: Element;
   /** If this modifies the meaning of other elements */
-  isModifier?: t.TypeOf<primitives.R4.BooleanType>;
+  isModifier?: boolean;
+  /** Extension of isModifier element */
+  _isModifier?: Element;
   /** Reason that this element is marked as a modifier */
-  isModifierReason?: t.TypeOf<primitives.R4.StringType>;
+  isModifierReason?: string;
+  /** Extension of isModifierReason element */
+  _isModifierReason?: Element;
   /** Include when _summary = true? */
-  isSummary?: t.TypeOf<primitives.R4.BooleanType>;
+  isSummary?: boolean;
+  /** Extension of isSummary element */
+  _isSummary?: Element;
   /** ValueSet details if this is coded */
-  binding?: ElementDefinitionBinding;
+  binding?: Element;
   /** Map element to another set of definitions */
-  mapping?: ElementDefinitionMapping[];
+  mapping?: Element[];
 }
+/**
+ * Definition of an element in a resource or extension
+ */
+export const ElementDefinition: t.Type<ElementDefinition> = t.recursion<
+  ElementDefinition
+>("ElementDefinition", () =>
+  t.intersection([
+    t.type({
+      /** Path of the element in the hierarchy of elements */
+      path: primitives.R4.string
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Extension of path element */
+      _path: Element,
+      /** xmlAttr | xmlText | typeAttr | cdaText | xhtml */
+      representation: t.array(primitives.R4.code),
+      /** Extension of representation element */
+      _representation: t.array(Element),
+      /** Name for this particular element (in a set of slices) */
+      sliceName: primitives.R4.string,
+      /** Extension of sliceName element */
+      _sliceName: Element,
+      /** If this slice definition constrains an inherited slice definition (or not) */
+      sliceIsConstraining: primitives.R4.boolean,
+      /** Extension of sliceIsConstraining element */
+      _sliceIsConstraining: Element,
+      /** Name for element to display with or prompt for element */
+      label: primitives.R4.string,
+      /** Extension of label element */
+      _label: Element,
+      /** Corresponding codes in terminologies */
+      code: t.array(Coding),
+      /** This element is sliced - slices follow */
+      slicing: Element,
+      /** Concise definition for space-constrained presentation */
+      short: primitives.R4.string,
+      /** Extension of short element */
+      _short: Element,
+      /** Full formal definition as narrative text */
+      definition: primitives.R4.markdown,
+      /** Extension of definition element */
+      _definition: Element,
+      /** Comments about the use of this element */
+      comment: primitives.R4.markdown,
+      /** Extension of comment element */
+      _comment: Element,
+      /** Why this resource has been created */
+      requirements: primitives.R4.markdown,
+      /** Extension of requirements element */
+      _requirements: Element,
+      /** Other names */
+      alias: t.array(primitives.R4.string),
+      /** Extension of alias element */
+      _alias: t.array(Element),
+      /** Minimum Cardinality */
+      min: primitives.R4.unsignedInt,
+      /** Extension of min element */
+      _min: Element,
+      /** Maximum Cardinality (a number or *) */
+      max: primitives.R4.string,
+      /** Extension of max element */
+      _max: Element,
+      /** Base definition information for tools */
+      base: Element,
+      /** Reference to definition of content for the element */
+      contentReference: primitives.R4.uri,
+      /** Extension of contentReference element */
+      _contentReference: Element,
+      /** Data type and Profile for this element */
+      type: t.array(Element),
+      /** Specified value if missing from instance */
+      defaultvalueBase64Binary: primitives.R4.base64Binary,
+      /** Extension of defaultvalueBase64Binary element */
+      _defaultvalueBase64Binary: Element,
+      /** Specified value if missing from instance */
+      defaultvalueBoolean: primitives.R4.boolean,
+      /** Extension of defaultvalueBoolean element */
+      _defaultvalueBoolean: Element,
+      /** Specified value if missing from instance */
+      defaultvalueCanonical: primitives.R4.canonical,
+      /** Extension of defaultvalueCanonical element */
+      _defaultvalueCanonical: Element,
+      /** Specified value if missing from instance */
+      defaultvalueCode: primitives.R4.code,
+      /** Extension of defaultvalueCode element */
+      _defaultvalueCode: Element,
+      /** Specified value if missing from instance */
+      defaultvalueDate: primitives.R4.date,
+      /** Extension of defaultvalueDate element */
+      _defaultvalueDate: Element,
+      /** Specified value if missing from instance */
+      defaultvalueDateTime: primitives.R4.dateTime,
+      /** Extension of defaultvalueDateTime element */
+      _defaultvalueDateTime: Element,
+      /** Specified value if missing from instance */
+      defaultvalueDecimal: primitives.R4.decimal,
+      /** Extension of defaultvalueDecimal element */
+      _defaultvalueDecimal: Element,
+      /** Specified value if missing from instance */
+      defaultvalueId: primitives.R4.id,
+      /** Extension of defaultvalueId element */
+      _defaultvalueId: Element,
+      /** Specified value if missing from instance */
+      defaultvalueInstant: primitives.R4.instant,
+      /** Extension of defaultvalueInstant element */
+      _defaultvalueInstant: Element,
+      /** Specified value if missing from instance */
+      defaultvalueInteger: primitives.R4.integer,
+      /** Extension of defaultvalueInteger element */
+      _defaultvalueInteger: Element,
+      /** Specified value if missing from instance */
+      defaultvalueMarkdown: primitives.R4.markdown,
+      /** Extension of defaultvalueMarkdown element */
+      _defaultvalueMarkdown: Element,
+      /** Specified value if missing from instance */
+      defaultvalueOid: primitives.R4.oid,
+      /** Extension of defaultvalueOid element */
+      _defaultvalueOid: Element,
+      /** Specified value if missing from instance */
+      defaultvaluePositiveInt: primitives.R4.positiveInt,
+      /** Extension of defaultvaluePositiveInt element */
+      _defaultvaluePositiveInt: Element,
+      /** Specified value if missing from instance */
+      defaultvalueString: primitives.R4.string,
+      /** Extension of defaultvalueString element */
+      _defaultvalueString: Element,
+      /** Specified value if missing from instance */
+      defaultvalueTime: primitives.R4.time,
+      /** Extension of defaultvalueTime element */
+      _defaultvalueTime: Element,
+      /** Specified value if missing from instance */
+      defaultvalueUnsignedInt: primitives.R4.unsignedInt,
+      /** Extension of defaultvalueUnsignedInt element */
+      _defaultvalueUnsignedInt: Element,
+      /** Specified value if missing from instance */
+      defaultvalueUri: primitives.R4.uri,
+      /** Extension of defaultvalueUri element */
+      _defaultvalueUri: Element,
+      /** Specified value if missing from instance */
+      defaultvalueUrl: primitives.R4.url,
+      /** Extension of defaultvalueUrl element */
+      _defaultvalueUrl: Element,
+      /** Specified value if missing from instance */
+      defaultvalueUuid: primitives.R4.uuid,
+      /** Extension of defaultvalueUuid element */
+      _defaultvalueUuid: Element,
+      /** Specified value if missing from instance */
+      defaultvalueAddress: Address,
+      /** Specified value if missing from instance */
+      defaultvalueAge: Age,
+      /** Specified value if missing from instance */
+      defaultvalueAnnotation: Annotation,
+      /** Specified value if missing from instance */
+      defaultvalueAttachment: Attachment,
+      /** Specified value if missing from instance */
+      defaultvalueCodeableConcept: CodeableConcept,
+      /** Specified value if missing from instance */
+      defaultvalueCoding: Coding,
+      /** Specified value if missing from instance */
+      defaultvalueContactPoint: ContactPoint,
+      /** Specified value if missing from instance */
+      defaultvalueCount: Count,
+      /** Specified value if missing from instance */
+      defaultvalueDistance: Distance,
+      /** Specified value if missing from instance */
+      defaultvalueDuration: Duration,
+      /** Specified value if missing from instance */
+      defaultvalueHumanName: HumanName,
+      /** Specified value if missing from instance */
+      defaultvalueIdentifier: Identifier,
+      /** Specified value if missing from instance */
+      defaultvalueMoney: Money,
+      /** Specified value if missing from instance */
+      defaultvaluePeriod: Period,
+      /** Specified value if missing from instance */
+      defaultvalueQuantity: Quantity,
+      /** Specified value if missing from instance */
+      defaultvalueRange: Range,
+      /** Specified value if missing from instance */
+      defaultvalueRatio: Ratio,
+      /** Specified value if missing from instance */
+      defaultvalueReference: Reference,
+      /** Specified value if missing from instance */
+      defaultvalueSampledData: SampledData,
+      /** Specified value if missing from instance */
+      defaultvalueSignature: Signature,
+      /** Specified value if missing from instance */
+      defaultvalueTiming: Timing,
+      /** Specified value if missing from instance */
+      defaultvalueContactDetail: ContactDetail,
+      /** Specified value if missing from instance */
+      defaultvalueContributor: Contributor,
+      /** Specified value if missing from instance */
+      defaultvalueDataRequirement: DataRequirement,
+      /** Specified value if missing from instance */
+      defaultvalueExpression: Expression,
+      /** Specified value if missing from instance */
+      defaultvalueParameterDefinition: ParameterDefinition,
+      /** Specified value if missing from instance */
+      defaultvalueRelatedArtifact: RelatedArtifact,
+      /** Specified value if missing from instance */
+      defaultvalueTriggerDefinition: TriggerDefinition,
+      /** Specified value if missing from instance */
+      defaultvalueUsageContext: UsageContext,
+      /** Specified value if missing from instance */
+      defaultvalueDosage: Dosage,
+      /** Implicit meaning when this element is missing */
+      meaningWhenMissing: primitives.R4.markdown,
+      /** Extension of meaningWhenMissing element */
+      _meaningWhenMissing: Element,
+      /** What the order of the elements means */
+      orderMeaning: primitives.R4.string,
+      /** Extension of orderMeaning element */
+      _orderMeaning: Element,
+      /** Value must be exactly this */
+      fixedBase64Binary: primitives.R4.base64Binary,
+      /** Extension of fixedBase64Binary element */
+      _fixedBase64Binary: Element,
+      /** Value must be exactly this */
+      fixedBoolean: primitives.R4.boolean,
+      /** Extension of fixedBoolean element */
+      _fixedBoolean: Element,
+      /** Value must be exactly this */
+      fixedCanonical: primitives.R4.canonical,
+      /** Extension of fixedCanonical element */
+      _fixedCanonical: Element,
+      /** Value must be exactly this */
+      fixedCode: primitives.R4.code,
+      /** Extension of fixedCode element */
+      _fixedCode: Element,
+      /** Value must be exactly this */
+      fixedDate: primitives.R4.date,
+      /** Extension of fixedDate element */
+      _fixedDate: Element,
+      /** Value must be exactly this */
+      fixedDateTime: primitives.R4.dateTime,
+      /** Extension of fixedDateTime element */
+      _fixedDateTime: Element,
+      /** Value must be exactly this */
+      fixedDecimal: primitives.R4.decimal,
+      /** Extension of fixedDecimal element */
+      _fixedDecimal: Element,
+      /** Value must be exactly this */
+      fixedId: primitives.R4.id,
+      /** Extension of fixedId element */
+      _fixedId: Element,
+      /** Value must be exactly this */
+      fixedInstant: primitives.R4.instant,
+      /** Extension of fixedInstant element */
+      _fixedInstant: Element,
+      /** Value must be exactly this */
+      fixedInteger: primitives.R4.integer,
+      /** Extension of fixedInteger element */
+      _fixedInteger: Element,
+      /** Value must be exactly this */
+      fixedMarkdown: primitives.R4.markdown,
+      /** Extension of fixedMarkdown element */
+      _fixedMarkdown: Element,
+      /** Value must be exactly this */
+      fixedOid: primitives.R4.oid,
+      /** Extension of fixedOid element */
+      _fixedOid: Element,
+      /** Value must be exactly this */
+      fixedPositiveInt: primitives.R4.positiveInt,
+      /** Extension of fixedPositiveInt element */
+      _fixedPositiveInt: Element,
+      /** Value must be exactly this */
+      fixedString: primitives.R4.string,
+      /** Extension of fixedString element */
+      _fixedString: Element,
+      /** Value must be exactly this */
+      fixedTime: primitives.R4.time,
+      /** Extension of fixedTime element */
+      _fixedTime: Element,
+      /** Value must be exactly this */
+      fixedUnsignedInt: primitives.R4.unsignedInt,
+      /** Extension of fixedUnsignedInt element */
+      _fixedUnsignedInt: Element,
+      /** Value must be exactly this */
+      fixedUri: primitives.R4.uri,
+      /** Extension of fixedUri element */
+      _fixedUri: Element,
+      /** Value must be exactly this */
+      fixedUrl: primitives.R4.url,
+      /** Extension of fixedUrl element */
+      _fixedUrl: Element,
+      /** Value must be exactly this */
+      fixedUuid: primitives.R4.uuid,
+      /** Extension of fixedUuid element */
+      _fixedUuid: Element,
+      /** Value must be exactly this */
+      fixedAddress: Address,
+      /** Value must be exactly this */
+      fixedAge: Age,
+      /** Value must be exactly this */
+      fixedAnnotation: Annotation,
+      /** Value must be exactly this */
+      fixedAttachment: Attachment,
+      /** Value must be exactly this */
+      fixedCodeableConcept: CodeableConcept,
+      /** Value must be exactly this */
+      fixedCoding: Coding,
+      /** Value must be exactly this */
+      fixedContactPoint: ContactPoint,
+      /** Value must be exactly this */
+      fixedCount: Count,
+      /** Value must be exactly this */
+      fixedDistance: Distance,
+      /** Value must be exactly this */
+      fixedDuration: Duration,
+      /** Value must be exactly this */
+      fixedHumanName: HumanName,
+      /** Value must be exactly this */
+      fixedIdentifier: Identifier,
+      /** Value must be exactly this */
+      fixedMoney: Money,
+      /** Value must be exactly this */
+      fixedPeriod: Period,
+      /** Value must be exactly this */
+      fixedQuantity: Quantity,
+      /** Value must be exactly this */
+      fixedRange: Range,
+      /** Value must be exactly this */
+      fixedRatio: Ratio,
+      /** Value must be exactly this */
+      fixedReference: Reference,
+      /** Value must be exactly this */
+      fixedSampledData: SampledData,
+      /** Value must be exactly this */
+      fixedSignature: Signature,
+      /** Value must be exactly this */
+      fixedTiming: Timing,
+      /** Value must be exactly this */
+      fixedContactDetail: ContactDetail,
+      /** Value must be exactly this */
+      fixedContributor: Contributor,
+      /** Value must be exactly this */
+      fixedDataRequirement: DataRequirement,
+      /** Value must be exactly this */
+      fixedExpression: Expression,
+      /** Value must be exactly this */
+      fixedParameterDefinition: ParameterDefinition,
+      /** Value must be exactly this */
+      fixedRelatedArtifact: RelatedArtifact,
+      /** Value must be exactly this */
+      fixedTriggerDefinition: TriggerDefinition,
+      /** Value must be exactly this */
+      fixedUsageContext: UsageContext,
+      /** Value must be exactly this */
+      fixedDosage: Dosage,
+      /** Value must have at least these property values */
+      patternBase64Binary: primitives.R4.base64Binary,
+      /** Extension of patternBase64Binary element */
+      _patternBase64Binary: Element,
+      /** Value must have at least these property values */
+      patternBoolean: primitives.R4.boolean,
+      /** Extension of patternBoolean element */
+      _patternBoolean: Element,
+      /** Value must have at least these property values */
+      patternCanonical: primitives.R4.canonical,
+      /** Extension of patternCanonical element */
+      _patternCanonical: Element,
+      /** Value must have at least these property values */
+      patternCode: primitives.R4.code,
+      /** Extension of patternCode element */
+      _patternCode: Element,
+      /** Value must have at least these property values */
+      patternDate: primitives.R4.date,
+      /** Extension of patternDate element */
+      _patternDate: Element,
+      /** Value must have at least these property values */
+      patternDateTime: primitives.R4.dateTime,
+      /** Extension of patternDateTime element */
+      _patternDateTime: Element,
+      /** Value must have at least these property values */
+      patternDecimal: primitives.R4.decimal,
+      /** Extension of patternDecimal element */
+      _patternDecimal: Element,
+      /** Value must have at least these property values */
+      patternId: primitives.R4.id,
+      /** Extension of patternId element */
+      _patternId: Element,
+      /** Value must have at least these property values */
+      patternInstant: primitives.R4.instant,
+      /** Extension of patternInstant element */
+      _patternInstant: Element,
+      /** Value must have at least these property values */
+      patternInteger: primitives.R4.integer,
+      /** Extension of patternInteger element */
+      _patternInteger: Element,
+      /** Value must have at least these property values */
+      patternMarkdown: primitives.R4.markdown,
+      /** Extension of patternMarkdown element */
+      _patternMarkdown: Element,
+      /** Value must have at least these property values */
+      patternOid: primitives.R4.oid,
+      /** Extension of patternOid element */
+      _patternOid: Element,
+      /** Value must have at least these property values */
+      patternPositiveInt: primitives.R4.positiveInt,
+      /** Extension of patternPositiveInt element */
+      _patternPositiveInt: Element,
+      /** Value must have at least these property values */
+      patternString: primitives.R4.string,
+      /** Extension of patternString element */
+      _patternString: Element,
+      /** Value must have at least these property values */
+      patternTime: primitives.R4.time,
+      /** Extension of patternTime element */
+      _patternTime: Element,
+      /** Value must have at least these property values */
+      patternUnsignedInt: primitives.R4.unsignedInt,
+      /** Extension of patternUnsignedInt element */
+      _patternUnsignedInt: Element,
+      /** Value must have at least these property values */
+      patternUri: primitives.R4.uri,
+      /** Extension of patternUri element */
+      _patternUri: Element,
+      /** Value must have at least these property values */
+      patternUrl: primitives.R4.url,
+      /** Extension of patternUrl element */
+      _patternUrl: Element,
+      /** Value must have at least these property values */
+      patternUuid: primitives.R4.uuid,
+      /** Extension of patternUuid element */
+      _patternUuid: Element,
+      /** Value must have at least these property values */
+      patternAddress: Address,
+      /** Value must have at least these property values */
+      patternAge: Age,
+      /** Value must have at least these property values */
+      patternAnnotation: Annotation,
+      /** Value must have at least these property values */
+      patternAttachment: Attachment,
+      /** Value must have at least these property values */
+      patternCodeableConcept: CodeableConcept,
+      /** Value must have at least these property values */
+      patternCoding: Coding,
+      /** Value must have at least these property values */
+      patternContactPoint: ContactPoint,
+      /** Value must have at least these property values */
+      patternCount: Count,
+      /** Value must have at least these property values */
+      patternDistance: Distance,
+      /** Value must have at least these property values */
+      patternDuration: Duration,
+      /** Value must have at least these property values */
+      patternHumanName: HumanName,
+      /** Value must have at least these property values */
+      patternIdentifier: Identifier,
+      /** Value must have at least these property values */
+      patternMoney: Money,
+      /** Value must have at least these property values */
+      patternPeriod: Period,
+      /** Value must have at least these property values */
+      patternQuantity: Quantity,
+      /** Value must have at least these property values */
+      patternRange: Range,
+      /** Value must have at least these property values */
+      patternRatio: Ratio,
+      /** Value must have at least these property values */
+      patternReference: Reference,
+      /** Value must have at least these property values */
+      patternSampledData: SampledData,
+      /** Value must have at least these property values */
+      patternSignature: Signature,
+      /** Value must have at least these property values */
+      patternTiming: Timing,
+      /** Value must have at least these property values */
+      patternContactDetail: ContactDetail,
+      /** Value must have at least these property values */
+      patternContributor: Contributor,
+      /** Value must have at least these property values */
+      patternDataRequirement: DataRequirement,
+      /** Value must have at least these property values */
+      patternExpression: Expression,
+      /** Value must have at least these property values */
+      patternParameterDefinition: ParameterDefinition,
+      /** Value must have at least these property values */
+      patternRelatedArtifact: RelatedArtifact,
+      /** Value must have at least these property values */
+      patternTriggerDefinition: TriggerDefinition,
+      /** Value must have at least these property values */
+      patternUsageContext: UsageContext,
+      /** Value must have at least these property values */
+      patternDosage: Dosage,
+      /** Example value (as defined for type) */
+      example: t.array(Element),
+      /** Minimum Allowed Value (for some types) */
+      minvalueDate: primitives.R4.date,
+      /** Extension of minvalueDate element */
+      _minvalueDate: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueDateTime: primitives.R4.dateTime,
+      /** Extension of minvalueDateTime element */
+      _minvalueDateTime: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueInstant: primitives.R4.instant,
+      /** Extension of minvalueInstant element */
+      _minvalueInstant: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueTime: primitives.R4.time,
+      /** Extension of minvalueTime element */
+      _minvalueTime: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueDecimal: primitives.R4.decimal,
+      /** Extension of minvalueDecimal element */
+      _minvalueDecimal: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueInteger: primitives.R4.integer,
+      /** Extension of minvalueInteger element */
+      _minvalueInteger: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvaluePositiveInt: primitives.R4.positiveInt,
+      /** Extension of minvaluePositiveInt element */
+      _minvaluePositiveInt: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueUnsignedInt: primitives.R4.unsignedInt,
+      /** Extension of minvalueUnsignedInt element */
+      _minvalueUnsignedInt: Element,
+      /** Minimum Allowed Value (for some types) */
+      minvalueQuantity: Quantity,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueDate: primitives.R4.date,
+      /** Extension of maxvalueDate element */
+      _maxvalueDate: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueDateTime: primitives.R4.dateTime,
+      /** Extension of maxvalueDateTime element */
+      _maxvalueDateTime: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueInstant: primitives.R4.instant,
+      /** Extension of maxvalueInstant element */
+      _maxvalueInstant: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueTime: primitives.R4.time,
+      /** Extension of maxvalueTime element */
+      _maxvalueTime: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueDecimal: primitives.R4.decimal,
+      /** Extension of maxvalueDecimal element */
+      _maxvalueDecimal: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueInteger: primitives.R4.integer,
+      /** Extension of maxvalueInteger element */
+      _maxvalueInteger: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvaluePositiveInt: primitives.R4.positiveInt,
+      /** Extension of maxvaluePositiveInt element */
+      _maxvaluePositiveInt: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueUnsignedInt: primitives.R4.unsignedInt,
+      /** Extension of maxvalueUnsignedInt element */
+      _maxvalueUnsignedInt: Element,
+      /** Maximum Allowed Value (for some types) */
+      maxvalueQuantity: Quantity,
+      /** Max length for strings */
+      maxLength: primitives.R4.integer,
+      /** Extension of maxLength element */
+      _maxLength: Element,
+      /** Reference to invariant about presence */
+      condition: t.array(primitives.R4.id),
+      /** Extension of condition element */
+      _condition: t.array(Element),
+      /** Condition that must evaluate to true */
+      constraint: t.array(Element),
+      /** If the element must be supported */
+      mustSupport: primitives.R4.boolean,
+      /** Extension of mustSupport element */
+      _mustSupport: Element,
+      /** If this modifies the meaning of other elements */
+      isModifier: primitives.R4.boolean,
+      /** Extension of isModifier element */
+      _isModifier: Element,
+      /** Reason that this element is marked as a modifier */
+      isModifierReason: primitives.R4.string,
+      /** Extension of isModifierReason element */
+      _isModifierReason: Element,
+      /** Include when _summary = true? */
+      isSummary: primitives.R4.boolean,
+      /** Extension of isSummary element */
+      _isSummary: Element,
+      /** ValueSet details if this is coded */
+      binding: Element,
+      /** Map element to another set of definitions */
+      mapping: t.array(Element)
+    })
+  ])
+);
 
-export interface ElementDefinitionOutputType {
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionSlicing {
   /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Path of the element in the hierarchy of elements */
-  path: t.OutputOf<primitives.R4.StringType>;
-  /** xmlAttr | xmlText | typeAttr | cdaText | xhtml */
-  representation?: t.OutputOf<primitives.R4.CodeType>[];
-  /** Name for this particular element (in a set of slices) */
-  sliceName?: t.OutputOf<primitives.R4.StringType>;
-  /** If this slice definition constrains an inherited slice definition (or not) */
-  sliceIsConstraining?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Name for element to display with or prompt for element */
-  label?: t.OutputOf<primitives.R4.StringType>;
-  /** Corresponding codes in terminologies */
-  code?: CodingOutputType[];
-  /** This element is sliced - slices follow */
-  slicing?: ElementDefinitionSlicingOutputType;
-  /** Concise definition for space-constrained presentation */
-  short?: t.OutputOf<primitives.R4.StringType>;
-  /** Full formal definition as narrative text */
-  definition?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** Comments about the use of this element */
-  comment?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** Why this resource has been created */
-  requirements?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** Other names */
-  alias?: t.OutputOf<primitives.R4.StringType>[];
-  /** Minimum Cardinality */
-  min?: t.OutputOf<primitives.R4.UnsignedIntegerType>;
-  /** Maximum Cardinality (a number or *) */
-  max?: t.OutputOf<primitives.R4.StringType>;
-  /** Base definition information for tools */
-  base?: ElementDefinitionBaseOutputType;
-  /** Reference to definition of content for the element */
-  contentReference?: t.OutputOf<primitives.R4.URIType>;
-  /** Data type and Profile for this element */
-  type?: ElementDefinitionTypeOutputType[];
-  /** Specified value if missing from instance */
-  defaultvalue?:
-    | t.OutputOf<primitives.R4.Base64BinaryType>
-    | t.OutputOf<primitives.R4.BooleanType>
-    | t.OutputOf<primitives.R4.CanonicalType>
-    | t.OutputOf<primitives.R4.CodeType>
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IDType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.MarkdownType>
-    | t.OutputOf<primitives.R4.OIDType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | t.OutputOf<primitives.R4.URIType>
-    | t.OutputOf<primitives.R4.URLType>
-    | t.OutputOf<primitives.R4.UUIDType>
-    | AddressOutputType
-    | AgeOutputType
-    | AnnotationOutputType
-    | AttachmentOutputType
-    | CodeableConceptOutputType
-    | CodingOutputType
-    | ContactPointOutputType
-    | CountOutputType
-    | DistanceOutputType
-    | DurationOutputType
-    | HumanNameOutputType
-    | IdentifierOutputType
-    | MoneyOutputType
-    | PeriodOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | RatioOutputType
-    | ReferenceOutputType
-    | SampledDataOutputType
-    | SignatureOutputType
-    | TimingOutputType
-    | ContactDetailOutputType
-    | ContributorOutputType
-    | DataRequirementOutputType
-    | ExpressionOutputType
-    | ParameterDefinitionOutputType
-    | RelatedArtifactOutputType
-    | TriggerDefinitionOutputType
-    | UsageContextOutputType
-    | DosageOutputType;
-  /** Implicit meaning when this element is missing */
-  meaningWhenMissing?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** What the order of the elements means */
-  orderMeaning?: t.OutputOf<primitives.R4.StringType>;
-  /** Value must be exactly this */
-  fixed?:
-    | t.OutputOf<primitives.R4.Base64BinaryType>
-    | t.OutputOf<primitives.R4.BooleanType>
-    | t.OutputOf<primitives.R4.CanonicalType>
-    | t.OutputOf<primitives.R4.CodeType>
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IDType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.MarkdownType>
-    | t.OutputOf<primitives.R4.OIDType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | t.OutputOf<primitives.R4.URIType>
-    | t.OutputOf<primitives.R4.URLType>
-    | t.OutputOf<primitives.R4.UUIDType>
-    | AddressOutputType
-    | AgeOutputType
-    | AnnotationOutputType
-    | AttachmentOutputType
-    | CodeableConceptOutputType
-    | CodingOutputType
-    | ContactPointOutputType
-    | CountOutputType
-    | DistanceOutputType
-    | DurationOutputType
-    | HumanNameOutputType
-    | IdentifierOutputType
-    | MoneyOutputType
-    | PeriodOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | RatioOutputType
-    | ReferenceOutputType
-    | SampledDataOutputType
-    | SignatureOutputType
-    | TimingOutputType
-    | ContactDetailOutputType
-    | ContributorOutputType
-    | DataRequirementOutputType
-    | ExpressionOutputType
-    | ParameterDefinitionOutputType
-    | RelatedArtifactOutputType
-    | TriggerDefinitionOutputType
-    | UsageContextOutputType
-    | DosageOutputType;
-  /** Value must have at least these property values */
-  pattern?:
-    | t.OutputOf<primitives.R4.Base64BinaryType>
-    | t.OutputOf<primitives.R4.BooleanType>
-    | t.OutputOf<primitives.R4.CanonicalType>
-    | t.OutputOf<primitives.R4.CodeType>
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IDType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.MarkdownType>
-    | t.OutputOf<primitives.R4.OIDType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | t.OutputOf<primitives.R4.URIType>
-    | t.OutputOf<primitives.R4.URLType>
-    | t.OutputOf<primitives.R4.UUIDType>
-    | AddressOutputType
-    | AgeOutputType
-    | AnnotationOutputType
-    | AttachmentOutputType
-    | CodeableConceptOutputType
-    | CodingOutputType
-    | ContactPointOutputType
-    | CountOutputType
-    | DistanceOutputType
-    | DurationOutputType
-    | HumanNameOutputType
-    | IdentifierOutputType
-    | MoneyOutputType
-    | PeriodOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | RatioOutputType
-    | ReferenceOutputType
-    | SampledDataOutputType
-    | SignatureOutputType
-    | TimingOutputType
-    | ContactDetailOutputType
-    | ContributorOutputType
-    | DataRequirementOutputType
-    | ExpressionOutputType
-    | ParameterDefinitionOutputType
-    | RelatedArtifactOutputType
-    | TriggerDefinitionOutputType
-    | UsageContextOutputType
-    | DosageOutputType;
-  /** Example value (as defined for type) */
-  example?: ElementDefinitionExampleOutputType[];
-  /** Minimum Allowed Value (for some types) */
-  minvalue?:
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | QuantityOutputType;
-  /** Maximum Allowed Value (for some types) */
-  maxvalue?:
-    | t.OutputOf<primitives.R4.DateType>
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | t.OutputOf<primitives.R4.InstantType>
-    | t.OutputOf<primitives.R4.TimeType>
-    | t.OutputOf<primitives.R4.DecimalType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.UnsignedIntegerType>
-    | QuantityOutputType;
-  /** Max length for strings */
-  maxLength?: t.OutputOf<primitives.R4.IntegerType>;
-  /** Reference to invariant about presence */
-  condition?: t.OutputOf<primitives.R4.IDType>[];
-  /** Condition that must evaluate to true */
-  constraint?: ElementDefinitionConstraintOutputType[];
-  /** If the element must be supported */
-  mustSupport?: t.OutputOf<primitives.R4.BooleanType>;
-  /** If this modifies the meaning of other elements */
-  isModifier?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Reason that this element is marked as a modifier */
-  isModifierReason?: t.OutputOf<primitives.R4.StringType>;
-  /** Include when _summary = true? */
-  isSummary?: t.OutputOf<primitives.R4.BooleanType>;
-  /** ValueSet details if this is coded */
-  binding?: ElementDefinitionBindingOutputType;
-  /** Map element to another set of definitions */
-  mapping?: ElementDefinitionMappingOutputType[];
+  extension?: Extension[];
+  /** Element values that are used to distinguish the slices */
+  discriminator?: Element[];
+  /** Text description of how slicing works (or not) */
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
+  /** If elements must be in same order as slices */
+  ordered?: boolean;
+  /** Extension of ordered element */
+  _ordered?: Element;
+  /** closed | open | openAtEnd */
+  rules: primitives.R4.code;
+  /** Extension of rules element */
+  _rules?: Element;
 }
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionSlicing: t.Type<
+  ElementDefinitionSlicing
+> = t.recursion<ElementDefinitionSlicing>("ElementDefinitionSlicing", () =>
+  t.intersection([
+    t.type({
+      /** closed | open | openAtEnd */
+      rules: primitives.R4.code
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Element values that are used to distinguish the slices */
+      discriminator: t.array(Element),
+      /** Text description of how slicing works (or not) */
+      description: primitives.R4.string,
+      /** Extension of description element */
+      _description: Element,
+      /** If elements must be in same order as slices */
+      ordered: primitives.R4.boolean,
+      /** Extension of ordered element */
+      _ordered: Element,
+      /** Extension of rules element */
+      _rules: Element
+    })
+  ])
+);
 
-export const ElementDefinition: t.RecursiveType<
-  t.Type<ElementDefinition, ElementDefinitionOutputType>,
-  ElementDefinition,
-  ElementDefinitionOutputType
-> = t.recursion<ElementDefinition, ElementDefinitionOutputType>(
-  "ElementDefinition",
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionSlicingDiscriminator {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** value | exists | pattern | type | profile */
+  type: primitives.R4.code;
+  /** Extension of type element */
+  _type?: Element;
+  /** Path to element value */
+  path: string;
+  /** Extension of path element */
+  _path?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionSlicingDiscriminator: t.Type<
+  ElementDefinitionSlicingDiscriminator
+> = t.recursion<ElementDefinitionSlicingDiscriminator>(
+  "ElementDefinitionSlicingDiscriminator",
   () =>
-    t.intersection(
-      [
-        t.type({
-          /** Path of the element in the hierarchy of elements */
-          path: primitives.R4.string
-        }),
-        t.partial({
-          /** Other names */
-          alias: t.array(primitives.R4.string),
-          /** Base definition information for tools */
-          base: ElementDefinitionBase,
-          /** ValueSet details if this is coded */
-          binding: ElementDefinitionBinding,
-          /** Corresponding codes in terminologies */
-          code: t.array(Coding),
-          /** Comments about the use of this element */
-          comment: primitives.R4.markdown,
-          /** Reference to invariant about presence */
-          condition: t.array(primitives.R4.id),
-          /** Condition that must evaluate to true */
-          constraint: t.array(ElementDefinitionConstraint),
-          /** Reference to definition of content for the element */
-          contentReference: primitives.R4.uri,
-          /** Specified value if missing from instance */
-          defaultvalue: t.union([
-            primitives.R4.base64Binary,
-            primitives.R4.boolean,
-            primitives.R4.canonical,
-            primitives.R4.code,
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.decimal,
-            primitives.R4.id,
-            primitives.R4.instant,
-            primitives.R4.integer,
-            primitives.R4.markdown,
-            primitives.R4.oid,
-            primitives.R4.positiveInt,
-            primitives.R4.string,
-            primitives.R4.time,
-            primitives.R4.unsignedInt,
-            primitives.R4.uri,
-            primitives.R4.url,
-            primitives.R4.uuid,
-            Address,
-            Age,
-            Annotation,
-            Attachment,
-            CodeableConcept,
-            Coding,
-            ContactPoint,
-            Count,
-            Distance,
-            Duration,
-            HumanName,
-            Identifier,
-            Money,
-            Period,
-            Quantity,
-            Range,
-            Ratio,
-            Reference,
-            SampledData,
-            Signature,
-            Timing,
-            ContactDetail,
-            Contributor,
-            DataRequirement,
-            Expression,
-            ParameterDefinition,
-            RelatedArtifact,
-            TriggerDefinition,
-            UsageContext,
-            Dosage
-          ]),
-          /** Full formal definition as narrative text */
-          definition: primitives.R4.markdown,
-          /** Example value (as defined for type) */
-          example: t.array(ElementDefinitionExample),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Value must be exactly this */
-          fixed: t.union([
-            primitives.R4.base64Binary,
-            primitives.R4.boolean,
-            primitives.R4.canonical,
-            primitives.R4.code,
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.decimal,
-            primitives.R4.id,
-            primitives.R4.instant,
-            primitives.R4.integer,
-            primitives.R4.markdown,
-            primitives.R4.oid,
-            primitives.R4.positiveInt,
-            primitives.R4.string,
-            primitives.R4.time,
-            primitives.R4.unsignedInt,
-            primitives.R4.uri,
-            primitives.R4.url,
-            primitives.R4.uuid,
-            Address,
-            Age,
-            Annotation,
-            Attachment,
-            CodeableConcept,
-            Coding,
-            ContactPoint,
-            Count,
-            Distance,
-            Duration,
-            HumanName,
-            Identifier,
-            Money,
-            Period,
-            Quantity,
-            Range,
-            Ratio,
-            Reference,
-            SampledData,
-            Signature,
-            Timing,
-            ContactDetail,
-            Contributor,
-            DataRequirement,
-            Expression,
-            ParameterDefinition,
-            RelatedArtifact,
-            TriggerDefinition,
-            UsageContext,
-            Dosage
-          ]),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** If this modifies the meaning of other elements */
-          isModifier: primitives.R4.boolean,
-          /** Reason that this element is marked as a modifier */
-          isModifierReason: primitives.R4.string,
-          /** Include when _summary = true? */
-          isSummary: primitives.R4.boolean,
-          /** Name for element to display with or prompt for element */
-          label: primitives.R4.string,
-          /** Map element to another set of definitions */
-          mapping: t.array(ElementDefinitionMapping),
-          /** Maximum Cardinality (a number or *) */
-          max: primitives.R4.string,
-          /** Max length for strings */
-          maxLength: primitives.R4.integer,
-          /** Maximum Allowed Value (for some types) */
-          maxvalue: t.union([
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.instant,
-            primitives.R4.time,
-            primitives.R4.decimal,
-            primitives.R4.integer,
-            primitives.R4.positiveInt,
-            primitives.R4.unsignedInt,
-            Quantity
-          ]),
-          /** Implicit meaning when this element is missing */
-          meaningWhenMissing: primitives.R4.markdown,
-          /** Minimum Cardinality */
-          min: primitives.R4.unsignedInt,
-          /** Minimum Allowed Value (for some types) */
-          minvalue: t.union([
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.instant,
-            primitives.R4.time,
-            primitives.R4.decimal,
-            primitives.R4.integer,
-            primitives.R4.positiveInt,
-            primitives.R4.unsignedInt,
-            Quantity
-          ]),
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** If the element must be supported */
-          mustSupport: primitives.R4.boolean,
-          /** What the order of the elements means */
-          orderMeaning: primitives.R4.string,
-          /** Value must have at least these property values */
-          pattern: t.union([
-            primitives.R4.base64Binary,
-            primitives.R4.boolean,
-            primitives.R4.canonical,
-            primitives.R4.code,
-            primitives.R4.date,
-            primitives.R4.dateTime,
-            primitives.R4.decimal,
-            primitives.R4.id,
-            primitives.R4.instant,
-            primitives.R4.integer,
-            primitives.R4.markdown,
-            primitives.R4.oid,
-            primitives.R4.positiveInt,
-            primitives.R4.string,
-            primitives.R4.time,
-            primitives.R4.unsignedInt,
-            primitives.R4.uri,
-            primitives.R4.url,
-            primitives.R4.uuid,
-            Address,
-            Age,
-            Annotation,
-            Attachment,
-            CodeableConcept,
-            Coding,
-            ContactPoint,
-            Count,
-            Distance,
-            Duration,
-            HumanName,
-            Identifier,
-            Money,
-            Period,
-            Quantity,
-            Range,
-            Ratio,
-            Reference,
-            SampledData,
-            Signature,
-            Timing,
-            ContactDetail,
-            Contributor,
-            DataRequirement,
-            Expression,
-            ParameterDefinition,
-            RelatedArtifact,
-            TriggerDefinition,
-            UsageContext,
-            Dosage
-          ]),
-          /** xmlAttr | xmlText | typeAttr | cdaText | xhtml */
-          representation: t.array(primitives.R4.code),
-          /** Why this resource has been created */
-          requirements: primitives.R4.markdown,
-          /** Concise definition for space-constrained presentation */
-          short: primitives.R4.string,
-          /** If this slice definition constrains an inherited slice definition (or not) */
-          sliceIsConstraining: primitives.R4.boolean,
-          /** Name for this particular element (in a set of slices) */
-          sliceName: primitives.R4.string,
-          /** This element is sliced - slices follow */
-          slicing: ElementDefinitionSlicing,
-          /** Data type and Profile for this element */
-          type: t.array(ElementDefinitionType)
-        })
-      ],
-      "ElementDefinition"
-    )
+    t.intersection([
+      t.type({
+        /** value | exists | pattern | type | profile */
+        type: primitives.R4.code,
+        /** Path to element value */
+        path: primitives.R4.string
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extension of type element */
+        _type: Element,
+        /** Extension of path element */
+        _path: Element
+      })
+    ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionBase {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Path that identifies the base element */
+  path: string;
+  /** Extension of path element */
+  _path?: Element;
+  /** Min cardinality of the base element */
+  min: primitives.R4.unsignedInt;
+  /** Extension of min element */
+  _min?: Element;
+  /** Max cardinality of the base element */
+  max: string;
+  /** Extension of max element */
+  _max?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionBase: t.Type<ElementDefinitionBase> = t.recursion<
+  ElementDefinitionBase
+>("ElementDefinitionBase", () =>
+  t.intersection([
+    t.type({
+      /** Path that identifies the base element */
+      path: primitives.R4.string,
+      /** Min cardinality of the base element */
+      min: primitives.R4.unsignedInt,
+      /** Max cardinality of the base element */
+      max: primitives.R4.string
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extension of path element */
+      _path: Element,
+      /** Extension of min element */
+      _min: Element,
+      /** Extension of max element */
+      _max: Element
+    })
+  ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionType {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Data type or Resource (reference to definition) */
+  code: primitives.R4.uri;
+  /** Extension of code element */
+  _code?: Element;
+  /** Profiles (StructureDefinition or IG) - one must apply */
+  profile?: primitives.R4.canonical[];
+  /** Extension of profile element */
+  _profile?: Element[];
+  /** Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply */
+  targetProfile?: primitives.R4.canonical[];
+  /** Extension of targetProfile element */
+  _targetProfile?: Element[];
+  /** contained | referenced | bundled - how aggregated */
+  aggregation?: primitives.R4.code[];
+  /** Extension of aggregation element */
+  _aggregation?: Element[];
+  /** either | independent | specific */
+  versioning?: primitives.R4.code;
+  /** Extension of versioning element */
+  _versioning?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionType: t.Type<ElementDefinitionType> = t.recursion<
+  ElementDefinitionType
+>("ElementDefinitionType", () =>
+  t.intersection([
+    t.type({
+      /** Data type or Resource (reference to definition) */
+      code: primitives.R4.uri
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extension of code element */
+      _code: Element,
+      /** Profiles (StructureDefinition or IG) - one must apply */
+      profile: t.array(primitives.R4.canonical),
+      /** Extension of profile element */
+      _profile: t.array(Element),
+      /** Profile (StructureDefinition or IG) on the Reference/canonical target - one must apply */
+      targetProfile: t.array(primitives.R4.canonical),
+      /** Extension of targetProfile element */
+      _targetProfile: t.array(Element),
+      /** contained | referenced | bundled - how aggregated */
+      aggregation: t.array(primitives.R4.code),
+      /** Extension of aggregation element */
+      _aggregation: t.array(Element),
+      /** either | independent | specific */
+      versioning: primitives.R4.code,
+      /** Extension of versioning element */
+      _versioning: Element
+    })
+  ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionExample {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Describes the purpose of this example */
+  label: string;
+  /** Extension of label element */
+  _label?: Element;
+  /** Value of Example (one of allowed types) */
+  valueBase64Binary: primitives.R4.base64Binary;
+  /** Extension of valueBase64Binary element */
+  _valueBase64Binary?: Element;
+  /** Value of Example (one of allowed types) */
+  valueBoolean: boolean;
+  /** Extension of valueBoolean element */
+  _valueBoolean?: Element;
+  /** Value of Example (one of allowed types) */
+  valueCanonical: primitives.R4.canonical;
+  /** Extension of valueCanonical element */
+  _valueCanonical?: Element;
+  /** Value of Example (one of allowed types) */
+  valueCode: primitives.R4.code;
+  /** Extension of valueCode element */
+  _valueCode?: Element;
+  /** Value of Example (one of allowed types) */
+  valueDate: primitives.R4.date;
+  /** Extension of valueDate element */
+  _valueDate?: Element;
+  /** Value of Example (one of allowed types) */
+  valueDateTime: primitives.R4.dateTime;
+  /** Extension of valueDateTime element */
+  _valueDateTime?: Element;
+  /** Value of Example (one of allowed types) */
+  valueDecimal: primitives.R4.decimal;
+  /** Extension of valueDecimal element */
+  _valueDecimal?: Element;
+  /** Value of Example (one of allowed types) */
+  valueId: primitives.R4.id;
+  /** Extension of valueId element */
+  _valueId?: Element;
+  /** Value of Example (one of allowed types) */
+  valueInstant: primitives.R4.instant;
+  /** Extension of valueInstant element */
+  _valueInstant?: Element;
+  /** Value of Example (one of allowed types) */
+  valueInteger: primitives.R4.integer;
+  /** Extension of valueInteger element */
+  _valueInteger?: Element;
+  /** Value of Example (one of allowed types) */
+  valueMarkdown: primitives.R4.markdown;
+  /** Extension of valueMarkdown element */
+  _valueMarkdown?: Element;
+  /** Value of Example (one of allowed types) */
+  valueOid: primitives.R4.oid;
+  /** Extension of valueOid element */
+  _valueOid?: Element;
+  /** Value of Example (one of allowed types) */
+  valuePositiveInt: primitives.R4.positiveInt;
+  /** Extension of valuePositiveInt element */
+  _valuePositiveInt?: Element;
+  /** Value of Example (one of allowed types) */
+  valueString: string;
+  /** Extension of valueString element */
+  _valueString?: Element;
+  /** Value of Example (one of allowed types) */
+  valueTime: primitives.R4.time;
+  /** Extension of valueTime element */
+  _valueTime?: Element;
+  /** Value of Example (one of allowed types) */
+  valueUnsignedInt: primitives.R4.unsignedInt;
+  /** Extension of valueUnsignedInt element */
+  _valueUnsignedInt?: Element;
+  /** Value of Example (one of allowed types) */
+  valueUri: primitives.R4.uri;
+  /** Extension of valueUri element */
+  _valueUri?: Element;
+  /** Value of Example (one of allowed types) */
+  valueUrl: primitives.R4.url;
+  /** Extension of valueUrl element */
+  _valueUrl?: Element;
+  /** Value of Example (one of allowed types) */
+  valueUuid: primitives.R4.uuid;
+  /** Extension of valueUuid element */
+  _valueUuid?: Element;
+  /** Value of Example (one of allowed types) */
+  valueAddress: Address;
+  /** Value of Example (one of allowed types) */
+  valueAge: Age;
+  /** Value of Example (one of allowed types) */
+  valueAnnotation: Annotation;
+  /** Value of Example (one of allowed types) */
+  valueAttachment: Attachment;
+  /** Value of Example (one of allowed types) */
+  valueCodeableConcept: CodeableConcept;
+  /** Value of Example (one of allowed types) */
+  valueCoding: Coding;
+  /** Value of Example (one of allowed types) */
+  valueContactPoint: ContactPoint;
+  /** Value of Example (one of allowed types) */
+  valueCount: Count;
+  /** Value of Example (one of allowed types) */
+  valueDistance: Distance;
+  /** Value of Example (one of allowed types) */
+  valueDuration: Duration;
+  /** Value of Example (one of allowed types) */
+  valueHumanName: HumanName;
+  /** Value of Example (one of allowed types) */
+  valueIdentifier: Identifier;
+  /** Value of Example (one of allowed types) */
+  valueMoney: Money;
+  /** Value of Example (one of allowed types) */
+  valuePeriod: Period;
+  /** Value of Example (one of allowed types) */
+  valueQuantity: Quantity;
+  /** Value of Example (one of allowed types) */
+  valueRange: Range;
+  /** Value of Example (one of allowed types) */
+  valueRatio: Ratio;
+  /** Value of Example (one of allowed types) */
+  valueReference: Reference;
+  /** Value of Example (one of allowed types) */
+  valueSampledData: SampledData;
+  /** Value of Example (one of allowed types) */
+  valueSignature: Signature;
+  /** Value of Example (one of allowed types) */
+  valueTiming: Timing;
+  /** Value of Example (one of allowed types) */
+  valueContactDetail: ContactDetail;
+  /** Value of Example (one of allowed types) */
+  valueContributor: Contributor;
+  /** Value of Example (one of allowed types) */
+  valueDataRequirement: DataRequirement;
+  /** Value of Example (one of allowed types) */
+  valueExpression: Expression;
+  /** Value of Example (one of allowed types) */
+  valueParameterDefinition: ParameterDefinition;
+  /** Value of Example (one of allowed types) */
+  valueRelatedArtifact: RelatedArtifact;
+  /** Value of Example (one of allowed types) */
+  valueTriggerDefinition: TriggerDefinition;
+  /** Value of Example (one of allowed types) */
+  valueUsageContext: UsageContext;
+  /** Value of Example (one of allowed types) */
+  valueDosage: Dosage;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionExample: t.Type<
+  ElementDefinitionExample
+> = t.recursion<ElementDefinitionExample>("ElementDefinitionExample", () =>
+  t.intersection([
+    t.type({
+      /** Describes the purpose of this example */
+      label: primitives.R4.string,
+      /** Value of Example (one of allowed types) */
+      valueBase64Binary: primitives.R4.base64Binary,
+      /** Value of Example (one of allowed types) */
+      valueBoolean: primitives.R4.boolean,
+      /** Value of Example (one of allowed types) */
+      valueCanonical: primitives.R4.canonical,
+      /** Value of Example (one of allowed types) */
+      valueCode: primitives.R4.code,
+      /** Value of Example (one of allowed types) */
+      valueDate: primitives.R4.date,
+      /** Value of Example (one of allowed types) */
+      valueDateTime: primitives.R4.dateTime,
+      /** Value of Example (one of allowed types) */
+      valueDecimal: primitives.R4.decimal,
+      /** Value of Example (one of allowed types) */
+      valueId: primitives.R4.id,
+      /** Value of Example (one of allowed types) */
+      valueInstant: primitives.R4.instant,
+      /** Value of Example (one of allowed types) */
+      valueInteger: primitives.R4.integer,
+      /** Value of Example (one of allowed types) */
+      valueMarkdown: primitives.R4.markdown,
+      /** Value of Example (one of allowed types) */
+      valueOid: primitives.R4.oid,
+      /** Value of Example (one of allowed types) */
+      valuePositiveInt: primitives.R4.positiveInt,
+      /** Value of Example (one of allowed types) */
+      valueString: primitives.R4.string,
+      /** Value of Example (one of allowed types) */
+      valueTime: primitives.R4.time,
+      /** Value of Example (one of allowed types) */
+      valueUnsignedInt: primitives.R4.unsignedInt,
+      /** Value of Example (one of allowed types) */
+      valueUri: primitives.R4.uri,
+      /** Value of Example (one of allowed types) */
+      valueUrl: primitives.R4.url,
+      /** Value of Example (one of allowed types) */
+      valueUuid: primitives.R4.uuid,
+      /** Value of Example (one of allowed types) */
+      valueAddress: Address,
+      /** Value of Example (one of allowed types) */
+      valueAge: Age,
+      /** Value of Example (one of allowed types) */
+      valueAnnotation: Annotation,
+      /** Value of Example (one of allowed types) */
+      valueAttachment: Attachment,
+      /** Value of Example (one of allowed types) */
+      valueCodeableConcept: CodeableConcept,
+      /** Value of Example (one of allowed types) */
+      valueCoding: Coding,
+      /** Value of Example (one of allowed types) */
+      valueContactPoint: ContactPoint,
+      /** Value of Example (one of allowed types) */
+      valueCount: Count,
+      /** Value of Example (one of allowed types) */
+      valueDistance: Distance,
+      /** Value of Example (one of allowed types) */
+      valueDuration: Duration,
+      /** Value of Example (one of allowed types) */
+      valueHumanName: HumanName,
+      /** Value of Example (one of allowed types) */
+      valueIdentifier: Identifier,
+      /** Value of Example (one of allowed types) */
+      valueMoney: Money,
+      /** Value of Example (one of allowed types) */
+      valuePeriod: Period,
+      /** Value of Example (one of allowed types) */
+      valueQuantity: Quantity,
+      /** Value of Example (one of allowed types) */
+      valueRange: Range,
+      /** Value of Example (one of allowed types) */
+      valueRatio: Ratio,
+      /** Value of Example (one of allowed types) */
+      valueReference: Reference,
+      /** Value of Example (one of allowed types) */
+      valueSampledData: SampledData,
+      /** Value of Example (one of allowed types) */
+      valueSignature: Signature,
+      /** Value of Example (one of allowed types) */
+      valueTiming: Timing,
+      /** Value of Example (one of allowed types) */
+      valueContactDetail: ContactDetail,
+      /** Value of Example (one of allowed types) */
+      valueContributor: Contributor,
+      /** Value of Example (one of allowed types) */
+      valueDataRequirement: DataRequirement,
+      /** Value of Example (one of allowed types) */
+      valueExpression: Expression,
+      /** Value of Example (one of allowed types) */
+      valueParameterDefinition: ParameterDefinition,
+      /** Value of Example (one of allowed types) */
+      valueRelatedArtifact: RelatedArtifact,
+      /** Value of Example (one of allowed types) */
+      valueTriggerDefinition: TriggerDefinition,
+      /** Value of Example (one of allowed types) */
+      valueUsageContext: UsageContext,
+      /** Value of Example (one of allowed types) */
+      valueDosage: Dosage
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extension of label element */
+      _label: Element,
+      /** Extension of valueBase64Binary element */
+      _valueBase64Binary: Element,
+      /** Extension of valueBoolean element */
+      _valueBoolean: Element,
+      /** Extension of valueCanonical element */
+      _valueCanonical: Element,
+      /** Extension of valueCode element */
+      _valueCode: Element,
+      /** Extension of valueDate element */
+      _valueDate: Element,
+      /** Extension of valueDateTime element */
+      _valueDateTime: Element,
+      /** Extension of valueDecimal element */
+      _valueDecimal: Element,
+      /** Extension of valueId element */
+      _valueId: Element,
+      /** Extension of valueInstant element */
+      _valueInstant: Element,
+      /** Extension of valueInteger element */
+      _valueInteger: Element,
+      /** Extension of valueMarkdown element */
+      _valueMarkdown: Element,
+      /** Extension of valueOid element */
+      _valueOid: Element,
+      /** Extension of valuePositiveInt element */
+      _valuePositiveInt: Element,
+      /** Extension of valueString element */
+      _valueString: Element,
+      /** Extension of valueTime element */
+      _valueTime: Element,
+      /** Extension of valueUnsignedInt element */
+      _valueUnsignedInt: Element,
+      /** Extension of valueUri element */
+      _valueUri: Element,
+      /** Extension of valueUrl element */
+      _valueUrl: Element,
+      /** Extension of valueUuid element */
+      _valueUuid: Element
+    })
+  ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionConstraint {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Target of 'condition' reference above */
+  key: primitives.R4.id;
+  /** Extension of key element */
+  _key?: Element;
+  /** Why this constraint is necessary or appropriate */
+  requirements?: string;
+  /** Extension of requirements element */
+  _requirements?: Element;
+  /** error | warning */
+  severity: primitives.R4.code;
+  /** Extension of severity element */
+  _severity?: Element;
+  /** Human description of constraint */
+  human: string;
+  /** Extension of human element */
+  _human?: Element;
+  /** FHIRPath expression of constraint */
+  expression?: string;
+  /** Extension of expression element */
+  _expression?: Element;
+  /** XPath expression of constraint */
+  xpath?: string;
+  /** Extension of xpath element */
+  _xpath?: Element;
+  /** Reference to original source of constraint */
+  source?: primitives.R4.canonical;
+  /** Extension of source element */
+  _source?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionConstraint: t.Type<
+  ElementDefinitionConstraint
+> = t.recursion<ElementDefinitionConstraint>(
+  "ElementDefinitionConstraint",
+  () =>
+    t.intersection([
+      t.type({
+        /** Target of 'condition' reference above */
+        key: primitives.R4.id,
+        /** error | warning */
+        severity: primitives.R4.code,
+        /** Human description of constraint */
+        human: primitives.R4.string
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extension of key element */
+        _key: Element,
+        /** Why this constraint is necessary or appropriate */
+        requirements: primitives.R4.string,
+        /** Extension of requirements element */
+        _requirements: Element,
+        /** Extension of severity element */
+        _severity: Element,
+        /** Extension of human element */
+        _human: Element,
+        /** FHIRPath expression of constraint */
+        expression: primitives.R4.string,
+        /** Extension of expression element */
+        _expression: Element,
+        /** XPath expression of constraint */
+        xpath: primitives.R4.string,
+        /** Extension of xpath element */
+        _xpath: Element,
+        /** Reference to original source of constraint */
+        source: primitives.R4.canonical,
+        /** Extension of source element */
+        _source: Element
+      })
+    ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionBinding {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** required | extensible | preferred | example */
+  strength: primitives.R4.code;
+  /** Extension of strength element */
+  _strength?: Element;
+  /** Human explanation of the value set */
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
+  /** Source of value set */
+  valueSet?: primitives.R4.canonical;
+  /** Extension of valueSet element */
+  _valueSet?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionBinding: t.Type<
+  ElementDefinitionBinding
+> = t.recursion<ElementDefinitionBinding>("ElementDefinitionBinding", () =>
+  t.intersection([
+    t.type({
+      /** required | extensible | preferred | example */
+      strength: primitives.R4.code
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extension of strength element */
+      _strength: Element,
+      /** Human explanation of the value set */
+      description: primitives.R4.string,
+      /** Extension of description element */
+      _description: Element,
+      /** Source of value set */
+      valueSet: primitives.R4.canonical,
+      /** Extension of valueSet element */
+      _valueSet: Element
+    })
+  ])
+);
+
+/**
+ * Unique id for inter-element referencing
+ */
+export interface ElementDefinitionMapping {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Reference to mapping declaration */
+  identity: primitives.R4.id;
+  /** Extension of identity element */
+  _identity?: Element;
+  /** Computable language of mapping */
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
+  /** Details of the mapping */
+  map: string;
+  /** Extension of map element */
+  _map?: Element;
+  /** Comments about the mapping or its use */
+  comment?: string;
+  /** Extension of comment element */
+  _comment?: Element;
+}
+/**
+ * Unique id for inter-element referencing
+ */
+export const ElementDefinitionMapping: t.Type<
+  ElementDefinitionMapping
+> = t.recursion<ElementDefinitionMapping>("ElementDefinitionMapping", () =>
+  t.intersection([
+    t.type({
+      /** Reference to mapping declaration */
+      identity: primitives.R4.id,
+      /** Details of the mapping */
+      map: primitives.R4.string
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extension of identity element */
+      _identity: Element,
+      /** Computable language of mapping */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Extension of map element */
+      _map: Element,
+      /** Comments about the mapping or its use */
+      comment: primitives.R4.string,
+      /** Extension of comment element */
+      _comment: Element
+    })
+  ])
 );

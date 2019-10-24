@@ -4,214 +4,36 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Money, MoneyOutputType } from "./Money";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-
-/**
- * Exceptions for patient payments
- */
-export interface CoverageCostToBeneficiaryException {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Exception category */
-  type: CodeableConcept;
-  /** The effective period of the exception */
-  period?: Period;
-}
-
-export interface CoverageCostToBeneficiaryExceptionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Exception category */
-  type: CodeableConceptOutputType;
-  /** The effective period of the exception */
-  period?: PeriodOutputType;
-}
-
-export const CoverageCostToBeneficiaryException: t.RecursiveType<
-  t.Type<
-    CoverageCostToBeneficiaryException,
-    CoverageCostToBeneficiaryExceptionOutputType
-  >,
-  CoverageCostToBeneficiaryException,
-  CoverageCostToBeneficiaryExceptionOutputType
-> = t.recursion<
-  CoverageCostToBeneficiaryException,
-  CoverageCostToBeneficiaryExceptionOutputType
->("CoverageCostToBeneficiaryException", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Exception category */
-        type: CodeableConcept
-      }),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension),
-        /** The effective period of the exception */
-        period: Period
-      })
-    ],
-    "CoverageCostToBeneficiaryException"
-  )
-);
-
-/**
- * Patient payments for services/products
- */
-export interface CoverageCostToBeneficiary {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Cost category */
-  type?: CodeableConcept;
-  /** The amount or percentage due from the beneficiary */
-  value: Quantity | Money;
-  /** Exceptions for patient payments */
-  exception?: CoverageCostToBeneficiaryException[];
-}
-
-export interface CoverageCostToBeneficiaryOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Cost category */
-  type?: CodeableConceptOutputType;
-  /** The amount or percentage due from the beneficiary */
-  value: QuantityOutputType | MoneyOutputType;
-  /** Exceptions for patient payments */
-  exception?: CoverageCostToBeneficiaryExceptionOutputType[];
-}
-
-export const CoverageCostToBeneficiary: t.RecursiveType<
-  t.Type<CoverageCostToBeneficiary, CoverageCostToBeneficiaryOutputType>,
-  CoverageCostToBeneficiary,
-  CoverageCostToBeneficiaryOutputType
-> = t.recursion<CoverageCostToBeneficiary, CoverageCostToBeneficiaryOutputType>(
-  "CoverageCostToBeneficiary",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** The amount or percentage due from the beneficiary */
-          value: t.union([Quantity, Money])
-        }),
-        t.partial({
-          /** Exceptions for patient payments */
-          exception: t.array(CoverageCostToBeneficiaryException),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Cost category */
-          type: CodeableConcept
-        })
-      ],
-      "CoverageCostToBeneficiary"
-    )
-);
-
-/**
- * Additional coverage classifications
- */
-export interface CoverageClass {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Type of class such as 'group' or 'plan' */
-  type: CodeableConcept;
-  /** Value associated with the type */
-  value: t.TypeOf<primitives.R4.StringType>;
-  /** Human readable description of the type and value */
-  name?: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface CoverageClassOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Type of class such as 'group' or 'plan' */
-  type: CodeableConceptOutputType;
-  /** Value associated with the type */
-  value: t.OutputOf<primitives.R4.StringType>;
-  /** Human readable description of the type and value */
-  name?: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const CoverageClass: t.RecursiveType<
-  t.Type<CoverageClass, CoverageClassOutputType>,
-  CoverageClass,
-  CoverageClassOutputType
-> = t.recursion<CoverageClass, CoverageClassOutputType>("CoverageClass", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Type of class such as 'group' or 'plan' */
-        type: CodeableConcept,
-        /** Value associated with the type */
-        value: primitives.R4.string
-      }),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension),
-        /** Human readable description of the type and value */
-        name: primitives.R4.string
-      })
-    ],
-    "CoverageClass"
-  )
-);
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Money } from "./Money";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Insurance or medical plan or a payment agreement
  */
 export interface Coverage {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -223,7 +45,9 @@ export interface Coverage {
   /** Business Identifier for the coverage */
   identifier?: Identifier[];
   /** active | cancelled | draft | entered-in-error */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** Coverage category such as medical or accident */
   type?: CodeableConcept;
   /** Owner of the policy */
@@ -231,146 +55,257 @@ export interface Coverage {
   /** Subscriber to the policy */
   subscriber?: Reference;
   /** ID assigned to the subscriber */
-  subscriberId?: t.TypeOf<primitives.R4.StringType>;
+  subscriberId?: string;
+  /** Extension of subscriberId element */
+  _subscriberId?: Element;
   /** Plan beneficiary */
   beneficiary: Reference;
   /** Dependent number */
-  dependent?: t.TypeOf<primitives.R4.StringType>;
+  dependent?: string;
+  /** Extension of dependent element */
+  _dependent?: Element;
   /** Beneficiary relationship to the subscriber */
   relationship?: CodeableConcept;
   /** Coverage start and end dates */
   period?: Period;
   /** Issuer of the policy */
   payor: Reference[];
-  /** Additional coverage classifications */
-  class?: CoverageClass[];
   /** Relative order of the coverage */
-  order?: t.TypeOf<primitives.R4.PositiveIntegerType>;
+  order?: primitives.R4.positiveInt;
+  /** Extension of order element */
+  _order?: Element;
   /** Insurer network */
-  network?: t.TypeOf<primitives.R4.StringType>;
-  /** Patient payments for services/products */
-  costToBeneficiary?: CoverageCostToBeneficiary[];
+  network?: string;
+  /** Extension of network element */
+  _network?: Element;
   /** Reimbursement to insurer */
-  subrogation?: t.TypeOf<primitives.R4.BooleanType>;
+  subrogation?: boolean;
+  /** Extension of subrogation element */
+  _subrogation?: Element;
   /** Contract details */
   contract?: Reference[];
 }
-
-export interface CoverageOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Business Identifier for the coverage */
-  identifier?: IdentifierOutputType[];
-  /** active | cancelled | draft | entered-in-error */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Coverage category such as medical or accident */
-  type?: CodeableConceptOutputType;
-  /** Owner of the policy */
-  policyHolder?: ReferenceOutputType;
-  /** Subscriber to the policy */
-  subscriber?: ReferenceOutputType;
-  /** ID assigned to the subscriber */
-  subscriberId?: t.OutputOf<primitives.R4.StringType>;
-  /** Plan beneficiary */
-  beneficiary: ReferenceOutputType;
-  /** Dependent number */
-  dependent?: t.OutputOf<primitives.R4.StringType>;
-  /** Beneficiary relationship to the subscriber */
-  relationship?: CodeableConceptOutputType;
-  /** Coverage start and end dates */
-  period?: PeriodOutputType;
-  /** Issuer of the policy */
-  payor: ReferenceOutputType[];
-  /** Additional coverage classifications */
-  class?: CoverageClassOutputType[];
-  /** Relative order of the coverage */
-  order?: t.OutputOf<primitives.R4.PositiveIntegerType>;
-  /** Insurer network */
-  network?: t.OutputOf<primitives.R4.StringType>;
-  /** Patient payments for services/products */
-  costToBeneficiary?: CoverageCostToBeneficiaryOutputType[];
-  /** Reimbursement to insurer */
-  subrogation?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Contract details */
-  contract?: ReferenceOutputType[];
-}
-
-export const Coverage: t.RecursiveType<
-  t.Type<Coverage, CoverageOutputType>,
-  Coverage,
-  CoverageOutputType
-> = t.recursion<Coverage, CoverageOutputType>("Coverage", () =>
-  t.intersection(
-    [
+/**
+ * Insurance or medical plan or a payment agreement
+ */
+export const Coverage: t.Type<Coverage> = t.recursion<Coverage>(
+  "Coverage",
+  () =>
+    t.intersection([
       t.type({
+        /** active | cancelled | draft | entered-in-error */
+        status: primitives.R4.code,
         /** Plan beneficiary */
         beneficiary: Reference,
         /** Issuer of the policy */
-        payor: t.array(Reference),
-        /** active | cancelled | draft | entered-in-error */
-        status: primitives.R4.code
+        payor: t.array(Reference)
       }),
       t.partial({
-        /** Additional coverage classifications */
-        class: t.array(CoverageClass),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Contract details */
-        contract: t.array(Reference),
-        /** Patient payments for services/products */
-        costToBeneficiary: t.array(CoverageCostToBeneficiary),
-        /** Dependent number */
-        dependent: primitives.R4.string,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** Business Identifier for the coverage */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored */
         modifierExtension: t.array(Extension),
-        /** Insurer network */
-        network: primitives.R4.string,
-        /** Relative order of the coverage */
-        order: primitives.R4.positiveInt,
-        /** Coverage start and end dates */
-        period: Period,
+        /** Business Identifier for the coverage */
+        identifier: t.array(Identifier),
+        /** Extension of status element */
+        _status: Element,
+        /** Coverage category such as medical or accident */
+        type: CodeableConcept,
         /** Owner of the policy */
         policyHolder: Reference,
-        /** Beneficiary relationship to the subscriber */
-        relationship: CodeableConcept,
-        /** Reimbursement to insurer */
-        subrogation: primitives.R4.boolean,
         /** Subscriber to the policy */
         subscriber: Reference,
         /** ID assigned to the subscriber */
         subscriberId: primitives.R4.string,
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative,
-        /** Coverage category such as medical or accident */
-        type: CodeableConcept
+        /** Extension of subscriberId element */
+        _subscriberId: Element,
+        /** Dependent number */
+        dependent: primitives.R4.string,
+        /** Extension of dependent element */
+        _dependent: Element,
+        /** Beneficiary relationship to the subscriber */
+        relationship: CodeableConcept,
+        /** Coverage start and end dates */
+        period: Period,
+        /** Relative order of the coverage */
+        order: primitives.R4.positiveInt,
+        /** Extension of order element */
+        _order: Element,
+        /** Insurer network */
+        network: primitives.R4.string,
+        /** Extension of network element */
+        _network: Element,
+        /** Reimbursement to insurer */
+        subrogation: primitives.R4.boolean,
+        /** Extension of subrogation element */
+        _subrogation: Element,
+        /** Contract details */
+        contract: t.array(Reference)
       })
-    ],
-    "Coverage"
-  )
+    ])
+);
+
+/**
+ * Additional coverage classifications
+ */
+export interface CoverageClass {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Type of class such as 'group' or 'plan' */
+  type: CodeableConcept;
+  /** Value associated with the type */
+  value: string;
+  /** Extension of value element */
+  _value?: Element;
+  /** Human readable description of the type and value */
+  name?: string;
+  /** Extension of name element */
+  _name?: Element;
+}
+/**
+ * Additional coverage classifications
+ */
+export const CoverageClass: t.Type<CoverageClass> = t.recursion<CoverageClass>(
+  "CoverageClass",
+  () =>
+    t.intersection([
+      t.type({
+        /** Type of class such as 'group' or 'plan' */
+        type: CodeableConcept,
+        /** Value associated with the type */
+        value: primitives.R4.string
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** Extension of value element */
+        _value: Element,
+        /** Human readable description of the type and value */
+        name: primitives.R4.string,
+        /** Extension of name element */
+        _name: Element
+      })
+    ])
+);
+
+/**
+ * Patient payments for services/products
+ */
+export interface CoverageCostToBeneficiary {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Cost category */
+  type?: CodeableConcept;
+  /** The amount or percentage due from the beneficiary */
+  valueQuantity: Quantity;
+  /** The amount or percentage due from the beneficiary */
+  valueMoney: Money;
+}
+/**
+ * Patient payments for services/products
+ */
+export const CoverageCostToBeneficiary: t.Type<
+  CoverageCostToBeneficiary
+> = t.recursion<CoverageCostToBeneficiary>("CoverageCostToBeneficiary", () =>
+  t.intersection([
+    t.type({
+      /** The amount or percentage due from the beneficiary */
+      valueQuantity: Quantity,
+      /** The amount or percentage due from the beneficiary */
+      valueMoney: Money
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Cost category */
+      type: CodeableConcept
+    })
+  ])
+);
+
+/**
+ * Exceptions for patient payments
+ */
+export interface CoverageCostToBeneficiaryException {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Exception category */
+  type: CodeableConcept;
+  /** The effective period of the exception */
+  period?: Period;
+}
+/**
+ * Exceptions for patient payments
+ */
+export const CoverageCostToBeneficiaryException: t.Type<
+  CoverageCostToBeneficiaryException
+> = t.recursion<CoverageCostToBeneficiaryException>(
+  "CoverageCostToBeneficiaryException",
+  () =>
+    t.intersection([
+      t.type({
+        /** Exception category */
+        type: CodeableConcept
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** The effective period of the exception */
+        period: Period
+      })
+    ])
 );

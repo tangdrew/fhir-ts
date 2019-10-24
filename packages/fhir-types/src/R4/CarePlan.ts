@@ -4,254 +4,37 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-import { Timing, TimingOutputType } from "./Timing";
-
-/**
- * In-line definition of activity
- */
-export interface CarePlanActivityDetail {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Kind of resource */
-  kind?: t.TypeOf<primitives.R4.CodeType>;
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.TypeOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.TypeOf<primitives.R4.URIType>[];
-  /** Detail type of activity */
-  code?: CodeableConcept;
-  /** Why activity should be done or why activity was prohibited */
-  reasonCode?: CodeableConcept[];
-  /** Why activity is needed */
-  reasonReference?: Reference[];
-  /** Goals this activity relates to */
-  goal?: Reference[];
-  /** not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error */
-  status: t.TypeOf<primitives.R4.CodeType>;
-  /** Reason for current status */
-  statusReason?: CodeableConcept;
-  /** If true, activity is prohibiting action */
-  doNotPerform?: t.TypeOf<primitives.R4.BooleanType>;
-  /** When activity is to occur */
-  scheduled?: Timing | Period | t.TypeOf<primitives.R4.StringType>;
-  /** Where it should happen */
-  location?: Reference;
-  /** Who will be responsible? */
-  performer?: Reference[];
-  /** What is to be administered/supplied */
-  product?: CodeableConcept | Reference;
-  /** How to consume/day? */
-  dailyAmount?: Quantity;
-  /** How much to administer/supply/consume */
-  quantity?: Quantity;
-  /** Extra info describing activity to perform */
-  description?: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface CarePlanActivityDetailOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Kind of resource */
-  kind?: t.OutputOf<primitives.R4.CodeType>;
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.OutputOf<primitives.R4.URIType>[];
-  /** Detail type of activity */
-  code?: CodeableConceptOutputType;
-  /** Why activity should be done or why activity was prohibited */
-  reasonCode?: CodeableConceptOutputType[];
-  /** Why activity is needed */
-  reasonReference?: ReferenceOutputType[];
-  /** Goals this activity relates to */
-  goal?: ReferenceOutputType[];
-  /** not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Reason for current status */
-  statusReason?: CodeableConceptOutputType;
-  /** If true, activity is prohibiting action */
-  doNotPerform?: t.OutputOf<primitives.R4.BooleanType>;
-  /** When activity is to occur */
-  scheduled?:
-    | TimingOutputType
-    | PeriodOutputType
-    | t.OutputOf<primitives.R4.StringType>;
-  /** Where it should happen */
-  location?: ReferenceOutputType;
-  /** Who will be responsible? */
-  performer?: ReferenceOutputType[];
-  /** What is to be administered/supplied */
-  product?: CodeableConceptOutputType | ReferenceOutputType;
-  /** How to consume/day? */
-  dailyAmount?: QuantityOutputType;
-  /** How much to administer/supply/consume */
-  quantity?: QuantityOutputType;
-  /** Extra info describing activity to perform */
-  description?: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const CarePlanActivityDetail: t.RecursiveType<
-  t.Type<CarePlanActivityDetail, CarePlanActivityDetailOutputType>,
-  CarePlanActivityDetail,
-  CarePlanActivityDetailOutputType
-> = t.recursion<CarePlanActivityDetail, CarePlanActivityDetailOutputType>(
-  "CarePlanActivityDetail",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error */
-          status: primitives.R4.code
-        }),
-        t.partial({
-          /** Detail type of activity */
-          code: CodeableConcept,
-          /** How to consume/day? */
-          dailyAmount: Quantity,
-          /** Extra info describing activity to perform */
-          description: primitives.R4.string,
-          /** If true, activity is prohibiting action */
-          doNotPerform: primitives.R4.boolean,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Goals this activity relates to */
-          goal: t.array(Reference),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Instantiates FHIR protocol or definition */
-          instantiatesCanonical: t.array(primitives.R4.canonical),
-          /** Instantiates external protocol or definition */
-          instantiatesUri: t.array(primitives.R4.uri),
-          /** Kind of resource */
-          kind: primitives.R4.code,
-          /** Where it should happen */
-          location: Reference,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Who will be responsible? */
-          performer: t.array(Reference),
-          /** What is to be administered/supplied */
-          product: t.union([CodeableConcept, Reference]),
-          /** How much to administer/supply/consume */
-          quantity: Quantity,
-          /** Why activity should be done or why activity was prohibited */
-          reasonCode: t.array(CodeableConcept),
-          /** Why activity is needed */
-          reasonReference: t.array(Reference),
-          /** When activity is to occur */
-          scheduled: t.union([Timing, Period, primitives.R4.string]),
-          /** Reason for current status */
-          statusReason: CodeableConcept
-        })
-      ],
-      "CarePlanActivityDetail"
-    )
-);
-
-/**
- * Action to occur as part of plan
- */
-export interface CarePlanActivity {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Results of the activity */
-  outcomeCodeableConcept?: CodeableConcept[];
-  /** Appointment, Encounter, Procedure, etc. */
-  outcomeReference?: Reference[];
-  /** Comments about the activity status/progress */
-  progress?: Annotation[];
-  /** Activity details defined in specific resource */
-  reference?: Reference;
-  /** In-line definition of activity */
-  detail?: CarePlanActivityDetail;
-}
-
-export interface CarePlanActivityOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Results of the activity */
-  outcomeCodeableConcept?: CodeableConceptOutputType[];
-  /** Appointment, Encounter, Procedure, etc. */
-  outcomeReference?: ReferenceOutputType[];
-  /** Comments about the activity status/progress */
-  progress?: AnnotationOutputType[];
-  /** Activity details defined in specific resource */
-  reference?: ReferenceOutputType;
-  /** In-line definition of activity */
-  detail?: CarePlanActivityDetailOutputType;
-}
-
-export const CarePlanActivity: t.RecursiveType<
-  t.Type<CarePlanActivity, CarePlanActivityOutputType>,
-  CarePlanActivity,
-  CarePlanActivityOutputType
-> = t.recursion<CarePlanActivity, CarePlanActivityOutputType>(
-  "CarePlanActivity",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** In-line definition of activity */
-          detail: CarePlanActivityDetail,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Results of the activity */
-          outcomeCodeableConcept: t.array(CodeableConcept),
-          /** Appointment, Encounter, Procedure, etc. */
-          outcomeReference: t.array(Reference),
-          /** Comments about the activity status/progress */
-          progress: t.array(Annotation),
-          /** Activity details defined in specific resource */
-          reference: Reference
-        })
-      ],
-      "CarePlanActivity"
-    )
-);
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
+import { Timing } from "./Timing";
 
 /**
  * Healthcare plan for patient or group
  */
 export interface CarePlan {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -263,9 +46,13 @@ export interface CarePlan {
   /** External Ids for this plan */
   identifier?: Identifier[];
   /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.TypeOf<primitives.R4.CanonicalType>[];
+  instantiatesCanonical?: primitives.R4.canonical[];
+  /** Extension of instantiatesCanonical element */
+  _instantiatesCanonical?: Element[];
   /** Instantiates external protocol or definition */
-  instantiatesUri?: t.TypeOf<primitives.R4.URIType>[];
+  instantiatesUri?: primitives.R4.uri[];
+  /** Extension of instantiatesUri element */
+  _instantiatesUri?: Element[];
   /** Fulfills CarePlan */
   basedOn?: Reference[];
   /** CarePlan replaced by this CarePlan */
@@ -273,15 +60,23 @@ export interface CarePlan {
   /** Part of referenced CarePlan */
   partOf?: Reference[];
   /** draft | active | suspended | completed | entered-in-error | cancelled | unknown */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** proposal | plan | order | option */
-  intent: t.TypeOf<primitives.R4.CodeType>;
+  intent: primitives.R4.code;
+  /** Extension of intent element */
+  _intent?: Element;
   /** Type of plan */
   category?: CodeableConcept[];
   /** Human-friendly name for the care plan */
-  title?: t.TypeOf<primitives.R4.StringType>;
+  title?: string;
+  /** Extension of title element */
+  _title?: Element;
   /** Summary of nature of plan */
-  description?: t.TypeOf<primitives.R4.StringType>;
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
   /** Who the care plan is for */
   subject: Reference;
   /** Encounter created as part of */
@@ -289,7 +84,9 @@ export interface CarePlan {
   /** Time period plan covers */
   period?: Period;
   /** Date record was first recorded */
-  created?: t.TypeOf<primitives.R4.DateTimeType>;
+  created?: primitives.R4.dateTime;
+  /** Extension of created element */
+  _created?: Element;
   /** Who is the designated responsible party */
   author?: Reference;
   /** Who provided the content of the care plan */
@@ -302,151 +99,292 @@ export interface CarePlan {
   supportingInfo?: Reference[];
   /** Desired outcome of plan */
   goal?: Reference[];
-  /** Action to occur as part of plan */
-  activity?: CarePlanActivity[];
   /** Comments about the plan */
   note?: Annotation[];
 }
-
-export interface CarePlanOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** External Ids for this plan */
-  identifier?: IdentifierOutputType[];
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.OutputOf<primitives.R4.URIType>[];
-  /** Fulfills CarePlan */
-  basedOn?: ReferenceOutputType[];
-  /** CarePlan replaced by this CarePlan */
-  replaces?: ReferenceOutputType[];
-  /** Part of referenced CarePlan */
-  partOf?: ReferenceOutputType[];
-  /** draft | active | suspended | completed | entered-in-error | cancelled | unknown */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** proposal | plan | order | option */
-  intent: t.OutputOf<primitives.R4.CodeType>;
-  /** Type of plan */
-  category?: CodeableConceptOutputType[];
-  /** Human-friendly name for the care plan */
-  title?: t.OutputOf<primitives.R4.StringType>;
-  /** Summary of nature of plan */
-  description?: t.OutputOf<primitives.R4.StringType>;
-  /** Who the care plan is for */
-  subject: ReferenceOutputType;
-  /** Encounter created as part of */
-  encounter?: ReferenceOutputType;
-  /** Time period plan covers */
-  period?: PeriodOutputType;
-  /** Date record was first recorded */
-  created?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Who is the designated responsible party */
-  author?: ReferenceOutputType;
-  /** Who provided the content of the care plan */
-  contributor?: ReferenceOutputType[];
-  /** Who's involved in plan? */
-  careTeam?: ReferenceOutputType[];
-  /** Health issues this plan addresses */
-  addresses?: ReferenceOutputType[];
-  /** Information considered as part of plan */
-  supportingInfo?: ReferenceOutputType[];
-  /** Desired outcome of plan */
-  goal?: ReferenceOutputType[];
-  /** Action to occur as part of plan */
-  activity?: CarePlanActivityOutputType[];
-  /** Comments about the plan */
-  note?: AnnotationOutputType[];
-}
-
-export const CarePlan: t.RecursiveType<
-  t.Type<CarePlan, CarePlanOutputType>,
-  CarePlan,
-  CarePlanOutputType
-> = t.recursion<CarePlan, CarePlanOutputType>("CarePlan", () =>
-  t.intersection(
-    [
+/**
+ * Healthcare plan for patient or group
+ */
+export const CarePlan: t.Type<CarePlan> = t.recursion<CarePlan>(
+  "CarePlan",
+  () =>
+    t.intersection([
       t.type({
-        /** proposal | plan | order | option */
-        intent: primitives.R4.code,
         /** draft | active | suspended | completed | entered-in-error | cancelled | unknown */
         status: primitives.R4.code,
+        /** proposal | plan | order | option */
+        intent: primitives.R4.code,
         /** Who the care plan is for */
         subject: Reference
       }),
       t.partial({
-        /** Action to occur as part of plan */
-        activity: t.array(CarePlanActivity),
-        /** Health issues this plan addresses */
-        addresses: t.array(Reference),
-        /** Who is the designated responsible party */
-        author: Reference,
-        /** Fulfills CarePlan */
-        basedOn: t.array(Reference),
-        /** Who's involved in plan? */
-        careTeam: t.array(Reference),
-        /** Type of plan */
-        category: t.array(CodeableConcept),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Who provided the content of the care plan */
-        contributor: t.array(Reference),
-        /** Date record was first recorded */
-        created: primitives.R4.dateTime,
-        /** Summary of nature of plan */
-        description: primitives.R4.string,
-        /** Encounter created as part of */
-        encounter: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Desired outcome of plan */
-        goal: t.array(Reference),
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** External Ids for this plan */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Instantiates FHIR protocol or definition */
-        instantiatesCanonical: t.array(primitives.R4.canonical),
-        /** Instantiates external protocol or definition */
-        instantiatesUri: t.array(primitives.R4.uri),
-        /** Language of the resource content */
-        language: primitives.R4.code,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
-        /** Extensions that cannot be ignored */
-        modifierExtension: t.array(Extension),
-        /** Comments about the plan */
-        note: t.array(Annotation),
-        /** Part of referenced CarePlan */
-        partOf: t.array(Reference),
-        /** Time period plan covers */
-        period: Period,
-        /** CarePlan replaced by this CarePlan */
-        replaces: t.array(Reference),
-        /** Information considered as part of plan */
-        supportingInfo: t.array(Reference),
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
         /** Text summary of the resource, for human interpretation */
         text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored */
+        modifierExtension: t.array(Extension),
+        /** External Ids for this plan */
+        identifier: t.array(Identifier),
+        /** Instantiates FHIR protocol or definition */
+        instantiatesCanonical: t.array(primitives.R4.canonical),
+        /** Extension of instantiatesCanonical element */
+        _instantiatesCanonical: t.array(Element),
+        /** Instantiates external protocol or definition */
+        instantiatesUri: t.array(primitives.R4.uri),
+        /** Extension of instantiatesUri element */
+        _instantiatesUri: t.array(Element),
+        /** Fulfills CarePlan */
+        basedOn: t.array(Reference),
+        /** CarePlan replaced by this CarePlan */
+        replaces: t.array(Reference),
+        /** Part of referenced CarePlan */
+        partOf: t.array(Reference),
+        /** Extension of status element */
+        _status: Element,
+        /** Extension of intent element */
+        _intent: Element,
+        /** Type of plan */
+        category: t.array(CodeableConcept),
         /** Human-friendly name for the care plan */
-        title: primitives.R4.string
+        title: primitives.R4.string,
+        /** Extension of title element */
+        _title: Element,
+        /** Summary of nature of plan */
+        description: primitives.R4.string,
+        /** Extension of description element */
+        _description: Element,
+        /** Encounter created as part of */
+        encounter: Reference,
+        /** Time period plan covers */
+        period: Period,
+        /** Date record was first recorded */
+        created: primitives.R4.dateTime,
+        /** Extension of created element */
+        _created: Element,
+        /** Who is the designated responsible party */
+        author: Reference,
+        /** Who provided the content of the care plan */
+        contributor: t.array(Reference),
+        /** Who's involved in plan? */
+        careTeam: t.array(Reference),
+        /** Health issues this plan addresses */
+        addresses: t.array(Reference),
+        /** Information considered as part of plan */
+        supportingInfo: t.array(Reference),
+        /** Desired outcome of plan */
+        goal: t.array(Reference),
+        /** Comments about the plan */
+        note: t.array(Annotation)
       })
-    ],
-    "CarePlan"
-  )
+    ])
+);
+
+/**
+ * Action to occur as part of plan
+ */
+export interface CarePlanActivity {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Results of the activity */
+  outcomeCodeableConcept?: CodeableConcept[];
+  /** Appointment, Encounter, Procedure, etc. */
+  outcomeReference?: Reference[];
+  /** Comments about the activity status/progress */
+  progress?: Annotation[];
+  /** Activity details defined in specific resource */
+  reference?: Reference;
+}
+/**
+ * Action to occur as part of plan
+ */
+export const CarePlanActivity: t.Type<CarePlanActivity> = t.recursion<
+  CarePlanActivity
+>("CarePlanActivity", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Results of the activity */
+      outcomeCodeableConcept: t.array(CodeableConcept),
+      /** Appointment, Encounter, Procedure, etc. */
+      outcomeReference: t.array(Reference),
+      /** Comments about the activity status/progress */
+      progress: t.array(Annotation),
+      /** Activity details defined in specific resource */
+      reference: Reference
+    })
+  ])
+);
+
+/**
+ * In-line definition of activity
+ */
+export interface CarePlanActivityDetail {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Kind of resource */
+  kind?: primitives.R4.code;
+  /** Extension of kind element */
+  _kind?: Element;
+  /** Instantiates FHIR protocol or definition */
+  instantiatesCanonical?: primitives.R4.canonical[];
+  /** Extension of instantiatesCanonical element */
+  _instantiatesCanonical?: Element[];
+  /** Instantiates external protocol or definition */
+  instantiatesUri?: primitives.R4.uri[];
+  /** Extension of instantiatesUri element */
+  _instantiatesUri?: Element[];
+  /** Detail type of activity */
+  code?: CodeableConcept;
+  /** Why activity should be done or why activity was prohibited */
+  reasonCode?: CodeableConcept[];
+  /** Why activity is needed */
+  reasonReference?: Reference[];
+  /** Goals this activity relates to */
+  goal?: Reference[];
+  /** not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error */
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
+  /** Reason for current status */
+  statusReason?: CodeableConcept;
+  /** If true, activity is prohibiting action */
+  doNotPerform?: boolean;
+  /** Extension of doNotPerform element */
+  _doNotPerform?: Element;
+  /** When activity is to occur */
+  scheduledTiming?: Timing;
+  /** When activity is to occur */
+  scheduledPeriod?: Period;
+  /** When activity is to occur */
+  scheduledString?: string;
+  /** Extension of scheduledString element */
+  _scheduledString?: Element;
+  /** Where it should happen */
+  location?: Reference;
+  /** Who will be responsible? */
+  performer?: Reference[];
+  /** What is to be administered/supplied */
+  productCodeableConcept?: CodeableConcept;
+  /** What is to be administered/supplied */
+  productReference?: Reference;
+  /** How to consume/day? */
+  dailyAmount?: Quantity;
+  /** How much to administer/supply/consume */
+  quantity?: Quantity;
+  /** Extra info describing activity to perform */
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
+}
+/**
+ * In-line definition of activity
+ */
+export const CarePlanActivityDetail: t.Type<
+  CarePlanActivityDetail
+> = t.recursion<CarePlanActivityDetail>("CarePlanActivityDetail", () =>
+  t.intersection([
+    t.type({
+      /** not-started | scheduled | in-progress | on-hold | completed | cancelled | stopped | unknown | entered-in-error */
+      status: primitives.R4.code
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Kind of resource */
+      kind: primitives.R4.code,
+      /** Extension of kind element */
+      _kind: Element,
+      /** Instantiates FHIR protocol or definition */
+      instantiatesCanonical: t.array(primitives.R4.canonical),
+      /** Extension of instantiatesCanonical element */
+      _instantiatesCanonical: t.array(Element),
+      /** Instantiates external protocol or definition */
+      instantiatesUri: t.array(primitives.R4.uri),
+      /** Extension of instantiatesUri element */
+      _instantiatesUri: t.array(Element),
+      /** Detail type of activity */
+      code: CodeableConcept,
+      /** Why activity should be done or why activity was prohibited */
+      reasonCode: t.array(CodeableConcept),
+      /** Why activity is needed */
+      reasonReference: t.array(Reference),
+      /** Goals this activity relates to */
+      goal: t.array(Reference),
+      /** Extension of status element */
+      _status: Element,
+      /** Reason for current status */
+      statusReason: CodeableConcept,
+      /** If true, activity is prohibiting action */
+      doNotPerform: primitives.R4.boolean,
+      /** Extension of doNotPerform element */
+      _doNotPerform: Element,
+      /** When activity is to occur */
+      scheduledTiming: Timing,
+      /** When activity is to occur */
+      scheduledPeriod: Period,
+      /** When activity is to occur */
+      scheduledString: primitives.R4.string,
+      /** Extension of scheduledString element */
+      _scheduledString: Element,
+      /** Where it should happen */
+      location: Reference,
+      /** Who will be responsible? */
+      performer: t.array(Reference),
+      /** What is to be administered/supplied */
+      productCodeableConcept: CodeableConcept,
+      /** What is to be administered/supplied */
+      productReference: Reference,
+      /** How to consume/day? */
+      dailyAmount: Quantity,
+      /** How much to administer/supply/consume */
+      quantity: Quantity,
+      /** Extra info describing activity to perform */
+      description: primitives.R4.string,
+      /** Extension of description element */
+      _description: Element
+    })
+  ])
 );

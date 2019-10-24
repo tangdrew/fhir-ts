@@ -4,17 +4,20 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Attachment, AttachmentOutputType } from "./Attachment";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Quantity, QuantityOutputType } from "./Quantity";
+import { Attachment } from "./Attachment";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Quantity } from "./Quantity";
 
 /**
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available
  */
 export interface ProdCharacteristic {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
@@ -32,89 +35,67 @@ export interface ProdCharacteristic {
   /** Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
   externalDiameter?: Quantity;
   /** Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-  shape?: t.TypeOf<primitives.R4.StringType>;
+  shape?: string;
+  /** Extension of shape element */
+  _shape?: Element;
   /** Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-  color?: t.TypeOf<primitives.R4.StringType>[];
+  color?: string[];
+  /** Extension of color element */
+  _color?: Element[];
   /** Where applicable, the imprint can be specified as text */
-  imprint?: t.TypeOf<primitives.R4.StringType>[];
+  imprint?: string[];
+  /** Extension of imprint element */
+  _imprint?: Element[];
   /** Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations */
   image?: Attachment[];
   /** Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
   scoring?: CodeableConcept;
 }
-
-export interface ProdCharacteristicOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  height?: QuantityOutputType;
-  /** Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  width?: QuantityOutputType;
-  /** Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  depth?: QuantityOutputType;
-  /** Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  weight?: QuantityOutputType;
-  /** Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  nominalVolume?: QuantityOutputType;
-  /** Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-  externalDiameter?: QuantityOutputType;
-  /** Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-  shape?: t.OutputOf<primitives.R4.StringType>;
-  /** Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-  color?: t.OutputOf<primitives.R4.StringType>[];
-  /** Where applicable, the imprint can be specified as text */
-  imprint?: t.OutputOf<primitives.R4.StringType>[];
-  /** Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations */
-  image?: AttachmentOutputType[];
-  /** Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-  scoring?: CodeableConceptOutputType;
-}
-
-export const ProdCharacteristic: t.RecursiveType<
-  t.Type<ProdCharacteristic, ProdCharacteristicOutputType>,
-  ProdCharacteristic,
-  ProdCharacteristicOutputType
-> = t.recursion<ProdCharacteristic, ProdCharacteristicOutputType>(
-  "ProdCharacteristic",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-          color: t.array(primitives.R4.string),
-          /** Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          depth: Quantity,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          externalDiameter: Quantity,
-          /** Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          height: Quantity,
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations */
-          image: t.array(Attachment),
-          /** Where applicable, the imprint can be specified as text */
-          imprint: t.array(primitives.R4.string),
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          nominalVolume: Quantity,
-          /** Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-          scoring: CodeableConcept,
-          /** Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
-          shape: primitives.R4.string,
-          /** Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          weight: Quantity,
-          /** Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
-          width: Quantity
-        })
-      ],
-      "ProdCharacteristic"
-    )
+/**
+ * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available
+ */
+export const ProdCharacteristic: t.Type<ProdCharacteristic> = t.recursion<
+  ProdCharacteristic
+>("ProdCharacteristic", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Where applicable, the height can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      height: Quantity,
+      /** Where applicable, the width can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      width: Quantity,
+      /** Where applicable, the depth can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      depth: Quantity,
+      /** Where applicable, the weight can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      weight: Quantity,
+      /** Where applicable, the nominal volume can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      nominalVolume: Quantity,
+      /** Where applicable, the external diameter can be specified using a numerical value and its unit of measurement The unit of measurement shall be specified in accordance with ISO 11240 and the resulting terminology The symbol and the symbol identifier shall be used */
+      externalDiameter: Quantity,
+      /** Where applicable, the shape can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
+      shape: primitives.R4.string,
+      /** Extension of shape element */
+      _shape: Element,
+      /** Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
+      color: t.array(primitives.R4.string),
+      /** Extension of color element */
+      _color: t.array(Element),
+      /** Where applicable, the imprint can be specified as text */
+      imprint: t.array(primitives.R4.string),
+      /** Extension of imprint element */
+      _imprint: t.array(Element),
+      /** Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations */
+      image: t.array(Attachment),
+      /** Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used */
+      scoring: CodeableConcept
+    })
+  ])
 );

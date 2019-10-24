@@ -4,336 +4,41 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Age, AgeOutputType } from "./Age";
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Duration, DurationOutputType } from "./Duration";
-import { Expression, ExpressionOutputType } from "./Expression";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Range, RangeOutputType } from "./Range";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { RelatedArtifact, RelatedArtifactOutputType } from "./RelatedArtifact";
-import { Resource, ResourceOutputType } from "./Resource";
-import { Timing, TimingOutputType } from "./Timing";
-
-/**
- * Relationship to another action
- */
-export interface RequestGroupActionRelatedAction {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** What action this is related to */
-  actionId: t.TypeOf<primitives.R4.IDType>;
-  /** before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end */
-  relationship: t.TypeOf<primitives.R4.CodeType>;
-  /** Time offset for the relationship */
-  offset?: Duration | Range;
-}
-
-export interface RequestGroupActionRelatedActionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** What action this is related to */
-  actionId: t.OutputOf<primitives.R4.IDType>;
-  /** before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end */
-  relationship: t.OutputOf<primitives.R4.CodeType>;
-  /** Time offset for the relationship */
-  offset?: DurationOutputType | RangeOutputType;
-}
-
-export const RequestGroupActionRelatedAction: t.RecursiveType<
-  t.Type<
-    RequestGroupActionRelatedAction,
-    RequestGroupActionRelatedActionOutputType
-  >,
-  RequestGroupActionRelatedAction,
-  RequestGroupActionRelatedActionOutputType
-> = t.recursion<
-  RequestGroupActionRelatedAction,
-  RequestGroupActionRelatedActionOutputType
->("RequestGroupActionRelatedAction", () =>
-  t.intersection(
-    [
-      t.type({
-        /** What action this is related to */
-        actionId: primitives.R4.id,
-        /** before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end */
-        relationship: primitives.R4.code
-      }),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension),
-        /** Time offset for the relationship */
-        offset: t.union([Duration, Range])
-      })
-    ],
-    "RequestGroupActionRelatedAction"
-  )
-);
-
-/**
- * Whether or not the action is applicable
- */
-export interface RequestGroupActionCondition {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** applicability | start | stop */
-  kind: t.TypeOf<primitives.R4.CodeType>;
-  /** Boolean-valued expression */
-  expression?: Expression;
-}
-
-export interface RequestGroupActionConditionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** applicability | start | stop */
-  kind: t.OutputOf<primitives.R4.CodeType>;
-  /** Boolean-valued expression */
-  expression?: ExpressionOutputType;
-}
-
-export const RequestGroupActionCondition: t.RecursiveType<
-  t.Type<RequestGroupActionCondition, RequestGroupActionConditionOutputType>,
-  RequestGroupActionCondition,
-  RequestGroupActionConditionOutputType
-> = t.recursion<
-  RequestGroupActionCondition,
-  RequestGroupActionConditionOutputType
->("RequestGroupActionCondition", () =>
-  t.intersection(
-    [
-      t.type({
-        /** applicability | start | stop */
-        kind: primitives.R4.code
-      }),
-      t.partial({
-        /** Boolean-valued expression */
-        expression: Expression,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
-      })
-    ],
-    "RequestGroupActionCondition"
-  )
-);
-
-/**
- * Proposed actions, if any
- */
-export interface RequestGroupAction {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** User-visible prefix for the action (e.g. 1. or A.) */
-  prefix?: t.TypeOf<primitives.R4.StringType>;
-  /** User-visible title */
-  title?: t.TypeOf<primitives.R4.StringType>;
-  /** Short description of the action */
-  description?: t.TypeOf<primitives.R4.StringType>;
-  /** Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system */
-  textEquivalent?: t.TypeOf<primitives.R4.StringType>;
-  /** routine | urgent | asap | stat */
-  priority?: t.TypeOf<primitives.R4.CodeType>;
-  /** Code representing the meaning of the action or sub-actions */
-  code?: CodeableConcept[];
-  /** Supporting documentation for the intended performer of the action */
-  documentation?: RelatedArtifact[];
-  /** Whether or not the action is applicable */
-  condition?: RequestGroupActionCondition[];
-  /** Relationship to another action */
-  relatedAction?: RequestGroupActionRelatedAction[];
-  /** When the action should take place */
-  timing?:
-    | t.TypeOf<primitives.R4.DateTimeType>
-    | Age
-    | Period
-    | Duration
-    | Range
-    | Timing;
-  /** Who should perform the action */
-  participant?: Reference[];
-  /** create | update | remove | fire-event */
-  type?: CodeableConcept;
-  /** visual-group | logical-group | sentence-group */
-  groupingBehavior?: t.TypeOf<primitives.R4.CodeType>;
-  /** any | all | all-or-none | exactly-one | at-most-one | one-or-more */
-  selectionBehavior?: t.TypeOf<primitives.R4.CodeType>;
-  /** must | could | must-unless-documented */
-  requiredBehavior?: t.TypeOf<primitives.R4.CodeType>;
-  /** yes | no */
-  precheckBehavior?: t.TypeOf<primitives.R4.CodeType>;
-  /** single | multiple */
-  cardinalityBehavior?: t.TypeOf<primitives.R4.CodeType>;
-  /** The target of the action */
-  resource?: Reference;
-  /** Sub action */
-  action?: RequestGroupAction[];
-}
-
-export interface RequestGroupActionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** User-visible prefix for the action (e.g. 1. or A.) */
-  prefix?: t.OutputOf<primitives.R4.StringType>;
-  /** User-visible title */
-  title?: t.OutputOf<primitives.R4.StringType>;
-  /** Short description of the action */
-  description?: t.OutputOf<primitives.R4.StringType>;
-  /** Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system */
-  textEquivalent?: t.OutputOf<primitives.R4.StringType>;
-  /** routine | urgent | asap | stat */
-  priority?: t.OutputOf<primitives.R4.CodeType>;
-  /** Code representing the meaning of the action or sub-actions */
-  code?: CodeableConceptOutputType[];
-  /** Supporting documentation for the intended performer of the action */
-  documentation?: RelatedArtifactOutputType[];
-  /** Whether or not the action is applicable */
-  condition?: RequestGroupActionConditionOutputType[];
-  /** Relationship to another action */
-  relatedAction?: RequestGroupActionRelatedActionOutputType[];
-  /** When the action should take place */
-  timing?:
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | AgeOutputType
-    | PeriodOutputType
-    | DurationOutputType
-    | RangeOutputType
-    | TimingOutputType;
-  /** Who should perform the action */
-  participant?: ReferenceOutputType[];
-  /** create | update | remove | fire-event */
-  type?: CodeableConceptOutputType;
-  /** visual-group | logical-group | sentence-group */
-  groupingBehavior?: t.OutputOf<primitives.R4.CodeType>;
-  /** any | all | all-or-none | exactly-one | at-most-one | one-or-more */
-  selectionBehavior?: t.OutputOf<primitives.R4.CodeType>;
-  /** must | could | must-unless-documented */
-  requiredBehavior?: t.OutputOf<primitives.R4.CodeType>;
-  /** yes | no */
-  precheckBehavior?: t.OutputOf<primitives.R4.CodeType>;
-  /** single | multiple */
-  cardinalityBehavior?: t.OutputOf<primitives.R4.CodeType>;
-  /** The target of the action */
-  resource?: ReferenceOutputType;
-  /** Sub action */
-  action?: RequestGroupActionOutputType[];
-}
-
-export const RequestGroupAction: t.RecursiveType<
-  t.Type<RequestGroupAction, RequestGroupActionOutputType>,
-  RequestGroupAction,
-  RequestGroupActionOutputType
-> = t.recursion<RequestGroupAction, RequestGroupActionOutputType>(
-  "RequestGroupAction",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** Sub action */
-          action: t.array(RequestGroupAction),
-          /** single | multiple */
-          cardinalityBehavior: primitives.R4.code,
-          /** Code representing the meaning of the action or sub-actions */
-          code: t.array(CodeableConcept),
-          /** Whether or not the action is applicable */
-          condition: t.array(RequestGroupActionCondition),
-          /** Short description of the action */
-          description: primitives.R4.string,
-          /** Supporting documentation for the intended performer of the action */
-          documentation: t.array(RelatedArtifact),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** visual-group | logical-group | sentence-group */
-          groupingBehavior: primitives.R4.code,
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Who should perform the action */
-          participant: t.array(Reference),
-          /** yes | no */
-          precheckBehavior: primitives.R4.code,
-          /** User-visible prefix for the action (e.g. 1. or A.) */
-          prefix: primitives.R4.string,
-          /** routine | urgent | asap | stat */
-          priority: primitives.R4.code,
-          /** Relationship to another action */
-          relatedAction: t.array(RequestGroupActionRelatedAction),
-          /** must | could | must-unless-documented */
-          requiredBehavior: primitives.R4.code,
-          /** The target of the action */
-          resource: Reference,
-          /** any | all | all-or-none | exactly-one | at-most-one | one-or-more */
-          selectionBehavior: primitives.R4.code,
-          /** Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system */
-          textEquivalent: primitives.R4.string,
-          /** When the action should take place */
-          timing: t.union([
-            primitives.R4.dateTime,
-            Age,
-            Period,
-            Duration,
-            Range,
-            Timing
-          ]),
-          /** User-visible title */
-          title: primitives.R4.string,
-          /** create | update | remove | fire-event */
-          type: CodeableConcept
-        })
-      ],
-      "RequestGroupAction"
-    )
-);
+import { Age } from "./Age";
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { Duration } from "./Duration";
+import { Element } from "./Element";
+import { Expression } from "./Expression";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Range } from "./Range";
+import { Reference } from "./Reference";
+import { RelatedArtifact } from "./RelatedArtifact";
+import { Resource } from "./Resource";
+import { Timing } from "./Timing";
 
 /**
  * A group of related requests
  */
 export interface RequestGroup {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -345,9 +50,13 @@ export interface RequestGroup {
   /** Business identifier */
   identifier?: Identifier[];
   /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.TypeOf<primitives.R4.CanonicalType>[];
+  instantiatesCanonical?: primitives.R4.canonical[];
+  /** Extension of instantiatesCanonical element */
+  _instantiatesCanonical?: Element[];
   /** Instantiates external protocol or definition */
-  instantiatesUri?: t.TypeOf<primitives.R4.URIType>[];
+  instantiatesUri?: primitives.R4.uri[];
+  /** Extension of instantiatesUri element */
+  _instantiatesUri?: Element[];
   /** Fulfills plan, proposal, or order */
   basedOn?: Reference[];
   /** Request(s) replaced by this request */
@@ -355,11 +64,17 @@ export interface RequestGroup {
   /** Composite request this is part of */
   groupIdentifier?: Identifier;
   /** draft | active | suspended | cancelled | completed | entered-in-error | unknown */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** proposal | plan | order */
-  intent: t.TypeOf<primitives.R4.CodeType>;
+  intent: primitives.R4.code;
+  /** Extension of intent element */
+  _intent?: Element;
   /** routine | urgent | asap | stat */
-  priority?: t.TypeOf<primitives.R4.CodeType>;
+  priority?: primitives.R4.code;
+  /** Extension of priority element */
+  _priority?: Element;
   /** What's being requested/ordered */
   code?: CodeableConcept;
   /** Who the request group is about */
@@ -367,7 +82,9 @@ export interface RequestGroup {
   /** Created as part of */
   encounter?: Reference;
   /** When the request group was authored */
-  authoredOn?: t.TypeOf<primitives.R4.DateTimeType>;
+  authoredOn?: primitives.R4.dateTime;
+  /** Extension of authoredOn element */
+  _authoredOn?: Element;
   /** Device or practitioner that authored the request group */
   author?: Reference;
   /** Why the request group is needed */
@@ -376,129 +93,361 @@ export interface RequestGroup {
   reasonReference?: Reference[];
   /** Additional notes about the response */
   note?: Annotation[];
-  /** Proposed actions, if any */
-  action?: RequestGroupAction[];
 }
-
-export interface RequestGroupOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Business identifier */
-  identifier?: IdentifierOutputType[];
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.OutputOf<primitives.R4.URIType>[];
-  /** Fulfills plan, proposal, or order */
-  basedOn?: ReferenceOutputType[];
-  /** Request(s) replaced by this request */
-  replaces?: ReferenceOutputType[];
-  /** Composite request this is part of */
-  groupIdentifier?: IdentifierOutputType;
-  /** draft | active | suspended | cancelled | completed | entered-in-error | unknown */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** proposal | plan | order */
-  intent: t.OutputOf<primitives.R4.CodeType>;
-  /** routine | urgent | asap | stat */
-  priority?: t.OutputOf<primitives.R4.CodeType>;
-  /** What's being requested/ordered */
-  code?: CodeableConceptOutputType;
-  /** Who the request group is about */
-  subject?: ReferenceOutputType;
-  /** Created as part of */
-  encounter?: ReferenceOutputType;
-  /** When the request group was authored */
-  authoredOn?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Device or practitioner that authored the request group */
-  author?: ReferenceOutputType;
-  /** Why the request group is needed */
-  reasonCode?: CodeableConceptOutputType[];
-  /** Why the request group is needed */
-  reasonReference?: ReferenceOutputType[];
-  /** Additional notes about the response */
-  note?: AnnotationOutputType[];
-  /** Proposed actions, if any */
-  action?: RequestGroupActionOutputType[];
-}
-
-export const RequestGroup: t.RecursiveType<
-  t.Type<RequestGroup, RequestGroupOutputType>,
-  RequestGroup,
-  RequestGroupOutputType
-> = t.recursion<RequestGroup, RequestGroupOutputType>("RequestGroup", () =>
-  t.intersection(
-    [
+/**
+ * A group of related requests
+ */
+export const RequestGroup: t.Type<RequestGroup> = t.recursion<RequestGroup>(
+  "RequestGroup",
+  () =>
+    t.intersection([
       t.type({
-        /** proposal | plan | order */
-        intent: primitives.R4.code,
         /** draft | active | suspended | cancelled | completed | entered-in-error | unknown */
-        status: primitives.R4.code
+        status: primitives.R4.code,
+        /** proposal | plan | order */
+        intent: primitives.R4.code
       }),
       t.partial({
-        /** Proposed actions, if any */
-        action: t.array(RequestGroupAction),
-        /** Device or practitioner that authored the request group */
-        author: Reference,
-        /** When the request group was authored */
-        authoredOn: primitives.R4.dateTime,
-        /** Fulfills plan, proposal, or order */
-        basedOn: t.array(Reference),
-        /** What's being requested/ordered */
-        code: CodeableConcept,
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Created as part of */
-        encounter: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Composite request this is part of */
-        groupIdentifier: Identifier,
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** Business identifier */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Instantiates FHIR protocol or definition */
-        instantiatesCanonical: t.array(primitives.R4.canonical),
-        /** Instantiates external protocol or definition */
-        instantiatesUri: t.array(primitives.R4.uri),
-        /** Language of the resource content */
-        language: primitives.R4.code,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored */
         modifierExtension: t.array(Extension),
-        /** Additional notes about the response */
-        note: t.array(Annotation),
+        /** Business identifier */
+        identifier: t.array(Identifier),
+        /** Instantiates FHIR protocol or definition */
+        instantiatesCanonical: t.array(primitives.R4.canonical),
+        /** Extension of instantiatesCanonical element */
+        _instantiatesCanonical: t.array(Element),
+        /** Instantiates external protocol or definition */
+        instantiatesUri: t.array(primitives.R4.uri),
+        /** Extension of instantiatesUri element */
+        _instantiatesUri: t.array(Element),
+        /** Fulfills plan, proposal, or order */
+        basedOn: t.array(Reference),
+        /** Request(s) replaced by this request */
+        replaces: t.array(Reference),
+        /** Composite request this is part of */
+        groupIdentifier: Identifier,
+        /** Extension of status element */
+        _status: Element,
+        /** Extension of intent element */
+        _intent: Element,
         /** routine | urgent | asap | stat */
         priority: primitives.R4.code,
+        /** Extension of priority element */
+        _priority: Element,
+        /** What's being requested/ordered */
+        code: CodeableConcept,
+        /** Who the request group is about */
+        subject: Reference,
+        /** Created as part of */
+        encounter: Reference,
+        /** When the request group was authored */
+        authoredOn: primitives.R4.dateTime,
+        /** Extension of authoredOn element */
+        _authoredOn: Element,
+        /** Device or practitioner that authored the request group */
+        author: Reference,
         /** Why the request group is needed */
         reasonCode: t.array(CodeableConcept),
         /** Why the request group is needed */
         reasonReference: t.array(Reference),
-        /** Request(s) replaced by this request */
-        replaces: t.array(Reference),
-        /** Who the request group is about */
-        subject: Reference,
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** Additional notes about the response */
+        note: t.array(Annotation)
       })
-    ],
-    "RequestGroup"
-  )
+    ])
+);
+
+/**
+ * Proposed actions, if any
+ */
+export interface RequestGroupAction {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** User-visible prefix for the action (e.g. 1. or A.) */
+  prefix?: string;
+  /** Extension of prefix element */
+  _prefix?: Element;
+  /** User-visible title */
+  title?: string;
+  /** Extension of title element */
+  _title?: Element;
+  /** Short description of the action */
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
+  /** Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system */
+  textEquivalent?: string;
+  /** Extension of textEquivalent element */
+  _textEquivalent?: Element;
+  /** routine | urgent | asap | stat */
+  priority?: primitives.R4.code;
+  /** Extension of priority element */
+  _priority?: Element;
+  /** Code representing the meaning of the action or sub-actions */
+  code?: CodeableConcept[];
+  /** Supporting documentation for the intended performer of the action */
+  documentation?: RelatedArtifact[];
+  /** When the action should take place */
+  timingDateTime?: primitives.R4.dateTime;
+  /** Extension of timingDateTime element */
+  _timingDateTime?: Element;
+  /** When the action should take place */
+  timingAge?: Age;
+  /** When the action should take place */
+  timingPeriod?: Period;
+  /** When the action should take place */
+  timingDuration?: Duration;
+  /** When the action should take place */
+  timingRange?: Range;
+  /** When the action should take place */
+  timingTiming?: Timing;
+  /** Who should perform the action */
+  participant?: Reference[];
+  /** create | update | remove | fire-event */
+  type?: CodeableConcept;
+  /** visual-group | logical-group | sentence-group */
+  groupingBehavior?: primitives.R4.code;
+  /** Extension of groupingBehavior element */
+  _groupingBehavior?: Element;
+  /** any | all | all-or-none | exactly-one | at-most-one | one-or-more */
+  selectionBehavior?: primitives.R4.code;
+  /** Extension of selectionBehavior element */
+  _selectionBehavior?: Element;
+  /** must | could | must-unless-documented */
+  requiredBehavior?: primitives.R4.code;
+  /** Extension of requiredBehavior element */
+  _requiredBehavior?: Element;
+  /** yes | no */
+  precheckBehavior?: primitives.R4.code;
+  /** Extension of precheckBehavior element */
+  _precheckBehavior?: Element;
+  /** single | multiple */
+  cardinalityBehavior?: primitives.R4.code;
+  /** Extension of cardinalityBehavior element */
+  _cardinalityBehavior?: Element;
+  /** The target of the action */
+  resource?: Reference;
+  /** Sub action */
+  action?: RequestGroupAction[];
+}
+/**
+ * Proposed actions, if any
+ */
+export const RequestGroupAction: t.Type<RequestGroupAction> = t.recursion<
+  RequestGroupAction
+>("RequestGroupAction", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** User-visible prefix for the action (e.g. 1. or A.) */
+      prefix: primitives.R4.string,
+      /** Extension of prefix element */
+      _prefix: Element,
+      /** User-visible title */
+      title: primitives.R4.string,
+      /** Extension of title element */
+      _title: Element,
+      /** Short description of the action */
+      description: primitives.R4.string,
+      /** Extension of description element */
+      _description: Element,
+      /** Static text equivalent of the action, used if the dynamic aspects cannot be interpreted by the receiving system */
+      textEquivalent: primitives.R4.string,
+      /** Extension of textEquivalent element */
+      _textEquivalent: Element,
+      /** routine | urgent | asap | stat */
+      priority: primitives.R4.code,
+      /** Extension of priority element */
+      _priority: Element,
+      /** Code representing the meaning of the action or sub-actions */
+      code: t.array(CodeableConcept),
+      /** Supporting documentation for the intended performer of the action */
+      documentation: t.array(RelatedArtifact),
+      /** When the action should take place */
+      timingDateTime: primitives.R4.dateTime,
+      /** Extension of timingDateTime element */
+      _timingDateTime: Element,
+      /** When the action should take place */
+      timingAge: Age,
+      /** When the action should take place */
+      timingPeriod: Period,
+      /** When the action should take place */
+      timingDuration: Duration,
+      /** When the action should take place */
+      timingRange: Range,
+      /** When the action should take place */
+      timingTiming: Timing,
+      /** Who should perform the action */
+      participant: t.array(Reference),
+      /** create | update | remove | fire-event */
+      type: CodeableConcept,
+      /** visual-group | logical-group | sentence-group */
+      groupingBehavior: primitives.R4.code,
+      /** Extension of groupingBehavior element */
+      _groupingBehavior: Element,
+      /** any | all | all-or-none | exactly-one | at-most-one | one-or-more */
+      selectionBehavior: primitives.R4.code,
+      /** Extension of selectionBehavior element */
+      _selectionBehavior: Element,
+      /** must | could | must-unless-documented */
+      requiredBehavior: primitives.R4.code,
+      /** Extension of requiredBehavior element */
+      _requiredBehavior: Element,
+      /** yes | no */
+      precheckBehavior: primitives.R4.code,
+      /** Extension of precheckBehavior element */
+      _precheckBehavior: Element,
+      /** single | multiple */
+      cardinalityBehavior: primitives.R4.code,
+      /** Extension of cardinalityBehavior element */
+      _cardinalityBehavior: Element,
+      /** The target of the action */
+      resource: Reference,
+      /** Sub action */
+      action: t.array(RequestGroupAction)
+    })
+  ])
+);
+
+/**
+ * Whether or not the action is applicable
+ */
+export interface RequestGroupActionCondition {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** applicability | start | stop */
+  kind: primitives.R4.code;
+  /** Extension of kind element */
+  _kind?: Element;
+  /** Boolean-valued expression */
+  expression?: Expression;
+}
+/**
+ * Whether or not the action is applicable
+ */
+export const RequestGroupActionCondition: t.Type<
+  RequestGroupActionCondition
+> = t.recursion<RequestGroupActionCondition>(
+  "RequestGroupActionCondition",
+  () =>
+    t.intersection([
+      t.type({
+        /** applicability | start | stop */
+        kind: primitives.R4.code
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** Extension of kind element */
+        _kind: Element,
+        /** Boolean-valued expression */
+        expression: Expression
+      })
+    ])
+);
+
+/**
+ * Relationship to another action
+ */
+export interface RequestGroupActionRelatedAction {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** What action this is related to */
+  actionId: primitives.R4.id;
+  /** Extension of actionId element */
+  _actionId?: Element;
+  /** before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end */
+  relationship: primitives.R4.code;
+  /** Extension of relationship element */
+  _relationship?: Element;
+  /** Time offset for the relationship */
+  offsetDuration?: Duration;
+  /** Time offset for the relationship */
+  offsetRange?: Range;
+}
+/**
+ * Relationship to another action
+ */
+export const RequestGroupActionRelatedAction: t.Type<
+  RequestGroupActionRelatedAction
+> = t.recursion<RequestGroupActionRelatedAction>(
+  "RequestGroupActionRelatedAction",
+  () =>
+    t.intersection([
+      t.type({
+        /** What action this is related to */
+        actionId: primitives.R4.id,
+        /** before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end */
+        relationship: primitives.R4.code
+      }),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** Extension of actionId element */
+        _actionId: Element,
+        /** Extension of relationship element */
+        _relationship: Element,
+        /** Time offset for the relationship */
+        offsetDuration: Duration,
+        /** Time offset for the relationship */
+        offsetRange: Range
+      })
+    ])
 );

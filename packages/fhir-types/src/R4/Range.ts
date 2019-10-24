@@ -4,15 +4,18 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Quantity, QuantityOutputType } from "./Quantity";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Quantity } from "./Quantity";
 
 /**
  * Set of values bounded by low and high
  */
 export interface Range {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Low limit */
@@ -20,37 +23,23 @@ export interface Range {
   /** High limit */
   high?: Quantity;
 }
-
-export interface RangeOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Low limit */
-  low?: QuantityOutputType;
-  /** High limit */
-  high?: QuantityOutputType;
-}
-
-export const Range: t.RecursiveType<
-  t.Type<Range, RangeOutputType>,
-  Range,
-  RangeOutputType
-> = t.recursion<Range, RangeOutputType>("Range", () =>
-  t.intersection(
-    [
-      t.type({}),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** High limit */
-        high: Quantity,
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Low limit */
-        low: Quantity
-      })
-    ],
-    "Range"
-  )
+/**
+ * Set of values bounded by low and high
+ */
+export const Range: t.Type<Range> = t.recursion<Range>("Range", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Low limit */
+      low: Quantity,
+      /** High limit */
+      high: Quantity
+    })
+  ])
 );

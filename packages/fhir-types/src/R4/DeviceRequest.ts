@@ -4,100 +4,38 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Range, RangeOutputType } from "./Range";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-import { Timing, TimingOutputType } from "./Timing";
-
-/**
- * Device details
- */
-export interface DeviceRequestParameter {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Device detail */
-  code?: CodeableConcept;
-  /** Value of detail */
-  value?:
-    | CodeableConcept
-    | Quantity
-    | Range
-    | t.TypeOf<primitives.R4.BooleanType>;
-}
-
-export interface DeviceRequestParameterOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Device detail */
-  code?: CodeableConceptOutputType;
-  /** Value of detail */
-  value?:
-    | CodeableConceptOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | t.OutputOf<primitives.R4.BooleanType>;
-}
-
-export const DeviceRequestParameter: t.RecursiveType<
-  t.Type<DeviceRequestParameter, DeviceRequestParameterOutputType>,
-  DeviceRequestParameter,
-  DeviceRequestParameterOutputType
-> = t.recursion<DeviceRequestParameter, DeviceRequestParameterOutputType>(
-  "DeviceRequestParameter",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** Device detail */
-          code: CodeableConcept,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Value of detail */
-          value: t.union([
-            CodeableConcept,
-            Quantity,
-            Range,
-            primitives.R4.boolean
-          ])
-        })
-      ],
-      "DeviceRequestParameter"
-    )
-);
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Range } from "./Range";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
+import { Timing } from "./Timing";
 
 /**
  * Medical device request
  */
 export interface DeviceRequest {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -109,9 +47,13 @@ export interface DeviceRequest {
   /** External Request identifier */
   identifier?: Identifier[];
   /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.TypeOf<primitives.R4.CanonicalType>[];
+  instantiatesCanonical?: primitives.R4.canonical[];
+  /** Extension of instantiatesCanonical element */
+  _instantiatesCanonical?: Element[];
   /** Instantiates external protocol or definition */
-  instantiatesUri?: t.TypeOf<primitives.R4.URIType>[];
+  instantiatesUri?: primitives.R4.uri[];
+  /** Extension of instantiatesUri element */
+  _instantiatesUri?: Element[];
   /** What request fulfills */
   basedOn?: Reference[];
   /** What request replaces */
@@ -119,23 +61,37 @@ export interface DeviceRequest {
   /** Identifier of composite request */
   groupIdentifier?: Identifier;
   /** draft | active | suspended | completed | entered-in-error | cancelled */
-  status?: t.TypeOf<primitives.R4.CodeType>;
+  status?: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** proposal | plan | original-order | encoded | reflex-order */
-  intent: t.TypeOf<primitives.R4.CodeType>;
+  intent: primitives.R4.code;
+  /** Extension of intent element */
+  _intent?: Element;
   /** Indicates how quickly the {{title}} should be addressed with respect to other requests */
-  priority?: t.TypeOf<primitives.R4.CodeType>;
+  priority?: primitives.R4.code;
+  /** Extension of priority element */
+  _priority?: Element;
   /** Device requested */
-  code: Reference | CodeableConcept;
-  /** Device details */
-  parameter?: DeviceRequestParameter[];
+  codeReference: Reference;
+  /** Device requested */
+  codeCodeableConcept: CodeableConcept;
   /** Focus of request */
   subject: Reference;
   /** Encounter motivating request */
   encounter?: Reference;
   /** Desired time or schedule for use */
-  occurrence?: t.TypeOf<primitives.R4.DateTimeType> | Period | Timing;
+  occurrenceDateTime?: primitives.R4.dateTime;
+  /** Extension of occurrenceDateTime element */
+  _occurrenceDateTime?: Element;
+  /** Desired time or schedule for use */
+  occurrencePeriod?: Period;
+  /** Desired time or schedule for use */
+  occurrenceTiming?: Timing;
   /** When recorded */
-  authoredOn?: t.TypeOf<primitives.R4.DateTimeType>;
+  authoredOn?: primitives.R4.dateTime;
+  /** Extension of authoredOn element */
+  _authoredOn?: Element;
   /** Who/what is requesting diagnostics */
   requester?: Reference;
   /** Filler role */
@@ -155,153 +111,162 @@ export interface DeviceRequest {
   /** Request provenance */
   relevantHistory?: Reference[];
 }
-
-export interface DeviceRequestOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** External Request identifier */
-  identifier?: IdentifierOutputType[];
-  /** Instantiates FHIR protocol or definition */
-  instantiatesCanonical?: t.OutputOf<primitives.R4.CanonicalType>[];
-  /** Instantiates external protocol or definition */
-  instantiatesUri?: t.OutputOf<primitives.R4.URIType>[];
-  /** What request fulfills */
-  basedOn?: ReferenceOutputType[];
-  /** What request replaces */
-  priorRequest?: ReferenceOutputType[];
-  /** Identifier of composite request */
-  groupIdentifier?: IdentifierOutputType;
-  /** draft | active | suspended | completed | entered-in-error | cancelled */
-  status?: t.OutputOf<primitives.R4.CodeType>;
-  /** proposal | plan | original-order | encoded | reflex-order */
-  intent: t.OutputOf<primitives.R4.CodeType>;
-  /** Indicates how quickly the {{title}} should be addressed with respect to other requests */
-  priority?: t.OutputOf<primitives.R4.CodeType>;
-  /** Device requested */
-  code: ReferenceOutputType | CodeableConceptOutputType;
-  /** Device details */
-  parameter?: DeviceRequestParameterOutputType[];
-  /** Focus of request */
-  subject: ReferenceOutputType;
-  /** Encounter motivating request */
-  encounter?: ReferenceOutputType;
-  /** Desired time or schedule for use */
-  occurrence?:
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | PeriodOutputType
-    | TimingOutputType;
-  /** When recorded */
-  authoredOn?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Who/what is requesting diagnostics */
-  requester?: ReferenceOutputType;
-  /** Filler role */
-  performerType?: CodeableConceptOutputType;
-  /** Requested Filler */
-  performer?: ReferenceOutputType;
-  /** Coded Reason for request */
-  reasonCode?: CodeableConceptOutputType[];
-  /** Linked Reason for request */
-  reasonReference?: ReferenceOutputType[];
-  /** Associated insurance coverage */
-  insurance?: ReferenceOutputType[];
-  /** Additional clinical information */
-  supportingInfo?: ReferenceOutputType[];
-  /** Notes or comments */
-  note?: AnnotationOutputType[];
-  /** Request provenance */
-  relevantHistory?: ReferenceOutputType[];
-}
-
-export const DeviceRequest: t.RecursiveType<
-  t.Type<DeviceRequest, DeviceRequestOutputType>,
-  DeviceRequest,
-  DeviceRequestOutputType
-> = t.recursion<DeviceRequest, DeviceRequestOutputType>("DeviceRequest", () =>
-  t.intersection(
-    [
+/**
+ * Medical device request
+ */
+export const DeviceRequest: t.Type<DeviceRequest> = t.recursion<DeviceRequest>(
+  "DeviceRequest",
+  () =>
+    t.intersection([
       t.type({
-        /** Device requested */
-        code: t.union([Reference, CodeableConcept]),
         /** proposal | plan | original-order | encoded | reflex-order */
         intent: primitives.R4.code,
+        /** Device requested */
+        codeReference: Reference,
+        /** Device requested */
+        codeCodeableConcept: CodeableConcept,
         /** Focus of request */
         subject: Reference
       }),
       t.partial({
-        /** When recorded */
-        authoredOn: primitives.R4.dateTime,
-        /** What request fulfills */
-        basedOn: t.array(Reference),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Encounter motivating request */
-        encounter: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Identifier of composite request */
-        groupIdentifier: Identifier,
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** External Request identifier */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Instantiates FHIR protocol or definition */
-        instantiatesCanonical: t.array(primitives.R4.canonical),
-        /** Instantiates external protocol or definition */
-        instantiatesUri: t.array(primitives.R4.uri),
-        /** Associated insurance coverage */
-        insurance: t.array(Reference),
-        /** Language of the resource content */
-        language: primitives.R4.code,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored */
         modifierExtension: t.array(Extension),
-        /** Notes or comments */
-        note: t.array(Annotation),
-        /** Desired time or schedule for use */
-        occurrence: t.union([primitives.R4.dateTime, Period, Timing]),
-        /** Device details */
-        parameter: t.array(DeviceRequestParameter),
-        /** Requested Filler */
-        performer: Reference,
-        /** Filler role */
-        performerType: CodeableConcept,
+        /** External Request identifier */
+        identifier: t.array(Identifier),
+        /** Instantiates FHIR protocol or definition */
+        instantiatesCanonical: t.array(primitives.R4.canonical),
+        /** Extension of instantiatesCanonical element */
+        _instantiatesCanonical: t.array(Element),
+        /** Instantiates external protocol or definition */
+        instantiatesUri: t.array(primitives.R4.uri),
+        /** Extension of instantiatesUri element */
+        _instantiatesUri: t.array(Element),
+        /** What request fulfills */
+        basedOn: t.array(Reference),
         /** What request replaces */
         priorRequest: t.array(Reference),
+        /** Identifier of composite request */
+        groupIdentifier: Identifier,
+        /** draft | active | suspended | completed | entered-in-error | cancelled */
+        status: primitives.R4.code,
+        /** Extension of status element */
+        _status: Element,
+        /** Extension of intent element */
+        _intent: Element,
         /** Indicates how quickly the {{title}} should be addressed with respect to other requests */
         priority: primitives.R4.code,
+        /** Extension of priority element */
+        _priority: Element,
+        /** Encounter motivating request */
+        encounter: Reference,
+        /** Desired time or schedule for use */
+        occurrenceDateTime: primitives.R4.dateTime,
+        /** Extension of occurrenceDateTime element */
+        _occurrenceDateTime: Element,
+        /** Desired time or schedule for use */
+        occurrencePeriod: Period,
+        /** Desired time or schedule for use */
+        occurrenceTiming: Timing,
+        /** When recorded */
+        authoredOn: primitives.R4.dateTime,
+        /** Extension of authoredOn element */
+        _authoredOn: Element,
+        /** Who/what is requesting diagnostics */
+        requester: Reference,
+        /** Filler role */
+        performerType: CodeableConcept,
+        /** Requested Filler */
+        performer: Reference,
         /** Coded Reason for request */
         reasonCode: t.array(CodeableConcept),
         /** Linked Reason for request */
         reasonReference: t.array(Reference),
-        /** Request provenance */
-        relevantHistory: t.array(Reference),
-        /** Who/what is requesting diagnostics */
-        requester: Reference,
-        /** draft | active | suspended | completed | entered-in-error | cancelled */
-        status: primitives.R4.code,
+        /** Associated insurance coverage */
+        insurance: t.array(Reference),
         /** Additional clinical information */
         supportingInfo: t.array(Reference),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** Notes or comments */
+        note: t.array(Annotation),
+        /** Request provenance */
+        relevantHistory: t.array(Reference)
       })
-    ],
-    "DeviceRequest"
-  )
+    ])
+);
+
+/**
+ * Device details
+ */
+export interface DeviceRequestParameter {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Device detail */
+  code?: CodeableConcept;
+  /** Value of detail */
+  valueCodeableConcept?: CodeableConcept;
+  /** Value of detail */
+  valueQuantity?: Quantity;
+  /** Value of detail */
+  valueRange?: Range;
+  /** Value of detail */
+  valueBoolean?: boolean;
+  /** Extension of valueBoolean element */
+  _valueBoolean?: Element;
+}
+/**
+ * Device details
+ */
+export const DeviceRequestParameter: t.Type<
+  DeviceRequestParameter
+> = t.recursion<DeviceRequestParameter>("DeviceRequestParameter", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Device detail */
+      code: CodeableConcept,
+      /** Value of detail */
+      valueCodeableConcept: CodeableConcept,
+      /** Value of detail */
+      valueQuantity: Quantity,
+      /** Value of detail */
+      valueRange: Range,
+      /** Value of detail */
+      valueBoolean: primitives.R4.boolean,
+      /** Extension of valueBoolean element */
+      _valueBoolean: Element
+    })
+  ])
 );

@@ -4,79 +4,74 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Period, PeriodOutputType } from "./Period";
-import { Reference, ReferenceOutputType } from "./Reference";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Period } from "./Period";
+import { Reference } from "./Reference";
 
 /**
  * An identifier intended for computation
  */
 export interface Identifier {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** usual | official | temp | secondary | old (If known) */
-  use?: t.TypeOf<primitives.R4.CodeType>;
+  use?: primitives.R4.code;
+  /** Extension of use element */
+  _use?: Element;
   /** Description of identifier */
   type?: CodeableConcept;
   /** The namespace for the identifier value */
-  system?: t.TypeOf<primitives.R4.URIType>;
+  system?: primitives.R4.uri;
+  /** Extension of system element */
+  _system?: Element;
   /** The value that is unique */
-  value?: t.TypeOf<primitives.R4.StringType>;
+  value?: string;
+  /** Extension of value element */
+  _value?: Element;
   /** Time period when id is/was valid for use */
   period?: Period;
   /** Organization that issued id (may be just text) */
   assigner?: Reference;
 }
-
-export interface IdentifierOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** usual | official | temp | secondary | old (If known) */
-  use?: t.OutputOf<primitives.R4.CodeType>;
-  /** Description of identifier */
-  type?: CodeableConceptOutputType;
-  /** The namespace for the identifier value */
-  system?: t.OutputOf<primitives.R4.URIType>;
-  /** The value that is unique */
-  value?: t.OutputOf<primitives.R4.StringType>;
-  /** Time period when id is/was valid for use */
-  period?: PeriodOutputType;
-  /** Organization that issued id (may be just text) */
-  assigner?: ReferenceOutputType;
-}
-
-export const Identifier: t.RecursiveType<
-  t.Type<Identifier, IdentifierOutputType>,
-  Identifier,
-  IdentifierOutputType
-> = t.recursion<Identifier, IdentifierOutputType>("Identifier", () =>
-  t.intersection(
-    [
+/**
+ * An identifier intended for computation
+ */
+export const Identifier: t.Type<Identifier> = t.recursion<Identifier>(
+  "Identifier",
+  () =>
+    t.intersection([
       t.type({}),
       t.partial({
-        /** Organization that issued id (may be just text) */
-        assigner: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
-        /** Time period when id is/was valid for use */
-        period: Period,
-        /** The namespace for the identifier value */
-        system: primitives.R4.uri,
-        /** Description of identifier */
-        type: CodeableConcept,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** usual | official | temp | secondary | old (If known) */
         use: primitives.R4.code,
+        /** Extension of use element */
+        _use: Element,
+        /** Description of identifier */
+        type: CodeableConcept,
+        /** The namespace for the identifier value */
+        system: primitives.R4.uri,
+        /** Extension of system element */
+        _system: Element,
         /** The value that is unique */
-        value: primitives.R4.string
+        value: primitives.R4.string,
+        /** Extension of value element */
+        _value: Element,
+        /** Time period when id is/was valid for use */
+        period: Period,
+        /** Organization that issued id (may be just text) */
+        assigner: Reference
       })
-    ],
-    "Identifier"
-  )
+    ])
 );

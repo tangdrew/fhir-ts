@@ -4,136 +4,257 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Money, MoneyOutputType } from "./Money";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Money } from "./Money";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
+
+/**
+ * CoverageEligibilityRequest resource
+ */
+export interface CoverageEligibilityRequest {
+  /** Logical id of this artifact */
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
+  /** Metadata about the resource */
+  meta?: Meta;
+  /** A set of rules under which this content was created */
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
+  /** Language of the resource content */
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
+  /** Text summary of the resource, for human interpretation */
+  text?: Narrative;
+  /** Contained, inline Resources */
+  contained?: Resource[];
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored */
+  modifierExtension?: Extension[];
+  /** Business Identifier for coverage eligiblity request */
+  identifier?: Identifier[];
+  /** active | cancelled | draft | entered-in-error */
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
+  /** Desired processing priority */
+  priority?: CodeableConcept;
+  /** auth-requirements | benefits | discovery | validation */
+  purpose: primitives.R4.code[];
+  /** Extension of purpose element */
+  _purpose?: Element[];
+  /** Intended recipient of products and services */
+  patient: Reference;
+  /** Estimated date or dates of service */
+  servicedDate?: primitives.R4.date;
+  /** Extension of servicedDate element */
+  _servicedDate?: Element;
+  /** Estimated date or dates of service */
+  servicedPeriod?: Period;
+  /** Creation date */
+  created: primitives.R4.dateTime;
+  /** Extension of created element */
+  _created?: Element;
+  /** Author */
+  enterer?: Reference;
+  /** Party responsible for the request */
+  provider?: Reference;
+  /** Coverage issuer */
+  insurer: Reference;
+  /** Servicing facility */
+  facility?: Reference;
+}
+/**
+ * CoverageEligibilityRequest resource
+ */
+export const CoverageEligibilityRequest: t.Type<
+  CoverageEligibilityRequest
+> = t.recursion<CoverageEligibilityRequest>("CoverageEligibilityRequest", () =>
+  t.intersection([
+    t.type({
+      /** active | cancelled | draft | entered-in-error */
+      status: primitives.R4.code,
+      /** auth-requirements | benefits | discovery | validation */
+      purpose: t.array(primitives.R4.code),
+      /** Intended recipient of products and services */
+      patient: Reference,
+      /** Creation date */
+      created: primitives.R4.dateTime,
+      /** Coverage issuer */
+      insurer: Reference
+    }),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** Business Identifier for coverage eligiblity request */
+      identifier: t.array(Identifier),
+      /** Extension of status element */
+      _status: Element,
+      /** Desired processing priority */
+      priority: CodeableConcept,
+      /** Extension of purpose element */
+      _purpose: t.array(Element),
+      /** Estimated date or dates of service */
+      servicedDate: primitives.R4.date,
+      /** Extension of servicedDate element */
+      _servicedDate: Element,
+      /** Estimated date or dates of service */
+      servicedPeriod: Period,
+      /** Extension of created element */
+      _created: Element,
+      /** Author */
+      enterer: Reference,
+      /** Party responsible for the request */
+      provider: Reference,
+      /** Servicing facility */
+      facility: Reference
+    })
+  ])
+);
 
 /**
  * Supporting information
  */
 export interface CoverageEligibilityRequestSupportingInfo {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
   modifierExtension?: Extension[];
   /** Information instance identifier */
-  sequence: t.TypeOf<primitives.R4.PositiveIntegerType>;
+  sequence: primitives.R4.positiveInt;
+  /** Extension of sequence element */
+  _sequence?: Element;
   /** Data to be provided */
   information: Reference;
   /** Applies to all items */
-  appliesToAll?: t.TypeOf<primitives.R4.BooleanType>;
+  appliesToAll?: boolean;
+  /** Extension of appliesToAll element */
+  _appliesToAll?: Element;
 }
-
-export interface CoverageEligibilityRequestSupportingInfoOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Information instance identifier */
-  sequence: t.OutputOf<primitives.R4.PositiveIntegerType>;
-  /** Data to be provided */
-  information: ReferenceOutputType;
-  /** Applies to all items */
-  appliesToAll?: t.OutputOf<primitives.R4.BooleanType>;
-}
-
-export const CoverageEligibilityRequestSupportingInfo: t.RecursiveType<
-  t.Type<
-    CoverageEligibilityRequestSupportingInfo,
-    CoverageEligibilityRequestSupportingInfoOutputType
-  >,
-  CoverageEligibilityRequestSupportingInfo,
-  CoverageEligibilityRequestSupportingInfoOutputType
-> = t.recursion<
-  CoverageEligibilityRequestSupportingInfo,
-  CoverageEligibilityRequestSupportingInfoOutputType
->("CoverageEligibilityRequestSupportingInfo", () =>
-  t.intersection(
-    [
+/**
+ * Supporting information
+ */
+export const CoverageEligibilityRequestSupportingInfo: t.Type<
+  CoverageEligibilityRequestSupportingInfo
+> = t.recursion<CoverageEligibilityRequestSupportingInfo>(
+  "CoverageEligibilityRequestSupportingInfo",
+  () =>
+    t.intersection([
       t.type({
-        /** Data to be provided */
-        information: Reference,
         /** Information instance identifier */
-        sequence: primitives.R4.positiveInt
+        sequence: primitives.R4.positiveInt,
+        /** Data to be provided */
+        information: Reference
       }),
       t.partial({
-        /** Applies to all items */
-        appliesToAll: primitives.R4.boolean,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
+        modifierExtension: t.array(Extension),
+        /** Extension of sequence element */
+        _sequence: Element,
+        /** Applies to all items */
+        appliesToAll: primitives.R4.boolean,
+        /** Extension of appliesToAll element */
+        _appliesToAll: Element
       })
-    ],
-    "CoverageEligibilityRequestSupportingInfo"
-  )
+    ])
 );
 
 /**
- * Applicable diagnosis
+ * Patient insurance information
  */
-export interface CoverageEligibilityRequestItemDiagnosis {
+export interface CoverageEligibilityRequestInsurance {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
   modifierExtension?: Extension[];
-  /** Nature of illness or problem */
-  diagnosis?: CodeableConcept | Reference;
+  /** Applicable coverage */
+  focal?: boolean;
+  /** Extension of focal element */
+  _focal?: Element;
+  /** Insurance information */
+  coverage: Reference;
+  /** Additional provider contract number */
+  businessArrangement?: string;
+  /** Extension of businessArrangement element */
+  _businessArrangement?: Element;
 }
-
-export interface CoverageEligibilityRequestItemDiagnosisOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Nature of illness or problem */
-  diagnosis?: CodeableConceptOutputType | ReferenceOutputType;
-}
-
-export const CoverageEligibilityRequestItemDiagnosis: t.RecursiveType<
-  t.Type<
-    CoverageEligibilityRequestItemDiagnosis,
-    CoverageEligibilityRequestItemDiagnosisOutputType
-  >,
-  CoverageEligibilityRequestItemDiagnosis,
-  CoverageEligibilityRequestItemDiagnosisOutputType
-> = t.recursion<
-  CoverageEligibilityRequestItemDiagnosis,
-  CoverageEligibilityRequestItemDiagnosisOutputType
->("CoverageEligibilityRequestItemDiagnosis", () =>
-  t.intersection(
-    [
-      t.type({}),
+/**
+ * Patient insurance information
+ */
+export const CoverageEligibilityRequestInsurance: t.Type<
+  CoverageEligibilityRequestInsurance
+> = t.recursion<CoverageEligibilityRequestInsurance>(
+  "CoverageEligibilityRequestInsurance",
+  () =>
+    t.intersection([
+      t.type({
+        /** Insurance information */
+        coverage: Reference
+      }),
       t.partial({
-        /** Nature of illness or problem */
-        diagnosis: t.union([CodeableConcept, Reference]),
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
+        modifierExtension: t.array(Extension),
+        /** Applicable coverage */
+        focal: primitives.R4.boolean,
+        /** Extension of focal element */
+        _focal: Element,
+        /** Additional provider contract number */
+        businessArrangement: primitives.R4.string,
+        /** Extension of businessArrangement element */
+        _businessArrangement: Element
       })
-    ],
-    "CoverageEligibilityRequestItemDiagnosis"
-  )
+    ])
 );
 
 /**
@@ -141,13 +262,17 @@ export const CoverageEligibilityRequestItemDiagnosis: t.RecursiveType<
  */
 export interface CoverageEligibilityRequestItem {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
   modifierExtension?: Extension[];
   /** Applicable exception or supporting information */
-  supportingInfoSequence?: t.TypeOf<primitives.R4.PositiveIntegerType>[];
+  supportingInfoSequence?: primitives.R4.positiveInt[];
+  /** Extension of supportingInfoSequence element */
+  _supportingInfoSequence?: Element[];
   /** Benefit classification */
   category?: CodeableConcept;
   /** Billing, service, product, or drug code */
@@ -162,311 +287,92 @@ export interface CoverageEligibilityRequestItem {
   unitPrice?: Money;
   /** Servicing facility */
   facility?: Reference;
-  /** Applicable diagnosis */
-  diagnosis?: CoverageEligibilityRequestItemDiagnosis[];
   /** Product or service details */
   detail?: Reference[];
 }
-
-export interface CoverageEligibilityRequestItemOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Applicable exception or supporting information */
-  supportingInfoSequence?: t.OutputOf<primitives.R4.PositiveIntegerType>[];
-  /** Benefit classification */
-  category?: CodeableConceptOutputType;
-  /** Billing, service, product, or drug code */
-  productOrService?: CodeableConceptOutputType;
-  /** Product or service billing modifiers */
-  modifier?: CodeableConceptOutputType[];
-  /** Perfoming practitioner */
-  provider?: ReferenceOutputType;
-  /** Count of products or services */
-  quantity?: QuantityOutputType;
-  /** Fee, charge or cost per item */
-  unitPrice?: MoneyOutputType;
-  /** Servicing facility */
-  facility?: ReferenceOutputType;
-  /** Applicable diagnosis */
-  diagnosis?: CoverageEligibilityRequestItemDiagnosisOutputType[];
-  /** Product or service details */
-  detail?: ReferenceOutputType[];
-}
-
-export const CoverageEligibilityRequestItem: t.RecursiveType<
-  t.Type<
-    CoverageEligibilityRequestItem,
-    CoverageEligibilityRequestItemOutputType
-  >,
-  CoverageEligibilityRequestItem,
-  CoverageEligibilityRequestItemOutputType
-> = t.recursion<
-  CoverageEligibilityRequestItem,
-  CoverageEligibilityRequestItemOutputType
->("CoverageEligibilityRequestItem", () =>
-  t.intersection(
-    [
+/**
+ * Item to be evaluated for eligibiity
+ */
+export const CoverageEligibilityRequestItem: t.Type<
+  CoverageEligibilityRequestItem
+> = t.recursion<CoverageEligibilityRequestItem>(
+  "CoverageEligibilityRequestItem",
+  () =>
+    t.intersection([
       t.type({}),
       t.partial({
-        /** Benefit classification */
-        category: CodeableConcept,
-        /** Product or service details */
-        detail: t.array(Reference),
-        /** Applicable diagnosis */
-        diagnosis: t.array(CoverageEligibilityRequestItemDiagnosis),
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Servicing facility */
-        facility: Reference,
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
-        /** Product or service billing modifiers */
-        modifier: t.array(CodeableConcept),
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored even if unrecognized */
         modifierExtension: t.array(Extension),
+        /** Applicable exception or supporting information */
+        supportingInfoSequence: t.array(primitives.R4.positiveInt),
+        /** Extension of supportingInfoSequence element */
+        _supportingInfoSequence: t.array(Element),
+        /** Benefit classification */
+        category: CodeableConcept,
         /** Billing, service, product, or drug code */
         productOrService: CodeableConcept,
+        /** Product or service billing modifiers */
+        modifier: t.array(CodeableConcept),
         /** Perfoming practitioner */
         provider: Reference,
         /** Count of products or services */
         quantity: Quantity,
-        /** Applicable exception or supporting information */
-        supportingInfoSequence: t.array(primitives.R4.positiveInt),
         /** Fee, charge or cost per item */
-        unitPrice: Money
-      })
-    ],
-    "CoverageEligibilityRequestItem"
-  )
-);
-
-/**
- * Patient insurance information
- */
-export interface CoverageEligibilityRequestInsurance {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Applicable coverage */
-  focal?: t.TypeOf<primitives.R4.BooleanType>;
-  /** Insurance information */
-  coverage: Reference;
-  /** Additional provider contract number */
-  businessArrangement?: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface CoverageEligibilityRequestInsuranceOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Applicable coverage */
-  focal?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Insurance information */
-  coverage: ReferenceOutputType;
-  /** Additional provider contract number */
-  businessArrangement?: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const CoverageEligibilityRequestInsurance: t.RecursiveType<
-  t.Type<
-    CoverageEligibilityRequestInsurance,
-    CoverageEligibilityRequestInsuranceOutputType
-  >,
-  CoverageEligibilityRequestInsurance,
-  CoverageEligibilityRequestInsuranceOutputType
-> = t.recursion<
-  CoverageEligibilityRequestInsurance,
-  CoverageEligibilityRequestInsuranceOutputType
->("CoverageEligibilityRequestInsurance", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Insurance information */
-        coverage: Reference
-      }),
-      t.partial({
-        /** Additional provider contract number */
-        businessArrangement: primitives.R4.string,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Applicable coverage */
-        focal: primitives.R4.boolean,
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
-      })
-    ],
-    "CoverageEligibilityRequestInsurance"
-  )
-);
-
-/**
- * CoverageEligibilityRequest resource
- */
-export interface CoverageEligibilityRequest {
-  /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: Meta;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: Narrative;
-  /** Contained, inline Resources */
-  contained?: Resource[];
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: Extension[];
-  /** Business Identifier for coverage eligiblity request */
-  identifier?: Identifier[];
-  /** active | cancelled | draft | entered-in-error */
-  status: t.TypeOf<primitives.R4.CodeType>;
-  /** Desired processing priority */
-  priority?: CodeableConcept;
-  /** auth-requirements | benefits | discovery | validation */
-  purpose: t.TypeOf<primitives.R4.CodeType>[];
-  /** Intended recipient of products and services */
-  patient: Reference;
-  /** Estimated date or dates of service */
-  serviced?: t.TypeOf<primitives.R4.DateType> | Period;
-  /** Creation date */
-  created: t.TypeOf<primitives.R4.DateTimeType>;
-  /** Author */
-  enterer?: Reference;
-  /** Party responsible for the request */
-  provider?: Reference;
-  /** Coverage issuer */
-  insurer: Reference;
-  /** Servicing facility */
-  facility?: Reference;
-  /** Supporting information */
-  supportingInfo?: CoverageEligibilityRequestSupportingInfo[];
-  /** Patient insurance information */
-  insurance?: CoverageEligibilityRequestInsurance[];
-  /** Item to be evaluated for eligibiity */
-  item?: CoverageEligibilityRequestItem[];
-}
-
-export interface CoverageEligibilityRequestOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Business Identifier for coverage eligiblity request */
-  identifier?: IdentifierOutputType[];
-  /** active | cancelled | draft | entered-in-error */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Desired processing priority */
-  priority?: CodeableConceptOutputType;
-  /** auth-requirements | benefits | discovery | validation */
-  purpose: t.OutputOf<primitives.R4.CodeType>[];
-  /** Intended recipient of products and services */
-  patient: ReferenceOutputType;
-  /** Estimated date or dates of service */
-  serviced?: t.OutputOf<primitives.R4.DateType> | PeriodOutputType;
-  /** Creation date */
-  created: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Author */
-  enterer?: ReferenceOutputType;
-  /** Party responsible for the request */
-  provider?: ReferenceOutputType;
-  /** Coverage issuer */
-  insurer: ReferenceOutputType;
-  /** Servicing facility */
-  facility?: ReferenceOutputType;
-  /** Supporting information */
-  supportingInfo?: CoverageEligibilityRequestSupportingInfoOutputType[];
-  /** Patient insurance information */
-  insurance?: CoverageEligibilityRequestInsuranceOutputType[];
-  /** Item to be evaluated for eligibiity */
-  item?: CoverageEligibilityRequestItemOutputType[];
-}
-
-export const CoverageEligibilityRequest: t.RecursiveType<
-  t.Type<CoverageEligibilityRequest, CoverageEligibilityRequestOutputType>,
-  CoverageEligibilityRequest,
-  CoverageEligibilityRequestOutputType
-> = t.recursion<
-  CoverageEligibilityRequest,
-  CoverageEligibilityRequestOutputType
->("CoverageEligibilityRequest", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Creation date */
-        created: primitives.R4.dateTime,
-        /** Coverage issuer */
-        insurer: Reference,
-        /** Intended recipient of products and services */
-        patient: Reference,
-        /** auth-requirements | benefits | discovery | validation */
-        purpose: t.array(primitives.R4.code),
-        /** active | cancelled | draft | entered-in-error */
-        status: primitives.R4.code
-      }),
-      t.partial({
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Author */
-        enterer: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
+        unitPrice: Money,
         /** Servicing facility */
         facility: Reference,
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** Business Identifier for coverage eligiblity request */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Patient insurance information */
-        insurance: t.array(CoverageEligibilityRequestInsurance),
-        /** Item to be evaluated for eligibiity */
-        item: t.array(CoverageEligibilityRequestItem),
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Metadata about the resource */
-        meta: Meta,
-        /** Extensions that cannot be ignored */
-        modifierExtension: t.array(Extension),
-        /** Desired processing priority */
-        priority: CodeableConcept,
-        /** Party responsible for the request */
-        provider: Reference,
-        /** Estimated date or dates of service */
-        serviced: t.union([primitives.R4.date, Period]),
-        /** Supporting information */
-        supportingInfo: t.array(CoverageEligibilityRequestSupportingInfo),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** Product or service details */
+        detail: t.array(Reference)
       })
-    ],
-    "CoverageEligibilityRequest"
-  )
+    ])
+);
+
+/**
+ * Applicable diagnosis
+ */
+export interface CoverageEligibilityRequestItemDiagnosis {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Nature of illness or problem */
+  diagnosisCodeableConcept?: CodeableConcept;
+  /** Nature of illness or problem */
+  diagnosisReference?: Reference;
+}
+/**
+ * Applicable diagnosis
+ */
+export const CoverageEligibilityRequestItemDiagnosis: t.Type<
+  CoverageEligibilityRequestItemDiagnosis
+> = t.recursion<CoverageEligibilityRequestItemDiagnosis>(
+  "CoverageEligibilityRequestItemDiagnosis",
+  () =>
+    t.intersection([
+      t.type({}),
+      t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored even if unrecognized */
+        modifierExtension: t.array(Extension),
+        /** Nature of illness or problem */
+        diagnosisCodeableConcept: CodeableConcept,
+        /** Nature of illness or problem */
+        diagnosisReference: Reference
+      })
+    ])
 );

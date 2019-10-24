@@ -4,29 +4,36 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Coding, CodingOutputType } from "./Coding";
-import { ContactPoint, ContactPointOutputType } from "./ContactPoint";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
+import { CodeableConcept } from "./CodeableConcept";
+import { Coding } from "./Coding";
+import { ContactPoint } from "./ContactPoint";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * The technical details of an endpoint that can be used for electronic services
  */
 export interface Endpoint {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -38,11 +45,15 @@ export interface Endpoint {
   /** Identifies this endpoint across multiple systems */
   identifier?: Identifier[];
   /** active | suspended | error | off | entered-in-error | test */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** Protocol/Profile/Standard to be used with this endpoint connection */
   connectionType: Coding;
   /** A name that this endpoint can be identified by */
-  name?: t.TypeOf<primitives.R4.StringType>;
+  name?: string;
+  /** Extension of name element */
+  _name?: Element;
   /** Organization that manages this endpoint (might not be the organization that exposes the endpoint) */
   managingOrganization?: Reference;
   /** Contact details for source (e.g. troubleshooting) */
@@ -52,104 +63,82 @@ export interface Endpoint {
   /** The type of content that may be used at this endpoint (e.g. XDS Discharge summaries) */
   payloadType: CodeableConcept[];
   /** Mimetype to send. If not specified, the content could be anything (including no payload, if the connectionType defined this) */
-  payloadMimeType?: t.TypeOf<primitives.R4.CodeType>[];
+  payloadMimeType?: primitives.R4.code[];
+  /** Extension of payloadMimeType element */
+  _payloadMimeType?: Element[];
   /** The technical base address for connecting to this endpoint */
-  address: t.TypeOf<primitives.R4.URLType>;
+  address: primitives.R4.url;
+  /** Extension of address element */
+  _address?: Element;
   /** Usage depends on the channel type */
-  header?: t.TypeOf<primitives.R4.StringType>[];
+  header?: string[];
+  /** Extension of header element */
+  _header?: Element[];
 }
-
-export interface EndpointOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Identifies this endpoint across multiple systems */
-  identifier?: IdentifierOutputType[];
-  /** active | suspended | error | off | entered-in-error | test */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Protocol/Profile/Standard to be used with this endpoint connection */
-  connectionType: CodingOutputType;
-  /** A name that this endpoint can be identified by */
-  name?: t.OutputOf<primitives.R4.StringType>;
-  /** Organization that manages this endpoint (might not be the organization that exposes the endpoint) */
-  managingOrganization?: ReferenceOutputType;
-  /** Contact details for source (e.g. troubleshooting) */
-  contact?: ContactPointOutputType[];
-  /** Interval the endpoint is expected to be operational */
-  period?: PeriodOutputType;
-  /** The type of content that may be used at this endpoint (e.g. XDS Discharge summaries) */
-  payloadType: CodeableConceptOutputType[];
-  /** Mimetype to send. If not specified, the content could be anything (including no payload, if the connectionType defined this) */
-  payloadMimeType?: t.OutputOf<primitives.R4.CodeType>[];
-  /** The technical base address for connecting to this endpoint */
-  address: t.OutputOf<primitives.R4.URLType>;
-  /** Usage depends on the channel type */
-  header?: t.OutputOf<primitives.R4.StringType>[];
-}
-
-export const Endpoint: t.RecursiveType<
-  t.Type<Endpoint, EndpointOutputType>,
-  Endpoint,
-  EndpointOutputType
-> = t.recursion<Endpoint, EndpointOutputType>("Endpoint", () =>
-  t.intersection(
-    [
+/**
+ * The technical details of an endpoint that can be used for electronic services
+ */
+export const Endpoint: t.Type<Endpoint> = t.recursion<Endpoint>(
+  "Endpoint",
+  () =>
+    t.intersection([
       t.type({
-        /** The technical base address for connecting to this endpoint */
-        address: primitives.R4.url,
+        /** active | suspended | error | off | entered-in-error | test */
+        status: primitives.R4.code,
         /** Protocol/Profile/Standard to be used with this endpoint connection */
         connectionType: Coding,
         /** The type of content that may be used at this endpoint (e.g. XDS Discharge summaries) */
         payloadType: t.array(CodeableConcept),
-        /** active | suspended | error | off | entered-in-error | test */
-        status: primitives.R4.code
+        /** The technical base address for connecting to this endpoint */
+        address: primitives.R4.url
       }),
       t.partial({
-        /** Contact details for source (e.g. troubleshooting) */
-        contact: t.array(ContactPoint),
+        /** Logical id of this artifact */
+        id: primitives.R4.id,
+        /** Extension of id element */
+        _id: Element,
+        /** Metadata about the resource */
+        meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
         /** Contained, inline Resources */
         contained: t.array(Resource),
         /** Additional content defined by implementations */
         extension: t.array(Extension),
-        /** Usage depends on the channel type */
-        header: t.array(primitives.R4.string),
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** Identifies this endpoint across multiple systems */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Organization that manages this endpoint (might not be the organization that exposes the endpoint) */
-        managingOrganization: Reference,
-        /** Metadata about the resource */
-        meta: Meta,
         /** Extensions that cannot be ignored */
         modifierExtension: t.array(Extension),
+        /** Identifies this endpoint across multiple systems */
+        identifier: t.array(Identifier),
+        /** Extension of status element */
+        _status: Element,
         /** A name that this endpoint can be identified by */
         name: primitives.R4.string,
-        /** Mimetype to send. If not specified, the content could be anything (including no payload, if the connectionType defined this) */
-        payloadMimeType: t.array(primitives.R4.code),
+        /** Extension of name element */
+        _name: Element,
+        /** Organization that manages this endpoint (might not be the organization that exposes the endpoint) */
+        managingOrganization: Reference,
+        /** Contact details for source (e.g. troubleshooting) */
+        contact: t.array(ContactPoint),
         /** Interval the endpoint is expected to be operational */
         period: Period,
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** Mimetype to send. If not specified, the content could be anything (including no payload, if the connectionType defined this) */
+        payloadMimeType: t.array(primitives.R4.code),
+        /** Extension of payloadMimeType element */
+        _payloadMimeType: t.array(Element),
+        /** Extension of address element */
+        _address: Element,
+        /** Usage depends on the channel type */
+        header: t.array(primitives.R4.string),
+        /** Extension of header element */
+        _header: t.array(Element)
       })
-    ],
-    "Endpoint"
-  )
+    ])
 );

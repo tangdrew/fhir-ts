@@ -4,76 +4,125 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-import { Signature, SignatureOutputType } from "./Signature";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
+import { Signature } from "./Signature";
 
 /**
- * An entity used in this activity
+ * Who, What, When for a set of resources
  */
-export interface ProvenanceEntity {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+export interface Provenance {
+  /** Logical id of this artifact */
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
+  /** Metadata about the resource */
+  meta?: Meta;
+  /** A set of rules under which this content was created */
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
+  /** Language of the resource content */
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
+  /** Text summary of the resource, for human interpretation */
+  text?: Narrative;
+  /** Contained, inline Resources */
+  contained?: Resource[];
   /** Additional content defined by implementations */
   extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
+  /** Extensions that cannot be ignored */
   modifierExtension?: Extension[];
-  /** derivation | revision | quotation | source | removal */
-  role: t.TypeOf<primitives.R4.CodeType>;
-  /** Identity of entity */
-  what: Reference;
-  /** Entity is attributed to this agent */
-  agent?: ProvenanceAgent[];
+  /** Target Reference(s) (usually version specific) */
+  target: Reference[];
+  /** When the activity occurred */
+  occurredPeriod?: Period;
+  /** When the activity occurred */
+  occurredDateTime?: primitives.R4.dateTime;
+  /** Extension of occurredDateTime element */
+  _occurredDateTime?: Element;
+  /** When the activity was recorded / updated */
+  recorded: primitives.R4.instant;
+  /** Extension of recorded element */
+  _recorded?: Element;
+  /** Policy or plan the activity was defined by */
+  policy?: primitives.R4.uri[];
+  /** Extension of policy element */
+  _policy?: Element[];
+  /** Where the activity occurred, if relevant */
+  location?: Reference;
+  /** Reason the activity is occurring */
+  reason?: CodeableConcept[];
+  /** Activity that occurred */
+  activity?: CodeableConcept;
+  /** Signature on target */
+  signature?: Signature[];
 }
-
-export interface ProvenanceEntityOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** derivation | revision | quotation | source | removal */
-  role: t.OutputOf<primitives.R4.CodeType>;
-  /** Identity of entity */
-  what: ReferenceOutputType;
-  /** Entity is attributed to this agent */
-  agent?: ProvenanceAgentOutputType[];
-}
-
-export const ProvenanceEntity: t.RecursiveType<
-  t.Type<ProvenanceEntity, ProvenanceEntityOutputType>,
-  ProvenanceEntity,
-  ProvenanceEntityOutputType
-> = t.recursion<ProvenanceEntity, ProvenanceEntityOutputType>(
-  "ProvenanceEntity",
+/**
+ * Who, What, When for a set of resources
+ */
+export const Provenance: t.Type<Provenance> = t.recursion<Provenance>(
+  "Provenance",
   () =>
-    t.intersection(
-      [
-        t.type({
-          /** derivation | revision | quotation | source | removal */
-          role: primitives.R4.code,
-          /** Identity of entity */
-          what: Reference
-        }),
-        t.partial({
-          /** Entity is attributed to this agent */
-          agent: t.array(ProvenanceAgent),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension)
-        })
-      ],
-      "ProvenanceEntity"
-    )
+    t.intersection([
+      t.type({
+        /** Target Reference(s) (usually version specific) */
+        target: t.array(Reference),
+        /** When the activity was recorded / updated */
+        recorded: primitives.R4.instant
+      }),
+      t.partial({
+        /** Logical id of this artifact */
+        id: primitives.R4.id,
+        /** Extension of id element */
+        _id: Element,
+        /** Metadata about the resource */
+        meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored */
+        modifierExtension: t.array(Extension),
+        /** When the activity occurred */
+        occurredPeriod: Period,
+        /** When the activity occurred */
+        occurredDateTime: primitives.R4.dateTime,
+        /** Extension of occurredDateTime element */
+        _occurredDateTime: Element,
+        /** Extension of recorded element */
+        _recorded: Element,
+        /** Policy or plan the activity was defined by */
+        policy: t.array(primitives.R4.uri),
+        /** Extension of policy element */
+        _policy: t.array(Element),
+        /** Where the activity occurred, if relevant */
+        location: Reference,
+        /** Reason the activity is occurring */
+        reason: t.array(CodeableConcept),
+        /** Activity that occurred */
+        activity: CodeableConcept,
+        /** Signature on target */
+        signature: t.array(Signature)
+      })
+    ])
 );
 
 /**
@@ -81,7 +130,9 @@ export const ProvenanceEntity: t.RecursiveType<
  */
 export interface ProvenanceAgent {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Extensions that cannot be ignored even if unrecognized */
@@ -95,185 +146,83 @@ export interface ProvenanceAgent {
   /** Who the agent is representing */
   onBehalfOf?: Reference;
 }
-
-export interface ProvenanceAgentOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** How the agent participated */
-  type?: CodeableConceptOutputType;
-  /** What the agents role was */
-  role?: CodeableConceptOutputType[];
-  /** Who participated */
-  who: ReferenceOutputType;
-  /** Who the agent is representing */
-  onBehalfOf?: ReferenceOutputType;
-}
-
-export const ProvenanceAgent: t.RecursiveType<
-  t.Type<ProvenanceAgent, ProvenanceAgentOutputType>,
-  ProvenanceAgent,
-  ProvenanceAgentOutputType
-> = t.recursion<ProvenanceAgent, ProvenanceAgentOutputType>(
-  "ProvenanceAgent",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Who participated */
-          who: Reference
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Who the agent is representing */
-          onBehalfOf: Reference,
-          /** What the agents role was */
-          role: t.array(CodeableConcept),
-          /** How the agent participated */
-          type: CodeableConcept
-        })
-      ],
-      "ProvenanceAgent"
-    )
+/**
+ * Actor involved
+ */
+export const ProvenanceAgent: t.Type<ProvenanceAgent> = t.recursion<
+  ProvenanceAgent
+>("ProvenanceAgent", () =>
+  t.intersection([
+    t.type({
+      /** Who participated */
+      who: Reference
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** How the agent participated */
+      type: CodeableConcept,
+      /** What the agents role was */
+      role: t.array(CodeableConcept),
+      /** Who the agent is representing */
+      onBehalfOf: Reference
+    })
+  ])
 );
 
 /**
- * Who, What, When for a set of resources
+ * An entity used in this activity
  */
-export interface Provenance {
-  /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: Meta;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: Narrative;
-  /** Contained, inline Resources */
-  contained?: Resource[];
+export interface ProvenanceEntity {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
-  /** Extensions that cannot be ignored */
+  /** Extensions that cannot be ignored even if unrecognized */
   modifierExtension?: Extension[];
-  /** Target Reference(s) (usually version specific) */
-  target: Reference[];
-  /** When the activity occurred */
-  occurred?: Period | t.TypeOf<primitives.R4.DateTimeType>;
-  /** When the activity was recorded / updated */
-  recorded: t.TypeOf<primitives.R4.InstantType>;
-  /** Policy or plan the activity was defined by */
-  policy?: t.TypeOf<primitives.R4.URIType>[];
-  /** Where the activity occurred, if relevant */
-  location?: Reference;
-  /** Reason the activity is occurring */
-  reason?: CodeableConcept[];
-  /** Activity that occurred */
-  activity?: CodeableConcept;
-  /** Actor involved */
-  agent: ProvenanceAgent[];
-  /** An entity used in this activity */
-  entity?: ProvenanceEntity[];
-  /** Signature on target */
-  signature?: Signature[];
+  /** derivation | revision | quotation | source | removal */
+  role: primitives.R4.code;
+  /** Extension of role element */
+  _role?: Element;
+  /** Identity of entity */
+  what: Reference;
+  /** Entity is attributed to this agent */
+  agent?: ProvenanceAgent[];
 }
-
-export interface ProvenanceOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Target Reference(s) (usually version specific) */
-  target: ReferenceOutputType[];
-  /** When the activity occurred */
-  occurred?: PeriodOutputType | t.OutputOf<primitives.R4.DateTimeType>;
-  /** When the activity was recorded / updated */
-  recorded: t.OutputOf<primitives.R4.InstantType>;
-  /** Policy or plan the activity was defined by */
-  policy?: t.OutputOf<primitives.R4.URIType>[];
-  /** Where the activity occurred, if relevant */
-  location?: ReferenceOutputType;
-  /** Reason the activity is occurring */
-  reason?: CodeableConceptOutputType[];
-  /** Activity that occurred */
-  activity?: CodeableConceptOutputType;
-  /** Actor involved */
-  agent: ProvenanceAgentOutputType[];
-  /** An entity used in this activity */
-  entity?: ProvenanceEntityOutputType[];
-  /** Signature on target */
-  signature?: SignatureOutputType[];
-}
-
-export const Provenance: t.RecursiveType<
-  t.Type<Provenance, ProvenanceOutputType>,
-  Provenance,
-  ProvenanceOutputType
-> = t.recursion<Provenance, ProvenanceOutputType>("Provenance", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Actor involved */
-        agent: t.array(ProvenanceAgent),
-        /** When the activity was recorded / updated */
-        recorded: primitives.R4.instant,
-        /** Target Reference(s) (usually version specific) */
-        target: t.array(Reference)
-      }),
-      t.partial({
-        /** Activity that occurred */
-        activity: CodeableConcept,
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** An entity used in this activity */
-        entity: t.array(ProvenanceEntity),
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Where the activity occurred, if relevant */
-        location: Reference,
-        /** Metadata about the resource */
-        meta: Meta,
-        /** Extensions that cannot be ignored */
-        modifierExtension: t.array(Extension),
-        /** When the activity occurred */
-        occurred: t.union([Period, primitives.R4.dateTime]),
-        /** Policy or plan the activity was defined by */
-        policy: t.array(primitives.R4.uri),
-        /** Reason the activity is occurring */
-        reason: t.array(CodeableConcept),
-        /** Signature on target */
-        signature: t.array(Signature),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
-      })
-    ],
-    "Provenance"
-  )
+/**
+ * An entity used in this activity
+ */
+export const ProvenanceEntity: t.Type<ProvenanceEntity> = t.recursion<
+  ProvenanceEntity
+>("ProvenanceEntity", () =>
+  t.intersection([
+    t.type({
+      /** derivation | revision | quotation | source | removal */
+      role: primitives.R4.code,
+      /** Identity of entity */
+      what: Reference
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Extension of role element */
+      _role: Element,
+      /** Entity is attributed to this agent */
+      agent: t.array(ProvenanceAgent)
+    })
+  ])
 );

@@ -4,70 +4,73 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Extension, ExtensionOutputType } from "./Extension";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
 
 /**
  * A duration of time during which an organism (or a process) has existed
  */
 export interface Age {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** Numerical value (with implicit precision) */
-  value?: t.TypeOf<primitives.R4.DecimalType>;
+  value?: primitives.R4.decimal;
+  /** Extension of value element */
+  _value?: Element;
   /** < | <= | >= | > - how to understand the value */
-  comparator?: t.TypeOf<primitives.R4.CodeType>;
+  comparator?: primitives.R4.code;
+  /** Extension of comparator element */
+  _comparator?: Element;
   /** Unit representation */
-  unit?: t.TypeOf<primitives.R4.StringType>;
+  unit?: string;
+  /** Extension of unit element */
+  _unit?: Element;
   /** System that defines coded unit form */
-  system?: t.TypeOf<primitives.R4.URIType>;
+  system?: primitives.R4.uri;
+  /** Extension of system element */
+  _system?: Element;
   /** Coded form of the unit */
-  code?: t.TypeOf<primitives.R4.CodeType>;
+  code?: primitives.R4.code;
+  /** Extension of code element */
+  _code?: Element;
 }
-
-export interface AgeOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Numerical value (with implicit precision) */
-  value?: t.OutputOf<primitives.R4.DecimalType>;
-  /** < | <= | >= | > - how to understand the value */
-  comparator?: t.OutputOf<primitives.R4.CodeType>;
-  /** Unit representation */
-  unit?: t.OutputOf<primitives.R4.StringType>;
-  /** System that defines coded unit form */
-  system?: t.OutputOf<primitives.R4.URIType>;
-  /** Coded form of the unit */
-  code?: t.OutputOf<primitives.R4.CodeType>;
-}
-
-export const Age: t.RecursiveType<
-  t.Type<Age, AgeOutputType>,
-  Age,
-  AgeOutputType
-> = t.recursion<Age, AgeOutputType>("Age", () =>
-  t.intersection(
-    [
-      t.type({}),
-      t.partial({
-        /** Coded form of the unit */
-        code: primitives.R4.code,
-        /** < | <= | >= | > - how to understand the value */
-        comparator: primitives.R4.code,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** System that defines coded unit form */
-        system: primitives.R4.uri,
-        /** Unit representation */
-        unit: primitives.R4.string,
-        /** Numerical value (with implicit precision) */
-        value: primitives.R4.decimal
-      })
-    ],
-    "Age"
-  )
+/**
+ * A duration of time during which an organism (or a process) has existed
+ */
+export const Age: t.Type<Age> = t.recursion<Age>("Age", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Numerical value (with implicit precision) */
+      value: primitives.R4.decimal,
+      /** Extension of value element */
+      _value: Element,
+      /** < | <= | >= | > - how to understand the value */
+      comparator: primitives.R4.code,
+      /** Extension of comparator element */
+      _comparator: Element,
+      /** Unit representation */
+      unit: primitives.R4.string,
+      /** Extension of unit element */
+      _unit: Element,
+      /** System that defines coded unit form */
+      system: primitives.R4.uri,
+      /** Extension of system element */
+      _system: Element,
+      /** Coded form of the unit */
+      code: primitives.R4.code,
+      /** Extension of code element */
+      _code: Element
+    })
+  ])
 );

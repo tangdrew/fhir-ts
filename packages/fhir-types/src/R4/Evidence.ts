@@ -4,31 +4,38 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { ContactDetail, ContactDetailOutputType } from "./ContactDetail";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { RelatedArtifact, RelatedArtifactOutputType } from "./RelatedArtifact";
-import { Resource, ResourceOutputType } from "./Resource";
-import { UsageContext, UsageContextOutputType } from "./UsageContext";
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { ContactDetail } from "./ContactDetail";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Reference } from "./Reference";
+import { RelatedArtifact } from "./RelatedArtifact";
+import { Resource } from "./Resource";
+import { UsageContext } from "./UsageContext";
 
 /**
  * A research context or question
  */
 export interface Evidence {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -38,29 +45,49 @@ export interface Evidence {
   /** Extensions that cannot be ignored */
   modifierExtension?: Extension[];
   /** Canonical identifier for this evidence, represented as a URI (globally unique) */
-  url?: t.TypeOf<primitives.R4.URIType>;
+  url?: primitives.R4.uri;
+  /** Extension of url element */
+  _url?: Element;
   /** Additional identifier for the evidence */
   identifier?: Identifier[];
   /** Business version of the evidence */
-  version?: t.TypeOf<primitives.R4.StringType>;
+  version?: string;
+  /** Extension of version element */
+  _version?: Element;
   /** Name for this evidence (computer friendly) */
-  name?: t.TypeOf<primitives.R4.StringType>;
+  name?: string;
+  /** Extension of name element */
+  _name?: Element;
   /** Name for this evidence (human friendly) */
-  title?: t.TypeOf<primitives.R4.StringType>;
+  title?: string;
+  /** Extension of title element */
+  _title?: Element;
   /** Title for use in informal contexts */
-  shortTitle?: t.TypeOf<primitives.R4.StringType>;
+  shortTitle?: string;
+  /** Extension of shortTitle element */
+  _shortTitle?: Element;
   /** Subordinate title of the Evidence */
-  subtitle?: t.TypeOf<primitives.R4.StringType>;
+  subtitle?: string;
+  /** Extension of subtitle element */
+  _subtitle?: Element;
   /** draft | active | retired | unknown */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** Date last changed */
-  date?: t.TypeOf<primitives.R4.DateTimeType>;
+  date?: primitives.R4.dateTime;
+  /** Extension of date element */
+  _date?: Element;
   /** Name of the publisher (organization or individual) */
-  publisher?: t.TypeOf<primitives.R4.StringType>;
+  publisher?: string;
+  /** Extension of publisher element */
+  _publisher?: Element;
   /** Contact details for the publisher */
   contact?: ContactDetail[];
   /** Natural language description of the evidence */
-  description?: t.TypeOf<primitives.R4.MarkdownType>;
+  description?: primitives.R4.markdown;
+  /** Extension of description element */
+  _description?: Element;
   /** Used for footnotes or explanatory notes */
   note?: Annotation[];
   /** The context that the content is intended to support */
@@ -68,11 +95,17 @@ export interface Evidence {
   /** Intended jurisdiction for evidence (if applicable) */
   jurisdiction?: CodeableConcept[];
   /** Use and/or publishing restrictions */
-  copyright?: t.TypeOf<primitives.R4.MarkdownType>;
+  copyright?: primitives.R4.markdown;
+  /** Extension of copyright element */
+  _copyright?: Element;
   /** When the evidence was approved by publisher */
-  approvalDate?: t.TypeOf<primitives.R4.DateType>;
+  approvalDate?: primitives.R4.date;
+  /** Extension of approvalDate element */
+  _approvalDate?: Element;
   /** When the evidence was last reviewed */
-  lastReviewDate?: t.TypeOf<primitives.R4.DateType>;
+  lastReviewDate?: primitives.R4.date;
+  /** Extension of lastReviewDate element */
+  _lastReviewDate?: Element;
   /** When the evidence is expected to be used */
   effectivePeriod?: Period;
   /** The category of the Evidence, such as Education, Treatment, Assessment, etc. */
@@ -94,166 +127,120 @@ export interface Evidence {
   /** What outcome? */
   outcome?: Reference[];
 }
-
-export interface EvidenceOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Canonical identifier for this evidence, represented as a URI (globally unique) */
-  url?: t.OutputOf<primitives.R4.URIType>;
-  /** Additional identifier for the evidence */
-  identifier?: IdentifierOutputType[];
-  /** Business version of the evidence */
-  version?: t.OutputOf<primitives.R4.StringType>;
-  /** Name for this evidence (computer friendly) */
-  name?: t.OutputOf<primitives.R4.StringType>;
-  /** Name for this evidence (human friendly) */
-  title?: t.OutputOf<primitives.R4.StringType>;
-  /** Title for use in informal contexts */
-  shortTitle?: t.OutputOf<primitives.R4.StringType>;
-  /** Subordinate title of the Evidence */
-  subtitle?: t.OutputOf<primitives.R4.StringType>;
-  /** draft | active | retired | unknown */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Date last changed */
-  date?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Name of the publisher (organization or individual) */
-  publisher?: t.OutputOf<primitives.R4.StringType>;
-  /** Contact details for the publisher */
-  contact?: ContactDetailOutputType[];
-  /** Natural language description of the evidence */
-  description?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** Used for footnotes or explanatory notes */
-  note?: AnnotationOutputType[];
-  /** The context that the content is intended to support */
-  useContext?: UsageContextOutputType[];
-  /** Intended jurisdiction for evidence (if applicable) */
-  jurisdiction?: CodeableConceptOutputType[];
-  /** Use and/or publishing restrictions */
-  copyright?: t.OutputOf<primitives.R4.MarkdownType>;
-  /** When the evidence was approved by publisher */
-  approvalDate?: t.OutputOf<primitives.R4.DateType>;
-  /** When the evidence was last reviewed */
-  lastReviewDate?: t.OutputOf<primitives.R4.DateType>;
-  /** When the evidence is expected to be used */
-  effectivePeriod?: PeriodOutputType;
-  /** The category of the Evidence, such as Education, Treatment, Assessment, etc. */
-  topic?: CodeableConceptOutputType[];
-  /** Who authored the content */
-  author?: ContactDetailOutputType[];
-  /** Who edited the content */
-  editor?: ContactDetailOutputType[];
-  /** Who reviewed the content */
-  reviewer?: ContactDetailOutputType[];
-  /** Who endorsed the content */
-  endorser?: ContactDetailOutputType[];
-  /** Additional documentation, citations, etc. */
-  relatedArtifact?: RelatedArtifactOutputType[];
-  /** What population? */
-  exposureBackground: ReferenceOutputType;
-  /** What exposure? */
-  exposureVariant?: ReferenceOutputType[];
-  /** What outcome? */
-  outcome?: ReferenceOutputType[];
-}
-
-export const Evidence: t.RecursiveType<
-  t.Type<Evidence, EvidenceOutputType>,
-  Evidence,
-  EvidenceOutputType
-> = t.recursion<Evidence, EvidenceOutputType>("Evidence", () =>
-  t.intersection(
-    [
+/**
+ * A research context or question
+ */
+export const Evidence: t.Type<Evidence> = t.recursion<Evidence>(
+  "Evidence",
+  () =>
+    t.intersection([
       t.type({
-        /** What population? */
-        exposureBackground: Reference,
         /** draft | active | retired | unknown */
-        status: primitives.R4.code
+        status: primitives.R4.code,
+        /** What population? */
+        exposureBackground: Reference
       }),
       t.partial({
-        /** When the evidence was approved by publisher */
-        approvalDate: primitives.R4.date,
-        /** Who authored the content */
-        author: t.array(ContactDetail),
-        /** Contact details for the publisher */
-        contact: t.array(ContactDetail),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Use and/or publishing restrictions */
-        copyright: primitives.R4.markdown,
-        /** Date last changed */
-        date: primitives.R4.dateTime,
-        /** Natural language description of the evidence */
-        description: primitives.R4.markdown,
-        /** Who edited the content */
-        editor: t.array(ContactDetail),
-        /** When the evidence is expected to be used */
-        effectivePeriod: Period,
-        /** Who endorsed the content */
-        endorser: t.array(ContactDetail),
-        /** What exposure? */
-        exposureVariant: t.array(Reference),
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** Additional identifier for the evidence */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Intended jurisdiction for evidence (if applicable) */
-        jurisdiction: t.array(CodeableConcept),
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** When the evidence was last reviewed */
-        lastReviewDate: primitives.R4.date,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
-        /** Extensions that cannot be ignored */
-        modifierExtension: t.array(Extension),
-        /** Name for this evidence (computer friendly) */
-        name: primitives.R4.string,
-        /** Used for footnotes or explanatory notes */
-        note: t.array(Annotation),
-        /** What outcome? */
-        outcome: t.array(Reference),
-        /** Name of the publisher (organization or individual) */
-        publisher: primitives.R4.string,
-        /** Additional documentation, citations, etc. */
-        relatedArtifact: t.array(RelatedArtifact),
-        /** Who reviewed the content */
-        reviewer: t.array(ContactDetail),
-        /** Title for use in informal contexts */
-        shortTitle: primitives.R4.string,
-        /** Subordinate title of the Evidence */
-        subtitle: primitives.R4.string,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
         /** Text summary of the resource, for human interpretation */
         text: Narrative,
-        /** Name for this evidence (human friendly) */
-        title: primitives.R4.string,
-        /** The category of the Evidence, such as Education, Treatment, Assessment, etc. */
-        topic: t.array(CodeableConcept),
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
+        /** Extensions that cannot be ignored */
+        modifierExtension: t.array(Extension),
         /** Canonical identifier for this evidence, represented as a URI (globally unique) */
         url: primitives.R4.uri,
+        /** Extension of url element */
+        _url: Element,
+        /** Additional identifier for the evidence */
+        identifier: t.array(Identifier),
+        /** Business version of the evidence */
+        version: primitives.R4.string,
+        /** Extension of version element */
+        _version: Element,
+        /** Name for this evidence (computer friendly) */
+        name: primitives.R4.string,
+        /** Extension of name element */
+        _name: Element,
+        /** Name for this evidence (human friendly) */
+        title: primitives.R4.string,
+        /** Extension of title element */
+        _title: Element,
+        /** Title for use in informal contexts */
+        shortTitle: primitives.R4.string,
+        /** Extension of shortTitle element */
+        _shortTitle: Element,
+        /** Subordinate title of the Evidence */
+        subtitle: primitives.R4.string,
+        /** Extension of subtitle element */
+        _subtitle: Element,
+        /** Extension of status element */
+        _status: Element,
+        /** Date last changed */
+        date: primitives.R4.dateTime,
+        /** Extension of date element */
+        _date: Element,
+        /** Name of the publisher (organization or individual) */
+        publisher: primitives.R4.string,
+        /** Extension of publisher element */
+        _publisher: Element,
+        /** Contact details for the publisher */
+        contact: t.array(ContactDetail),
+        /** Natural language description of the evidence */
+        description: primitives.R4.markdown,
+        /** Extension of description element */
+        _description: Element,
+        /** Used for footnotes or explanatory notes */
+        note: t.array(Annotation),
         /** The context that the content is intended to support */
         useContext: t.array(UsageContext),
-        /** Business version of the evidence */
-        version: primitives.R4.string
+        /** Intended jurisdiction for evidence (if applicable) */
+        jurisdiction: t.array(CodeableConcept),
+        /** Use and/or publishing restrictions */
+        copyright: primitives.R4.markdown,
+        /** Extension of copyright element */
+        _copyright: Element,
+        /** When the evidence was approved by publisher */
+        approvalDate: primitives.R4.date,
+        /** Extension of approvalDate element */
+        _approvalDate: Element,
+        /** When the evidence was last reviewed */
+        lastReviewDate: primitives.R4.date,
+        /** Extension of lastReviewDate element */
+        _lastReviewDate: Element,
+        /** When the evidence is expected to be used */
+        effectivePeriod: Period,
+        /** The category of the Evidence, such as Education, Treatment, Assessment, etc. */
+        topic: t.array(CodeableConcept),
+        /** Who authored the content */
+        author: t.array(ContactDetail),
+        /** Who edited the content */
+        editor: t.array(ContactDetail),
+        /** Who reviewed the content */
+        reviewer: t.array(ContactDetail),
+        /** Who endorsed the content */
+        endorser: t.array(ContactDetail),
+        /** Additional documentation, citations, etc. */
+        relatedArtifact: t.array(RelatedArtifact),
+        /** What exposure? */
+        exposureVariant: t.array(Reference),
+        /** What outcome? */
+        outcome: t.array(Reference)
       })
-    ],
-    "Evidence"
-  )
+    ])
 );

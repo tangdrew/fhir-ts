@@ -4,53 +4,52 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Extension, ExtensionOutputType } from "./Extension";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
 
 /**
  * Human-readable summary of the resource (essential clinical and business information)
  */
 export interface Narrative {
   /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
   extension?: Extension[];
   /** generated | extensions | additional | empty */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** Limited xhtml content */
-  div: t.TypeOf<primitives.R4.XHTMLType>;
+  div: primitives.R4.xhtml;
+  /** Extension of div element */
+  _div?: Element;
 }
-
-export interface NarrativeOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** generated | extensions | additional | empty */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Limited xhtml content */
-  div: t.OutputOf<primitives.R4.XHTMLType>;
-}
-
-export const Narrative: t.RecursiveType<
-  t.Type<Narrative, NarrativeOutputType>,
-  Narrative,
-  NarrativeOutputType
-> = t.recursion<Narrative, NarrativeOutputType>("Narrative", () =>
-  t.intersection(
-    [
+/**
+ * Human-readable summary of the resource (essential clinical and business information)
+ */
+export const Narrative: t.Type<Narrative> = t.recursion<Narrative>(
+  "Narrative",
+  () =>
+    t.intersection([
       t.type({
-        /** Limited xhtml content */
-        div: primitives.R4.xhtml,
         /** generated | extensions | additional | empty */
-        status: primitives.R4.code
+        status: primitives.R4.code,
+        /** Limited xhtml content */
+        div: primitives.R4.xhtml
       }),
       t.partial({
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
         /** Additional content defined by implementations */
         extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string
+        /** Extension of status element */
+        _status: Element,
+        /** Extension of div element */
+        _div: Element
       })
-    ],
-    "Narrative"
-  )
+    ])
 );

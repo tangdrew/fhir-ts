@@ -4,113 +4,38 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Duration, DurationOutputType } from "./Duration";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Range, RangeOutputType } from "./Range";
-import { Ratio, RatioOutputType } from "./Ratio";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-
-/**
- * Target outcome for the goal
- */
-export interface GoalTarget {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** The parameter whose value is being tracked */
-  measure?: CodeableConcept;
-  /** The target value to be achieved */
-  detail?:
-    | Quantity
-    | Range
-    | CodeableConcept
-    | t.TypeOf<primitives.R4.StringType>
-    | t.TypeOf<primitives.R4.BooleanType>
-    | t.TypeOf<primitives.R4.IntegerType>
-    | Ratio;
-  /** Reach goal on or before */
-  due?: t.TypeOf<primitives.R4.DateType> | Duration;
-}
-
-export interface GoalTargetOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** The parameter whose value is being tracked */
-  measure?: CodeableConceptOutputType;
-  /** The target value to be achieved */
-  detail?:
-    | QuantityOutputType
-    | RangeOutputType
-    | CodeableConceptOutputType
-    | t.OutputOf<primitives.R4.StringType>
-    | t.OutputOf<primitives.R4.BooleanType>
-    | t.OutputOf<primitives.R4.IntegerType>
-    | RatioOutputType;
-  /** Reach goal on or before */
-  due?: t.OutputOf<primitives.R4.DateType> | DurationOutputType;
-}
-
-export const GoalTarget: t.RecursiveType<
-  t.Type<GoalTarget, GoalTargetOutputType>,
-  GoalTarget,
-  GoalTargetOutputType
-> = t.recursion<GoalTarget, GoalTargetOutputType>("GoalTarget", () =>
-  t.intersection(
-    [
-      t.type({}),
-      t.partial({
-        /** The target value to be achieved */
-        detail: t.union([
-          Quantity,
-          Range,
-          CodeableConcept,
-          primitives.R4.string,
-          primitives.R4.boolean,
-          primitives.R4.integer,
-          Ratio
-        ]),
-        /** Reach goal on or before */
-        due: t.union([primitives.R4.date, Duration]),
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** The parameter whose value is being tracked */
-        measure: CodeableConcept,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
-      })
-    ],
-    "GoalTarget"
-  )
-);
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { Duration } from "./Duration";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Quantity } from "./Quantity";
+import { Range } from "./Range";
+import { Ratio } from "./Ratio";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Describes the intended objective(s) for a patient, group or organization
  */
 export interface Goal {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -122,7 +47,9 @@ export interface Goal {
   /** External Ids for this goal */
   identifier?: Identifier[];
   /** proposed | planned | accepted | active | on-hold | completed | cancelled | entered-in-error | rejected */
-  lifecycleStatus: t.TypeOf<primitives.R4.CodeType>;
+  lifecycleStatus: primitives.R4.code;
+  /** Extension of lifecycleStatus element */
+  _lifecycleStatus?: Element;
   /** in-progress | improving | worsening | no-change | achieved | sustaining | not-achieved | no-progress | not-attainable */
   achievementStatus?: CodeableConcept;
   /** E.g. Treatment, dietary, behavioral, etc. */
@@ -134,13 +61,19 @@ export interface Goal {
   /** Who this goal is intended for */
   subject: Reference;
   /** When goal pursuit begins */
-  start?: t.TypeOf<primitives.R4.DateType> | CodeableConcept;
-  /** Target outcome for the goal */
-  target?: GoalTarget[];
+  startDate?: primitives.R4.date;
+  /** Extension of startDate element */
+  _startDate?: Element;
+  /** When goal pursuit begins */
+  startCodeableConcept?: CodeableConcept;
   /** When goal status took effect */
-  statusDate?: t.TypeOf<primitives.R4.DateType>;
+  statusDate?: primitives.R4.date;
+  /** Extension of statusDate element */
+  _statusDate?: Element;
   /** Reason for current status */
-  statusReason?: t.TypeOf<primitives.R4.StringType>;
+  statusReason?: string;
+  /** Extension of statusReason element */
+  _statusReason?: Element;
   /** Who's responsible for creating Goal? */
   expressedBy?: Reference;
   /** Issues addressed by this goal */
@@ -152,118 +85,166 @@ export interface Goal {
   /** Observation that resulted from goal */
   outcomeReference?: Reference[];
 }
+/**
+ * Describes the intended objective(s) for a patient, group or organization
+ */
+export const Goal: t.Type<Goal> = t.recursion<Goal>("Goal", () =>
+  t.intersection([
+    t.type({
+      /** proposed | planned | accepted | active | on-hold | completed | cancelled | entered-in-error | rejected */
+      lifecycleStatus: primitives.R4.code,
+      /** Code or text describing goal */
+      description: CodeableConcept,
+      /** Who this goal is intended for */
+      subject: Reference
+    }),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** External Ids for this goal */
+      identifier: t.array(Identifier),
+      /** Extension of lifecycleStatus element */
+      _lifecycleStatus: Element,
+      /** in-progress | improving | worsening | no-change | achieved | sustaining | not-achieved | no-progress | not-attainable */
+      achievementStatus: CodeableConcept,
+      /** E.g. Treatment, dietary, behavioral, etc. */
+      category: t.array(CodeableConcept),
+      /** high-priority | medium-priority | low-priority */
+      priority: CodeableConcept,
+      /** When goal pursuit begins */
+      startDate: primitives.R4.date,
+      /** Extension of startDate element */
+      _startDate: Element,
+      /** When goal pursuit begins */
+      startCodeableConcept: CodeableConcept,
+      /** When goal status took effect */
+      statusDate: primitives.R4.date,
+      /** Extension of statusDate element */
+      _statusDate: Element,
+      /** Reason for current status */
+      statusReason: primitives.R4.string,
+      /** Extension of statusReason element */
+      _statusReason: Element,
+      /** Who's responsible for creating Goal? */
+      expressedBy: Reference,
+      /** Issues addressed by this goal */
+      addresses: t.array(Reference),
+      /** Comments about the goal */
+      note: t.array(Annotation),
+      /** What result was achieved regarding the goal? */
+      outcomeCode: t.array(CodeableConcept),
+      /** Observation that resulted from goal */
+      outcomeReference: t.array(Reference)
+    })
+  ])
+);
 
-export interface GoalOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
+/**
+ * Target outcome for the goal
+ */
+export interface GoalTarget {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** External Ids for this goal */
-  identifier?: IdentifierOutputType[];
-  /** proposed | planned | accepted | active | on-hold | completed | cancelled | entered-in-error | rejected */
-  lifecycleStatus: t.OutputOf<primitives.R4.CodeType>;
-  /** in-progress | improving | worsening | no-change | achieved | sustaining | not-achieved | no-progress | not-attainable */
-  achievementStatus?: CodeableConceptOutputType;
-  /** E.g. Treatment, dietary, behavioral, etc. */
-  category?: CodeableConceptOutputType[];
-  /** high-priority | medium-priority | low-priority */
-  priority?: CodeableConceptOutputType;
-  /** Code or text describing goal */
-  description: CodeableConceptOutputType;
-  /** Who this goal is intended for */
-  subject: ReferenceOutputType;
-  /** When goal pursuit begins */
-  start?: t.OutputOf<primitives.R4.DateType> | CodeableConceptOutputType;
-  /** Target outcome for the goal */
-  target?: GoalTargetOutputType[];
-  /** When goal status took effect */
-  statusDate?: t.OutputOf<primitives.R4.DateType>;
-  /** Reason for current status */
-  statusReason?: t.OutputOf<primitives.R4.StringType>;
-  /** Who's responsible for creating Goal? */
-  expressedBy?: ReferenceOutputType;
-  /** Issues addressed by this goal */
-  addresses?: ReferenceOutputType[];
-  /** Comments about the goal */
-  note?: AnnotationOutputType[];
-  /** What result was achieved regarding the goal? */
-  outcomeCode?: CodeableConceptOutputType[];
-  /** Observation that resulted from goal */
-  outcomeReference?: ReferenceOutputType[];
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** The parameter whose value is being tracked */
+  measure?: CodeableConcept;
+  /** The target value to be achieved */
+  detailQuantity?: Quantity;
+  /** The target value to be achieved */
+  detailRange?: Range;
+  /** The target value to be achieved */
+  detailCodeableConcept?: CodeableConcept;
+  /** The target value to be achieved */
+  detailString?: string;
+  /** Extension of detailString element */
+  _detailString?: Element;
+  /** The target value to be achieved */
+  detailBoolean?: boolean;
+  /** Extension of detailBoolean element */
+  _detailBoolean?: Element;
+  /** The target value to be achieved */
+  detailInteger?: primitives.R4.integer;
+  /** Extension of detailInteger element */
+  _detailInteger?: Element;
+  /** The target value to be achieved */
+  detailRatio?: Ratio;
+  /** Reach goal on or before */
+  dueDate?: primitives.R4.date;
+  /** Extension of dueDate element */
+  _dueDate?: Element;
+  /** Reach goal on or before */
+  dueDuration?: Duration;
 }
-
-export const Goal: t.RecursiveType<
-  t.Type<Goal, GoalOutputType>,
-  Goal,
-  GoalOutputType
-> = t.recursion<Goal, GoalOutputType>("Goal", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Code or text describing goal */
-        description: CodeableConcept,
-        /** proposed | planned | accepted | active | on-hold | completed | cancelled | entered-in-error | rejected */
-        lifecycleStatus: primitives.R4.code,
-        /** Who this goal is intended for */
-        subject: Reference
-      }),
+/**
+ * Target outcome for the goal
+ */
+export const GoalTarget: t.Type<GoalTarget> = t.recursion<GoalTarget>(
+  "GoalTarget",
+  () =>
+    t.intersection([
+      t.type({}),
       t.partial({
-        /** in-progress | improving | worsening | no-change | achieved | sustaining | not-achieved | no-progress | not-attainable */
-        achievementStatus: CodeableConcept,
-        /** Issues addressed by this goal */
-        addresses: t.array(Reference),
-        /** E.g. Treatment, dietary, behavioral, etc. */
-        category: t.array(CodeableConcept),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** Who's responsible for creating Goal? */
-        expressedBy: Reference,
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
         /** Additional content defined by implementations */
         extension: t.array(Extension),
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** External Ids for this goal */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Metadata about the resource */
-        meta: Meta,
-        /** Extensions that cannot be ignored */
+        /** Extensions that cannot be ignored even if unrecognized */
         modifierExtension: t.array(Extension),
-        /** Comments about the goal */
-        note: t.array(Annotation),
-        /** What result was achieved regarding the goal? */
-        outcomeCode: t.array(CodeableConcept),
-        /** Observation that resulted from goal */
-        outcomeReference: t.array(Reference),
-        /** high-priority | medium-priority | low-priority */
-        priority: CodeableConcept,
-        /** When goal pursuit begins */
-        start: t.union([primitives.R4.date, CodeableConcept]),
-        /** When goal status took effect */
-        statusDate: primitives.R4.date,
-        /** Reason for current status */
-        statusReason: primitives.R4.string,
-        /** Target outcome for the goal */
-        target: t.array(GoalTarget),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** The parameter whose value is being tracked */
+        measure: CodeableConcept,
+        /** The target value to be achieved */
+        detailQuantity: Quantity,
+        /** The target value to be achieved */
+        detailRange: Range,
+        /** The target value to be achieved */
+        detailCodeableConcept: CodeableConcept,
+        /** The target value to be achieved */
+        detailString: primitives.R4.string,
+        /** Extension of detailString element */
+        _detailString: Element,
+        /** The target value to be achieved */
+        detailBoolean: primitives.R4.boolean,
+        /** Extension of detailBoolean element */
+        _detailBoolean: Element,
+        /** The target value to be achieved */
+        detailInteger: primitives.R4.integer,
+        /** Extension of detailInteger element */
+        _detailInteger: Element,
+        /** The target value to be achieved */
+        detailRatio: Ratio,
+        /** Reach goal on or before */
+        dueDate: primitives.R4.date,
+        /** Extension of dueDate element */
+        _dueDate: Element,
+        /** Reach goal on or before */
+        dueDuration: Duration
       })
-    ],
-    "Goal"
-  )
+    ])
 );

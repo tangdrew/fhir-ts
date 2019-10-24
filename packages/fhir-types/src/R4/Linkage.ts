@@ -4,79 +4,31 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-
-/**
- * Item to be linked
- */
-export interface LinkageItem {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** source | alternate | historical */
-  type: t.TypeOf<primitives.R4.CodeType>;
-  /** Resource being linked */
-  resource: Reference;
-}
-
-export interface LinkageItemOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** source | alternate | historical */
-  type: t.OutputOf<primitives.R4.CodeType>;
-  /** Resource being linked */
-  resource: ReferenceOutputType;
-}
-
-export const LinkageItem: t.RecursiveType<
-  t.Type<LinkageItem, LinkageItemOutputType>,
-  LinkageItem,
-  LinkageItemOutputType
-> = t.recursion<LinkageItem, LinkageItemOutputType>("LinkageItem", () =>
-  t.intersection(
-    [
-      t.type({
-        /** Resource being linked */
-        resource: Reference,
-        /** source | alternate | historical */
-        type: primitives.R4.code
-      }),
-      t.partial({
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension)
-      })
-    ],
-    "LinkageItem"
-  )
-);
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Links records for 'same' item
  */
 export interface Linkage {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -86,72 +38,94 @@ export interface Linkage {
   /** Extensions that cannot be ignored */
   modifierExtension?: Extension[];
   /** Whether this linkage assertion is active or not */
-  active?: t.TypeOf<primitives.R4.BooleanType>;
+  active?: boolean;
+  /** Extension of active element */
+  _active?: Element;
   /** Who is responsible for linkages */
   author?: Reference;
-  /** Item to be linked */
-  item: LinkageItem[];
 }
+/**
+ * Links records for 'same' item
+ */
+export const Linkage: t.Type<Linkage> = t.recursion<Linkage>("Linkage", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** Whether this linkage assertion is active or not */
+      active: primitives.R4.boolean,
+      /** Extension of active element */
+      _active: Element,
+      /** Who is responsible for linkages */
+      author: Reference
+    })
+  ])
+);
 
-export interface LinkageOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
+/**
+ * Item to be linked
+ */
+export interface LinkageItem {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Whether this linkage assertion is active or not */
-  active?: t.OutputOf<primitives.R4.BooleanType>;
-  /** Who is responsible for linkages */
-  author?: ReferenceOutputType;
-  /** Item to be linked */
-  item: LinkageItemOutputType[];
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** source | alternate | historical */
+  type: primitives.R4.code;
+  /** Extension of type element */
+  _type?: Element;
+  /** Resource being linked */
+  resource: Reference;
 }
-
-export const Linkage: t.RecursiveType<
-  t.Type<Linkage, LinkageOutputType>,
-  Linkage,
-  LinkageOutputType
-> = t.recursion<Linkage, LinkageOutputType>("Linkage", () =>
-  t.intersection(
-    [
+/**
+ * Item to be linked
+ */
+export const LinkageItem: t.Type<LinkageItem> = t.recursion<LinkageItem>(
+  "LinkageItem",
+  () =>
+    t.intersection([
       t.type({
-        /** Item to be linked */
-        item: t.array(LinkageItem)
+        /** source | alternate | historical */
+        type: primitives.R4.code,
+        /** Resource being linked */
+        resource: Reference
       }),
       t.partial({
-        /** Whether this linkage assertion is active or not */
-        active: primitives.R4.boolean,
-        /** Who is responsible for linkages */
-        author: Reference,
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
         /** Additional content defined by implementations */
         extension: t.array(Extension),
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Metadata about the resource */
-        meta: Meta,
-        /** Extensions that cannot be ignored */
+        /** Extensions that cannot be ignored even if unrecognized */
         modifierExtension: t.array(Extension),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** Extension of type element */
+        _type: Element
       })
-    ],
-    "Linkage"
-  )
+    ])
 );

@@ -4,26 +4,33 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Immunization evaluation information
  */
 export interface ImmunizationEvaluation {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -35,11 +42,15 @@ export interface ImmunizationEvaluation {
   /** Business identifier */
   identifier?: Identifier[];
   /** completed | entered-in-error */
-  status: t.TypeOf<primitives.R4.CodeType>;
+  status: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** Who this evaluation is for */
   patient: Reference;
   /** Date evaluation was performed */
-  date?: t.TypeOf<primitives.R4.DateTimeType>;
+  date?: primitives.R4.dateTime;
+  /** Extension of date element */
+  _date?: Element;
   /** Who is responsible for publishing the recommendations */
   authority?: Reference;
   /** Evaluation target disease */
@@ -51,130 +62,108 @@ export interface ImmunizationEvaluation {
   /** Reason for the dose status */
   doseStatusReason?: CodeableConcept[];
   /** Evaluation notes */
-  description?: t.TypeOf<primitives.R4.StringType>;
+  description?: string;
+  /** Extension of description element */
+  _description?: Element;
   /** Name of vaccine series */
-  series?: t.TypeOf<primitives.R4.StringType>;
+  series?: string;
+  /** Extension of series element */
+  _series?: Element;
   /** Dose number within series */
-  dosenumber?:
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>;
-  /** Recommended number of doses for immunity */
-  seriesdoses?:
-    | t.TypeOf<primitives.R4.PositiveIntegerType>
-    | t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface ImmunizationEvaluationOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Business identifier */
-  identifier?: IdentifierOutputType[];
-  /** completed | entered-in-error */
-  status: t.OutputOf<primitives.R4.CodeType>;
-  /** Who this evaluation is for */
-  patient: ReferenceOutputType;
-  /** Date evaluation was performed */
-  date?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Who is responsible for publishing the recommendations */
-  authority?: ReferenceOutputType;
-  /** Evaluation target disease */
-  targetDisease: CodeableConceptOutputType;
-  /** Immunization being evaluated */
-  immunizationEvent: ReferenceOutputType;
-  /** Status of the dose relative to published recommendations */
-  doseStatus: CodeableConceptOutputType;
-  /** Reason for the dose status */
-  doseStatusReason?: CodeableConceptOutputType[];
-  /** Evaluation notes */
-  description?: t.OutputOf<primitives.R4.StringType>;
-  /** Name of vaccine series */
-  series?: t.OutputOf<primitives.R4.StringType>;
+  dosenumberPositiveInt?: primitives.R4.positiveInt;
+  /** Extension of dosenumberPositiveInt element */
+  _dosenumberPositiveInt?: Element;
   /** Dose number within series */
-  dosenumber?:
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>;
+  dosenumberString?: string;
+  /** Extension of dosenumberString element */
+  _dosenumberString?: Element;
   /** Recommended number of doses for immunity */
-  seriesdoses?:
-    | t.OutputOf<primitives.R4.PositiveIntegerType>
-    | t.OutputOf<primitives.R4.StringType>;
+  seriesdosesPositiveInt?: primitives.R4.positiveInt;
+  /** Extension of seriesdosesPositiveInt element */
+  _seriesdosesPositiveInt?: Element;
+  /** Recommended number of doses for immunity */
+  seriesdosesString?: string;
+  /** Extension of seriesdosesString element */
+  _seriesdosesString?: Element;
 }
-
-export const ImmunizationEvaluation: t.RecursiveType<
-  t.Type<ImmunizationEvaluation, ImmunizationEvaluationOutputType>,
-  ImmunizationEvaluation,
-  ImmunizationEvaluationOutputType
-> = t.recursion<ImmunizationEvaluation, ImmunizationEvaluationOutputType>(
-  "ImmunizationEvaluation",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Status of the dose relative to published recommendations */
-          doseStatus: CodeableConcept,
-          /** Immunization being evaluated */
-          immunizationEvent: Reference,
-          /** Who this evaluation is for */
-          patient: Reference,
-          /** completed | entered-in-error */
-          status: primitives.R4.code,
-          /** Evaluation target disease */
-          targetDisease: CodeableConcept
-        }),
-        t.partial({
-          /** Who is responsible for publishing the recommendations */
-          authority: Reference,
-          /** Contained, inline Resources */
-          contained: t.array(Resource),
-          /** Date evaluation was performed */
-          date: primitives.R4.dateTime,
-          /** Evaluation notes */
-          description: primitives.R4.string,
-          /** Reason for the dose status */
-          doseStatusReason: t.array(CodeableConcept),
-          /** Dose number within series */
-          dosenumber: t.union([
-            primitives.R4.positiveInt,
-            primitives.R4.string
-          ]),
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Logical id of this artifact */
-          id: primitives.R4.id,
-          /** Business identifier */
-          identifier: t.array(Identifier),
-          /** A set of rules under which this content was created */
-          implicitRules: primitives.R4.uri,
-          /** Language of the resource content */
-          language: primitives.R4.code,
-          /** Metadata about the resource */
-          meta: Meta,
-          /** Extensions that cannot be ignored */
-          modifierExtension: t.array(Extension),
-          /** Name of vaccine series */
-          series: primitives.R4.string,
-          /** Recommended number of doses for immunity */
-          seriesdoses: t.union([
-            primitives.R4.positiveInt,
-            primitives.R4.string
-          ]),
-          /** Text summary of the resource, for human interpretation */
-          text: Narrative
-        })
-      ],
-      "ImmunizationEvaluation"
-    )
+/**
+ * Immunization evaluation information
+ */
+export const ImmunizationEvaluation: t.Type<
+  ImmunizationEvaluation
+> = t.recursion<ImmunizationEvaluation>("ImmunizationEvaluation", () =>
+  t.intersection([
+    t.type({
+      /** completed | entered-in-error */
+      status: primitives.R4.code,
+      /** Who this evaluation is for */
+      patient: Reference,
+      /** Evaluation target disease */
+      targetDisease: CodeableConcept,
+      /** Immunization being evaluated */
+      immunizationEvent: Reference,
+      /** Status of the dose relative to published recommendations */
+      doseStatus: CodeableConcept
+    }),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** Business identifier */
+      identifier: t.array(Identifier),
+      /** Extension of status element */
+      _status: Element,
+      /** Date evaluation was performed */
+      date: primitives.R4.dateTime,
+      /** Extension of date element */
+      _date: Element,
+      /** Who is responsible for publishing the recommendations */
+      authority: Reference,
+      /** Reason for the dose status */
+      doseStatusReason: t.array(CodeableConcept),
+      /** Evaluation notes */
+      description: primitives.R4.string,
+      /** Extension of description element */
+      _description: Element,
+      /** Name of vaccine series */
+      series: primitives.R4.string,
+      /** Extension of series element */
+      _series: Element,
+      /** Dose number within series */
+      dosenumberPositiveInt: primitives.R4.positiveInt,
+      /** Extension of dosenumberPositiveInt element */
+      _dosenumberPositiveInt: Element,
+      /** Dose number within series */
+      dosenumberString: primitives.R4.string,
+      /** Extension of dosenumberString element */
+      _dosenumberString: Element,
+      /** Recommended number of doses for immunity */
+      seriesdosesPositiveInt: primitives.R4.positiveInt,
+      /** Extension of seriesdosesPositiveInt element */
+      _seriesdosesPositiveInt: Element,
+      /** Recommended number of doses for immunity */
+      seriesdosesString: primitives.R4.string,
+      /** Extension of seriesdosesString element */
+      _seriesdosesString: Element
+    })
+  ])
 );

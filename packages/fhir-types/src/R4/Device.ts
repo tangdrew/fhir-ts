@@ -4,347 +4,36 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { Annotation, AnnotationOutputType } from "./Annotation";
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { ContactPoint, ContactPointOutputType } from "./ContactPoint";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-
-/**
- * The actual design of the device or software version running on the device
- */
-export interface DeviceVersion {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** The type of the device version */
-  type?: CodeableConcept;
-  /** A single component of the device version */
-  component?: Identifier;
-  /** The version text */
-  value: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface DeviceVersionOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** The type of the device version */
-  type?: CodeableConceptOutputType;
-  /** A single component of the device version */
-  component?: IdentifierOutputType;
-  /** The version text */
-  value: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const DeviceVersion: t.RecursiveType<
-  t.Type<DeviceVersion, DeviceVersionOutputType>,
-  DeviceVersion,
-  DeviceVersionOutputType
-> = t.recursion<DeviceVersion, DeviceVersionOutputType>("DeviceVersion", () =>
-  t.intersection(
-    [
-      t.type({
-        /** The version text */
-        value: primitives.R4.string
-      }),
-      t.partial({
-        /** A single component of the device version */
-        component: Identifier,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
-        /** Unique id for inter-element referencing */
-        id: primitives.R4.string,
-        /** Extensions that cannot be ignored even if unrecognized */
-        modifierExtension: t.array(Extension),
-        /** The type of the device version */
-        type: CodeableConcept
-      })
-    ],
-    "DeviceVersion"
-  )
-);
-
-/**
- * Unique Device Identifier (UDI) Barcode string
- */
-export interface DeviceUdiCarrier {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Mandatory fixed portion of UDI */
-  deviceIdentifier?: t.TypeOf<primitives.R4.StringType>;
-  /** UDI Issuing Organization */
-  issuer?: t.TypeOf<primitives.R4.URIType>;
-  /** Regional UDI authority */
-  jurisdiction?: t.TypeOf<primitives.R4.URIType>;
-  /** UDI Machine Readable Barcode String */
-  carrierAIDC?: t.TypeOf<primitives.R4.Base64BinaryType>;
-  /** UDI Human Readable Barcode String */
-  carrierHRF?: t.TypeOf<primitives.R4.StringType>;
-  /** barcode | rfid | manual + */
-  entryType?: t.TypeOf<primitives.R4.CodeType>;
-}
-
-export interface DeviceUdiCarrierOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Mandatory fixed portion of UDI */
-  deviceIdentifier?: t.OutputOf<primitives.R4.StringType>;
-  /** UDI Issuing Organization */
-  issuer?: t.OutputOf<primitives.R4.URIType>;
-  /** Regional UDI authority */
-  jurisdiction?: t.OutputOf<primitives.R4.URIType>;
-  /** UDI Machine Readable Barcode String */
-  carrierAIDC?: t.OutputOf<primitives.R4.Base64BinaryType>;
-  /** UDI Human Readable Barcode String */
-  carrierHRF?: t.OutputOf<primitives.R4.StringType>;
-  /** barcode | rfid | manual + */
-  entryType?: t.OutputOf<primitives.R4.CodeType>;
-}
-
-export const DeviceUdiCarrier: t.RecursiveType<
-  t.Type<DeviceUdiCarrier, DeviceUdiCarrierOutputType>,
-  DeviceUdiCarrier,
-  DeviceUdiCarrierOutputType
-> = t.recursion<DeviceUdiCarrier, DeviceUdiCarrierOutputType>(
-  "DeviceUdiCarrier",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** UDI Machine Readable Barcode String */
-          carrierAIDC: primitives.R4.base64Binary,
-          /** UDI Human Readable Barcode String */
-          carrierHRF: primitives.R4.string,
-          /** Mandatory fixed portion of UDI */
-          deviceIdentifier: primitives.R4.string,
-          /** barcode | rfid | manual + */
-          entryType: primitives.R4.code,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** UDI Issuing Organization */
-          issuer: primitives.R4.uri,
-          /** Regional UDI authority */
-          jurisdiction: primitives.R4.uri,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension)
-        })
-      ],
-      "DeviceUdiCarrier"
-    )
-);
-
-/**
- * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication
- */
-export interface DeviceSpecialization {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** The standard that is used to operate and communicate */
-  systemType: CodeableConcept;
-  /** The version of the standard that is used to operate and communicate */
-  version?: t.TypeOf<primitives.R4.StringType>;
-}
-
-export interface DeviceSpecializationOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** The standard that is used to operate and communicate */
-  systemType: CodeableConceptOutputType;
-  /** The version of the standard that is used to operate and communicate */
-  version?: t.OutputOf<primitives.R4.StringType>;
-}
-
-export const DeviceSpecialization: t.RecursiveType<
-  t.Type<DeviceSpecialization, DeviceSpecializationOutputType>,
-  DeviceSpecialization,
-  DeviceSpecializationOutputType
-> = t.recursion<DeviceSpecialization, DeviceSpecializationOutputType>(
-  "DeviceSpecialization",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** The standard that is used to operate and communicate */
-          systemType: CodeableConcept
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** The version of the standard that is used to operate and communicate */
-          version: primitives.R4.string
-        })
-      ],
-      "DeviceSpecialization"
-    )
-);
-
-/**
- * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties
- */
-export interface DeviceProperty {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Code that specifies the property DeviceDefinitionPropetyCode (Extensible) */
-  type: CodeableConcept;
-  /** Property value as a quantity */
-  valueQuantity?: Quantity[];
-  /** Property value as a code, e.g., NTP4 (synced to NTP) */
-  valueCode?: CodeableConcept[];
-}
-
-export interface DevicePropertyOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Code that specifies the property DeviceDefinitionPropetyCode (Extensible) */
-  type: CodeableConceptOutputType;
-  /** Property value as a quantity */
-  valueQuantity?: QuantityOutputType[];
-  /** Property value as a code, e.g., NTP4 (synced to NTP) */
-  valueCode?: CodeableConceptOutputType[];
-}
-
-export const DeviceProperty: t.RecursiveType<
-  t.Type<DeviceProperty, DevicePropertyOutputType>,
-  DeviceProperty,
-  DevicePropertyOutputType
-> = t.recursion<DeviceProperty, DevicePropertyOutputType>(
-  "DeviceProperty",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** Code that specifies the property DeviceDefinitionPropetyCode (Extensible) */
-          type: CodeableConcept
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Property value as a code, e.g., NTP4 (synced to NTP) */
-          valueCode: t.array(CodeableConcept),
-          /** Property value as a quantity */
-          valueQuantity: t.array(Quantity)
-        })
-      ],
-      "DeviceProperty"
-    )
-);
-
-/**
- * The name of the device as given by the manufacturer
- */
-export interface DeviceDeviceName {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** The name of the device */
-  name: t.TypeOf<primitives.R4.StringType>;
-  /** udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other */
-  type: t.TypeOf<primitives.R4.CodeType>;
-}
-
-export interface DeviceDeviceNameOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** The name of the device */
-  name: t.OutputOf<primitives.R4.StringType>;
-  /** udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other */
-  type: t.OutputOf<primitives.R4.CodeType>;
-}
-
-export const DeviceDeviceName: t.RecursiveType<
-  t.Type<DeviceDeviceName, DeviceDeviceNameOutputType>,
-  DeviceDeviceName,
-  DeviceDeviceNameOutputType
-> = t.recursion<DeviceDeviceName, DeviceDeviceNameOutputType>(
-  "DeviceDeviceName",
-  () =>
-    t.intersection(
-      [
-        t.type({
-          /** The name of the device */
-          name: primitives.R4.string,
-          /** udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other */
-          type: primitives.R4.code
-        }),
-        t.partial({
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension)
-        })
-      ],
-      "DeviceDeviceName"
-    )
-);
+import { Annotation } from "./Annotation";
+import { CodeableConcept } from "./CodeableConcept";
+import { ContactPoint } from "./ContactPoint";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Quantity } from "./Quantity";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
 
 /**
  * Item used in healthcare
  */
 export interface Device {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -357,38 +46,46 @@ export interface Device {
   identifier?: Identifier[];
   /** The reference to the definition for the device */
   definition?: Reference;
-  /** Unique Device Identifier (UDI) Barcode string */
-  udiCarrier?: DeviceUdiCarrier[];
   /** active | inactive | entered-in-error | unknown */
-  status?: t.TypeOf<primitives.R4.CodeType>;
+  status?: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off */
   statusReason?: CodeableConcept[];
   /** The distinct identification string */
-  distinctIdentifier?: t.TypeOf<primitives.R4.StringType>;
+  distinctIdentifier?: string;
+  /** Extension of distinctIdentifier element */
+  _distinctIdentifier?: Element;
   /** Name of device manufacturer */
-  manufacturer?: t.TypeOf<primitives.R4.StringType>;
+  manufacturer?: string;
+  /** Extension of manufacturer element */
+  _manufacturer?: Element;
   /** Date when the device was made */
-  manufactureDate?: t.TypeOf<primitives.R4.DateTimeType>;
+  manufactureDate?: primitives.R4.dateTime;
+  /** Extension of manufactureDate element */
+  _manufactureDate?: Element;
   /** Date and time of expiry of this device (if applicable) */
-  expirationDate?: t.TypeOf<primitives.R4.DateTimeType>;
+  expirationDate?: primitives.R4.dateTime;
+  /** Extension of expirationDate element */
+  _expirationDate?: Element;
   /** Lot number of manufacture */
-  lotNumber?: t.TypeOf<primitives.R4.StringType>;
+  lotNumber?: string;
+  /** Extension of lotNumber element */
+  _lotNumber?: Element;
   /** Serial number assigned by the manufacturer */
-  serialNumber?: t.TypeOf<primitives.R4.StringType>;
-  /** The name of the device as given by the manufacturer */
-  deviceName?: DeviceDeviceName[];
+  serialNumber?: string;
+  /** Extension of serialNumber element */
+  _serialNumber?: Element;
   /** The model number for the device */
-  modelNumber?: t.TypeOf<primitives.R4.StringType>;
+  modelNumber?: string;
+  /** Extension of modelNumber element */
+  _modelNumber?: Element;
   /** The part number of the device */
-  partNumber?: t.TypeOf<primitives.R4.StringType>;
+  partNumber?: string;
+  /** Extension of partNumber element */
+  _partNumber?: Element;
   /** The kind or type of device */
   type?: CodeableConcept;
-  /** The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication */
-  specialization?: DeviceSpecialization[];
-  /** The actual design of the device or software version running on the device */
-  version?: DeviceVersion[];
-  /** The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties */
-  property?: DeviceProperty[];
   /** Patient to whom Device is affixed */
   patient?: Reference;
   /** Organization responsible for device */
@@ -398,7 +95,9 @@ export interface Device {
   /** Where the device is found */
   location?: Reference;
   /** Network address to contact device */
-  url?: t.TypeOf<primitives.R4.URIType>;
+  url?: primitives.R4.uri;
+  /** Extension of url element */
+  _url?: Element;
   /** Device notes and comments */
   note?: Annotation[];
   /** Safety Characteristics of Device */
@@ -406,157 +105,375 @@ export interface Device {
   /** The parent device */
   parent?: Reference;
 }
+/**
+ * Item used in healthcare
+ */
+export const Device: t.Type<Device> = t.recursion<Device>("Device", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Logical id of this artifact */
+      id: primitives.R4.id,
+      /** Extension of id element */
+      _id: Element,
+      /** Metadata about the resource */
+      meta: Meta,
+      /** A set of rules under which this content was created */
+      implicitRules: primitives.R4.uri,
+      /** Extension of implicitRules element */
+      _implicitRules: Element,
+      /** Language of the resource content */
+      language: primitives.R4.code,
+      /** Extension of language element */
+      _language: Element,
+      /** Text summary of the resource, for human interpretation */
+      text: Narrative,
+      /** Contained, inline Resources */
+      contained: t.array(Resource),
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored */
+      modifierExtension: t.array(Extension),
+      /** Instance identifier */
+      identifier: t.array(Identifier),
+      /** The reference to the definition for the device */
+      definition: Reference,
+      /** active | inactive | entered-in-error | unknown */
+      status: primitives.R4.code,
+      /** Extension of status element */
+      _status: Element,
+      /** online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off */
+      statusReason: t.array(CodeableConcept),
+      /** The distinct identification string */
+      distinctIdentifier: primitives.R4.string,
+      /** Extension of distinctIdentifier element */
+      _distinctIdentifier: Element,
+      /** Name of device manufacturer */
+      manufacturer: primitives.R4.string,
+      /** Extension of manufacturer element */
+      _manufacturer: Element,
+      /** Date when the device was made */
+      manufactureDate: primitives.R4.dateTime,
+      /** Extension of manufactureDate element */
+      _manufactureDate: Element,
+      /** Date and time of expiry of this device (if applicable) */
+      expirationDate: primitives.R4.dateTime,
+      /** Extension of expirationDate element */
+      _expirationDate: Element,
+      /** Lot number of manufacture */
+      lotNumber: primitives.R4.string,
+      /** Extension of lotNumber element */
+      _lotNumber: Element,
+      /** Serial number assigned by the manufacturer */
+      serialNumber: primitives.R4.string,
+      /** Extension of serialNumber element */
+      _serialNumber: Element,
+      /** The model number for the device */
+      modelNumber: primitives.R4.string,
+      /** Extension of modelNumber element */
+      _modelNumber: Element,
+      /** The part number of the device */
+      partNumber: primitives.R4.string,
+      /** Extension of partNumber element */
+      _partNumber: Element,
+      /** The kind or type of device */
+      type: CodeableConcept,
+      /** Patient to whom Device is affixed */
+      patient: Reference,
+      /** Organization responsible for device */
+      owner: Reference,
+      /** Details for human/organization for support */
+      contact: t.array(ContactPoint),
+      /** Where the device is found */
+      location: Reference,
+      /** Network address to contact device */
+      url: primitives.R4.uri,
+      /** Extension of url element */
+      _url: Element,
+      /** Device notes and comments */
+      note: t.array(Annotation),
+      /** Safety Characteristics of Device */
+      safety: t.array(CodeableConcept),
+      /** The parent device */
+      parent: Reference
+    })
+  ])
+);
 
-export interface DeviceOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
+/**
+ * Unique Device Identifier (UDI) Barcode string
+ */
+export interface DeviceUdiCarrier {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
   /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Instance identifier */
-  identifier?: IdentifierOutputType[];
-  /** The reference to the definition for the device */
-  definition?: ReferenceOutputType;
-  /** Unique Device Identifier (UDI) Barcode string */
-  udiCarrier?: DeviceUdiCarrierOutputType[];
-  /** active | inactive | entered-in-error | unknown */
-  status?: t.OutputOf<primitives.R4.CodeType>;
-  /** online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off */
-  statusReason?: CodeableConceptOutputType[];
-  /** The distinct identification string */
-  distinctIdentifier?: t.OutputOf<primitives.R4.StringType>;
-  /** Name of device manufacturer */
-  manufacturer?: t.OutputOf<primitives.R4.StringType>;
-  /** Date when the device was made */
-  manufactureDate?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Date and time of expiry of this device (if applicable) */
-  expirationDate?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Lot number of manufacture */
-  lotNumber?: t.OutputOf<primitives.R4.StringType>;
-  /** Serial number assigned by the manufacturer */
-  serialNumber?: t.OutputOf<primitives.R4.StringType>;
-  /** The name of the device as given by the manufacturer */
-  deviceName?: DeviceDeviceNameOutputType[];
-  /** The model number for the device */
-  modelNumber?: t.OutputOf<primitives.R4.StringType>;
-  /** The part number of the device */
-  partNumber?: t.OutputOf<primitives.R4.StringType>;
-  /** The kind or type of device */
-  type?: CodeableConceptOutputType;
-  /** The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication */
-  specialization?: DeviceSpecializationOutputType[];
-  /** The actual design of the device or software version running on the device */
-  version?: DeviceVersionOutputType[];
-  /** The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties */
-  property?: DevicePropertyOutputType[];
-  /** Patient to whom Device is affixed */
-  patient?: ReferenceOutputType;
-  /** Organization responsible for device */
-  owner?: ReferenceOutputType;
-  /** Details for human/organization for support */
-  contact?: ContactPointOutputType[];
-  /** Where the device is found */
-  location?: ReferenceOutputType;
-  /** Network address to contact device */
-  url?: t.OutputOf<primitives.R4.URIType>;
-  /** Device notes and comments */
-  note?: AnnotationOutputType[];
-  /** Safety Characteristics of Device */
-  safety?: CodeableConceptOutputType[];
-  /** The parent device */
-  parent?: ReferenceOutputType;
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Mandatory fixed portion of UDI */
+  deviceIdentifier?: string;
+  /** Extension of deviceIdentifier element */
+  _deviceIdentifier?: Element;
+  /** UDI Issuing Organization */
+  issuer?: primitives.R4.uri;
+  /** Extension of issuer element */
+  _issuer?: Element;
+  /** Regional UDI authority */
+  jurisdiction?: primitives.R4.uri;
+  /** Extension of jurisdiction element */
+  _jurisdiction?: Element;
+  /** UDI Machine Readable Barcode String */
+  carrierAIDC?: primitives.R4.base64Binary;
+  /** Extension of carrierAIDC element */
+  _carrierAIDC?: Element;
+  /** UDI Human Readable Barcode String */
+  carrierHRF?: string;
+  /** Extension of carrierHRF element */
+  _carrierHRF?: Element;
+  /** barcode | rfid | manual + */
+  entryType?: primitives.R4.code;
+  /** Extension of entryType element */
+  _entryType?: Element;
 }
+/**
+ * Unique Device Identifier (UDI) Barcode string
+ */
+export const DeviceUdiCarrier: t.Type<DeviceUdiCarrier> = t.recursion<
+  DeviceUdiCarrier
+>("DeviceUdiCarrier", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Mandatory fixed portion of UDI */
+      deviceIdentifier: primitives.R4.string,
+      /** Extension of deviceIdentifier element */
+      _deviceIdentifier: Element,
+      /** UDI Issuing Organization */
+      issuer: primitives.R4.uri,
+      /** Extension of issuer element */
+      _issuer: Element,
+      /** Regional UDI authority */
+      jurisdiction: primitives.R4.uri,
+      /** Extension of jurisdiction element */
+      _jurisdiction: Element,
+      /** UDI Machine Readable Barcode String */
+      carrierAIDC: primitives.R4.base64Binary,
+      /** Extension of carrierAIDC element */
+      _carrierAIDC: Element,
+      /** UDI Human Readable Barcode String */
+      carrierHRF: primitives.R4.string,
+      /** Extension of carrierHRF element */
+      _carrierHRF: Element,
+      /** barcode | rfid | manual + */
+      entryType: primitives.R4.code,
+      /** Extension of entryType element */
+      _entryType: Element
+    })
+  ])
+);
 
-export const Device: t.RecursiveType<
-  t.Type<Device, DeviceOutputType>,
-  Device,
-  DeviceOutputType
-> = t.recursion<Device, DeviceOutputType>("Device", () =>
-  t.intersection(
-    [
-      t.type({}),
+/**
+ * The name of the device as given by the manufacturer
+ */
+export interface DeviceDeviceName {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** The name of the device */
+  name: string;
+  /** Extension of name element */
+  _name?: Element;
+  /** udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other */
+  type: primitives.R4.code;
+  /** Extension of type element */
+  _type?: Element;
+}
+/**
+ * The name of the device as given by the manufacturer
+ */
+export const DeviceDeviceName: t.Type<DeviceDeviceName> = t.recursion<
+  DeviceDeviceName
+>("DeviceDeviceName", () =>
+  t.intersection([
+    t.type({
+      /** The name of the device */
+      name: primitives.R4.string,
+      /** udi-label-name | user-friendly-name | patient-reported-name | manufacturer-name | model-name | other */
+      type: primitives.R4.code
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Extension of name element */
+      _name: Element,
+      /** Extension of type element */
+      _type: Element
+    })
+  ])
+);
+
+/**
+ * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication
+ */
+export interface DeviceSpecialization {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** The standard that is used to operate and communicate */
+  systemType: CodeableConcept;
+  /** The version of the standard that is used to operate and communicate */
+  version?: string;
+  /** Extension of version element */
+  _version?: Element;
+}
+/**
+ * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication
+ */
+export const DeviceSpecialization: t.Type<DeviceSpecialization> = t.recursion<
+  DeviceSpecialization
+>("DeviceSpecialization", () =>
+  t.intersection([
+    t.type({
+      /** The standard that is used to operate and communicate */
+      systemType: CodeableConcept
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** The version of the standard that is used to operate and communicate */
+      version: primitives.R4.string,
+      /** Extension of version element */
+      _version: Element
+    })
+  ])
+);
+
+/**
+ * The actual design of the device or software version running on the device
+ */
+export interface DeviceVersion {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** The type of the device version */
+  type?: CodeableConcept;
+  /** A single component of the device version */
+  component?: Identifier;
+  /** The version text */
+  value: string;
+  /** Extension of value element */
+  _value?: Element;
+}
+/**
+ * The actual design of the device or software version running on the device
+ */
+export const DeviceVersion: t.Type<DeviceVersion> = t.recursion<DeviceVersion>(
+  "DeviceVersion",
+  () =>
+    t.intersection([
+      t.type({
+        /** The version text */
+        value: primitives.R4.string
+      }),
       t.partial({
-        /** Details for human/organization for support */
-        contact: t.array(ContactPoint),
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** The reference to the definition for the device */
-        definition: Reference,
-        /** The name of the device as given by the manufacturer */
-        deviceName: t.array(DeviceDeviceName),
-        /** The distinct identification string */
-        distinctIdentifier: primitives.R4.string,
-        /** Date and time of expiry of this device (if applicable) */
-        expirationDate: primitives.R4.dateTime,
+        /** Unique id for inter-element referencing */
+        id: primitives.R4.string,
+        /** Extension of id element */
+        _id: Element,
         /** Additional content defined by implementations */
         extension: t.array(Extension),
-        /** Logical id of this artifact */
-        id: primitives.R4.id,
-        /** Instance identifier */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
-        /** Where the device is found */
-        location: Reference,
-        /** Lot number of manufacture */
-        lotNumber: primitives.R4.string,
-        /** Date when the device was made */
-        manufactureDate: primitives.R4.dateTime,
-        /** Name of device manufacturer */
-        manufacturer: primitives.R4.string,
-        /** Metadata about the resource */
-        meta: Meta,
-        /** The model number for the device */
-        modelNumber: primitives.R4.string,
-        /** Extensions that cannot be ignored */
+        /** Extensions that cannot be ignored even if unrecognized */
         modifierExtension: t.array(Extension),
-        /** Device notes and comments */
-        note: t.array(Annotation),
-        /** Organization responsible for device */
-        owner: Reference,
-        /** The parent device */
-        parent: Reference,
-        /** The part number of the device */
-        partNumber: primitives.R4.string,
-        /** Patient to whom Device is affixed */
-        patient: Reference,
-        /** The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties */
-        property: t.array(DeviceProperty),
-        /** Safety Characteristics of Device */
-        safety: t.array(CodeableConcept),
-        /** Serial number assigned by the manufacturer */
-        serialNumber: primitives.R4.string,
-        /** The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication */
-        specialization: t.array(DeviceSpecialization),
-        /** active | inactive | entered-in-error | unknown */
-        status: primitives.R4.code,
-        /** online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off */
-        statusReason: t.array(CodeableConcept),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative,
-        /** The kind or type of device */
+        /** The type of the device version */
         type: CodeableConcept,
-        /** Unique Device Identifier (UDI) Barcode string */
-        udiCarrier: t.array(DeviceUdiCarrier),
-        /** Network address to contact device */
-        url: primitives.R4.uri,
-        /** The actual design of the device or software version running on the device */
-        version: t.array(DeviceVersion)
+        /** A single component of the device version */
+        component: Identifier,
+        /** Extension of value element */
+        _value: Element
       })
-    ],
-    "Device"
-  )
+    ])
+);
+
+/**
+ * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties
+ */
+export interface DeviceProperty {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Code that specifies the property DeviceDefinitionPropetyCode (Extensible) */
+  type: CodeableConcept;
+  /** Property value as a quantity */
+  valueQuantity?: Quantity[];
+  /** Property value as a code, e.g., NTP4 (synced to NTP) */
+  valueCode?: CodeableConcept[];
+}
+/**
+ * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties
+ */
+export const DeviceProperty: t.Type<DeviceProperty> = t.recursion<
+  DeviceProperty
+>("DeviceProperty", () =>
+  t.intersection([
+    t.type({
+      /** Code that specifies the property DeviceDefinitionPropetyCode (Extensible) */
+      type: CodeableConcept
+    }),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Property value as a quantity */
+      valueQuantity: t.array(Quantity),
+      /** Property value as a code, e.g., NTP4 (synced to NTP) */
+      valueCode: t.array(CodeableConcept)
+    })
+  ])
 );

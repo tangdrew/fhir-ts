@@ -4,99 +4,37 @@
 import * as primitives from "@tangdrew/primitives";
 import * as t from "io-ts";
 
-import { CodeableConcept, CodeableConceptOutputType } from "./CodeableConcept";
-import { Extension, ExtensionOutputType } from "./Extension";
-import { Identifier, IdentifierOutputType } from "./Identifier";
-import { Meta, MetaOutputType } from "./Meta";
-import { Narrative, NarrativeOutputType } from "./Narrative";
-import { Period, PeriodOutputType } from "./Period";
-import { Quantity, QuantityOutputType } from "./Quantity";
-import { Range, RangeOutputType } from "./Range";
-import { Reference, ReferenceOutputType } from "./Reference";
-import { Resource, ResourceOutputType } from "./Resource";
-import { Timing, TimingOutputType } from "./Timing";
-
-/**
- * Ordered item details
- */
-export interface SupplyRequestParameter {
-  /** Unique id for inter-element referencing */
-  id?: t.TypeOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: Extension[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: Extension[];
-  /** Item detail */
-  code?: CodeableConcept;
-  /** Value of detail */
-  value?:
-    | CodeableConcept
-    | Quantity
-    | Range
-    | t.TypeOf<primitives.R4.BooleanType>;
-}
-
-export interface SupplyRequestParameterOutputType {
-  /** Unique id for inter-element referencing */
-  id?: t.OutputOf<primitives.R4.StringType>;
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored even if unrecognized */
-  modifierExtension?: ExtensionOutputType[];
-  /** Item detail */
-  code?: CodeableConceptOutputType;
-  /** Value of detail */
-  value?:
-    | CodeableConceptOutputType
-    | QuantityOutputType
-    | RangeOutputType
-    | t.OutputOf<primitives.R4.BooleanType>;
-}
-
-export const SupplyRequestParameter: t.RecursiveType<
-  t.Type<SupplyRequestParameter, SupplyRequestParameterOutputType>,
-  SupplyRequestParameter,
-  SupplyRequestParameterOutputType
-> = t.recursion<SupplyRequestParameter, SupplyRequestParameterOutputType>(
-  "SupplyRequestParameter",
-  () =>
-    t.intersection(
-      [
-        t.type({}),
-        t.partial({
-          /** Item detail */
-          code: CodeableConcept,
-          /** Additional content defined by implementations */
-          extension: t.array(Extension),
-          /** Unique id for inter-element referencing */
-          id: primitives.R4.string,
-          /** Extensions that cannot be ignored even if unrecognized */
-          modifierExtension: t.array(Extension),
-          /** Value of detail */
-          value: t.union([
-            CodeableConcept,
-            Quantity,
-            Range,
-            primitives.R4.boolean
-          ])
-        })
-      ],
-      "SupplyRequestParameter"
-    )
-);
+import { CodeableConcept } from "./CodeableConcept";
+import { Element } from "./Element";
+import { Extension } from "./Extension";
+import { Identifier } from "./Identifier";
+import { Meta } from "./Meta";
+import { Narrative } from "./Narrative";
+import { Period } from "./Period";
+import { Quantity } from "./Quantity";
+import { Range } from "./Range";
+import { Reference } from "./Reference";
+import { Resource } from "./Resource";
+import { Timing } from "./Timing";
 
 /**
  * Request for a medication, substance or device
  */
 export interface SupplyRequest {
   /** Logical id of this artifact */
-  id?: t.TypeOf<primitives.R4.IDType>;
+  id?: primitives.R4.id;
+  /** Extension of id element */
+  _id?: Element;
   /** Metadata about the resource */
   meta?: Meta;
   /** A set of rules under which this content was created */
-  implicitRules?: t.TypeOf<primitives.R4.URIType>;
+  implicitRules?: primitives.R4.uri;
+  /** Extension of implicitRules element */
+  _implicitRules?: Element;
   /** Language of the resource content */
-  language?: t.TypeOf<primitives.R4.CodeType>;
+  language?: primitives.R4.code;
+  /** Extension of language element */
+  _language?: Element;
   /** Text summary of the resource, for human interpretation */
   text?: Narrative;
   /** Contained, inline Resources */
@@ -108,21 +46,33 @@ export interface SupplyRequest {
   /** Business Identifier for SupplyRequest */
   identifier?: Identifier[];
   /** draft | active | suspended + */
-  status?: t.TypeOf<primitives.R4.CodeType>;
+  status?: primitives.R4.code;
+  /** Extension of status element */
+  _status?: Element;
   /** The kind of supply (central, non-stock, etc.) */
   category?: CodeableConcept;
   /** routine | urgent | asap | stat */
-  priority?: t.TypeOf<primitives.R4.CodeType>;
+  priority?: primitives.R4.code;
+  /** Extension of priority element */
+  _priority?: Element;
   /** Medication, Substance, or Device requested to be supplied */
-  item: CodeableConcept | Reference;
+  itemCodeableConcept: CodeableConcept;
+  /** Medication, Substance, or Device requested to be supplied */
+  itemReference: Reference;
   /** The requested amount of the item indicated */
   quantity: Quantity;
-  /** Ordered item details */
-  parameter?: SupplyRequestParameter[];
   /** When the request should be fulfilled */
-  occurrence?: t.TypeOf<primitives.R4.DateTimeType> | Period | Timing;
+  occurrenceDateTime?: primitives.R4.dateTime;
+  /** Extension of occurrenceDateTime element */
+  _occurrenceDateTime?: Element;
+  /** When the request should be fulfilled */
+  occurrencePeriod?: Period;
+  /** When the request should be fulfilled */
+  occurrenceTiming?: Timing;
   /** When the request was made */
-  authoredOn?: t.TypeOf<primitives.R4.DateTimeType>;
+  authoredOn?: primitives.R4.dateTime;
+  /** Extension of authoredOn element */
+  _authoredOn?: Element;
   /** Individual making the request */
   requester?: Reference;
   /** Who is intended to fulfill the request */
@@ -136,117 +86,138 @@ export interface SupplyRequest {
   /** The destination of the supply */
   deliverTo?: Reference;
 }
-
-export interface SupplyRequestOutputType {
-  /** Logical id of this artifact */
-  id?: t.OutputOf<primitives.R4.IDType>;
-  /** Metadata about the resource */
-  meta?: MetaOutputType;
-  /** A set of rules under which this content was created */
-  implicitRules?: t.OutputOf<primitives.R4.URIType>;
-  /** Language of the resource content */
-  language?: t.OutputOf<primitives.R4.CodeType>;
-  /** Text summary of the resource, for human interpretation */
-  text?: NarrativeOutputType;
-  /** Contained, inline Resources */
-  contained?: ResourceOutputType[];
-  /** Additional content defined by implementations */
-  extension?: ExtensionOutputType[];
-  /** Extensions that cannot be ignored */
-  modifierExtension?: ExtensionOutputType[];
-  /** Business Identifier for SupplyRequest */
-  identifier?: IdentifierOutputType[];
-  /** draft | active | suspended + */
-  status?: t.OutputOf<primitives.R4.CodeType>;
-  /** The kind of supply (central, non-stock, etc.) */
-  category?: CodeableConceptOutputType;
-  /** routine | urgent | asap | stat */
-  priority?: t.OutputOf<primitives.R4.CodeType>;
-  /** Medication, Substance, or Device requested to be supplied */
-  item: CodeableConceptOutputType | ReferenceOutputType;
-  /** The requested amount of the item indicated */
-  quantity: QuantityOutputType;
-  /** Ordered item details */
-  parameter?: SupplyRequestParameterOutputType[];
-  /** When the request should be fulfilled */
-  occurrence?:
-    | t.OutputOf<primitives.R4.DateTimeType>
-    | PeriodOutputType
-    | TimingOutputType;
-  /** When the request was made */
-  authoredOn?: t.OutputOf<primitives.R4.DateTimeType>;
-  /** Individual making the request */
-  requester?: ReferenceOutputType;
-  /** Who is intended to fulfill the request */
-  supplier?: ReferenceOutputType[];
-  /** The reason why the supply item was requested */
-  reasonCode?: CodeableConceptOutputType[];
-  /** The reason why the supply item was requested */
-  reasonReference?: ReferenceOutputType[];
-  /** The origin of the supply */
-  deliverFrom?: ReferenceOutputType;
-  /** The destination of the supply */
-  deliverTo?: ReferenceOutputType;
-}
-
-export const SupplyRequest: t.RecursiveType<
-  t.Type<SupplyRequest, SupplyRequestOutputType>,
-  SupplyRequest,
-  SupplyRequestOutputType
-> = t.recursion<SupplyRequest, SupplyRequestOutputType>("SupplyRequest", () =>
-  t.intersection(
-    [
+/**
+ * Request for a medication, substance or device
+ */
+export const SupplyRequest: t.Type<SupplyRequest> = t.recursion<SupplyRequest>(
+  "SupplyRequest",
+  () =>
+    t.intersection([
       t.type({
         /** Medication, Substance, or Device requested to be supplied */
-        item: t.union([CodeableConcept, Reference]),
+        itemCodeableConcept: CodeableConcept,
+        /** Medication, Substance, or Device requested to be supplied */
+        itemReference: Reference,
         /** The requested amount of the item indicated */
         quantity: Quantity
       }),
       t.partial({
-        /** When the request was made */
-        authoredOn: primitives.R4.dateTime,
-        /** The kind of supply (central, non-stock, etc.) */
-        category: CodeableConcept,
-        /** Contained, inline Resources */
-        contained: t.array(Resource),
-        /** The origin of the supply */
-        deliverFrom: Reference,
-        /** The destination of the supply */
-        deliverTo: Reference,
-        /** Additional content defined by implementations */
-        extension: t.array(Extension),
         /** Logical id of this artifact */
         id: primitives.R4.id,
-        /** Business Identifier for SupplyRequest */
-        identifier: t.array(Identifier),
-        /** A set of rules under which this content was created */
-        implicitRules: primitives.R4.uri,
-        /** Language of the resource content */
-        language: primitives.R4.code,
+        /** Extension of id element */
+        _id: Element,
         /** Metadata about the resource */
         meta: Meta,
+        /** A set of rules under which this content was created */
+        implicitRules: primitives.R4.uri,
+        /** Extension of implicitRules element */
+        _implicitRules: Element,
+        /** Language of the resource content */
+        language: primitives.R4.code,
+        /** Extension of language element */
+        _language: Element,
+        /** Text summary of the resource, for human interpretation */
+        text: Narrative,
+        /** Contained, inline Resources */
+        contained: t.array(Resource),
+        /** Additional content defined by implementations */
+        extension: t.array(Extension),
         /** Extensions that cannot be ignored */
         modifierExtension: t.array(Extension),
-        /** When the request should be fulfilled */
-        occurrence: t.union([primitives.R4.dateTime, Period, Timing]),
-        /** Ordered item details */
-        parameter: t.array(SupplyRequestParameter),
+        /** Business Identifier for SupplyRequest */
+        identifier: t.array(Identifier),
+        /** draft | active | suspended + */
+        status: primitives.R4.code,
+        /** Extension of status element */
+        _status: Element,
+        /** The kind of supply (central, non-stock, etc.) */
+        category: CodeableConcept,
         /** routine | urgent | asap | stat */
         priority: primitives.R4.code,
+        /** Extension of priority element */
+        _priority: Element,
+        /** When the request should be fulfilled */
+        occurrenceDateTime: primitives.R4.dateTime,
+        /** Extension of occurrenceDateTime element */
+        _occurrenceDateTime: Element,
+        /** When the request should be fulfilled */
+        occurrencePeriod: Period,
+        /** When the request should be fulfilled */
+        occurrenceTiming: Timing,
+        /** When the request was made */
+        authoredOn: primitives.R4.dateTime,
+        /** Extension of authoredOn element */
+        _authoredOn: Element,
+        /** Individual making the request */
+        requester: Reference,
+        /** Who is intended to fulfill the request */
+        supplier: t.array(Reference),
         /** The reason why the supply item was requested */
         reasonCode: t.array(CodeableConcept),
         /** The reason why the supply item was requested */
         reasonReference: t.array(Reference),
-        /** Individual making the request */
-        requester: Reference,
-        /** draft | active | suspended + */
-        status: primitives.R4.code,
-        /** Who is intended to fulfill the request */
-        supplier: t.array(Reference),
-        /** Text summary of the resource, for human interpretation */
-        text: Narrative
+        /** The origin of the supply */
+        deliverFrom: Reference,
+        /** The destination of the supply */
+        deliverTo: Reference
       })
-    ],
-    "SupplyRequest"
-  )
+    ])
+);
+
+/**
+ * Ordered item details
+ */
+export interface SupplyRequestParameter {
+  /** Unique id for inter-element referencing */
+  id?: string;
+  /** Extension of id element */
+  _id?: Element;
+  /** Additional content defined by implementations */
+  extension?: Extension[];
+  /** Extensions that cannot be ignored even if unrecognized */
+  modifierExtension?: Extension[];
+  /** Item detail */
+  code?: CodeableConcept;
+  /** Value of detail */
+  valueCodeableConcept?: CodeableConcept;
+  /** Value of detail */
+  valueQuantity?: Quantity;
+  /** Value of detail */
+  valueRange?: Range;
+  /** Value of detail */
+  valueBoolean?: boolean;
+  /** Extension of valueBoolean element */
+  _valueBoolean?: Element;
+}
+/**
+ * Ordered item details
+ */
+export const SupplyRequestParameter: t.Type<
+  SupplyRequestParameter
+> = t.recursion<SupplyRequestParameter>("SupplyRequestParameter", () =>
+  t.intersection([
+    t.type({}),
+    t.partial({
+      /** Unique id for inter-element referencing */
+      id: primitives.R4.string,
+      /** Extension of id element */
+      _id: Element,
+      /** Additional content defined by implementations */
+      extension: t.array(Extension),
+      /** Extensions that cannot be ignored even if unrecognized */
+      modifierExtension: t.array(Extension),
+      /** Item detail */
+      code: CodeableConcept,
+      /** Value of detail */
+      valueCodeableConcept: CodeableConcept,
+      /** Value of detail */
+      valueQuantity: Quantity,
+      /** Value of detail */
+      valueRange: Range,
+      /** Value of detail */
+      valueBoolean: primitives.R4.boolean,
+      /** Extension of valueBoolean element */
+      _valueBoolean: Element
+    })
+  ])
 );
