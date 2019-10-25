@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A reference to a document
  */
 export interface DocumentReference {
+  /** The type of resource */
+  resourceType?: "DocumentReference";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -89,6 +91,8 @@ export const DocumentReference: t.Type<DocumentReference> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DocumentReference"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

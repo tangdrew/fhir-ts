@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Nucleic acids are defined by three distinct elements: the base, sugar and linkage. Individual substance/moiety IDs will be created for each of these elements. The nucleotide sequence will be always entered in the 5’-3’ direction
  */
 export interface SubstanceNucleicAcid {
+  /** The type of resource */
+  resourceType?: "SubstanceNucleicAcid";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -61,6 +63,8 @@ export const SubstanceNucleicAcid: t.Type<SubstanceNucleicAcid> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SubstanceNucleicAcid"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

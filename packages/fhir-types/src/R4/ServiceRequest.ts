@@ -23,6 +23,8 @@ import { Timing } from "./Timing";
  * A request for a service to be performed
  */
 export interface ServiceRequest {
+  /** The type of resource */
+  resourceType?: "ServiceRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -158,6 +160,8 @@ export const ServiceRequest: t.Type<ServiceRequest> = t.recursion<
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ServiceRequest"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -22,6 +22,8 @@ import { Timing } from "./Timing";
  * Item containing charge code(s) associated with the provision of healthcare provider products
  */
 export interface ChargeItem {
+  /** The type of resource */
+  resourceType?: "ChargeItem";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -131,6 +133,8 @@ export const ChargeItem: t.Type<ChargeItem> = t.recursion<ChargeItem>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ChargeItem"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

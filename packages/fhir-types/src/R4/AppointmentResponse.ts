@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection
  */
 export interface AppointmentResponse {
+  /** The type of resource */
+  resourceType?: "AppointmentResponse";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -78,6 +80,8 @@ export const AppointmentResponse: t.Type<AppointmentResponse> = t.recursion<
       participantStatus: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("AppointmentResponse"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

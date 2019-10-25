@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Specific and identified anatomical structure
  */
 export interface BodyStructure {
+  /** The type of resource */
+  resourceType?: "BodyStructure";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -73,6 +75,8 @@ export const BodyStructure: t.Type<BodyStructure> = t.recursion<BodyStructure>(
         patient: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("BodyStructure"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

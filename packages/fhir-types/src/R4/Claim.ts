@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * Claim, Pre-determination or Pre-authorization
  */
 export interface Claim {
+  /** The type of resource */
+  resourceType?: "Claim";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -109,6 +111,8 @@ export const Claim: t.Type<Claim> = t.recursion<Claim>("Claim", () =>
       priority: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Claim"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

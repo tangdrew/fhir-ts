@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A measured or measurable amount
  */
 export interface Count {
+  /** The type of resource */
+  resourceType?: "Count";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -45,6 +47,8 @@ export const Count: t.Type<Count> = t.recursion<Count>("Count", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Count"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

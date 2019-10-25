@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A clinical assessment performed when planning treatments and management strategies for a patient
  */
 export interface ClinicalImpression {
+  /** The type of resource */
+  resourceType?: "ClinicalImpression";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -106,6 +108,8 @@ export const ClinicalImpression: t.Type<ClinicalImpression> = t.recursion<
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ClinicalImpression"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s)
  */
 export interface Appointment {
+  /** The type of resource */
+  resourceType?: "Appointment";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -113,6 +115,8 @@ export const Appointment: t.Type<Appointment> = t.recursion<Appointment>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Appointment"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -12,6 +12,8 @@ import { Period } from "./Period";
  * Name of a human - parts and usage
  */
 export interface HumanName {
+  /** The type of resource */
+  resourceType?: "HumanName";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -54,6 +56,8 @@ export const HumanName: t.Type<HumanName> = t.recursion<HumanName>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("HumanName"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

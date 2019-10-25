@@ -17,6 +17,8 @@ import { UsageContext } from "./UsageContext";
  * Definition of a graph of resources
  */
 export interface GraphDefinition {
+  /** The type of resource */
+  resourceType?: "GraphDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -106,6 +108,8 @@ export const GraphDefinition: t.Type<GraphDefinition> = t.recursion<
       start: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("GraphDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

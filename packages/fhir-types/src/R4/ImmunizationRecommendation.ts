@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Guidance or advice relating to an immunization
  */
 export interface ImmunizationRecommendation {
+  /** The type of resource */
+  resourceType?: "ImmunizationRecommendation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -64,6 +66,8 @@ export const ImmunizationRecommendation: t.Type<
       date: primitives.R4.dateTime
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ImmunizationRecommendation"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

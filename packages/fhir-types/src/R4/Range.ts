@@ -12,6 +12,8 @@ import { Quantity } from "./Quantity";
  * Set of values bounded by low and high
  */
 export interface Range {
+  /** The type of resource */
+  resourceType?: "Range";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -30,6 +32,8 @@ export const Range: t.Type<Range> = t.recursion<Range>("Range", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Range"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

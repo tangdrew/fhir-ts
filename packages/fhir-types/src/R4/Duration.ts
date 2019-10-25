@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A length of time
  */
 export interface Duration {
+  /** The type of resource */
+  resourceType?: "Duration";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const Duration: t.Type<Duration> = t.recursion<Duration>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Duration"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

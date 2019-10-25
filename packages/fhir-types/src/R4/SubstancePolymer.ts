@@ -17,6 +17,8 @@ import { SubstanceAmount } from "./SubstanceAmount";
  * Todo
  */
 export interface SubstancePolymer {
+  /** The type of resource */
+  resourceType?: "SubstancePolymer";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -59,6 +61,8 @@ export const SubstancePolymer: t.Type<SubstancePolymer> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SubstancePolymer"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

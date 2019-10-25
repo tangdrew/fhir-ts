@@ -16,6 +16,8 @@ import { Resource } from "./Resource";
  * Describes the results of a TestScript execution
  */
 export interface TestReport {
+  /** The type of resource */
+  resourceType?: "TestReport";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -83,6 +85,8 @@ export const TestReport: t.Type<TestReport> = t.recursion<TestReport>(
         result: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("TestReport"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

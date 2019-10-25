@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * Investigation to increase healthcare-related patient-independent knowledge
  */
 export interface ResearchStudy {
+  /** The type of resource */
+  resourceType?: "ResearchStudy";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -106,6 +108,8 @@ export const ResearchStudy: t.Type<ResearchStudy> = t.recursion<ResearchStudy>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ResearchStudy"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

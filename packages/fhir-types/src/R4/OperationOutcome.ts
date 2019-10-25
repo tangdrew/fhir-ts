@@ -15,6 +15,8 @@ import { Resource } from "./Resource";
  * Information about the success/failure of an action
  */
 export interface OperationOutcome {
+  /** The type of resource */
+  resourceType?: "OperationOutcome";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const OperationOutcome: t.Type<OperationOutcome> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("OperationOutcome"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

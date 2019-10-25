@@ -20,6 +20,8 @@ import { UsageContext } from "./UsageContext";
  * Structural Definition
  */
 export interface StructureDefinition {
+  /** The type of resource */
+  resourceType?: "StructureDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -147,6 +149,8 @@ export const StructureDefinition: t.Type<StructureDefinition> = t.recursion<
       type: primitives.R4.uri
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("StructureDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

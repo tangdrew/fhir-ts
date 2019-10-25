@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Immunization evaluation information
  */
 export interface ImmunizationEvaluation {
+  /** The type of resource */
+  resourceType?: "ImmunizationEvaluation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -106,6 +108,8 @@ export const ImmunizationEvaluation: t.Type<
       doseStatus: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ImmunizationEvaluation"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

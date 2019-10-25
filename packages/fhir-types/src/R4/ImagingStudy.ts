@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A set of images produced in single study (one or more series of references images)
  */
 export interface ImagingStudy {
+  /** The type of resource */
+  resourceType?: "ImagingStudy";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -104,6 +106,8 @@ export const ImagingStudy: t.Type<ImagingStudy> = t.recursion<ImagingStudy>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ImagingStudy"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

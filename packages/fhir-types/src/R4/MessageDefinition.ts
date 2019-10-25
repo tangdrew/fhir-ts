@@ -19,6 +19,8 @@ import { UsageContext } from "./UsageContext";
  * A resource that defines a type of message that can be exchanged between systems
  */
 export interface MessageDefinition {
+  /** The type of resource */
+  resourceType?: "MessageDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -142,6 +144,8 @@ export const MessageDefinition: t.Type<MessageDefinition> = t.recursion<
       eventUri: primitives.R4.uri
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MessageDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

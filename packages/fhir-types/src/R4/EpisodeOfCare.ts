@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * An association of a Patient with an Organization and  Healthcare Provider(s) for a period of time that the Organization assumes some level of responsibility
  */
 export interface EpisodeOfCare {
+  /** The type of resource */
+  resourceType?: "EpisodeOfCare";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -77,6 +79,8 @@ export const EpisodeOfCare: t.Type<EpisodeOfCare> = t.recursion<EpisodeOfCare>(
         patient: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("EpisodeOfCare"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

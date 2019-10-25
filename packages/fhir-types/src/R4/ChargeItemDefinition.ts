@@ -21,6 +21,8 @@ import { UsageContext } from "./UsageContext";
  * Definition of properties and rules about how the price and the applicability of a ChargeItem can be determined
  */
 export interface ChargeItemDefinition {
+  /** The type of resource */
+  resourceType?: "ChargeItemDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -128,6 +130,8 @@ export const ChargeItemDefinition: t.Type<ChargeItemDefinition> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ChargeItemDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

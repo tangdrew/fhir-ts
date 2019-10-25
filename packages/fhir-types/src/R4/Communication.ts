@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A record of information transmitted from a sender to a receiver
  */
 export interface Communication {
+  /** The type of resource */
+  resourceType?: "Communication";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -110,6 +112,8 @@ export const Communication: t.Type<Communication> = t.recursion<Communication>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Communication"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

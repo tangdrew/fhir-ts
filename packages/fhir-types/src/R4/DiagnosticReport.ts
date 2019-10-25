@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports
  */
 export interface DiagnosticReport {
+  /** The type of resource */
+  resourceType?: "DiagnosticReport";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -100,6 +102,8 @@ export const DiagnosticReport: t.Type<DiagnosticReport> = t.recursion<
       code: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DiagnosticReport"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -22,6 +22,8 @@ import { UsageContext } from "./UsageContext";
  * A description of when an event can occur
  */
 export interface EventDefinition {
+  /** The type of resource */
+  resourceType?: "EventDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -147,6 +149,8 @@ export const EventDefinition: t.Type<EventDefinition> = t.recursion<
       trigger: t.array(TriggerDefinition)
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("EventDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

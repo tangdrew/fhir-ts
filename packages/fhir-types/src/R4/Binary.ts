@@ -12,6 +12,8 @@ import { Reference } from "./Reference";
  * Pure binary content defined by a format other than FHIR
  */
 export interface Binary {
+  /** The type of resource */
+  resourceType?: "Binary";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const Binary: t.Type<Binary> = t.recursion<Binary>("Binary", () =>
       contentType: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Binary"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

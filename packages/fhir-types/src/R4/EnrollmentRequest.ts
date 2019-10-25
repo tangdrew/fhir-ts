@@ -16,6 +16,8 @@ import { Resource } from "./Resource";
  * Enroll in coverage
  */
 export interface EnrollmentRequest {
+  /** The type of resource */
+  resourceType?: "EnrollmentRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -66,6 +68,8 @@ export const EnrollmentRequest: t.Type<EnrollmentRequest> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("EnrollmentRequest"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

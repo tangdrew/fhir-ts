@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Todo
  */
 export interface SubstanceReferenceInformation {
+  /** The type of resource */
+  resourceType?: "SubstanceReferenceInformation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -57,6 +59,8 @@ export const SubstanceReferenceInformation: t.Type<
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("SubstanceReferenceInformation"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

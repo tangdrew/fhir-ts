@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A generic person record
  */
 export interface Person {
+  /** The type of resource */
+  resourceType?: "Person";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -74,6 +76,8 @@ export const Person: t.Type<Person> = t.recursion<Person>("Person", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Person"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

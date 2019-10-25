@@ -22,6 +22,8 @@ import { UsageContext } from "./UsageContext";
  * A quality measure definition
  */
 export interface Measure {
+  /** The type of resource */
+  resourceType?: "Measure";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -181,6 +183,8 @@ export const Measure: t.Type<Measure> = t.recursion<Measure>("Measure", () =>
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Measure"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

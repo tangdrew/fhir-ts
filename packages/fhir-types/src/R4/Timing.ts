@@ -15,6 +15,8 @@ import { Range } from "./Range";
  * A timing schedule that specifies an event that may occur multiple times
  */
 export interface Timing {
+  /** The type of resource */
+  resourceType?: "Timing";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -39,6 +41,8 @@ export const Timing: t.Type<Timing> = t.recursion<Timing>("Timing", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Timing"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

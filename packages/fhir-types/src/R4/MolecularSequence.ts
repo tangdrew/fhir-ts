@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Information about a biological sequence
  */
 export interface MolecularSequence {
+  /** The type of resource */
+  resourceType?: "MolecularSequence";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -83,6 +85,8 @@ export const MolecularSequence: t.Type<MolecularSequence> = t.recursion<
       coordinateSystem: primitives.R4.integer
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MolecularSequence"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

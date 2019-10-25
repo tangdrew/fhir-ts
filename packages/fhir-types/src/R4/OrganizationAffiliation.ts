@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Defines an affiliation/assotiation/relationship between 2 distinct oganizations, that is not a part-of relationship/sub-division relationship
  */
 export interface OrganizationAffiliation {
+  /** The type of resource */
+  resourceType?: "OrganizationAffiliation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -77,6 +79,8 @@ export const OrganizationAffiliation: t.Type<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("OrganizationAffiliation"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

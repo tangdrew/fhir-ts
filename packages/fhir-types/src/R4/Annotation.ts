@@ -12,6 +12,8 @@ import { Reference } from "./Reference";
  * Text node with attribution
  */
 export interface Annotation {
+  /** The type of resource */
+  resourceType?: "Annotation";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -45,6 +47,8 @@ export const Annotation: t.Type<Annotation> = t.recursion<Annotation>(
         text: primitives.R4.markdown
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Annotation"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

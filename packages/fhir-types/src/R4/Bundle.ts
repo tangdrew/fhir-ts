@@ -15,6 +15,8 @@ import { Signature } from "./Signature";
  * Contains a collection of resources
  */
 export interface Bundle {
+  /** The type of resource */
+  resourceType?: "Bundle";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -56,6 +58,8 @@ export const Bundle: t.Type<Bundle> = t.recursion<Bundle>("Bundle", () =>
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Bundle"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

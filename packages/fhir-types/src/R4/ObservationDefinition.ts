@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Definition of an observation
  */
 export interface ObservationDefinition {
+  /** The type of resource */
+  resourceType?: "ObservationDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -81,6 +83,8 @@ export const ObservationDefinition: t.Type<ObservationDefinition> = t.recursion<
       code: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ObservationDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

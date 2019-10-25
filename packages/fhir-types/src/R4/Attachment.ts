@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * Content in a format defined elsewhere
  */
 export interface Attachment {
+  /** The type of resource */
+  resourceType?: "Attachment";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -59,6 +61,8 @@ export const Attachment: t.Type<Attachment> = t.recursion<Attachment>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Attachment"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

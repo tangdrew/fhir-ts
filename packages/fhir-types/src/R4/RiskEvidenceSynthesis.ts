@@ -22,6 +22,8 @@ import { UsageContext } from "./UsageContext";
  * A quantified estimate of risk based on a body of evidence
  */
 export interface RiskEvidenceSynthesis {
+  /** The type of resource */
+  resourceType?: "RiskEvidenceSynthesis";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -139,6 +141,8 @@ export const RiskEvidenceSynthesis: t.Type<RiskEvidenceSynthesis> = t.recursion<
       outcome: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("RiskEvidenceSynthesis"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

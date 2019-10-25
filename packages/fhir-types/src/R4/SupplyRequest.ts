@@ -21,6 +21,8 @@ import { Timing } from "./Timing";
  * Request for a medication, substance or device
  */
 export interface SupplyRequest {
+  /** The type of resource */
+  resourceType?: "SupplyRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -102,6 +104,8 @@ export const SupplyRequest: t.Type<SupplyRequest> = t.recursion<SupplyRequest>(
         quantity: Quantity
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("SupplyRequest"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

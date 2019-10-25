@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * Detailed information about conditions, problems or diagnoses
  */
 export interface Condition {
+  /** The type of resource */
+  resourceType?: "Condition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -112,6 +114,8 @@ export const Condition: t.Type<Condition> = t.recursion<Condition>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Condition"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

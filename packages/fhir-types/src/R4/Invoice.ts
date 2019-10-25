@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Invoice containing ChargeItems from an Account
  */
 export interface Invoice {
+  /** The type of resource */
+  resourceType?: "Invoice";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -88,6 +90,8 @@ export const Invoice: t.Type<Invoice> = t.recursion<Invoice>("Invoice", () =>
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Invoice"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -20,6 +20,8 @@ import { Timing } from "./Timing";
  * Delivery of bulk Supplies
  */
 export interface SupplyDelivery {
+  /** The type of resource */
+  resourceType?: "SupplyDelivery";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -80,6 +82,8 @@ export const SupplyDelivery: t.Type<SupplyDelivery> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SupplyDelivery"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

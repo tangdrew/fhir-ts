@@ -41,6 +41,8 @@ import { UsageContext } from "./UsageContext";
  * Definition of an element in a resource or extension
  */
 export interface ElementDefinition {
+  /** The type of resource */
+  resourceType?: "ElementDefinition";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -638,6 +640,8 @@ export const ElementDefinition: t.Type<ElementDefinition> = t.recursion<
       path: primitives.R4.string
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ElementDefinition"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

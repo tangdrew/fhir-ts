@@ -19,6 +19,8 @@ import { UsageContext } from "./UsageContext";
  * A statement of system capabilities
  */
 export interface CapabilityStatement {
+  /** The type of resource */
+  resourceType?: "CapabilityStatement";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -140,6 +142,8 @@ export const CapabilityStatement: t.Type<CapabilityStatement> = t.recursion<
       format: t.array(primitives.R4.code)
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("CapabilityStatement"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

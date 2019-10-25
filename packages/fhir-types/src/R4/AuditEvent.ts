@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Event record kept for security purposes
  */
 export interface AuditEvent {
+  /** The type of resource */
+  resourceType?: "AuditEvent";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -79,6 +81,8 @@ export const AuditEvent: t.Type<AuditEvent> = t.recursion<AuditEvent>(
         recorded: primitives.R4.instant
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("AuditEvent"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

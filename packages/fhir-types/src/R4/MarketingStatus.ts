@@ -13,6 +13,8 @@ import { Period } from "./Period";
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available
  */
 export interface MarketingStatus {
+  /** The type of resource */
+  resourceType?: "MarketingStatus";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -50,6 +52,8 @@ export const MarketingStatus: t.Type<MarketingStatus> = t.recursion<
       dateRange: Period
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MarketingStatus"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

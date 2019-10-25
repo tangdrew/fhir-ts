@@ -15,6 +15,8 @@ import { Timing } from "./Timing";
  * Defines an expected trigger for a module
  */
 export interface TriggerDefinition {
+  /** The type of resource */
+  resourceType?: "TriggerDefinition";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -58,6 +60,8 @@ export const TriggerDefinition: t.Type<TriggerDefinition> = t.recursion<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("TriggerDefinition"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

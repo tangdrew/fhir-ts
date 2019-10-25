@@ -18,6 +18,8 @@ import { UsageContext } from "./UsageContext";
  * Example of workflow instance
  */
 export interface ExampleScenario {
+  /** The type of resource */
+  resourceType?: "ExampleScenario";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -101,6 +103,8 @@ export const ExampleScenario: t.Type<ExampleScenario> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ExampleScenario"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

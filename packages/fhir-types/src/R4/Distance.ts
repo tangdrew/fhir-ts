@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A length - a value with a unit that is a physical distance
  */
 export interface Distance {
+  /** The type of resource */
+  resourceType?: "Distance";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const Distance: t.Type<Distance> = t.recursion<Distance>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Distance"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

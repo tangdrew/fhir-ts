@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Potential outcomes for a subject with likelihood
  */
 export interface RiskAssessment {
+  /** The type of resource */
+  resourceType?: "RiskAssessment";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -97,6 +99,8 @@ export const RiskAssessment: t.Type<RiskAssessment> = t.recursion<
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("RiskAssessment"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

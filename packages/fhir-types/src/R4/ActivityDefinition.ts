@@ -28,6 +28,8 @@ import { UsageContext } from "./UsageContext";
  * The definition of a specific activity to be taken, independent of any particular patient or context
  */
 export interface ActivityDefinition {
+  /** The type of resource */
+  resourceType?: "ActivityDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -211,6 +213,8 @@ export const ActivityDefinition: t.Type<ActivityDefinition> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ActivityDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

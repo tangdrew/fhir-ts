@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference
  */
 export interface Media {
+  /** The type of resource */
+  resourceType?: "Media";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -117,6 +119,8 @@ export const Media: t.Type<Media> = t.recursion<Media>("Media", () =>
       content: Attachment
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Media"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

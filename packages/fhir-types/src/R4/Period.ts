@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * Time range defined by start and end date/time
  */
 export interface Period {
+  /** The type of resource */
+  resourceType?: "Period";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -33,6 +35,8 @@ export const Period: t.Type<Period> = t.recursion<Period>("Period", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Period"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

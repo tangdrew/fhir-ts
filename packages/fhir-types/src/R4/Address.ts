@@ -12,6 +12,8 @@ import { Period } from "./Period";
  * An address expressed using postal conventions (as opposed to GPS or other location definition formats)
  */
 export interface Address {
+  /** The type of resource */
+  resourceType?: "Address";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -64,6 +66,8 @@ export const Address: t.Type<Address> = t.recursion<Address>("Address", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Address"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

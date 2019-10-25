@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A fixed quantity (no comparator)
  */
 export interface SimpleQuantity {
+  /** The type of resource */
+  resourceType?: "Quantity";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const SimpleQuantity: t.Type<SimpleQuantity> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Quantity"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

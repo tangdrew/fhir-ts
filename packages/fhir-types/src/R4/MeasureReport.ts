@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Results of a measure evaluation
  */
 export interface MeasureReport {
+  /** The type of resource */
+  resourceType?: "MeasureReport";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -88,6 +90,8 @@ export const MeasureReport: t.Type<MeasureReport> = t.recursion<MeasureReport>(
         period: Period
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("MeasureReport"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

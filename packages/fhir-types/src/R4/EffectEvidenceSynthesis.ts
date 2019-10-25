@@ -22,6 +22,8 @@ import { UsageContext } from "./UsageContext";
  * A quantified estimate of effect based on a body of evidence
  */
 export interface EffectEvidenceSynthesis {
+  /** The type of resource */
+  resourceType?: "EffectEvidenceSynthesis";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -145,6 +147,8 @@ export const EffectEvidenceSynthesis: t.Type<
       outcome: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("EffectEvidenceSynthesis"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

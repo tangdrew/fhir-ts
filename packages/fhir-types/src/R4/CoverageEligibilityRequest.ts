@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * CoverageEligibilityRequest resource
  */
 export interface CoverageEligibilityRequest {
+  /** The type of resource */
+  resourceType?: "CoverageEligibilityRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -95,6 +97,8 @@ export const CoverageEligibilityRequest: t.Type<
       insurer: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("CoverageEligibilityRequest"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -18,6 +18,8 @@ import { Signature } from "./Signature";
  * Who, What, When for a set of resources
  */
 export interface Provenance {
+  /** The type of resource */
+  resourceType?: "Provenance";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -79,6 +81,8 @@ export const Provenance: t.Type<Provenance> = t.recursion<Provenance>(
         recorded: primitives.R4.instant
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Provenance"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

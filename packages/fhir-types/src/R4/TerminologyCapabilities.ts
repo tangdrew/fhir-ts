@@ -17,6 +17,8 @@ import { UsageContext } from "./UsageContext";
  * A statement of system capabilities
  */
 export interface TerminologyCapabilities {
+  /** The type of resource */
+  resourceType?: "TerminologyCapabilities";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -118,6 +120,8 @@ export const TerminologyCapabilities: t.Type<
       kind: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("TerminologyCapabilities"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

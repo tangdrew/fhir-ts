@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use)
  */
 export interface MedicinalProduct {
+  /** The type of resource */
+  resourceType?: "MedicinalProduct";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -87,6 +89,8 @@ export const MedicinalProduct: t.Type<MedicinalProduct> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MedicinalProduct"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

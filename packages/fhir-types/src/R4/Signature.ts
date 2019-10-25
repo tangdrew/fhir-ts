@@ -13,6 +13,8 @@ import { Reference } from "./Reference";
  * A Signature - XML DigSig, JWS, Graphical image of signature, etc.
  */
 export interface Signature {
+  /** The type of resource */
+  resourceType?: "Signature";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -58,6 +60,8 @@ export const Signature: t.Type<Signature> = t.recursion<Signature>(
         who: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Signature"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

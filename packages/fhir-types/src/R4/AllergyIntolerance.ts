@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * Allergy or Intolerance (generally: Risk of adverse reaction to a substance)
  */
 export interface AllergyIntolerance {
+  /** The type of resource */
+  resourceType?: "AllergyIntolerance";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -108,6 +110,8 @@ export const AllergyIntolerance: t.Type<AllergyIntolerance> = t.recursion<
       patient: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("AllergyIntolerance"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -24,6 +24,8 @@ import { UsageContext } from "./UsageContext";
  * Represents a library of quality improvement components
  */
 export interface Library {
+  /** The type of resource */
+  resourceType?: "Library";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -153,6 +155,8 @@ export const Library: t.Type<Library> = t.recursion<Library>("Library", () =>
       type: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Library"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

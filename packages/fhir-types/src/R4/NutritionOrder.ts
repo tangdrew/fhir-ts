@@ -21,6 +21,8 @@ import { Timing } from "./Timing";
  * Diet, formula or nutritional supplement request
  */
 export interface NutritionOrder {
+  /** The type of resource */
+  resourceType?: "NutritionOrder";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -102,6 +104,8 @@ export const NutritionOrder: t.Type<NutritionOrder> = t.recursion<
       dateTime: primitives.R4.dateTime
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("NutritionOrder"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

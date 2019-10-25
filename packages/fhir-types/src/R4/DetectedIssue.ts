@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Clinical issue with action
  */
 export interface DetectedIssue {
+  /** The type of resource */
+  resourceType?: "DetectedIssue";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -85,6 +87,8 @@ export const DetectedIssue: t.Type<DetectedIssue> = t.recursion<DetectedIssue>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("DetectedIssue"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

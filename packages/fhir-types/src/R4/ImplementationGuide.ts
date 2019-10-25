@@ -18,6 +18,8 @@ import { UsageContext } from "./UsageContext";
  * A set of rules about how FHIR is used
  */
 export interface ImplementationGuide {
+  /** The type of resource */
+  resourceType?: "ImplementationGuide";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -119,6 +121,8 @@ export const ImplementationGuide: t.Type<ImplementationGuide> = t.recursion<
       fhirVersion: t.array(primitives.R4.code)
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ImplementationGuide"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

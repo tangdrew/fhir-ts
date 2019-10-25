@@ -13,6 +13,8 @@ import { Range } from "./Range";
  * A definition of a set of people that apply to some clinically related context, for example people contraindicated for a certain medication
  */
 export interface Population {
+  /** The type of resource */
+  resourceType?: "Population";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -41,6 +43,8 @@ export const Population: t.Type<Population> = t.recursion<Population>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Population"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

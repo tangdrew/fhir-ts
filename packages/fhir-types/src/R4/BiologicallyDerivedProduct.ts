@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A material substance originating from a biological entity
  */
 export interface BiologicallyDerivedProduct {
+  /** The type of resource */
+  resourceType?: "BiologicallyDerivedProduct";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -70,6 +72,8 @@ export const BiologicallyDerivedProduct: t.Type<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("BiologicallyDerivedProduct"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -11,6 +11,8 @@ import { Meta } from "./Meta";
  * Base Resource
  */
 export interface Resource {
+  /** The type of resource */
+  resourceType?: "Resource";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -35,6 +37,8 @@ export const Resource: t.Type<Resource> = t.recursion<Resource>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Resource"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

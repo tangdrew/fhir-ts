@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * PaymentNotice request
  */
 export interface PaymentNotice {
+  /** The type of resource */
+  resourceType?: "PaymentNotice";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -91,6 +93,8 @@ export const PaymentNotice: t.Type<PaymentNotice> = t.recursion<PaymentNotice>(
         amount: Money
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("PaymentNotice"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

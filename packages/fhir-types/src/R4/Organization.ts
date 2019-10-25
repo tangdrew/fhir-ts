@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A grouping of people or organizations with a common purpose
  */
 export interface Organization {
+  /** The type of resource */
+  resourceType?: "Organization";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -76,6 +78,8 @@ export const Organization: t.Type<Organization> = t.recursion<Organization>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Organization"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

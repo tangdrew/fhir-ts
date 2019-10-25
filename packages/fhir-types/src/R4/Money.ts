@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * An amount of economic utility in some recognized currency
  */
 export interface Money {
+  /** The type of resource */
+  resourceType?: "Money";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -33,6 +35,8 @@ export const Money: t.Type<Money> = t.recursion<Money>("Money", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Money"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

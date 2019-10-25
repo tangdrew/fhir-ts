@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * The manufactured item as contained in the packaged medicinal product
  */
 export interface MedicinalProductManufactured {
+  /** The type of resource */
+  resourceType?: "MedicinalProductManufactured";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -71,6 +73,8 @@ export const MedicinalProductManufactured: t.Type<
         quantity: Quantity
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("MedicinalProductManufactured"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A pharmaceutical product described in terms of its composition and dose form
  */
 export interface MedicinalProductPharmaceutical {
+  /** The type of resource */
+  resourceType?: "MedicinalProductPharmaceutical";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -67,6 +69,8 @@ export const MedicinalProductPharmaceutical: t.Type<
         administrableDoseForm: CodeableConcept
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("MedicinalProductPharmaceutical"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

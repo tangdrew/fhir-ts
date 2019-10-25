@@ -20,6 +20,8 @@ import { Timing } from "./Timing";
  * Record of use of a device
  */
 export interface DeviceUseStatement {
+  /** The type of resource */
+  resourceType?: "DeviceUseStatement";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -95,6 +97,8 @@ export const DeviceUseStatement: t.Type<DeviceUseStatement> = t.recursion<
       device: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DeviceUseStatement"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

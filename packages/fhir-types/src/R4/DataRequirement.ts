@@ -16,6 +16,8 @@ import { Reference } from "./Reference";
  * Describes a required data item
  */
 export interface DataRequirement {
+  /** The type of resource */
+  resourceType?: "DataRequirement";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -61,6 +63,8 @@ export const DataRequirement: t.Type<DataRequirement> = t.recursion<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DataRequirement"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

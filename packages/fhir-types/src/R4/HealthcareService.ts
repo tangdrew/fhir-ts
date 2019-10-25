@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * The details of a healthcare service available at a location
  */
 export interface HealthcareService {
+  /** The type of resource */
+  resourceType?: "HealthcareService";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -106,6 +108,8 @@ export const HealthcareService: t.Type<HealthcareService> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("HealthcareService"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

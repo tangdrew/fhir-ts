@@ -12,6 +12,8 @@ import { Extension } from "./Extension";
  * Contributor information
  */
 export interface Contributor {
+  /** The type of resource */
+  resourceType?: "Contributor";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -43,6 +45,8 @@ export const Contributor: t.Type<Contributor> = t.recursion<Contributor>(
         name: primitives.R4.string
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Contributor"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * The technical details of an endpoint that can be used for electronic services
  */
 export interface Endpoint {
+  /** The type of resource */
+  resourceType?: "Endpoint";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -93,6 +95,8 @@ export const Endpoint: t.Type<Endpoint> = t.recursion<Endpoint>(
         address: primitives.R4.url
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Endpoint"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

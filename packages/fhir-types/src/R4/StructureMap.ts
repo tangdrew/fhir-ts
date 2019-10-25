@@ -44,6 +44,8 @@ import { UsageContext } from "./UsageContext";
  * A Map of relationships between 2 structures that can be used to transform data
  */
 export interface StructureMap {
+  /** The type of resource */
+  resourceType?: "StructureMap";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -139,6 +141,8 @@ export const StructureMap: t.Type<StructureMap> = t.recursion<StructureMap>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("StructureMap"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

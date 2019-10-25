@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * Describes the intended objective(s) for a patient, group or organization
  */
 export interface Goal {
+  /** The type of resource */
+  resourceType?: "Goal";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -99,6 +101,8 @@ export const Goal: t.Type<Goal> = t.recursion<Goal>("Goal", () =>
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Goal"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

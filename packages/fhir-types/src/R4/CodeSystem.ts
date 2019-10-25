@@ -19,6 +19,8 @@ import { UsageContext } from "./UsageContext";
  * Declares the existence of and describes a code system or code system supplement
  */
 export interface CodeSystem {
+  /** The type of resource */
+  resourceType?: "CodeSystem";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -140,6 +142,8 @@ export const CodeSystem: t.Type<CodeSystem> = t.recursion<CodeSystem>(
         content: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("CodeSystem"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

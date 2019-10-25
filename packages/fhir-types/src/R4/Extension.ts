@@ -40,6 +40,8 @@ import { UsageContext } from "./UsageContext";
  * Optional Extensions Element
  */
 export interface Extension {
+  /** The type of resource */
+  resourceType?: "Extension";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -199,6 +201,8 @@ export const Extension: t.Type<Extension> = t.recursion<Extension>(
         url: primitives.R4.string
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Extension"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

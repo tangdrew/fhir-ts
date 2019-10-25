@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * PaymentReconciliation resource
  */
 export interface PaymentReconciliation {
+  /** The type of resource */
+  resourceType?: "PaymentReconciliation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -96,6 +98,8 @@ export const PaymentReconciliation: t.Type<PaymentReconciliation> = t.recursion<
       paymentAmount: Money
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("PaymentReconciliation"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

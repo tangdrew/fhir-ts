@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Details and position information for a physical place
  */
 export interface Location {
+  /** The type of resource */
+  resourceType?: "Location";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -94,6 +96,8 @@ export const Location: t.Type<Location> = t.recursion<Location>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Location"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

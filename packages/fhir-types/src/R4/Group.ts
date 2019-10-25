@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Group of multiple entities
  */
 export interface Group {
+  /** The type of resource */
+  resourceType?: "Group";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -81,6 +83,8 @@ export const Group: t.Type<Group> = t.recursion<Group>("Group", () =>
       actual: primitives.R4.boolean
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Group"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

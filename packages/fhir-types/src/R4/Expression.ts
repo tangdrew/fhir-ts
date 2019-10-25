@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * An expression that can be used to generate a value
  */
 export interface Expression {
+  /** The type of resource */
+  resourceType?: "Expression";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -50,6 +52,8 @@ export const Expression: t.Type<Expression> = t.recursion<Expression>(
         language: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Expression"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

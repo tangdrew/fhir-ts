@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Immunization event information
  */
 export interface Immunization {
+  /** The type of resource */
+  resourceType?: "Immunization";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -128,6 +130,8 @@ export const Immunization: t.Type<Immunization> = t.recursion<Immunization>(
         occurrenceString: primitives.R4.string
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Immunization"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

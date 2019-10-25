@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * An interaction during which services are provided to the patient
  */
 export interface Encounter {
+  /** The type of resource */
+  resourceType?: "Encounter";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -93,6 +95,8 @@ export const Encounter: t.Type<Encounter> = t.recursion<Encounter>(
         class: Coding
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Encounter"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

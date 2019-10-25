@@ -15,6 +15,8 @@ import { Resource } from "./Resource";
  * Links records for 'same' item
  */
 export interface Linkage {
+  /** The type of resource */
+  resourceType?: "Linkage";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -51,6 +53,8 @@ export const Linkage: t.Type<Linkage> = t.recursion<Linkage>("Linkage", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Linkage"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

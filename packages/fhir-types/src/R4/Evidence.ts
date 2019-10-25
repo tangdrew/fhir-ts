@@ -22,6 +22,8 @@ import { UsageContext } from "./UsageContext";
  * A research context or question
  */
 export interface Evidence {
+  /** The type of resource */
+  resourceType?: "Evidence";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -141,6 +143,8 @@ export const Evidence: t.Type<Evidence> = t.recursion<Evidence>(
         exposureBackground: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Evidence"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

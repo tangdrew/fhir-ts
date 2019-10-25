@@ -14,6 +14,8 @@ import { Reference } from "./Reference";
  * An identifier intended for computation
  */
 export interface Identifier {
+  /** The type of resource */
+  resourceType?: "Identifier";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -48,6 +50,8 @@ export const Identifier: t.Type<Identifier> = t.recursion<Identifier>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Identifier"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

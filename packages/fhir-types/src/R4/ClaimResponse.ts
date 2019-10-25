@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * Response to a claim predetermination or preauthorization
  */
 export interface ClaimResponse {
+  /** The type of resource */
+  resourceType?: "ClaimResponse";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -121,6 +123,8 @@ export const ClaimResponse: t.Type<ClaimResponse> = t.recursion<ClaimResponse>(
         outcome: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ClaimResponse"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

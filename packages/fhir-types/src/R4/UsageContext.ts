@@ -16,6 +16,8 @@ import { Reference } from "./Reference";
  * Describes the context of use for a conformance or knowledge resource
  */
 export interface UsageContext {
+  /** The type of resource */
+  resourceType?: "UsageContext";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -53,6 +55,8 @@ export const UsageContext: t.Type<UsageContext> = t.recursion<UsageContext>(
         valueReference: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("UsageContext"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

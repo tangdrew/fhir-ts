@@ -20,6 +20,8 @@ import { UsageContext } from "./UsageContext";
  * Describes a set of tests
  */
 export interface TestScript {
+  /** The type of resource */
+  resourceType?: "TestScript";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -113,6 +115,8 @@ export const TestScript: t.Type<TestScript> = t.recursion<TestScript>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("TestScript"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

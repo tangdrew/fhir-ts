@@ -22,6 +22,8 @@ import { Timing } from "./Timing";
  * Medical device request
  */
 export interface DeviceRequest {
+  /** The type of resource */
+  resourceType?: "DeviceRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -129,6 +131,8 @@ export const DeviceRequest: t.Type<DeviceRequest> = t.recursion<DeviceRequest>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("DeviceRequest"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

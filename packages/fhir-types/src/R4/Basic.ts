@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Resource for non-supported content
  */
 export interface Basic {
+  /** The type of resource */
+  resourceType?: "Basic";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -62,6 +64,8 @@ export const Basic: t.Type<Basic> = t.recursion<Basic>("Basic", () =>
       code: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Basic"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

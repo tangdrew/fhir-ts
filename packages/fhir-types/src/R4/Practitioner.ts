@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * A person with a  formal responsibility in the provisioning of healthcare or related services
  */
 export interface Practitioner {
+  /** The type of resource */
+  resourceType?: "Practitioner";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -78,6 +80,8 @@ export const Practitioner: t.Type<Practitioner> = t.recursion<Practitioner>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Practitioner"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

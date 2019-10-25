@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Tracks balance, charges, for patient or cost center
  */
 export interface Account {
+  /** The type of resource */
+  resourceType?: "Account";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -75,6 +77,8 @@ export const Account: t.Type<Account> = t.recursion<Account>("Account", () =>
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Account"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

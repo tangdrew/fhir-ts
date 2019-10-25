@@ -14,6 +14,8 @@ import { Quantity } from "./Quantity";
  * The shelf-life and storage information for a medicinal product item or container can be described using this class
  */
 export interface ProductShelfLife {
+  /** The type of resource */
+  resourceType?: "ProductShelfLife";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -45,6 +47,8 @@ export const ProductShelfLife: t.Type<ProductShelfLife> = t.recursion<
       period: Quantity
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ProductShelfLife"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

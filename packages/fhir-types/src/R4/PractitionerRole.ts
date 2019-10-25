@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Roles/organizations the practitioner is associated with
  */
 export interface PractitionerRole {
+  /** The type of resource */
+  resourceType?: "PractitionerRole";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -79,6 +81,8 @@ export const PractitionerRole: t.Type<PractitionerRole> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("PractitionerRole"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

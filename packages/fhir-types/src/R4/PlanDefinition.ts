@@ -29,6 +29,8 @@ import { UsageContext } from "./UsageContext";
  * The definition of a plan for a series of actions, independent of any specific patient or context
  */
 export interface PlanDefinition {
+  /** The type of resource */
+  resourceType?: "PlanDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -156,6 +158,8 @@ export const PlanDefinition: t.Type<PlanDefinition> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("PlanDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

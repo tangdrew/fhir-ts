@@ -12,6 +12,8 @@ import { Extension } from "./Extension";
  * Related artifacts for a knowledge resource
  */
 export interface RelatedArtifact {
+  /** The type of resource */
+  resourceType?: "RelatedArtifact";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -57,6 +59,8 @@ export const RelatedArtifact: t.Type<RelatedArtifact> = t.recursion<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("RelatedArtifact"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

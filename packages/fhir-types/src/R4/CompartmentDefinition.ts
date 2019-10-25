@@ -16,6 +16,8 @@ import { UsageContext } from "./UsageContext";
  * Compartment Definition for a resource
  */
 export interface CompartmentDefinition {
+  /** The type of resource */
+  resourceType?: "CompartmentDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -107,6 +109,8 @@ export const CompartmentDefinition: t.Type<CompartmentDefinition> = t.recursion<
       search: primitives.R4.boolean
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("CompartmentDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

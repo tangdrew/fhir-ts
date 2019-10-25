@@ -14,6 +14,8 @@ import { Range } from "./Range";
  * Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID
  */
 export interface SubstanceAmount {
+  /** The type of resource */
+  resourceType?: "SubstanceAmount";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -48,6 +50,8 @@ export const SubstanceAmount: t.Type<SubstanceAmount> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SubstanceAmount"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A duration of time during which an organism (or a process) has existed
  */
 export interface Age {
+  /** The type of resource */
+  resourceType?: "Age";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -45,6 +47,8 @@ export const Age: t.Type<Age> = t.recursion<Age>("Age", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Age"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

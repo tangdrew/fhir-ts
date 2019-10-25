@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * An action that is being or was performed on a patient
  */
 export interface Procedure {
+  /** The type of resource */
+  resourceType?: "Procedure";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -128,6 +130,8 @@ export const Procedure: t.Type<Procedure> = t.recursion<Procedure>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Procedure"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

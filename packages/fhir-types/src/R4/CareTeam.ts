@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Planned participants in the coordination and delivery of care for a patient or group
  */
 export interface CareTeam {
+  /** The type of resource */
+  resourceType?: "CareTeam";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -80,6 +82,8 @@ export const CareTeam: t.Type<CareTeam> = t.recursion<CareTeam>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("CareTeam"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

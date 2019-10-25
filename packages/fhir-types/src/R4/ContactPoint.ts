@@ -12,6 +12,8 @@ import { Period } from "./Period";
  * Details of a Technology mediated contact point (phone, fax, email, etc.)
  */
 export interface ContactPoint {
+  /** The type of resource */
+  resourceType?: "ContactPoint";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -46,6 +48,8 @@ export const ContactPoint: t.Type<ContactPoint> = t.recursion<ContactPoint>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ContactPoint"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

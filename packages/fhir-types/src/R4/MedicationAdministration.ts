@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * Administration of medication to a patient
  */
 export interface MedicationAdministration {
+  /** The type of resource */
+  resourceType?: "MedicationAdministration";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -110,6 +112,8 @@ export const MedicationAdministration: t.Type<
       effectivePeriod: Period
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MedicationAdministration"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

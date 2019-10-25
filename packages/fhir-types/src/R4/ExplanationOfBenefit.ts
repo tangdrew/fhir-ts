@@ -23,6 +23,8 @@ import { Resource } from "./Resource";
  * Explanation of Benefit resource
  */
 export interface ExplanationOfBenefit {
+  /** The type of resource */
+  resourceType?: "ExplanationOfBenefit";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -144,6 +146,8 @@ export const ExplanationOfBenefit: t.Type<ExplanationOfBenefit> = t.recursion<
       outcome: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ExplanationOfBenefit"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

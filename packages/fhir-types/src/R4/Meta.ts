@@ -12,6 +12,8 @@ import { Extension } from "./Extension";
  * Metadata about a resource
  */
 export interface Meta {
+  /** The type of resource */
+  resourceType?: "Meta";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -46,6 +48,8 @@ export const Meta: t.Type<Meta> = t.recursion<Meta>("Meta", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Meta"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * The detailed description of a substance, typically at a level beyond what is used for prescribing
  */
 export interface SubstanceSpecification {
+  /** The type of resource */
+  resourceType?: "SubstanceSpecification";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -83,6 +85,8 @@ export const SubstanceSpecification: t.Type<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SubstanceSpecification"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

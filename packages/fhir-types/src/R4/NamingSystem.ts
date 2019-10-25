@@ -18,6 +18,8 @@ import { UsageContext } from "./UsageContext";
  * System of unique identification
  */
 export interface NamingSystem {
+  /** The type of resource */
+  resourceType?: "NamingSystem";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -99,6 +101,8 @@ export const NamingSystem: t.Type<NamingSystem> = t.recursion<NamingSystem>(
         date: primitives.R4.dateTime
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("NamingSystem"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

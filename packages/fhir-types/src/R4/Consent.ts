@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * A healthcare consumer's  choices to permit or deny recipients or roles to perform actions for specific purposes and periods of time
  */
 export interface Consent {
+  /** The type of resource */
+  resourceType?: "Consent";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -83,6 +85,8 @@ export const Consent: t.Type<Consent> = t.recursion<Consent>("Consent", () =>
       category: t.array(CodeableConcept)
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Consent"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * An instance of a medical-related component of a medical device
  */
 export interface DeviceDefinition {
+  /** The type of resource */
+  resourceType?: "DeviceDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -98,6 +100,8 @@ export const DeviceDefinition: t.Type<DeviceDefinition> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DeviceDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

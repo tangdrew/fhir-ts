@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A homogeneous material with a definite composition
  */
 export interface Substance {
+  /** The type of resource */
+  resourceType?: "Substance";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -68,6 +70,8 @@ export const Substance: t.Type<Substance> = t.recursion<Substance>(
         code: CodeableConcept
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Substance"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

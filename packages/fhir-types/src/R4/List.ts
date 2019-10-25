@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A list is a curated collection of resources
  */
 export interface List {
+  /** The type of resource */
+  resourceType?: "List";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -85,6 +87,8 @@ export const List: t.Type<List> = t.recursion<List>("List", () =>
       mode: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("List"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

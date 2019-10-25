@@ -12,6 +12,8 @@ import { Extension } from "./Extension";
  * Contact information
  */
 export interface ContactDetail {
+  /** The type of resource */
+  resourceType?: "ContactDetail";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -34,6 +36,8 @@ export const ContactDetail: t.Type<ContactDetail> = t.recursion<ContactDetail>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ContactDetail"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

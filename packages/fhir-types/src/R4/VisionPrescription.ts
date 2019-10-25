@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * Prescription for vision correction products for a patient
  */
 export interface VisionPrescription {
+  /** The type of resource */
+  resourceType?: "VisionPrescription";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -82,6 +84,8 @@ export const VisionPrescription: t.Type<VisionPrescription> = t.recursion<
       prescriber: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("VisionPrescription"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

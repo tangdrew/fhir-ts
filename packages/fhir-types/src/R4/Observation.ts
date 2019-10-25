@@ -24,6 +24,8 @@ import { Timing } from "./Timing";
  * Measurements and simple assertions
  */
 export interface Observation {
+  /** The type of resource */
+  resourceType?: "Observation";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -149,6 +151,8 @@ export const Observation: t.Type<Observation> = t.recursion<Observation>(
         code: CodeableConcept
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Observation"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

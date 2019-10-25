@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * A person that is related to a patient, but who is not a direct target of care
  */
 export interface RelatedPerson {
+  /** The type of resource */
+  resourceType?: "RelatedPerson";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -85,6 +87,8 @@ export const RelatedPerson: t.Type<RelatedPerson> = t.recursion<RelatedPerson>(
         patient: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("RelatedPerson"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

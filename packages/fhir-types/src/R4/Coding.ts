@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * A reference to a code defined by a terminology system
  */
 export interface Coding {
+  /** The type of resource */
+  resourceType?: "Coding";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -45,6 +47,8 @@ export const Coding: t.Type<Coding> = t.recursion<Coding>("Coding", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Coding"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

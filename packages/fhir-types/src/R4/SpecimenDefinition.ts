@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Kind of specimen
  */
 export interface SpecimenDefinition {
+  /** The type of resource */
+  resourceType?: "SpecimenDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -64,6 +66,8 @@ export const SpecimenDefinition: t.Type<SpecimenDefinition> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SpecimenDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

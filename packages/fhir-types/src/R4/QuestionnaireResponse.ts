@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * A structured set of questions and their answers
  */
 export interface QuestionnaireResponse {
+  /** The type of resource */
+  resourceType?: "QuestionnaireResponse";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -80,6 +82,8 @@ export const QuestionnaireResponse: t.Type<QuestionnaireResponse> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("QuestionnaireResponse"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -18,6 +18,8 @@ import { Timing } from "./Timing";
  * Describes validation requirements, source(s), status and dates for one or more elements
  */
 export interface VerificationResult {
+  /** The type of resource */
+  resourceType?: "VerificationResult";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -85,6 +87,8 @@ export const VerificationResult: t.Type<VerificationResult> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("VerificationResult"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

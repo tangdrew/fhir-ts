@@ -1,1 +1,2 @@
-export * from "./R4";
+import * as R4 from "./R4";
+export { R4 };

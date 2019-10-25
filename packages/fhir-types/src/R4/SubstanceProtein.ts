@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * A SubstanceProtein is defined as a single unit of a linear amino acid sequence, or a combination of subunits that are either covalently linked or have a defined invariant stoichiometric relationship. This includes all synthetic, recombinant and purified SubstanceProteins of defined sequence, whether the use is therapeutic or prophylactic. This set of elements will be used to describe albumins, coagulation factors, cytokines, growth factors, peptide/SubstanceProtein hormones, enzymes, toxins, toxoids, recombinant vaccines, and immunomodulators
  */
 export interface SubstanceProtein {
+  /** The type of resource */
+  resourceType?: "SubstanceProtein";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -59,6 +61,8 @@ export const SubstanceProtein: t.Type<SubstanceProtein> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SubstanceProtein"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

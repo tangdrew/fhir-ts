@@ -22,6 +22,8 @@ import { Resource } from "./Resource";
  * Ordering of medication for patient or group
  */
 export interface MedicationRequest {
+  /** The type of resource */
+  resourceType?: "MedicationRequest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -145,6 +147,8 @@ export const MedicationRequest: t.Type<MedicationRequest> = t.recursion<
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MedicationRequest"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

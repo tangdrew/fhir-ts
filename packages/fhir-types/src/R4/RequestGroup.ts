@@ -25,6 +25,8 @@ import { Timing } from "./Timing";
  * A group of related requests
  */
 export interface RequestGroup {
+  /** The type of resource */
+  resourceType?: "RequestGroup";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -108,6 +110,8 @@ export const RequestGroup: t.Type<RequestGroup> = t.recursion<RequestGroup>(
         intent: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("RequestGroup"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

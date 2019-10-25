@@ -18,6 +18,8 @@ import { UsageContext } from "./UsageContext";
  * A map from one set of concepts to one or more other concepts
  */
 export interface ConceptMap {
+  /** The type of resource */
+  resourceType?: "ConceptMap";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -121,6 +123,8 @@ export const ConceptMap: t.Type<ConceptMap> = t.recursion<ConceptMap>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ConceptMap"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

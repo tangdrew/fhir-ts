@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * Key information to flag to healthcare providers
  */
 export interface Flag {
+  /** The type of resource */
+  resourceType?: "Flag";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -73,6 +75,8 @@ export const Flag: t.Type<Flag> = t.recursion<Flag>("Flag", () =>
       subject: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Flag"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

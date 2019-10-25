@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A container for slots of time that may be available for booking appointments
  */
 export interface Schedule {
+  /** The type of resource */
+  resourceType?: "Schedule";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -73,6 +75,8 @@ export const Schedule: t.Type<Schedule> = t.recursion<Schedule>(
         actor: t.array(Reference)
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Schedule"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

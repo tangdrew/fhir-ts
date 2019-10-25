@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A set of resources composed into a single coherent clinical statement with clinical attestation
  */
 export interface Composition {
+  /** The type of resource */
+  resourceType?: "Composition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -91,6 +93,8 @@ export const Composition: t.Type<Composition> = t.recursion<Composition>(
         title: primitives.R4.string
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Composition"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * Base for elements defined inside a resource
  */
 export interface BackboneElement {
+  /** The type of resource */
+  resourceType?: "BackboneElement";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -29,6 +31,8 @@ export const BackboneElement: t.Type<BackboneElement> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("BackboneElement"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

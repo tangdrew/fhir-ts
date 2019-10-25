@@ -12,6 +12,8 @@ import { Quantity } from "./Quantity";
  * A series of measurements taken by a device
  */
 export interface SampledData {
+  /** The type of resource */
+  resourceType?: "SampledData";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -61,6 +63,8 @@ export const SampledData: t.Type<SampledData> = t.recursion<SampledData>(
         dimensions: primitives.R4.positiveInt
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("SampledData"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

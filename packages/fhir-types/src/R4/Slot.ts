@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * A slot of time on a schedule that may be available for booking appointments
  */
 export interface Slot {
+  /** The type of resource */
+  resourceType?: "Slot";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -88,6 +90,8 @@ export const Slot: t.Type<Slot> = t.recursion<Slot>("Slot", () =>
       end: primitives.R4.instant
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Slot"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

@@ -16,6 +16,8 @@ import { Timing } from "./Timing";
  * How the medication is/was taken or should be taken
  */
 export interface Dosage {
+  /** The type of resource */
+  resourceType?: "Dosage";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -68,6 +70,8 @@ export const Dosage: t.Type<Dosage> = t.recursion<Dosage>("Dosage", () =>
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Dosage"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

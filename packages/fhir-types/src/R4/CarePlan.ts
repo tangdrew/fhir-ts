@@ -21,6 +21,8 @@ import { Timing } from "./Timing";
  * Healthcare plan for patient or group
  */
 export interface CarePlan {
+  /** The type of resource */
+  resourceType?: "CarePlan";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -118,6 +120,8 @@ export const CarePlan: t.Type<CarePlan> = t.recursion<CarePlan>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("CarePlan"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

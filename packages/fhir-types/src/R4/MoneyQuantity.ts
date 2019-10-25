@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * An amount of money. With regard to precision, see [Decimal Precision](datatypes.html#precision)
  */
 export interface MoneyQuantity {
+  /** The type of resource */
+  resourceType?: "Quantity";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -47,6 +49,8 @@ export const MoneyQuantity: t.Type<MoneyQuantity> = t.recursion<MoneyQuantity>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Quantity"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

@@ -27,6 +27,8 @@ import { UsageContext } from "./UsageContext";
  * A population, intervention, or exposure definition
  */
 export interface EvidenceVariable {
+  /** The type of resource */
+  resourceType?: "EvidenceVariable";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -142,6 +144,8 @@ export const EvidenceVariable: t.Type<EvidenceVariable> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("EvidenceVariable"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

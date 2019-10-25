@@ -20,6 +20,8 @@ import { Resource } from "./Resource";
  * Insurance or medical plan or a payment agreement
  */
 export interface Coverage {
+  /** The type of resource */
+  resourceType?: "Coverage";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -101,6 +103,8 @@ export const Coverage: t.Type<Coverage> = t.recursion<Coverage>(
         payor: t.array(Reference)
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Coverage"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -21,6 +21,8 @@ import { Resource } from "./Resource";
  * Information about patient's relatives, relevant for patient
  */
 export interface FamilyMemberHistory {
+  /** The type of resource */
+  resourceType?: "FamilyMemberHistory";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -134,6 +136,8 @@ export const FamilyMemberHistory: t.Type<FamilyMemberHistory> = t.recursion<
       relationship: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("FamilyMemberHistory"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

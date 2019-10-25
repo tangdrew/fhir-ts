@@ -17,6 +17,8 @@ import { UsageContext } from "./UsageContext";
  * Search parameter for a resource
  */
 export interface SearchParameter {
+  /** The type of resource */
+  resourceType?: "SearchParameter";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -158,6 +160,8 @@ export const SearchParameter: t.Type<SearchParameter> = t.recursion<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("SearchParameter"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

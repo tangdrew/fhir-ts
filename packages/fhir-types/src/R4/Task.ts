@@ -44,6 +44,8 @@ import { UsageContext } from "./UsageContext";
  * A task to be performed
  */
 export interface Task {
+  /** The type of resource */
+  resourceType?: "Task";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -151,6 +153,8 @@ export const Task: t.Type<Task> = t.recursion<Task>("Task", () =>
       intent: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("Task"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

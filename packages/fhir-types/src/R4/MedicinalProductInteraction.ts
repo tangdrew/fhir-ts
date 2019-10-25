@@ -16,6 +16,8 @@ import { Resource } from "./Resource";
  * MedicinalProductInteraction
  */
 export interface MedicinalProductInteraction {
+  /** The type of resource */
+  resourceType?: "MedicinalProductInteraction";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -64,6 +66,8 @@ export const MedicinalProductInteraction: t.Type<
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("MedicinalProductInteraction"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

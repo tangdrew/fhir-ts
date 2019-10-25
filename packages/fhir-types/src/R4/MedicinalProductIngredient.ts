@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * An ingredient of a manufactured item or pharmaceutical product
  */
 export interface MedicinalProductIngredient {
+  /** The type of resource */
+  resourceType?: "MedicinalProductIngredient";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -63,6 +65,8 @@ export const MedicinalProductIngredient: t.Type<
       role: CodeableConcept
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("MedicinalProductIngredient"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

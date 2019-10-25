@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * A list that defines a set of documents
  */
 export interface DocumentManifest {
+  /** The type of resource */
+  resourceType?: "DocumentManifest";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -84,6 +86,8 @@ export const DocumentManifest: t.Type<DocumentManifest> = t.recursion<
       content: t.array(Reference)
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("DocumentManifest"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

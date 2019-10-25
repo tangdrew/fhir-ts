@@ -25,6 +25,8 @@ import { UsageContext } from "./UsageContext";
  * A population, intervention, or exposure definition
  */
 export interface ResearchElementDefinition {
+  /** The type of resource */
+  resourceType?: "ResearchElementDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -168,6 +170,8 @@ export const ResearchElementDefinition: t.Type<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ResearchElementDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

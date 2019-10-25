@@ -17,6 +17,8 @@ import { UsageContext } from "./UsageContext";
  * Definition of an operation or a named query
  */
 export interface OperationDefinition {
+  /** The type of resource */
+  resourceType?: "OperationDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -154,6 +156,8 @@ export const OperationDefinition: t.Type<OperationDefinition> = t.recursion<
       instance: primitives.R4.boolean
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("OperationDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

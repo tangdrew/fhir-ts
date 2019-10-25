@@ -15,6 +15,8 @@ import { Resource } from "./Resource";
  * Server push subscription criteria
  */
 export interface Subscription {
+  /** The type of resource */
+  resourceType?: "Subscription";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -76,6 +78,8 @@ export const Subscription: t.Type<Subscription> = t.recursion<Subscription>(
         criteria: primitives.R4.string
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Subscription"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -21,6 +21,8 @@ import { UsageContext } from "./UsageContext";
  * A research context or question
  */
 export interface ResearchDefinition {
+  /** The type of resource */
+  resourceType?: "ResearchDefinition";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -164,6 +166,8 @@ export const ResearchDefinition: t.Type<ResearchDefinition> = t.recursion<
       population: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ResearchDefinition"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

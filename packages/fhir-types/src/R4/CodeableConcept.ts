@@ -12,6 +12,8 @@ import { Extension } from "./Extension";
  * Concept - reference to a terminology or just  text
  */
 export interface CodeableConcept {
+  /** The type of resource */
+  resourceType?: "CodeableConcept";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -34,6 +36,8 @@ export const CodeableConcept: t.Type<CodeableConcept> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("CodeableConcept"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

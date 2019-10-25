@@ -14,6 +14,8 @@ import { Quantity } from "./Quantity";
  * The marketing status describes the date when a medicinal product is actually put on the market or the date as of which it is no longer available
  */
 export interface ProdCharacteristic {
+  /** The type of resource */
+  resourceType?: "ProdCharacteristic";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -60,6 +62,8 @@ export const ProdCharacteristic: t.Type<ProdCharacteristic> = t.recursion<
   t.intersection([
     t.type({}),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ProdCharacteristic"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */

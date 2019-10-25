@@ -19,6 +19,8 @@ import { UsageContext } from "./UsageContext";
  * A set of codes drawn from one or more code systems
  */
 export interface ValueSet {
+  /** The type of resource */
+  resourceType?: "ValueSet";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -110,6 +112,8 @@ export const ValueSet: t.Type<ValueSet> = t.recursion<ValueSet>(
         status: primitives.R4.code
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("ValueSet"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

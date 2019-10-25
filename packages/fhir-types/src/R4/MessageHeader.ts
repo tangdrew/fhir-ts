@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * A resource that describes a message that is exchanged between systems
  */
 export interface MessageHeader {
+  /** The type of resource */
+  resourceType?: "MessageHeader";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -77,6 +79,8 @@ export const MessageHeader: t.Type<MessageHeader> = t.recursion<MessageHeader>(
         eventUri: primitives.R4.uri
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("MessageHeader"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

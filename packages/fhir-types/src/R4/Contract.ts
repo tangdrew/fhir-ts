@@ -25,6 +25,8 @@ import { Timing } from "./Timing";
  * Legal Agreement
  */
 export interface Contract {
+  /** The type of resource */
+  resourceType?: "Contract";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -133,6 +135,8 @@ export const Contract: t.Type<Contract> = t.recursion<Contract>(
     t.intersection([
       t.type({}),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Contract"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

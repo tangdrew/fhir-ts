@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * Human-readable summary of the resource (essential clinical and business information)
  */
 export interface Narrative {
+  /** The type of resource */
+  resourceType?: "Narrative";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -40,6 +42,8 @@ export const Narrative: t.Type<Narrative> = t.recursion<Narrative>(
         div: primitives.R4.xhtml
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("Narrative"),
         /** Unique id for inter-element referencing */
         id: primitives.R4.string,
         /** Extension of id element */

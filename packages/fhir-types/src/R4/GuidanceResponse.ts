@@ -19,6 +19,8 @@ import { Resource } from "./Resource";
  * The formal response to a guidance request
  */
 export interface GuidanceResponse {
+  /** The type of resource */
+  resourceType?: "GuidanceResponse";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -102,6 +104,8 @@ export const GuidanceResponse: t.Type<GuidanceResponse> = t.recursion<
       status: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("GuidanceResponse"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

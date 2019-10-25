@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Medical care, research study or other healthcare event causing physical injury
  */
 export interface AdverseEvent {
+  /** The type of resource */
+  resourceType?: "AdverseEvent";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -100,6 +102,8 @@ export const AdverseEvent: t.Type<AdverseEvent> = t.recursion<AdverseEvent>(
         subject: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("AdverseEvent"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

@@ -18,6 +18,8 @@ import { Resource } from "./Resource";
  * An entry in a catalog
  */
 export interface CatalogEntry {
+  /** The type of resource */
+  resourceType?: "CatalogEntry";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -87,6 +89,8 @@ export const CatalogEntry: t.Type<CatalogEntry> = t.recursion<CatalogEntry>(
         referencedItem: Reference
       }),
       t.partial({
+        /** The type of resource */
+        resourceType: t.literal("CatalogEntry"),
         /** Logical id of this artifact */
         id: primitives.R4.id,
         /** Extension of id element */

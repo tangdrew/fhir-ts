@@ -17,6 +17,8 @@ import { Resource } from "./Resource";
  * Physical entity which is the primary unit of interest in the study
  */
 export interface ResearchSubject {
+  /** The type of resource */
+  resourceType?: "ResearchSubject";
   /** Logical id of this artifact */
   id?: primitives.R4.id;
   /** Extension of id element */
@@ -78,6 +80,8 @@ export const ResearchSubject: t.Type<ResearchSubject> = t.recursion<
       individual: Reference
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ResearchSubject"),
       /** Logical id of this artifact */
       id: primitives.R4.id,
       /** Extension of id element */

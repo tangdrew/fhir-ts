@@ -11,6 +11,8 @@ import { Extension } from "./Extension";
  * Definition of a parameter to a module
  */
 export interface ParameterDefinition {
+  /** The type of resource */
+  resourceType?: "ParameterDefinition";
   /** Unique id for inter-element referencing */
   id?: string;
   /** Extension of id element */
@@ -60,6 +62,8 @@ export const ParameterDefinition: t.Type<ParameterDefinition> = t.recursion<
       type: primitives.R4.code
     }),
     t.partial({
+      /** The type of resource */
+      resourceType: t.literal("ParameterDefinition"),
       /** Unique id for inter-element referencing */
       id: primitives.R4.string,
       /** Extension of id element */
