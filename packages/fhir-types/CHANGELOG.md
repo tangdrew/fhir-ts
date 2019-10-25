@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-types@0.3.4...@tangdrew/fhir-types@0.4.0) (2019-10-25)
+
+
+### Features
+
+* **fhir-types:** add resourceType element ([fee59b8](https://github.com/tangdrew/fhir-ts/commit/fee59b8))
+* **fhir-types:** upgrade to use io-ts ^2.0.1 ([ef06551](https://github.com/tangdrew/fhir-ts/commit/ef06551))
+
+
+
+
+
 ## [0.3.4](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-types@0.3.3...@tangdrew/fhir-types@0.3.4) (2019-05-11)
 
 

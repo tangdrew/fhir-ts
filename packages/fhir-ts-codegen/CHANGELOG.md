@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.5.3...@tangdrew/fhir-ts-codegen@0.6.0) (2019-10-25)
+
+
+### Features
+
+* **fhir-ts-codegen:** add resourceType element ([48a2fa7](https://github.com/tangdrew/fhir-ts/commit/48a2fa7))
+* **fhir-ts-codegen:** full rewrite ([fc20dc3](https://github.com/tangdrew/fhir-ts/commit/fc20dc3))
+
+
+
+
+
 ## [0.5.3](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/fhir-ts-codegen@0.5.2...@tangdrew/fhir-ts-codegen@0.5.3) (2019-05-11)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.3...@tangdrew/primitives@0.5.0) (2019-10-25)
+
+
+### Features
+
+* **primitives:** upgrade primitives to io-ts ^2.0.1 ([5d2bde4](https://github.com/tangdrew/fhir-ts/commit/5d2bde4))
+
+
+
+
+
 ## [0.4.3](https://github.com/tangdrew/fhir-ts/compare/@tangdrew/primitives@0.4.2...@tangdrew/primitives@0.4.3) (2019-05-11)
 
 
