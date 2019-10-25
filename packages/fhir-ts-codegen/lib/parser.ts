@@ -23,8 +23,11 @@ export const parse = (structureDefinition: StructureDefinition) =>
       resourceName: structureDefinition.name
     },
     groupElementDefinitions,
-    analyzeElementDefinitionGroups,
-    groups => ({ name: structureDefinition.name, groups })
+    analyzeElementDefinitionGroups(structureDefinition.type),
+    groups => ({
+      name: structureDefinition.name,
+      groups
+    })
   );
 
 export interface ElementGroup {
@@ -40,6 +43,7 @@ export interface AnalyzedElement {
   comment?: string;
   contentReference: boolean;
   iotsType: string;
+  literal: boolean;
   name: string;
   primitive: boolean;
   recursive: boolean;
@@ -52,7 +56,7 @@ interface ElementDefinitionGroup {
   elements: ElementDefinition[];
 }
 
-const analyzeElementDefinitionGroups = (groups: {
+const analyzeElementDefinitionGroups = (resourceType: string) => (groups: {
   [key: string]: ElementDefinitionGroup;
 }) =>
   Object.keys(groups).reduce((accum: { [key: string]: ElementGroup }, key) => {
@@ -71,7 +75,11 @@ const analyzeElementDefinitionGroups = (groups: {
         map(elementDefinition =>
           analyzeElementDefinition({ elementDefinition, resourceType: name })
         ),
-        expandPrimitiveElements
+        expandPrimitiveElements,
+        elements =>
+          isResourceDefinition(resourceType, rootElement)
+            ? [creatResourceTypeAnalyzedElement(resourceType), ...elements]
+            : elements
       )
     };
     return {
@@ -118,6 +126,23 @@ const expandPrimitiveElements = (elements: AnalyzedElement[]) =>
     flatten
   );
 
+const creatResourceTypeAnalyzedElement = (
+  resourceType: string
+): AnalyzedElement => ({
+  array: false,
+  backbone: false,
+  choice: false,
+  comment: "The type of resource",
+  contentReference: false,
+  iotsType: `t.literal("${resourceType}")`,
+  literal: true,
+  name: "resourceType",
+  primitive: false,
+  recursive: false,
+  required: false,
+  type: `"${resourceType}"`
+});
+
 const analyzeElementDefinition = ({
   elementDefinition,
   resourceType
@@ -136,6 +161,7 @@ const analyzeElementDefinition = ({
     comment: elementDefinition.short,
     contentReference: isContentReferenceElement(elementDefinition),
     iotsType: primitive ? `primitives.R4.${type}` : type,
+    literal: false,
     name: elementName(elementDefinition),
     primitive,
     recursive: type === resourceType,

@@ -79,8 +79,12 @@ const generateImports = ({
     map(({ elements }) => elements),
     flatten,
     filter(
-      ({ backbone, contentReference, primitive, recursive }) =>
-        !primitive && !backbone && !contentReference && !recursive
+      ({ backbone, contentReference, primitive, recursive, name }) =>
+        !primitive &&
+        !backbone &&
+        !contentReference &&
+        !recursive &&
+        name !== "resourceType"
     ),
     map(({ type }) => type),
     // Ensure Element is imported
@@ -108,12 +112,13 @@ const generateProperty = ({
   array,
   comment,
   iotsType,
+  literal,
   name,
   required,
   type
 }: AnalyzedElement) =>
   pipe(
-    ["boolean", "string"].includes(type) ? type : iotsType,
+    ["boolean", "string"].includes(type) ? type : literal ? type : iotsType,
     typeName => `/** ${comment} */
   ${name}${required ? "" : "?"}: ${typeName}${array ? "[]" : ""};`
   );
