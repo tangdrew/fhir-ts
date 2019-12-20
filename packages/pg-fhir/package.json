@@ -1,0 +1,37 @@
+{
+  "name": "pg-fhir",
+  "version": "0.0.1",
+  "description": "Tools for FHIR persistence in PostgreSQL.",
+  "author": "Andrew Tang <andrew.yishiou.tang@gmail.com>",
+  "homepage": "https://github.com/tangdrew/fhir-ts#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangdrew/fhir-ts.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "generate-parser": "antlr4ts -visitor FHIRpath.g4 -o src/parser"
+  },
+  "bugs": {
+    "url": "https://github.com/tangdrew/fhir-ts/issues"
+  },
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.3",
+    "fp-ts": "^2.3.1",
+    "slonik": "^21.4.1"
+  },
+  "devDependencies": {
+    "@types/slonik": "^21.4.0",
+    "antlr4ts-cli": "^0.5.0-alpha.3",
+    "ts-node": "^8.5.4"
+  }
+}
